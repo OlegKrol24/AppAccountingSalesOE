@@ -15,7 +15,6 @@ namespace AppAccountingSalesOE
         private string manufacturing_country;
         private decimal price;
         private int warranty_months;
-        private int stock_quantity;
         private string description;
         private string image;
 
@@ -25,7 +24,6 @@ namespace AppAccountingSalesOE
         public string ManufacturingCountry { get => manufacturing_country; set; }
         public decimal Price { get => price; set; }
         public int WarrantyMonths { get => warranty_months; set; }
-        public int StockQuantity { get => stock_quantity; set; }
         public string Description { get => description; set; }
         public string Image { get => image; }
 
@@ -37,7 +35,6 @@ namespace AppAccountingSalesOE
             manufacturing_country = "";
             price = 0;
             warranty_months = 0;
-            stock_quantity = 0;
             description = "";
             image = "";
         }
@@ -50,7 +47,6 @@ namespace AppAccountingSalesOE
             this.manufacturing_country = manufacturing_country;
             this.price = price;
             this.warranty_months = warranty_months;
-            this.stock_quantity = stock_quantity;
             this.description = description;
             this.image = image;
         }
@@ -72,9 +68,8 @@ namespace AppAccountingSalesOE
                     if (info.Length >= 6)
                     {
                         try { warranty_months = Convert.ToInt32(values[5]); } catch (Exception ex) { warranty_months = 0; }
-                        try { stock_quantity = Convert.ToInt32(values[6]); } catch (Exception ex) { stock_quantity = 0; }
-                        try { description = values[7]; } catch (Exception ex) { description = ""; }
-                        try { image = values[8]; } catch (Exception ex) { image = ""; }
+                        try { description = values[6]; } catch (Exception ex) { description = ""; }
+                        try { image = values[7]; } catch (Exception ex) { image = ""; }
                     }
                 }
             }

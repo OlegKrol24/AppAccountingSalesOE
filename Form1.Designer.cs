@@ -1,6 +1,6 @@
 ﻿namespace AppAccountingSalesOE
 {
-    partial class Form1
+    partial class FormGoods
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,6 @@
             this.manufacturing_country = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.warranty_months = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stock_quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGoods)).BeginInit();
             this.SuspendLayout();
@@ -59,13 +58,12 @@
             this.manufacturing_country,
             this.price,
             this.warranty_months,
-            this.stock_quantity,
             this.description});
             this.dgvGoods.Location = new System.Drawing.Point(62, 34);
             this.dgvGoods.Name = "dgvGoods";
             this.dgvGoods.RowHeadersWidth = 51;
             this.dgvGoods.RowTemplate.Height = 24;
-            this.dgvGoods.Size = new System.Drawing.Size(998, 552);
+            this.dgvGoods.Size = new System.Drawing.Size(1065, 552);
             this.dgvGoods.TabIndex = 1;
             // 
             // name_goods
@@ -74,7 +72,7 @@
             this.name_goods.MinimumWidth = 6;
             this.name_goods.Name = "name_goods";
             this.name_goods.ReadOnly = true;
-            this.name_goods.Width = 150;
+            this.name_goods.Width = 160;
             // 
             // category
             // 
@@ -82,7 +80,7 @@
             this.category.MinimumWidth = 6;
             this.category.Name = "category";
             this.category.ReadOnly = true;
-            this.category.Width = 125;
+            this.category.Width = 150;
             // 
             // manufacturing_country
             // 
@@ -90,7 +88,7 @@
             this.manufacturing_country.MinimumWidth = 6;
             this.manufacturing_country.Name = "manufacturing_country";
             this.manufacturing_country.ReadOnly = true;
-            this.manufacturing_country.Width = 130;
+            this.manufacturing_country.Width = 120;
             // 
             // price
             // 
@@ -98,7 +96,7 @@
             this.price.MinimumWidth = 6;
             this.price.Name = "price";
             this.price.ReadOnly = true;
-            this.price.Width = 125;
+            this.price.Width = 110;
             // 
             // warranty_months
             // 
@@ -106,15 +104,6 @@
             this.warranty_months.MinimumWidth = 6;
             this.warranty_months.Name = "warranty_months";
             this.warranty_months.ReadOnly = true;
-            this.warranty_months.Width = 125;
-            // 
-            // stock_quantity
-            // 
-            this.stock_quantity.HeaderText = "Кількість на складі";
-            this.stock_quantity.MinimumWidth = 6;
-            this.stock_quantity.Name = "stock_quantity";
-            this.stock_quantity.ReadOnly = true;
-            this.stock_quantity.Width = 125;
             // 
             // description
             // 
@@ -122,16 +111,16 @@
             this.description.MinimumWidth = 6;
             this.description.Name = "description";
             this.description.ReadOnly = true;
-            this.description.Width = 160;
+            this.description.Width = 180;
             // 
-            // Form1
+            // FormGoods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1133, 691);
+            this.ClientSize = new System.Drawing.Size(1240, 691);
             this.Controls.Add(this.dgvGoods);
             this.Controls.Add(this.btnReport);
-            this.Name = "Form1";
+            this.Name = "FormGoods";
             this.Text = "Товари";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGoods)).EndInit();
@@ -148,7 +137,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn manufacturing_country;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewTextBoxColumn warranty_months;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stock_quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn description;
     }
 }
