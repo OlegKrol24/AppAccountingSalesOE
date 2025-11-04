@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,9 +52,63 @@ namespace AppAccountingSalesOE
         {
             ClassSerialize.SerializeToXml<List<Goods>>(ref goods_list, "data.xml");
 
-            FormReport frmReport = new FormReport();
+            // Інтеграція RepExcel для створення звіту в Excel
+            string excelFilePath = Path.Combine(Environment.CurrentDirectory, "GoodsReport.xlsx"); // Шлях до файлу на робочому столі
 
-            frmReport.ShowDialog();
+            using (RepExcel repExcel = new RepExcel())
+            {
+                try
+                {
+                    // Створюємо нову книгу Excel
+                    repExcel.CreateNewBook(excelFilePath);
+
+                    // Відкриваємо книгу для редагування
+                    repExcel.OpenBook(excelFilePath);
+
+                    // Заповнюємо заголовки на аркуші "Saturn Data"
+                    repExcel.SetValue("Saturn Data", "A1", "Назва товару", "string", true);
+                    repExcel.SetValue("Saturn Data", "B1", "Категорія", "string", true);
+                    repExcel.SetValue("Saturn Data", "C1", "Країна виробник", "string", true);
+                    repExcel.SetValue("Saturn Data", "D1", "Ціна", "string", true);
+                    repExcel.SetValue("Saturn Data", "E1", "Гарантія (міс.)", "string", true);
+                    repExcel.SetValue("Saturn Data", "F1", "Опис", "string", true);
+                    repExcel.SetValue("Saturn Data", "G1", "Зображення", "string", true); // Колонка для шляху до зображення (якщо потрібно вставити - див. нижче)
+
+                    // Заповнюємо дані з goods_list
+                    int rowIndex = 2; // Починаємо з рядка 2
+
+                    foreach (Goods g in goods_list)
+                    {
+                        repExcel.SetValue("Saturn Data", $"A{rowIndex}", g.Name, "string");
+                        repExcel.SetValue("Saturn Data", $"B{rowIndex}", g.Category, "string");
+                        repExcel.SetValue("Saturn Data", $"C{rowIndex}", g.ManufacturingCountry, "string");
+                        repExcel.SetValue("Saturn Data", $"D{rowIndex}", g.Price.ToString(), "double");
+                        repExcel.SetValue("Saturn Data", $"E{rowIndex}", g.WarrantyMonths.ToString(), "double");
+                        repExcel.SetValue("Saturn Data", $"F{rowIndex}", g.Description, "string");
+                        repExcel.SetValue("Saturn Data", $"G{rowIndex}", g.Image, "string"); // Шлях до зображення (якщо є)
+
+                        rowIndex++;
+                    }
+
+                    repExcel.AutoFitColumns("Saturn Data");
+
+                    // Зберігаємо файл
+                    repExcel.Save(excelFilePath);
+
+                    // Закриваємо книгу
+                    repExcel.CloseBook();
+
+                    MessageBox.Show($"Звіт створено: {excelFilePath}");
+
+                    FormReport frmReport = new FormReport();
+
+                    frmReport.ShowDialog();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Помилка при створенні звіту: " + ex.Message);
+                }
+            }
         }
     }
 }
