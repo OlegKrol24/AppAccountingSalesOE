@@ -290,6 +290,7 @@ namespace AppAccountingSalesOE
                     excelappworkbooks = excelapp.Workbooks;
                     excelappworkbook = excelappworkbooks[1];
                 }
+
                 excelsheets = excelappworkbook.Worksheets;
                 excelworksheet = (Excel.Worksheet)excelsheets[pageName];
                 excelworksheet.UsedRange.Columns.AutoFit(); // Один рядок для всіх колонок

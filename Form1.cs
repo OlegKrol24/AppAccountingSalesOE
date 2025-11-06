@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace AppAccountingSalesOE
 {
-    public partial class FormGoods : Form
+    public partial class formGoods : Form
     {
-        public FormGoods()
+        public formGoods()
         {
             InitializeComponent();
         }
@@ -98,7 +98,7 @@ namespace AppAccountingSalesOE
                     // Закриваємо книгу
                     repExcel.CloseBook();
 
-                    MessageBox.Show($"Звіт створено: {excelFilePath}");
+                    MessageBox.Show($"Звіт створено: {excelFilePath}", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     FormReport frmReport = new FormReport();
 
@@ -106,7 +106,7 @@ namespace AppAccountingSalesOE
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Помилка при створенні звіту: " + ex.Message);
+                    MessageBox.Show("Помилка при створенні звіту: " + ex.Message, "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

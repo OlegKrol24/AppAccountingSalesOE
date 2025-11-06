@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AppAccountingSalesOE
 {
-    public partial class Deliveries : Form
+    public partial class formDeliveries : Form
     {
-        public Deliveries()
+        public formDeliveries()
         {
             InitializeComponent();
         }

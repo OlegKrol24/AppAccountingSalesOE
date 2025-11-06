@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace AppAccountingSalesOE
 {
-    public partial class MainPage : Form
+    public partial class formAuthorization : Form
     {
-        public MainPage()
+        public formAuthorization()
         {
             InitializeComponent();
-        }
-
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MainPage_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
