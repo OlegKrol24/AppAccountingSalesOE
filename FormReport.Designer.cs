@@ -1,6 +1,6 @@
 ﻿namespace AppAccountingSalesOE
 {
-    partial class FormReport
+    partial class formReport
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // FormReport
+            // formReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "FormReport";
+            this.ClientSize = new System.Drawing.Size(1022, 704);
+            this.Name = "formReport";
             this.Text = "Звітність";
             this.Load += new System.EventHandler(this.FormReport_Load);
             this.ResumeLayout(false);

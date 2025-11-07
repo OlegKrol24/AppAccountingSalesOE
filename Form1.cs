@@ -100,7 +100,7 @@ namespace AppAccountingSalesOE
 
                     MessageBox.Show($"Звіт створено: {excelFilePath}", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    FormReport frmReport = new FormReport();
+                    formReport frmReport = new formReport();
 
                     frmReport.ShowDialog();
                 }
@@ -109,6 +109,11 @@ namespace AppAccountingSalesOE
                     MessageBox.Show("Помилка при створенні звіту: " + ex.Message, "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void formGoods_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

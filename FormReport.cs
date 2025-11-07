@@ -16,9 +16,9 @@ using FastReport.Design.StandardDesigner;
 
 namespace AppAccountingSalesOE
 {
-    public partial class FormReport : Form
+    public partial class formReport : Form
     {
-        public FormReport()
+        public formReport()
         {
             InitializeComponent();
         }

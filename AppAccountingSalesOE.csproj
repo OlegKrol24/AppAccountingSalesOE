@@ -275,5 +275,8 @@
   <ItemGroup>
     <None Include="Photos\Menu.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Photos\Authorization.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

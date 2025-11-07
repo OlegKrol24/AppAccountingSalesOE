@@ -1,6 +1,6 @@
 ﻿namespace AppAccountingSalesOE
 {
-    partial class MainPage
+    partial class formMainPage
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMainPage));
             this.btnGoods = new System.Windows.Forms.Button();
             this.btnCustomers = new System.Windows.Forms.Button();
             this.btnSales = new System.Windows.Forms.Button();
@@ -63,12 +63,13 @@
             this.btnGoods.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGoods.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnGoods.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnGoods.Location = new System.Drawing.Point(60, 250);
+            this.btnGoods.Location = new System.Drawing.Point(60, 260);
             this.btnGoods.Name = "btnGoods";
             this.btnGoods.Size = new System.Drawing.Size(166, 44);
             this.btnGoods.TabIndex = 3;
             this.btnGoods.Text = "Товари";
             this.btnGoods.UseVisualStyleBackColor = false;
+            this.btnGoods.Click += new System.EventHandler(this.btnGoods_Click);
             // 
             // btnCustomers
             // 
@@ -76,12 +77,13 @@
             this.btnCustomers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCustomers.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnCustomers.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCustomers.Location = new System.Drawing.Point(60, 325);
+            this.btnCustomers.Location = new System.Drawing.Point(60, 335);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.Size = new System.Drawing.Size(166, 44);
             this.btnCustomers.TabIndex = 4;
             this.btnCustomers.Text = "Клієнти";
             this.btnCustomers.UseVisualStyleBackColor = false;
+            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
             // 
             // btnSales
             // 
@@ -89,12 +91,13 @@
             this.btnSales.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSales.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSales.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSales.Location = new System.Drawing.Point(60, 400);
+            this.btnSales.Location = new System.Drawing.Point(60, 410);
             this.btnSales.Name = "btnSales";
             this.btnSales.Size = new System.Drawing.Size(166, 44);
             this.btnSales.TabIndex = 5;
             this.btnSales.Text = "Продажі";
             this.btnSales.UseVisualStyleBackColor = false;
+            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
             // 
             // btnDeliveries
             // 
@@ -102,12 +105,13 @@
             this.btnDeliveries.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeliveries.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnDeliveries.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDeliveries.Location = new System.Drawing.Point(60, 475);
+            this.btnDeliveries.Location = new System.Drawing.Point(60, 485);
             this.btnDeliveries.Name = "btnDeliveries";
             this.btnDeliveries.Size = new System.Drawing.Size(166, 44);
             this.btnDeliveries.TabIndex = 6;
             this.btnDeliveries.Text = "Поставки";
             this.btnDeliveries.UseVisualStyleBackColor = false;
+            this.btnDeliveries.Click += new System.EventHandler(this.btnDeliveries_Click);
             // 
             // btnReports
             // 
@@ -115,12 +119,13 @@
             this.btnReports.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReports.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnReports.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnReports.Location = new System.Drawing.Point(60, 550);
+            this.btnReports.Location = new System.Drawing.Point(60, 560);
             this.btnReports.Name = "btnReports";
             this.btnReports.Size = new System.Drawing.Size(166, 44);
             this.btnReports.TabIndex = 7;
             this.btnReports.Text = "Звіти";
             this.btnReports.UseVisualStyleBackColor = false;
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
             // 
             // lbRole
             // 
@@ -267,7 +272,7 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // MainPage
+            // formMainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -291,9 +296,10 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "MainPage";
+            this.Name = "formMainPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Головна сторінка";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainPage_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pbMainMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUA)).EndInit();
