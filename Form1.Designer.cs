@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnReport = new System.Windows.Forms.Button();
+            this.btnReportExcel = new System.Windows.Forms.Button();
             this.dgvGoods = new System.Windows.Forms.DataGridView();
             this.name_goods = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +45,7 @@
             this.pbLanguageUS = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnReportWord = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGoods)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMainMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
@@ -54,15 +55,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnReport
+            // btnReportExcel
             // 
-            this.btnReport.Location = new System.Drawing.Point(419, 700);
-            this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(203, 41);
-            this.btnReport.TabIndex = 0;
-            this.btnReport.Text = "Звіт";
-            this.btnReport.UseVisualStyleBackColor = true;
-            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            this.btnReportExcel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportExcel.Location = new System.Drawing.Point(202, 700);
+            this.btnReportExcel.Name = "btnReportExcel";
+            this.btnReportExcel.Size = new System.Drawing.Size(203, 41);
+            this.btnReportExcel.TabIndex = 0;
+            this.btnReportExcel.Text = "Звіт у форматі Excel";
+            this.btnReportExcel.UseVisualStyleBackColor = true;
+            this.btnReportExcel.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // dgvGoods
             // 
@@ -228,12 +230,24 @@
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
+            // btnReportWord
+            // 
+            this.btnReportWord.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportWord.Location = new System.Drawing.Point(624, 700);
+            this.btnReportWord.Name = "btnReportWord";
+            this.btnReportWord.Size = new System.Drawing.Size(203, 41);
+            this.btnReportWord.TabIndex = 26;
+            this.btnReportWord.Text = "Звіт у форматі Word";
+            this.btnReportWord.UseVisualStyleBackColor = true;
+            this.btnReportWord.Click += new System.EventHandler(this.btnReportWord_Click);
+            // 
             // formGoods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1302, 753);
+            this.Controls.Add(this.btnReportWord);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbMainMenu);
             this.Controls.Add(this.pbCart);
@@ -243,7 +257,7 @@
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvGoods);
-            this.Controls.Add(this.btnReport);
+            this.Controls.Add(this.btnReportExcel);
             this.Name = "formGoods";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Сторінка з товарами";
@@ -263,7 +277,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnReport;
+        private System.Windows.Forms.Button btnReportExcel;
         private System.Windows.Forms.DataGridView dgvGoods;
         private System.Windows.Forms.DataGridViewTextBoxColumn name_goods;
         private System.Windows.Forms.DataGridViewTextBoxColumn category;
@@ -279,6 +293,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnReportWord;
     }
 }
 

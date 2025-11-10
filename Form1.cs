@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace AppAccountingSalesOE
 {
@@ -100,9 +101,9 @@ namespace AppAccountingSalesOE
 
                     MessageBox.Show($"Звіт створено: {excelFilePath}", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    formReport frmReport = new formReport();
+                    //formReport frmReport = new formReport();
 
-                    frmReport.ShowDialog();
+                    //frmReport.ShowDialog();
                 }
                 catch (Exception ex)
                 {
@@ -114,6 +115,54 @@ namespace AppAccountingSalesOE
         private void formGoods_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnReportWord_Click(object sender, EventArgs e)
+        {
+            string wordFilePath = Path.Combine(Environment.CurrentDirectory, "GoodsReport.docx");
+
+            using (RepWord repWord = new RepWord())
+            {
+                try
+                {
+                    repWord.CreateNewDocument(wordFilePath);
+                    repWord.InsertText("Звіт про товари", true, "center");
+
+                    // Вставка таблиці з даними
+                    List<List<string>> tableData = new List<List<string>>();
+
+                    tableData.Add(new List<string> { "Назва", "Категорія", "Країна виробник", "Ціна", "Гарантія (міс.)", "Опис" }); // Заголовок таблиці
+
+                    decimal counter = 0;
+
+                    foreach (Goods g in goods_list)
+                    {
+                        tableData.Add(new List<string> { g.Name, g.Category, g.ManufacturingCountry, g.Price.ToString(), g.WarrantyMonths.ToString(), g.Description });
+
+                        counter += g.Price;
+                    }
+
+                    repWord.InsertTable(tableData);
+
+                    repWord.InsertText($"\nЗагальна сума цін товарів: {counter}", true, "right");
+
+                    repWord.Save(wordFilePath);
+
+                    repWord.ExportToPdf(wordFilePath.Replace(".docx", ".pdf"));
+
+                    repWord.CloseDocument();
+
+                    MessageBox.Show($"Документ створено: {wordFilePath}", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //formReport frmReport = new formReport();
+
+                    //frmReport.ShowDialog();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Помилка при створенні документа: " + ex.Message, "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
