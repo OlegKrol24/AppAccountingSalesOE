@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(1022, 704);
             this.Name = "formReport";
             this.Text = "Звітність";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formReport_FormClosing);
             this.Load += new System.EventHandler(this.FormReport_Load);
             this.ResumeLayout(false);
 

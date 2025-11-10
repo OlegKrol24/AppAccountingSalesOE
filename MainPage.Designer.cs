@@ -224,7 +224,7 @@
             // 
             this.pbLanguageUS.BackColor = System.Drawing.Color.SteelBlue;
             this.pbLanguageUS.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbLanguageUS.Image = global::AppAccountingSalesOE.Properties.Resources.Flag_USA1;
+            this.pbLanguageUS.Image = global::AppAccountingSalesOE.Properties.Resources.Flag_USA;
             this.pbLanguageUS.Location = new System.Drawing.Point(606, 9);
             this.pbLanguageUS.Name = "pbLanguageUS";
             this.pbLanguageUS.Size = new System.Drawing.Size(91, 53);

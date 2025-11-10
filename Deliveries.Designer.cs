@@ -54,7 +54,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(74, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 38);
+            this.label1.Size = new System.Drawing.Size(164, 37);
             this.label1.TabIndex = 33;
             this.label1.Text = "Поставки";
             // 
@@ -97,7 +97,7 @@
             // 
             this.pbLanguageUS.BackColor = System.Drawing.Color.SteelBlue;
             this.pbLanguageUS.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbLanguageUS.Image = global::AppAccountingSalesOE.Properties.Resources.Flag_USA1;
+            this.pbLanguageUS.Image = global::AppAccountingSalesOE.Properties.Resources.Flag_USA;
             this.pbLanguageUS.Location = new System.Drawing.Point(606, 9);
             this.pbLanguageUS.Name = "pbLanguageUS";
             this.pbLanguageUS.Size = new System.Drawing.Size(91, 53);
@@ -164,6 +164,7 @@
             this.Name = "formDeliveries";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Сторінка з поставками";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formDeliveries_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pbMainMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUA)).EndInit();

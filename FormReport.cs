@@ -13,7 +13,6 @@ using FastReport.Data;
 using FastReport.Design;
 using FastReport.Design.StandardDesigner;
 
-
 namespace AppAccountingSalesOE
 {
     public partial class formReport : Form
@@ -38,6 +37,11 @@ namespace AppAccountingSalesOE
             report.Preview = pc;
 
             report.Show();
+        }
+
+        private void formReport_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

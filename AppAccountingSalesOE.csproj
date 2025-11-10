@@ -147,6 +147,11 @@
     <Compile Include="Order.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="RepExcel.cs" />
     <Compile Include="Sales.cs">
       <SubType>Form</SubType>
@@ -177,13 +182,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Sales.resx">
       <DependentUpon>Sales.cs</DependentUpon>
     </EmbeddedResource>
@@ -258,25 +257,22 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Photos\Logo.png" />
+    <None Include="bin\Debug\Photos\Authorization.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Photos\Phone.png" />
+    <None Include="bin\Debug\Photos\Phone.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Photos\Flag_USA.png" />
+    <None Include="bin\Debug\Photos\Flag_USA.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Photos\Flag_UA.png" />
+    <None Include="bin\Debug\Photos\Flag_UA.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Photos\Cart.png" />
+    <None Include="bin\Debug\Photos\Cart.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Photos\Menu.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Photos\Authorization.png" />
+    <None Include="bin\Debug\Photos\Menu.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

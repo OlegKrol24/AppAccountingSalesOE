@@ -28,24 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbLogin = new System.Windows.Forms.Label();
             this.lbPassword = new System.Windows.Forms.Label();
             this.btnLogIn = new System.Windows.Forms.Button();
             this.tbLogin = new System.Windows.Forms.TextBox();
             this.tbPassword = new System.Windows.Forms.TextBox();
+            this.pbEye = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEye)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::AppAccountingSalesOE.Properties.Resources.Authorization;
-            this.pictureBox1.Location = new System.Drawing.Point(172, 26);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(384, 405);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // lbLogin
             // 
@@ -99,12 +91,35 @@
             this.tbPassword.TabIndex = 5;
             this.tbPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // pbEye
+            // 
+            this.pbEye.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pbEye.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbEye.Location = new System.Drawing.Point(569, 573);
+            this.pbEye.Name = "pbEye";
+            this.pbEye.Size = new System.Drawing.Size(63, 35);
+            this.pbEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbEye.TabIndex = 6;
+            this.pbEye.TabStop = false;
+            this.pbEye.Click += new System.EventHandler(this.pbEye_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AppAccountingSalesOE.Properties.Resources.Authorization;
+            this.pictureBox1.Location = new System.Drawing.Point(172, 26);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(384, 405);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // formAuthorization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(732, 753);
+            this.Controls.Add(this.pbEye);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.tbLogin);
             this.Controls.Add(this.btnLogIn);
@@ -113,8 +128,9 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "formAuthorization";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "formAuthorization";
+            this.Text = "Сторінка авторизації";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formAuthorization_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.pbEye)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -129,5 +145,6 @@
         private System.Windows.Forms.Button btnLogIn;
         private System.Windows.Forms.TextBox tbLogin;
         private System.Windows.Forms.TextBox tbPassword;
+        private System.Windows.Forms.PictureBox pbEye;
     }
 }

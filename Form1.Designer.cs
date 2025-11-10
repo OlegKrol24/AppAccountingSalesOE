@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnReport = new System.Windows.Forms.Button();
             this.dgvGoods = new System.Windows.Forms.DataGridView();
             this.name_goods = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,14 +37,14 @@
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.warranty_months = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pbMainMenu = new System.Windows.Forms.PictureBox();
             this.pbCart = new System.Windows.Forms.PictureBox();
             this.pbLanguageUA = new System.Windows.Forms.PictureBox();
             this.pbLanguageUS = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGoods)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMainMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
@@ -66,14 +66,14 @@
             // 
             // dgvGoods
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvGoods.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvGoods.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvGoods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGoods.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name_goods,
@@ -137,6 +137,30 @@
             this.description.ReadOnly = true;
             this.description.Width = 180;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.SteelBlue;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.ForeColor = System.Drawing.SystemColors.Control;
+            this.label5.Location = new System.Drawing.Point(400, 24);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(150, 26);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "012 345 67 89";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.SteelBlue;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(89, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 37);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Товари";
+            // 
             // pbMainMenu
             // 
             this.pbMainMenu.BackColor = System.Drawing.Color.SteelBlue;
@@ -176,25 +200,13 @@
             // 
             this.pbLanguageUS.BackColor = System.Drawing.Color.SteelBlue;
             this.pbLanguageUS.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbLanguageUS.Image = global::AppAccountingSalesOE.Properties.Resources.Flag_USA1;
+            this.pbLanguageUS.Image = global::AppAccountingSalesOE.Properties.Resources.Flag_USA;
             this.pbLanguageUS.Location = new System.Drawing.Point(606, 9);
             this.pbLanguageUS.Name = "pbLanguageUS";
             this.pbLanguageUS.Size = new System.Drawing.Size(91, 53);
             this.pbLanguageUS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLanguageUS.TabIndex = 21;
             this.pbLanguageUS.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.SteelBlue;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(400, 24);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(150, 26);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "012 345 67 89";
             // 
             // pictureBox4
             // 
@@ -215,18 +227,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(1309, 81);
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.SteelBlue;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(89, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 37);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Товари";
             // 
             // formGoods
             // 

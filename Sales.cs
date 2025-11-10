@@ -16,5 +16,10 @@ namespace AppAccountingSalesOE
         {
             InitializeComponent();
         }
+
+        private void formSales_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
