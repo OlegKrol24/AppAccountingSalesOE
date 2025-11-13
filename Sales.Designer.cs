@@ -37,6 +37,12 @@
             this.pbLanguageUS = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.msMainMenu = new System.Windows.Forms.MenuStrip();
+            this.tsmiMainPage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiGoods = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCustomers = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSupplies = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiReports = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMainMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
@@ -44,6 +50,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.msMainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -73,7 +80,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(67, 184);
+            this.dataGridView1.Location = new System.Drawing.Point(33, 186);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -85,12 +92,13 @@
             this.pbMainMenu.BackColor = System.Drawing.Color.SteelBlue;
             this.pbMainMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbMainMenu.Image = global::AppAccountingSalesOE.Properties.Resources.Menu;
-            this.pbMainMenu.Location = new System.Drawing.Point(1191, 1);
+            this.pbMainMenu.Location = new System.Drawing.Point(1187, 1);
             this.pbMainMenu.Name = "pbMainMenu";
             this.pbMainMenu.Size = new System.Drawing.Size(74, 70);
             this.pbMainMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbMainMenu.TabIndex = 32;
             this.pbMainMenu.TabStop = false;
+            this.pbMainMenu.Click += new System.EventHandler(this.pbMainMenu_Click);
             // 
             // pbCart
             // 
@@ -147,11 +155,88 @@
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
             // 
+            // msMainMenu
+            // 
+            this.msMainMenu.AutoSize = false;
+            this.msMainMenu.BackColor = System.Drawing.Color.SteelBlue;
+            this.msMainMenu.Dock = System.Windows.Forms.DockStyle.None;
+            this.msMainMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.msMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiMainPage,
+            this.tsmiGoods,
+            this.tsmiCustomers,
+            this.tsmiSupplies,
+            this.tsmiReports});
+            this.msMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
+            this.msMainMenu.Location = new System.Drawing.Point(1143, 74);
+            this.msMainMenu.Name = "msMainMenu";
+            this.msMainMenu.Size = new System.Drawing.Size(156, 268);
+            this.msMainMenu.TabIndex = 40;
+            this.msMainMenu.Text = "menuStrip1";
+            this.msMainMenu.Visible = false;
+            // 
+            // tsmiMainPage
+            // 
+            this.tsmiMainPage.AutoSize = false;
+            this.tsmiMainPage.BackColor = System.Drawing.Color.PowderBlue;
+            this.tsmiMainPage.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tsmiMainPage.Margin = new System.Windows.Forms.Padding(0, 10, 0, 5);
+            this.tsmiMainPage.Name = "tsmiMainPage";
+            this.tsmiMainPage.Size = new System.Drawing.Size(140, 32);
+            this.tsmiMainPage.Text = "Головна";
+            this.tsmiMainPage.Click += new System.EventHandler(this.tsmiMainPage_Click);
+            // 
+            // tsmiGoods
+            // 
+            this.tsmiGoods.AutoSize = false;
+            this.tsmiGoods.BackColor = System.Drawing.Color.PowderBlue;
+            this.tsmiGoods.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tsmiGoods.Margin = new System.Windows.Forms.Padding(0, 10, 0, 5);
+            this.tsmiGoods.Name = "tsmiGoods";
+            this.tsmiGoods.Size = new System.Drawing.Size(140, 32);
+            this.tsmiGoods.Text = "Товари";
+            this.tsmiGoods.Click += new System.EventHandler(this.tsmiGoods_Click);
+            // 
+            // tsmiCustomers
+            // 
+            this.tsmiCustomers.AutoSize = false;
+            this.tsmiCustomers.BackColor = System.Drawing.Color.PowderBlue;
+            this.tsmiCustomers.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tsmiCustomers.Margin = new System.Windows.Forms.Padding(0, 10, 0, 5);
+            this.tsmiCustomers.Name = "tsmiCustomers";
+            this.tsmiCustomers.Size = new System.Drawing.Size(140, 32);
+            this.tsmiCustomers.Text = "Клієнти";
+            this.tsmiCustomers.Click += new System.EventHandler(this.tsmiCustomers_Click);
+            // 
+            // tsmiSupplies
+            // 
+            this.tsmiSupplies.AutoSize = false;
+            this.tsmiSupplies.BackColor = System.Drawing.Color.PowderBlue;
+            this.tsmiSupplies.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tsmiSupplies.Margin = new System.Windows.Forms.Padding(0, 10, 0, 5);
+            this.tsmiSupplies.Name = "tsmiSupplies";
+            this.tsmiSupplies.Size = new System.Drawing.Size(140, 32);
+            this.tsmiSupplies.Text = "Поставки";
+            this.tsmiSupplies.Click += new System.EventHandler(this.tsmiSupplies_Click);
+            // 
+            // tsmiReports
+            // 
+            this.tsmiReports.AutoSize = false;
+            this.tsmiReports.BackColor = System.Drawing.Color.PowderBlue;
+            this.tsmiReports.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tsmiReports.Margin = new System.Windows.Forms.Padding(0, 10, 0, 5);
+            this.tsmiReports.Name = "tsmiReports";
+            this.tsmiReports.Size = new System.Drawing.Size(140, 32);
+            this.tsmiReports.Text = "Звіти";
+            this.tsmiReports.Click += new System.EventHandler(this.tsmiReports_Click);
+            // 
             // formSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1302, 753);
+            this.Controls.Add(this.msMainMenu);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbMainMenu);
@@ -172,6 +257,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.msMainMenu.ResumeLayout(false);
+            this.msMainMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,5 +275,11 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.MenuStrip msMainMenu;
+        private System.Windows.Forms.ToolStripMenuItem tsmiMainPage;
+        private System.Windows.Forms.ToolStripMenuItem tsmiGoods;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCustomers;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSupplies;
+        private System.Windows.Forms.ToolStripMenuItem tsmiReports;
     }
 }

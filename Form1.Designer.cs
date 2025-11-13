@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnReportExcel = new System.Windows.Forms.Button();
             this.dgvGoods = new System.Windows.Forms.DataGridView();
             this.name_goods = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -36,16 +36,26 @@
             this.manufacturing_country = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.warranty_months = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnReportWord = new System.Windows.Forms.Button();
+            this.btnAddGoods = new System.Windows.Forms.Button();
+            this.btnEditGoods = new System.Windows.Forms.Button();
+            this.btnDeleteGoods = new System.Windows.Forms.Button();
             this.pbMainMenu = new System.Windows.Forms.PictureBox();
             this.pbCart = new System.Windows.Forms.PictureBox();
             this.pbLanguageUA = new System.Windows.Forms.PictureBox();
             this.pbLanguageUS = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnReportWord = new System.Windows.Forms.Button();
+            this.lvGoods = new System.Windows.Forms.ListView();
+            this.btnFilterGoods = new System.Windows.Forms.Button();
+            this.msMainMenu = new System.Windows.Forms.MenuStrip();
+            this.tsmiCustomers = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSales = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSupplies = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiReports = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiMainPage = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGoods)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMainMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
@@ -53,12 +63,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.msMainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnReportExcel
             // 
             this.btnReportExcel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportExcel.Location = new System.Drawing.Point(202, 700);
+            this.btnReportExcel.Location = new System.Drawing.Point(123, 710);
             this.btnReportExcel.Name = "btnReportExcel";
             this.btnReportExcel.Size = new System.Drawing.Size(203, 41);
             this.btnReportExcel.TabIndex = 0;
@@ -68,27 +79,27 @@
             // 
             // dgvGoods
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvGoods.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvGoods.BackgroundColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvGoods.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvGoods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGoods.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name_goods,
             this.category,
             this.manufacturing_country,
             this.price,
-            this.warranty_months,
-            this.description});
-            this.dgvGoods.Location = new System.Drawing.Point(22, 110);
+            this.warranty_months});
+            this.dgvGoods.Location = new System.Drawing.Point(29, 152);
             this.dgvGoods.Name = "dgvGoods";
             this.dgvGoods.RowHeadersWidth = 51;
             this.dgvGoods.RowTemplate.Height = 24;
-            this.dgvGoods.Size = new System.Drawing.Size(1050, 552);
+            this.dgvGoods.Size = new System.Drawing.Size(781, 552);
             this.dgvGoods.TabIndex = 1;
             // 
             // name_goods
@@ -97,7 +108,7 @@
             this.name_goods.MinimumWidth = 6;
             this.name_goods.Name = "name_goods";
             this.name_goods.ReadOnly = true;
-            this.name_goods.Width = 160;
+            this.name_goods.Width = 200;
             // 
             // category
             // 
@@ -105,7 +116,7 @@
             this.category.MinimumWidth = 6;
             this.category.Name = "category";
             this.category.ReadOnly = true;
-            this.category.Width = 150;
+            this.category.Width = 175;
             // 
             // manufacturing_country
             // 
@@ -129,15 +140,7 @@
             this.warranty_months.MinimumWidth = 6;
             this.warranty_months.Name = "warranty_months";
             this.warranty_months.ReadOnly = true;
-            this.warranty_months.Width = 125;
-            // 
-            // description
-            // 
-            this.description.HeaderText = "Опис";
-            this.description.MinimumWidth = 6;
-            this.description.Name = "description";
-            this.description.ReadOnly = true;
-            this.description.Width = 180;
+            this.warranty_months.Width = 90;
             // 
             // label5
             // 
@@ -163,17 +166,68 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "Товари";
             // 
+            // btnReportWord
+            // 
+            this.btnReportWord.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportWord.Location = new System.Drawing.Point(518, 710);
+            this.btnReportWord.Name = "btnReportWord";
+            this.btnReportWord.Size = new System.Drawing.Size(203, 41);
+            this.btnReportWord.TabIndex = 26;
+            this.btnReportWord.Text = "Звіт у форматі Word";
+            this.btnReportWord.UseVisualStyleBackColor = true;
+            this.btnReportWord.Click += new System.EventHandler(this.btnReportWord_Click);
+            // 
+            // btnAddGoods
+            // 
+            this.btnAddGoods.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnAddGoods.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddGoods.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAddGoods.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnAddGoods.Location = new System.Drawing.Point(283, 97);
+            this.btnAddGoods.Name = "btnAddGoods";
+            this.btnAddGoods.Size = new System.Drawing.Size(130, 43);
+            this.btnAddGoods.TabIndex = 27;
+            this.btnAddGoods.Text = "Додати";
+            this.btnAddGoods.UseVisualStyleBackColor = false;
+            // 
+            // btnEditGoods
+            // 
+            this.btnEditGoods.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnEditGoods.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditGoods.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnEditGoods.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnEditGoods.Location = new System.Drawing.Point(463, 97);
+            this.btnEditGoods.Name = "btnEditGoods";
+            this.btnEditGoods.Size = new System.Drawing.Size(130, 43);
+            this.btnEditGoods.TabIndex = 28;
+            this.btnEditGoods.Text = "Редагувати";
+            this.btnEditGoods.UseVisualStyleBackColor = false;
+            // 
+            // btnDeleteGoods
+            // 
+            this.btnDeleteGoods.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnDeleteGoods.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteGoods.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnDeleteGoods.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnDeleteGoods.Location = new System.Drawing.Point(643, 97);
+            this.btnDeleteGoods.Name = "btnDeleteGoods";
+            this.btnDeleteGoods.Size = new System.Drawing.Size(130, 43);
+            this.btnDeleteGoods.TabIndex = 29;
+            this.btnDeleteGoods.Text = "Видалити";
+            this.btnDeleteGoods.UseVisualStyleBackColor = false;
+            // 
             // pbMainMenu
             // 
             this.pbMainMenu.BackColor = System.Drawing.Color.SteelBlue;
             this.pbMainMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbMainMenu.Image = global::AppAccountingSalesOE.Properties.Resources.Menu;
-            this.pbMainMenu.Location = new System.Drawing.Point(1191, 1);
+            this.pbMainMenu.Location = new System.Drawing.Point(1187, 1);
             this.pbMainMenu.Name = "pbMainMenu";
             this.pbMainMenu.Size = new System.Drawing.Size(74, 70);
             this.pbMainMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbMainMenu.TabIndex = 24;
             this.pbMainMenu.TabStop = false;
+            this.pbMainMenu.Click += new System.EventHandler(this.pbMainMenu_Click);
             // 
             // pbCart
             // 
@@ -230,16 +284,98 @@
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
-            // btnReportWord
+            // lvGoods
             // 
-            this.btnReportWord.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportWord.Location = new System.Drawing.Point(624, 700);
-            this.btnReportWord.Name = "btnReportWord";
-            this.btnReportWord.Size = new System.Drawing.Size(203, 41);
-            this.btnReportWord.TabIndex = 26;
-            this.btnReportWord.Text = "Звіт у форматі Word";
-            this.btnReportWord.UseVisualStyleBackColor = true;
-            this.btnReportWord.Click += new System.EventHandler(this.btnReportWord_Click);
+            this.lvGoods.HideSelection = false;
+            this.lvGoods.Location = new System.Drawing.Point(829, 152);
+            this.lvGoods.Name = "lvGoods";
+            this.lvGoods.Size = new System.Drawing.Size(464, 551);
+            this.lvGoods.TabIndex = 30;
+            this.lvGoods.UseCompatibleStateImageBehavior = false;
+            // 
+            // btnFilterGoods
+            // 
+            this.btnFilterGoods.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnFilterGoods.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFilterGoods.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnFilterGoods.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnFilterGoods.Location = new System.Drawing.Point(45, 97);
+            this.btnFilterGoods.Name = "btnFilterGoods";
+            this.btnFilterGoods.Size = new System.Drawing.Size(130, 43);
+            this.btnFilterGoods.TabIndex = 31;
+            this.btnFilterGoods.Text = "Фільтрація";
+            this.btnFilterGoods.UseVisualStyleBackColor = false;
+            this.btnFilterGoods.Click += new System.EventHandler(this.btnFilterGoods_Click);
+            // 
+            // msMainMenu
+            // 
+            this.msMainMenu.AutoSize = false;
+            this.msMainMenu.BackColor = System.Drawing.Color.SteelBlue;
+            this.msMainMenu.Dock = System.Windows.Forms.DockStyle.None;
+            this.msMainMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.msMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiMainPage,
+            this.tsmiCustomers,
+            this.tsmiSales,
+            this.tsmiSupplies,
+            this.tsmiReports});
+            this.msMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
+            this.msMainMenu.Location = new System.Drawing.Point(1134, 74);
+            this.msMainMenu.Name = "msMainMenu";
+            this.msMainMenu.Size = new System.Drawing.Size(166, 258);
+            this.msMainMenu.TabIndex = 32;
+            this.msMainMenu.Text = "menuStrip1";
+            this.msMainMenu.Visible = false;
+            // 
+            // tsmiCustomers
+            // 
+            this.tsmiCustomers.BackColor = System.Drawing.Color.PowderBlue;
+            this.tsmiCustomers.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tsmiCustomers.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
+            this.tsmiCustomers.Name = "tsmiCustomers";
+            this.tsmiCustomers.Size = new System.Drawing.Size(152, 29);
+            this.tsmiCustomers.Text = "Клієнти";
+            this.tsmiCustomers.Click += new System.EventHandler(this.tsmiCustomers_Click);
+            // 
+            // tsmiSales
+            // 
+            this.tsmiSales.BackColor = System.Drawing.Color.PowderBlue;
+            this.tsmiSales.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tsmiSales.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
+            this.tsmiSales.Name = "tsmiSales";
+            this.tsmiSales.Size = new System.Drawing.Size(152, 29);
+            this.tsmiSales.Text = "Продажі";
+            this.tsmiSales.Click += new System.EventHandler(this.tsmiSales_Click);
+            // 
+            // tsmiSupplies
+            // 
+            this.tsmiSupplies.BackColor = System.Drawing.Color.PowderBlue;
+            this.tsmiSupplies.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tsmiSupplies.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
+            this.tsmiSupplies.Name = "tsmiSupplies";
+            this.tsmiSupplies.Size = new System.Drawing.Size(152, 29);
+            this.tsmiSupplies.Text = "Поставки";
+            this.tsmiSupplies.Click += new System.EventHandler(this.tsmiSupplies_Click);
+            // 
+            // tsmiReports
+            // 
+            this.tsmiReports.BackColor = System.Drawing.Color.PowderBlue;
+            this.tsmiReports.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tsmiReports.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
+            this.tsmiReports.Name = "tsmiReports";
+            this.tsmiReports.Size = new System.Drawing.Size(152, 29);
+            this.tsmiReports.Text = "Звіти";
+            this.tsmiReports.Click += new System.EventHandler(this.tsmiReports_Click);
+            // 
+            // tsmiMainPage
+            // 
+            this.tsmiMainPage.BackColor = System.Drawing.Color.PowderBlue;
+            this.tsmiMainPage.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tsmiMainPage.Margin = new System.Windows.Forms.Padding(0, 10, 5, 0);
+            this.tsmiMainPage.Name = "tsmiMainPage";
+            this.tsmiMainPage.Size = new System.Drawing.Size(152, 29);
+            this.tsmiMainPage.Text = "Головна";
+            this.tsmiMainPage.Click += new System.EventHandler(this.tsmiMainPage_Click);
             // 
             // formGoods
             // 
@@ -247,6 +383,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1302, 753);
+            this.Controls.Add(this.msMainMenu);
+            this.Controls.Add(this.btnFilterGoods);
+            this.Controls.Add(this.lvGoods);
+            this.Controls.Add(this.btnDeleteGoods);
+            this.Controls.Add(this.btnEditGoods);
+            this.Controls.Add(this.btnAddGoods);
             this.Controls.Add(this.btnReportWord);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbMainMenu);
@@ -270,6 +412,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.msMainMenu.ResumeLayout(false);
+            this.msMainMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,12 +423,6 @@
 
         private System.Windows.Forms.Button btnReportExcel;
         private System.Windows.Forms.DataGridView dgvGoods;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name_goods;
-        private System.Windows.Forms.DataGridViewTextBoxColumn category;
-        private System.Windows.Forms.DataGridViewTextBoxColumn manufacturing_country;
-        private System.Windows.Forms.DataGridViewTextBoxColumn price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn warranty_months;
-        private System.Windows.Forms.DataGridViewTextBoxColumn description;
         private System.Windows.Forms.PictureBox pbMainMenu;
         private System.Windows.Forms.PictureBox pbCart;
         private System.Windows.Forms.PictureBox pbLanguageUA;
@@ -294,6 +432,22 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnReportWord;
+        private System.Windows.Forms.Button btnAddGoods;
+        private System.Windows.Forms.Button btnEditGoods;
+        private System.Windows.Forms.Button btnDeleteGoods;
+        private System.Windows.Forms.ListView lvGoods;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name_goods;
+        private System.Windows.Forms.DataGridViewTextBoxColumn category;
+        private System.Windows.Forms.DataGridViewTextBoxColumn manufacturing_country;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn warranty_months;
+        private System.Windows.Forms.Button btnFilterGoods;
+        private System.Windows.Forms.MenuStrip msMainMenu;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCustomers;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSales;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSupplies;
+        private System.Windows.Forms.ToolStripMenuItem tsmiReports;
+        private System.Windows.Forms.ToolStripMenuItem tsmiMainPage;
     }
 }
 

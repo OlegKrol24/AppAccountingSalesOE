@@ -93,11 +93,10 @@
             // 
             // pbEye
             // 
-            this.pbEye.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pbEye.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbEye.Location = new System.Drawing.Point(569, 573);
+            this.pbEye.Location = new System.Drawing.Point(571, 573);
             this.pbEye.Name = "pbEye";
-            this.pbEye.Size = new System.Drawing.Size(63, 35);
+            this.pbEye.Size = new System.Drawing.Size(63, 34);
             this.pbEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbEye.TabIndex = 6;
             this.pbEye.TabStop = false;

@@ -39,7 +39,16 @@
             this.lbRoleText = new System.Windows.Forms.Label();
             this.lbUserText = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.pbMainMenu = new System.Windows.Forms.PictureBox();
+            this.lbPopularGoods = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pbArrowRight = new System.Windows.Forms.PictureBox();
+            this.pbArrowLeft = new System.Windows.Forms.PictureBox();
+            this.pbPopularGoods = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pbMenu = new System.Windows.Forms.PictureBox();
             this.pbCart = new System.Windows.Forms.PictureBox();
             this.pbLanguageUA = new System.Windows.Forms.PictureBox();
             this.pbLanguageUS = new System.Windows.Forms.PictureBox();
@@ -47,7 +56,18 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMainMenu)).BeginInit();
+            this.msMainMenu = new System.Windows.Forms.MenuStrip();
+            this.tsmiGoods = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCustomers = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSales = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSupplies = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiReports = new System.Windows.Forms.ToolStripMenuItem();
+            ((System.ComponentModel.ISupportInitialize)(this.pbArrowRight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbArrowLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPopularGoods)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUS)).BeginInit();
@@ -55,6 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.msMainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnGoods
@@ -156,7 +177,7 @@
             this.lbRoleText.AutoSize = true;
             this.lbRoleText.BackColor = System.Drawing.Color.SteelBlue;
             this.lbRoleText.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbRoleText.Location = new System.Drawing.Point(126, 670);
+            this.lbRoleText.Location = new System.Drawing.Point(116, 670);
             this.lbRoleText.Name = "lbRoleText";
             this.lbRoleText.Size = new System.Drawing.Size(82, 17);
             this.lbRoleText.TabIndex = 10;
@@ -167,7 +188,7 @@
             this.lbUserText.AutoSize = true;
             this.lbUserText.BackColor = System.Drawing.Color.SteelBlue;
             this.lbUserText.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbUserText.Location = new System.Drawing.Point(126, 708);
+            this.lbUserText.Location = new System.Drawing.Point(116, 708);
             this.lbUserText.Name = "lbUserText";
             this.lbUserText.Size = new System.Drawing.Size(123, 17);
             this.lbUserText.TabIndex = 11;
@@ -185,17 +206,113 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "012 345 67 89";
             // 
-            // pbMainMenu
+            // lbPopularGoods
             // 
-            this.pbMainMenu.BackColor = System.Drawing.Color.SteelBlue;
-            this.pbMainMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbMainMenu.Image = global::AppAccountingSalesOE.Properties.Resources.Menu;
-            this.pbMainMenu.Location = new System.Drawing.Point(1191, 1);
-            this.pbMainMenu.Name = "pbMainMenu";
-            this.pbMainMenu.Size = new System.Drawing.Size(74, 70);
-            this.pbMainMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbMainMenu.TabIndex = 17;
-            this.pbMainMenu.TabStop = false;
+            this.lbPopularGoods.AutoSize = true;
+            this.lbPopularGoods.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.lbPopularGoods.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbPopularGoods.Location = new System.Drawing.Point(677, 127);
+            this.lbPopularGoods.Name = "lbPopularGoods";
+            this.lbPopularGoods.Size = new System.Drawing.Size(245, 32);
+            this.lbPopularGoods.TabIndex = 21;
+            this.lbPopularGoods.Text = "Популярні товари";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(610, 560);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(381, 32);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Загальна кількість продажів";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(545, 694);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(495, 32);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Оргтехніка, яка працює на ваш успіх!";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(771, 625);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 32);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "143";
+            // 
+            // pbArrowRight
+            // 
+            this.pbArrowRight.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.pbArrowRight.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbArrowRight.Image = global::AppAccountingSalesOE.Properties.Resources.Arrow_right;
+            this.pbArrowRight.Location = new System.Drawing.Point(1105, 284);
+            this.pbArrowRight.Name = "pbArrowRight";
+            this.pbArrowRight.Size = new System.Drawing.Size(103, 104);
+            this.pbArrowRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbArrowRight.TabIndex = 23;
+            this.pbArrowRight.TabStop = false;
+            // 
+            // pbArrowLeft
+            // 
+            this.pbArrowLeft.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.pbArrowLeft.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbArrowLeft.Image = global::AppAccountingSalesOE.Properties.Resources.Arrow_left;
+            this.pbArrowLeft.Location = new System.Drawing.Point(390, 284);
+            this.pbArrowLeft.Name = "pbArrowLeft";
+            this.pbArrowLeft.Size = new System.Drawing.Size(103, 104);
+            this.pbArrowLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbArrowLeft.TabIndex = 22;
+            this.pbArrowLeft.TabStop = false;
+            // 
+            // pbPopularGoods
+            // 
+            this.pbPopularGoods.BackColor = System.Drawing.SystemColors.Window;
+            this.pbPopularGoods.Location = new System.Drawing.Point(547, 173);
+            this.pbPopularGoods.Name = "pbPopularGoods";
+            this.pbPopularGoods.Size = new System.Drawing.Size(505, 334);
+            this.pbPopularGoods.TabIndex = 20;
+            this.pbPopularGoods.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.pictureBox6.Location = new System.Drawing.Point(513, 549);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(565, 187);
+            this.pictureBox6.TabIndex = 19;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.pictureBox5.Location = new System.Drawing.Point(362, 116);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(875, 413);
+            this.pictureBox5.TabIndex = 18;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pbMenu
+            // 
+            this.pbMenu.BackColor = System.Drawing.Color.SteelBlue;
+            this.pbMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbMenu.Image = global::AppAccountingSalesOE.Properties.Resources.Menu;
+            this.pbMenu.Location = new System.Drawing.Point(1187, 1);
+            this.pbMenu.Name = "pbMenu";
+            this.pbMenu.Size = new System.Drawing.Size(74, 70);
+            this.pbMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbMenu.TabIndex = 17;
+            this.pbMenu.TabStop = false;
+            this.pbMenu.Click += new System.EventHandler(this.pbMenu_Click);
             // 
             // pbCart
             // 
@@ -272,13 +389,93 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // msMainMenu
+            // 
+            this.msMainMenu.AutoSize = false;
+            this.msMainMenu.BackColor = System.Drawing.Color.SteelBlue;
+            this.msMainMenu.Dock = System.Windows.Forms.DockStyle.None;
+            this.msMainMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.msMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiGoods,
+            this.tsmiCustomers,
+            this.tsmiSales,
+            this.tsmiSupplies,
+            this.tsmiReports});
+            this.msMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
+            this.msMainMenu.Location = new System.Drawing.Point(1134, 74);
+            this.msMainMenu.Name = "msMainMenu";
+            this.msMainMenu.Size = new System.Drawing.Size(166, 258);
+            this.msMainMenu.TabIndex = 28;
+            this.msMainMenu.Text = "menuStrip1";
+            this.msMainMenu.Visible = false;
+            // 
+            // tsmiGoods
+            // 
+            this.tsmiGoods.BackColor = System.Drawing.Color.PowderBlue;
+            this.tsmiGoods.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tsmiGoods.Margin = new System.Windows.Forms.Padding(0, 10, 0, 5);
+            this.tsmiGoods.Name = "tsmiGoods";
+            this.tsmiGoods.Size = new System.Drawing.Size(157, 29);
+            this.tsmiGoods.Text = "Товари";
+            this.tsmiGoods.Click += new System.EventHandler(this.tsmiGoods_Click);
+            // 
+            // tsmiCustomers
+            // 
+            this.tsmiCustomers.BackColor = System.Drawing.Color.PowderBlue;
+            this.tsmiCustomers.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tsmiCustomers.Margin = new System.Windows.Forms.Padding(0, 10, 0, 5);
+            this.tsmiCustomers.Name = "tsmiCustomers";
+            this.tsmiCustomers.Size = new System.Drawing.Size(157, 29);
+            this.tsmiCustomers.Text = "Клієнти";
+            this.tsmiCustomers.Click += new System.EventHandler(this.tsmiCustomers_Click);
+            // 
+            // tsmiSales
+            // 
+            this.tsmiSales.BackColor = System.Drawing.Color.PowderBlue;
+            this.tsmiSales.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tsmiSales.Margin = new System.Windows.Forms.Padding(0, 10, 0, 5);
+            this.tsmiSales.Name = "tsmiSales";
+            this.tsmiSales.Size = new System.Drawing.Size(157, 29);
+            this.tsmiSales.Text = "Продажі";
+            this.tsmiSales.Click += new System.EventHandler(this.tsmiSales_Click);
+            // 
+            // tsmiSupplies
+            // 
+            this.tsmiSupplies.BackColor = System.Drawing.Color.PowderBlue;
+            this.tsmiSupplies.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tsmiSupplies.Margin = new System.Windows.Forms.Padding(0, 10, 0, 5);
+            this.tsmiSupplies.Name = "tsmiSupplies";
+            this.tsmiSupplies.Size = new System.Drawing.Size(157, 29);
+            this.tsmiSupplies.Text = "Поставки";
+            this.tsmiSupplies.Click += new System.EventHandler(this.tsmiSupplies_Click);
+            // 
+            // tsmiReports
+            // 
+            this.tsmiReports.BackColor = System.Drawing.Color.PowderBlue;
+            this.tsmiReports.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tsmiReports.Margin = new System.Windows.Forms.Padding(0, 10, 0, 5);
+            this.tsmiReports.Name = "tsmiReports";
+            this.tsmiReports.Size = new System.Drawing.Size(157, 29);
+            this.tsmiReports.Text = "Звіти";
+            this.tsmiReports.Click += new System.EventHandler(this.tsmiReports_Click);
+            // 
             // formMainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1302, 753);
-            this.Controls.Add(this.pbMainMenu);
+            this.Controls.Add(this.msMainMenu);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pbArrowRight);
+            this.Controls.Add(this.pbArrowLeft);
+            this.Controls.Add(this.lbPopularGoods);
+            this.Controls.Add(this.pbPopularGoods);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pbMenu);
             this.Controls.Add(this.pbCart);
             this.Controls.Add(this.pbLanguageUA);
             this.Controls.Add(this.pbLanguageUS);
@@ -300,7 +497,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Головна сторінка";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainPage_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.pbMainMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbArrowRight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbArrowLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPopularGoods)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUS)).EndInit();
@@ -308,6 +510,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.msMainMenu.ResumeLayout(false);
+            this.msMainMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -332,6 +536,21 @@
         private System.Windows.Forms.PictureBox pbLanguageUS;
         private System.Windows.Forms.PictureBox pbLanguageUA;
         private System.Windows.Forms.PictureBox pbCart;
-        private System.Windows.Forms.PictureBox pbMainMenu;
+        private System.Windows.Forms.PictureBox pbMenu;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pbPopularGoods;
+        private System.Windows.Forms.Label lbPopularGoods;
+        private System.Windows.Forms.PictureBox pbArrowLeft;
+        private System.Windows.Forms.PictureBox pbArrowRight;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.MenuStrip msMainMenu;
+        private System.Windows.Forms.ToolStripMenuItem tsmiGoods;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCustomers;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSales;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSupplies;
+        private System.Windows.Forms.ToolStripMenuItem tsmiReports;
     }
 }

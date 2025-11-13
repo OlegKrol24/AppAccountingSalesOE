@@ -130,6 +130,12 @@
     <Compile Include="formAuthorization.Designer.cs">
       <DependentUpon>formAuthorization.cs</DependentUpon>
     </Compile>
+    <Compile Include="formFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formFilter.Designer.cs">
+      <DependentUpon>formFilter.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formAuthorization.resx">
       <DependentUpon>formAuthorization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formFilter.resx">
+      <DependentUpon>formFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReport.resx">
       <DependentUpon>FormReport.cs</DependentUpon>
@@ -283,6 +292,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\Photos\Menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Photos\Arrow_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Photos\Arrow_right.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

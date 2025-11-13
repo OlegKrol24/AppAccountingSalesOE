@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -47,9 +48,30 @@ namespace AppAccountingSalesOE
             return true;
         }
 
+        // Хешування паролів
+        string GetMd5Hash(string input)
+        {
+            using (MD5 md5 = MD5.Create())
+            {
+                byte[] inputBytes = Encoding.UTF8.GetBytes(input);
+                byte[] hashBytes = md5.ComputeHash(inputBytes);
+
+                StringBuilder sb = new StringBuilder();
+
+                foreach (byte b in hashBytes)
+                {
+                    sb.Append(b.ToString("x2"));
+                }
+                return sb.ToString();
+            }
+        }
+
         private bool AuthorizeUser(string login, string password)
         {
-            string query = "select id_user, login, password from users where login = '" + login + "' and password = '" + password + "'";
+            // Хешуємо введений пароль перед порівнянням
+            string hashedPassword = GetMd5Hash(password);
+
+            string query = "select u.id_user, u.login, u.password, u.role,\r\ncase\r\n\twhen u.role like 'адміністратор%' or u.role like 'менеджер%' then e.full_name\r\n    when u.role like 'клієнт%' then c.full_name\r\n    else '' \r\nend as full_name\r\nfrom users u\r\nleft join employees e on u.id_employee = e.id_employee \r\nleft join customers c on u.id_customer = c.id_customer\r\nwhere u.login = '" + login + "' and u.password = '" + hashedPassword + "'";
 
             try
             {
@@ -75,9 +97,8 @@ namespace AppAccountingSalesOE
                 MessageBox.Show("Авторизація успішна!", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
 
-                // Add role 
-
-                formMainPage mainPage = new formMainPage();
+                // Передаємо об'єкт авторизованого користувача (users[0])
+                formMainPage mainPage = new formMainPage(users[0]);
                 mainPage.Show();
             }
 

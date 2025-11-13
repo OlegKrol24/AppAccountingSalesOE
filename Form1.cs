@@ -14,9 +14,12 @@ namespace AppAccountingSalesOE
 {
     public partial class formGoods : Form
     {
-        public formGoods()
+        private User currentUser;
+
+        public formGoods(User currentUser)
         {
             InitializeComponent();
+            this.currentUser = currentUser;
         }
 
         ClassDataBase db = new ClassDataBase();
@@ -38,7 +41,7 @@ namespace AppAccountingSalesOE
             {
                 foreach (Goods g in temp_goods)
                 {
-                    data.Rows.Add(g.Name, g.Category, g.ManufacturingCountry, g.Price, g.WarrantyMonths, g.Description);
+                    data.Rows.Add(g.Name, g.Category, g.ManufacturingCountry, g.Price, g.WarrantyMonths);
                 }
             }
         }
@@ -131,7 +134,7 @@ namespace AppAccountingSalesOE
                     // Вставка таблиці з даними
                     List<List<string>> tableData = new List<List<string>>();
 
-                    tableData.Add(new List<string> { "Назва", "Категорія", "Країна виробник", "Ціна", "Гарантія (міс.)", "Опис" }); // Заголовок таблиці
+                    tableData.Add(new List<string> {"Назва", "Категорія", "Країна виробник", "Ціна", "Гарантія (міс.)", "Опис" }); // Заголовок таблиці
 
                     decimal counter = 0;
 
@@ -163,6 +166,57 @@ namespace AppAccountingSalesOE
                     MessageBox.Show("Помилка при створенні документа: " + ex.Message, "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btnFilterGoods_Click(object sender, EventArgs e)
+        {
+            formFilter formFilter = new formFilter();
+
+            if (formFilter.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("Фільтр застосовано!", "Інформація", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void pbMainMenu_Click(object sender, EventArgs e)
+        {
+            if (msMainMenu.Visible == false) msMainMenu.Visible = true;
+            else msMainMenu.Visible = false;
+        }
+
+        private void tsmiMainPage_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formMainPage mainPage = new formMainPage(currentUser);
+            mainPage.Show();
+        }
+
+        private void tsmiCustomers_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formCustomers formCustomers = new formCustomers(currentUser);
+            formCustomers.Show();
+        }
+
+        private void tsmiSales_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formSales formSales = new formSales(currentUser);
+            formSales.Show();
+        }
+
+        private void tsmiSupplies_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formDeliveries formDeliveries = new formDeliveries(currentUser);
+            formDeliveries.Show();
+        }
+
+        private void tsmiReports_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formReport formReport = new formReport(currentUser);
+            formReport.Show();
         }
     }
 }
