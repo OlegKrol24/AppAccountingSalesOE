@@ -42,7 +42,7 @@
             this.lbPopularGoods = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbTotalQuantitySales = new System.Windows.Forms.Label();
             this.pbArrowRight = new System.Windows.Forms.PictureBox();
             this.pbArrowLeft = new System.Windows.Forms.PictureBox();
             this.pbPopularGoods = new System.Windows.Forms.PictureBox();
@@ -239,16 +239,16 @@
             this.label3.TabIndex = 25;
             this.label3.Text = "Оргтехніка, яка працює на ваш успіх!";
             // 
-            // label4
+            // lbTotalQuantitySales
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(771, 625);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 32);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "143";
+            this.lbTotalQuantitySales.AutoSize = true;
+            this.lbTotalQuantitySales.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.lbTotalQuantitySales.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbTotalQuantitySales.Location = new System.Drawing.Point(771, 625);
+            this.lbTotalQuantitySales.Name = "lbTotalQuantitySales";
+            this.lbTotalQuantitySales.Size = new System.Drawing.Size(56, 32);
+            this.lbTotalQuantitySales.TabIndex = 26;
+            this.lbTotalQuantitySales.Text = "143";
             // 
             // pbArrowRight
             // 
@@ -402,9 +402,9 @@
             this.tsmiSupplies,
             this.tsmiReports});
             this.msMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.msMainMenu.Location = new System.Drawing.Point(1134, 74);
+            this.msMainMenu.Location = new System.Drawing.Point(1145, 74);
             this.msMainMenu.Name = "msMainMenu";
-            this.msMainMenu.Size = new System.Drawing.Size(166, 258);
+            this.msMainMenu.Size = new System.Drawing.Size(156, 260);
             this.msMainMenu.TabIndex = 28;
             this.msMainMenu.Text = "menuStrip1";
             this.msMainMenu.Visible = false;
@@ -413,9 +413,9 @@
             // 
             this.tsmiGoods.BackColor = System.Drawing.Color.PowderBlue;
             this.tsmiGoods.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tsmiGoods.Margin = new System.Windows.Forms.Padding(0, 10, 0, 5);
+            this.tsmiGoods.Margin = new System.Windows.Forms.Padding(0, 10, 5, 0);
             this.tsmiGoods.Name = "tsmiGoods";
-            this.tsmiGoods.Size = new System.Drawing.Size(157, 29);
+            this.tsmiGoods.Size = new System.Drawing.Size(152, 29);
             this.tsmiGoods.Text = "Товари";
             this.tsmiGoods.Click += new System.EventHandler(this.tsmiGoods_Click);
             // 
@@ -423,9 +423,9 @@
             // 
             this.tsmiCustomers.BackColor = System.Drawing.Color.PowderBlue;
             this.tsmiCustomers.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tsmiCustomers.Margin = new System.Windows.Forms.Padding(0, 10, 0, 5);
+            this.tsmiCustomers.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiCustomers.Name = "tsmiCustomers";
-            this.tsmiCustomers.Size = new System.Drawing.Size(157, 29);
+            this.tsmiCustomers.Size = new System.Drawing.Size(152, 29);
             this.tsmiCustomers.Text = "Клієнти";
             this.tsmiCustomers.Click += new System.EventHandler(this.tsmiCustomers_Click);
             // 
@@ -433,9 +433,9 @@
             // 
             this.tsmiSales.BackColor = System.Drawing.Color.PowderBlue;
             this.tsmiSales.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tsmiSales.Margin = new System.Windows.Forms.Padding(0, 10, 0, 5);
+            this.tsmiSales.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiSales.Name = "tsmiSales";
-            this.tsmiSales.Size = new System.Drawing.Size(157, 29);
+            this.tsmiSales.Size = new System.Drawing.Size(152, 29);
             this.tsmiSales.Text = "Продажі";
             this.tsmiSales.Click += new System.EventHandler(this.tsmiSales_Click);
             // 
@@ -443,9 +443,9 @@
             // 
             this.tsmiSupplies.BackColor = System.Drawing.Color.PowderBlue;
             this.tsmiSupplies.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tsmiSupplies.Margin = new System.Windows.Forms.Padding(0, 10, 0, 5);
+            this.tsmiSupplies.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiSupplies.Name = "tsmiSupplies";
-            this.tsmiSupplies.Size = new System.Drawing.Size(157, 29);
+            this.tsmiSupplies.Size = new System.Drawing.Size(152, 29);
             this.tsmiSupplies.Text = "Поставки";
             this.tsmiSupplies.Click += new System.EventHandler(this.tsmiSupplies_Click);
             // 
@@ -453,9 +453,9 @@
             // 
             this.tsmiReports.BackColor = System.Drawing.Color.PowderBlue;
             this.tsmiReports.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tsmiReports.Margin = new System.Windows.Forms.Padding(0, 10, 0, 5);
+            this.tsmiReports.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiReports.Name = "tsmiReports";
-            this.tsmiReports.Size = new System.Drawing.Size(157, 29);
+            this.tsmiReports.Size = new System.Drawing.Size(152, 29);
             this.tsmiReports.Text = "Звіти";
             this.tsmiReports.Click += new System.EventHandler(this.tsmiReports_Click);
             // 
@@ -466,7 +466,7 @@
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1302, 753);
             this.Controls.Add(this.msMainMenu);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lbTotalQuantitySales);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pbArrowRight);
@@ -545,7 +545,7 @@
         private System.Windows.Forms.PictureBox pbArrowRight;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbTotalQuantitySales;
         private System.Windows.Forms.MenuStrip msMainMenu;
         private System.Windows.Forms.ToolStripMenuItem tsmiGoods;
         private System.Windows.Forms.ToolStripMenuItem tsmiCustomers;

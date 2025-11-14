@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnReportExcel = new System.Windows.Forms.Button();
             this.dgvGoods = new System.Windows.Forms.DataGridView();
             this.name_goods = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,11 +51,11 @@
             this.lvGoods = new System.Windows.Forms.ListView();
             this.btnFilterGoods = new System.Windows.Forms.Button();
             this.msMainMenu = new System.Windows.Forms.MenuStrip();
+            this.tsmiMainPage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCustomers = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSales = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSupplies = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiReports = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiMainPage = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGoods)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMainMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
@@ -80,14 +80,14 @@
             // dgvGoods
             // 
             this.dgvGoods.BackgroundColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvGoods.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvGoods.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvGoods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGoods.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name_goods,
@@ -189,6 +189,7 @@
             this.btnAddGoods.TabIndex = 27;
             this.btnAddGoods.Text = "Додати";
             this.btnAddGoods.UseVisualStyleBackColor = false;
+            this.btnAddGoods.Click += new System.EventHandler(this.btnAddGoods_Click);
             // 
             // btnEditGoods
             // 
@@ -320,12 +321,22 @@
             this.tsmiSupplies,
             this.tsmiReports});
             this.msMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.msMainMenu.Location = new System.Drawing.Point(1134, 74);
+            this.msMainMenu.Location = new System.Drawing.Point(1145, 74);
             this.msMainMenu.Name = "msMainMenu";
-            this.msMainMenu.Size = new System.Drawing.Size(166, 258);
+            this.msMainMenu.Size = new System.Drawing.Size(156, 260);
             this.msMainMenu.TabIndex = 32;
             this.msMainMenu.Text = "menuStrip1";
             this.msMainMenu.Visible = false;
+            // 
+            // tsmiMainPage
+            // 
+            this.tsmiMainPage.BackColor = System.Drawing.Color.PowderBlue;
+            this.tsmiMainPage.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tsmiMainPage.Margin = new System.Windows.Forms.Padding(0, 10, 5, 0);
+            this.tsmiMainPage.Name = "tsmiMainPage";
+            this.tsmiMainPage.Size = new System.Drawing.Size(152, 29);
+            this.tsmiMainPage.Text = "Головна";
+            this.tsmiMainPage.Click += new System.EventHandler(this.tsmiMainPage_Click);
             // 
             // tsmiCustomers
             // 
@@ -366,16 +377,6 @@
             this.tsmiReports.Size = new System.Drawing.Size(152, 29);
             this.tsmiReports.Text = "Звіти";
             this.tsmiReports.Click += new System.EventHandler(this.tsmiReports_Click);
-            // 
-            // tsmiMainPage
-            // 
-            this.tsmiMainPage.BackColor = System.Drawing.Color.PowderBlue;
-            this.tsmiMainPage.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tsmiMainPage.Margin = new System.Windows.Forms.Padding(0, 10, 5, 0);
-            this.tsmiMainPage.Name = "tsmiMainPage";
-            this.tsmiMainPage.Size = new System.Drawing.Size(152, 29);
-            this.tsmiMainPage.Text = "Головна";
-            this.tsmiMainPage.Click += new System.EventHandler(this.tsmiMainPage_Click);
             // 
             // formGoods
             // 

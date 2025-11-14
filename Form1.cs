@@ -218,5 +218,10 @@ namespace AppAccountingSalesOE
             formReport formReport = new formReport(currentUser);
             formReport.Show();
         }
+
+        private void btnAddGoods_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

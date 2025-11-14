@@ -20,6 +20,36 @@ namespace AppAccountingSalesOE
             this.currentUser = currentUser;
         }
 
+        ClassDataBase db = new ClassDataBase();
+        string file_db = "Сourse_ASOE";
+
+        public List<clCustomers> customers_list = new List<clCustomers>();
+
+        void LoadData()
+        {
+            try { db.Execute<clCustomers>(file_db, "select c.id_customer, c.full_name, c.phone_number, c.email, c.address from customers c", ref customers_list); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        void ShowGoods(ref List<clCustomers> temp_customers, ref DataGridView data)
+        {
+            dgvCustomers.Rows.Clear();
+
+            if (customers_list.Count > 0)
+            {
+                foreach (clCustomers c in temp_customers)
+                {
+                    data.Rows.Add(c.Full_name, c.Phone_number, c.Email, c.Address);
+                }
+            }
+        }
+
+        private void formCustomers_Load(object sender, EventArgs e)
+        {
+            LoadData();
+            ShowGoods(ref customers_list, ref dgvCustomers);
+        }
+
         private void formCustomers_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();

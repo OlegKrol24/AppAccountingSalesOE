@@ -38,6 +38,10 @@ namespace AppAccountingSalesOE
             // }
         }
 
+        ClassDataBase db = new ClassDataBase();
+        string file_db = "Сourse_ASOE";
+        public List<clSales> sales = new List<clSales>();
+
         private void btnGoods_Click(object sender, EventArgs e)
         {
             this.Hide();

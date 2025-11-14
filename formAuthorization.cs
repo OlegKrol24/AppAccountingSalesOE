@@ -94,7 +94,9 @@ namespace AppAccountingSalesOE
 
             if (AuthorizeUser(tbLogin.Text.Trim(), tbPassword.Text.Trim()))
             {
-                MessageBox.Show("Авторизація успішна!", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var fullName = users.Where(u => u.Login == tbLogin.Text && u.Password == GetMd5Hash(tbPassword.Text)).Select(u => u.LastName + " " + u.FirstName).FirstOrDefault();
+
+                MessageBox.Show($"Авторизація успішна!\nЛаскаво просимо, {fullName}", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
 
                 // Передаємо об'єкт авторизованого користувача (users[0])
