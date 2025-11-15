@@ -20,6 +20,34 @@ namespace AppAccountingSalesOE
             this.currentUser = currentUser;
         }
 
+        ClassDataBase db = new ClassDataBase();
+        string file_db = "Сourse_ASOE";
+
+        public List<Supplies> supplies_list = new List<Supplies>();
+        public List<Suppliers> suppliers_list = new List<Suppliers>();
+
+        void LoadData()
+        {
+            try { db.Execute<Supplies>(file_db, "select s.id_supply, s.id_supplier, s.delivery_date, s.total_cost from supplies s", ref supplies_list); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+
+            try { db.Execute<Suppliers>(file_db, "select sp.id_supplier, sp.full_name, sp.company_name, sp.phone_number, sp.email from suppliers sp", ref suppliers_list); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        void ShowGoods(ref List<Supplies> temp_supplies, ref List<Suppliers> temp_suppliers, ref DataGridView data)
+        {
+            dgvDeliveries.Rows.Clear();
+
+            if (supplies_list.Count > 0)
+            {
+                foreach (Supplies s in temp_supplies)
+                {
+                    data.Rows.Add(s.DeliveryDate, s.TotalCost);
+                }
+            }
+        }
+
         private void formDeliveries_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
@@ -64,6 +92,12 @@ namespace AppAccountingSalesOE
             this.Hide();
             formReport formReport = new formReport(currentUser);
             formReport.Show();
+        }
+
+        private void formDeliveries_Load(object sender, EventArgs e)
+        {
+            LoadData();
+            ShowGoods(ref supplies_list, ref suppliers_list, ref dgvDeliveries);
         }
     }
 }

@@ -36,20 +36,24 @@
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDeliveries = new System.Windows.Forms.DataGridView();
             this.msMainMenu = new System.Windows.Forms.MenuStrip();
             this.tsmiMainPage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiGoods = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCustomers = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSales = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiReports = new System.Windows.Forms.ToolStripMenuItem();
+            this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Company_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delivery_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbMainMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDeliveries)).BeginInit();
             this.msMainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -145,15 +149,20 @@
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
             // 
-            // dataGridView1
+            // dgvDeliveries
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(81, 160);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(756, 479);
-            this.dataGridView1.TabIndex = 34;
+            this.dgvDeliveries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDeliveries.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Supplier,
+            this.Company_name,
+            this.Delivery_date,
+            this.Total_cost});
+            this.dgvDeliveries.Location = new System.Drawing.Point(81, 160);
+            this.dgvDeliveries.Name = "dgvDeliveries";
+            this.dgvDeliveries.RowHeadersWidth = 51;
+            this.dgvDeliveries.RowTemplate.Height = 24;
+            this.dgvDeliveries.Size = new System.Drawing.Size(756, 479);
+            this.dgvDeliveries.TabIndex = 34;
             // 
             // msMainMenu
             // 
@@ -181,7 +190,7 @@
             this.tsmiMainPage.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiMainPage.Margin = new System.Windows.Forms.Padding(0, 10, 5, 0);
             this.tsmiMainPage.Name = "tsmiMainPage";
-            this.tsmiMainPage.Size = new System.Drawing.Size(142, 29);
+            this.tsmiMainPage.Size = new System.Drawing.Size(144, 29);
             this.tsmiMainPage.Text = "Головна";
             this.tsmiMainPage.Click += new System.EventHandler(this.tsmiMainPage_Click);
             // 
@@ -191,7 +200,7 @@
             this.tsmiGoods.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiGoods.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiGoods.Name = "tsmiGoods";
-            this.tsmiGoods.Size = new System.Drawing.Size(142, 29);
+            this.tsmiGoods.Size = new System.Drawing.Size(144, 29);
             this.tsmiGoods.Text = "Товари";
             this.tsmiGoods.Click += new System.EventHandler(this.tsmiGoods_Click);
             // 
@@ -201,7 +210,7 @@
             this.tsmiCustomers.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiCustomers.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiCustomers.Name = "tsmiCustomers";
-            this.tsmiCustomers.Size = new System.Drawing.Size(142, 29);
+            this.tsmiCustomers.Size = new System.Drawing.Size(144, 29);
             this.tsmiCustomers.Text = "Клієнти";
             this.tsmiCustomers.Click += new System.EventHandler(this.tsmiCustomers_Click);
             // 
@@ -211,7 +220,7 @@
             this.tsmiSales.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiSales.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiSales.Name = "tsmiSales";
-            this.tsmiSales.Size = new System.Drawing.Size(142, 29);
+            this.tsmiSales.Size = new System.Drawing.Size(144, 29);
             this.tsmiSales.Text = "Продажі";
             this.tsmiSales.Click += new System.EventHandler(this.tsmiSales_Click);
             // 
@@ -221,9 +230,41 @@
             this.tsmiReports.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiReports.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiReports.Name = "tsmiReports";
-            this.tsmiReports.Size = new System.Drawing.Size(142, 29);
+            this.tsmiReports.Size = new System.Drawing.Size(144, 29);
             this.tsmiReports.Text = "Звіти";
             this.tsmiReports.Click += new System.EventHandler(this.tsmiReports_Click);
+            // 
+            // Supplier
+            // 
+            this.Supplier.HeaderText = "Постачальник";
+            this.Supplier.MinimumWidth = 6;
+            this.Supplier.Name = "Supplier";
+            this.Supplier.ReadOnly = true;
+            this.Supplier.Width = 125;
+            // 
+            // Company_name
+            // 
+            this.Company_name.HeaderText = "Назва компанії";
+            this.Company_name.MinimumWidth = 6;
+            this.Company_name.Name = "Company_name";
+            this.Company_name.ReadOnly = true;
+            this.Company_name.Width = 125;
+            // 
+            // Delivery_date
+            // 
+            this.Delivery_date.HeaderText = "Дата постачання";
+            this.Delivery_date.MinimumWidth = 6;
+            this.Delivery_date.Name = "Delivery_date";
+            this.Delivery_date.ReadOnly = true;
+            this.Delivery_date.Width = 125;
+            // 
+            // Total_cost
+            // 
+            this.Total_cost.HeaderText = "Загальна вартість";
+            this.Total_cost.MinimumWidth = 6;
+            this.Total_cost.Name = "Total_cost";
+            this.Total_cost.ReadOnly = true;
+            this.Total_cost.Width = 125;
             // 
             // formDeliveries
             // 
@@ -232,7 +273,7 @@
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1302, 753);
             this.Controls.Add(this.msMainMenu);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvDeliveries);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbMainMenu);
             this.Controls.Add(this.pbCart);
@@ -245,13 +286,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Сторінка з поставками";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formDeliveries_FormClosing);
+            this.Load += new System.EventHandler(this.formDeliveries_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbMainMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDeliveries)).EndInit();
             this.msMainMenu.ResumeLayout(false);
             this.msMainMenu.PerformLayout();
             this.ResumeLayout(false);
@@ -269,12 +311,16 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDeliveries;
         private System.Windows.Forms.MenuStrip msMainMenu;
         private System.Windows.Forms.ToolStripMenuItem tsmiMainPage;
         private System.Windows.Forms.ToolStripMenuItem tsmiCustomers;
         private System.Windows.Forms.ToolStripMenuItem tsmiSales;
         private System.Windows.Forms.ToolStripMenuItem tsmiGoods;
         private System.Windows.Forms.ToolStripMenuItem tsmiReports;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Supplier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Company_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total_cost;
     }
 }

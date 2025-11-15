@@ -144,6 +144,12 @@
     <Compile Include="FormReport.Designer.cs">
       <DependentUpon>FormReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="formWorkingWithGoods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formWorkingWithGoods.Designer.cs">
+      <DependentUpon>formWorkingWithGoods.cs</DependentUpon>
+    </Compile>
     <Compile Include="Goods.cs" />
     <Compile Include="LoggerService.cs" />
     <Compile Include="MainPage.cs">
@@ -167,6 +173,7 @@
     <Compile Include="Sales.Designer.cs">
       <DependentUpon>Sales.cs</DependentUpon>
     </Compile>
+    <Compile Include="Suppliers.cs" />
     <Compile Include="Supplies.cs" />
     <Compile Include="Supplies_details.cs" />
     <Compile Include="User.cs" />
@@ -187,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormReport.resx">
       <DependentUpon>FormReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formWorkingWithGoods.resx">
+      <DependentUpon>formWorkingWithGoods.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>
