@@ -52,120 +52,9 @@ namespace AppAccountingSalesOE
             ShowGoods(ref goods_list, ref dgvGoods);
         }
 
-        private void btnReport_Click(object sender, EventArgs e)
-        {
-            ClassSerialize.SerializeToXml<List<Goods>>(ref goods_list, "data.xml");
-
-            // Інтеграція RepExcel для створення звіту в Excel
-            string excelFilePath = Path.Combine(Environment.CurrentDirectory, "GoodsReport.xlsx"); // Шлях до файлу на робочому столі
-
-            using (RepExcel repExcel = new RepExcel())
-            {
-                try
-                {
-                    // Створюємо нову книгу Excel
-                    repExcel.CreateNewBook(excelFilePath);
-
-                    // Відкриваємо книгу для редагування
-                    repExcel.OpenBook(excelFilePath);
-
-                    // Заповнюємо заголовки на аркуші "Saturn Data"
-                    repExcel.SetValue("Saturn Data", "A1", "Назва товару", "string", true);
-                    repExcel.SetValue("Saturn Data", "B1", "Категорія", "string", true);
-                    repExcel.SetValue("Saturn Data", "C1", "Країна виробник", "string", true);
-                    repExcel.SetValue("Saturn Data", "D1", "Ціна", "string", true);
-                    repExcel.SetValue("Saturn Data", "E1", "Гарантія (міс.)", "string", true);
-                    repExcel.SetValue("Saturn Data", "F1", "Опис", "string", true);
-                    repExcel.SetValue("Saturn Data", "G1", "Зображення", "string", true); // Колонка для шляху до зображення (якщо потрібно вставити - див. нижче)
-
-                    // Заповнюємо дані з goods_list
-                    int rowIndex = 2; // Починаємо з рядка 2
-
-                    foreach (Goods g in goods_list)
-                    {
-                        repExcel.SetValue("Saturn Data", $"A{rowIndex}", g.Name, "string");
-                        repExcel.SetValue("Saturn Data", $"B{rowIndex}", g.Category, "string");
-                        repExcel.SetValue("Saturn Data", $"C{rowIndex}", g.ManufacturingCountry, "string");
-                        repExcel.SetValue("Saturn Data", $"D{rowIndex}", g.Price.ToString(), "double");
-                        repExcel.SetValue("Saturn Data", $"E{rowIndex}", g.WarrantyMonths.ToString(), "double");
-                        repExcel.SetValue("Saturn Data", $"F{rowIndex}", g.Description, "string");
-                        repExcel.SetValue("Saturn Data", $"G{rowIndex}", g.Image, "string"); // Шлях до зображення (якщо є)
-
-                        rowIndex++;
-                    }
-
-                    repExcel.AutoFitColumns("Saturn Data");
-
-                    // Зберігаємо файл
-                    repExcel.Save(excelFilePath);
-
-                    // Закриваємо книгу
-                    repExcel.CloseBook();
-
-                    MessageBox.Show($"Звіт створено: {excelFilePath}", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    //formReport frmReport = new formReport();
-
-                    //frmReport.ShowDialog();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Помилка при створенні звіту: " + ex.Message, "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
         private void formGoods_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
-        }
-
-        private void btnReportWord_Click(object sender, EventArgs e)
-        {
-            string wordFilePath = Path.Combine(Environment.CurrentDirectory, "GoodsReport.docx");
-
-            using (RepWord repWord = new RepWord())
-            {
-                try
-                {
-                    repWord.CreateNewDocument(wordFilePath);
-                    repWord.InsertText("Звіт про товари", true, "center");
-
-                    // Вставка таблиці з даними
-                    List<List<string>> tableData = new List<List<string>>();
-
-                    tableData.Add(new List<string> {"Назва", "Категорія", "Країна виробник", "Ціна", "Гарантія (міс.)", "Опис" }); // Заголовок таблиці
-
-                    decimal counter = 0;
-
-                    foreach (Goods g in goods_list)
-                    {
-                        tableData.Add(new List<string> { g.Name, g.Category, g.ManufacturingCountry, g.Price.ToString(), g.WarrantyMonths.ToString(), g.Description });
-
-                        counter += g.Price;
-                    }
-
-                    repWord.InsertTable(tableData);
-
-                    repWord.InsertText($"\nЗагальна сума цін товарів: {counter}", true, "right");
-
-                    repWord.Save(wordFilePath);
-
-                    repWord.ExportToPdf(wordFilePath.Replace(".docx", ".pdf"));
-
-                    repWord.CloseDocument();
-
-                    MessageBox.Show($"Документ створено: {wordFilePath}", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    //formReport frmReport = new formReport();
-
-                    //frmReport.ShowDialog();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Помилка при створенні документа: " + ex.Message, "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
         }
 
         private void btnFilterGoods_Click(object sender, EventArgs e)
@@ -221,7 +110,90 @@ namespace AppAccountingSalesOE
 
         private void btnAddGoods_Click(object sender, EventArgs e)
         {
+            formWorkingWithGoods addForm = new formWorkingWithGoods("add", -1);
 
+            if (addForm.ShowDialog() == DialogResult.OK)
+            {
+                goods_list.Clear();
+                dgvGoods.Rows.Clear();
+
+                LoadData();
+                ShowGoods(ref goods_list, ref dgvGoods);
+
+                MessageBox.Show("Товар додано!", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnEditGoods_Click(object sender, EventArgs e)
+        {
+            if (dgvGoods.SelectedRows.Count > 0)
+            {
+                int selectedIndex = dgvGoods.SelectedRows[0].Index;
+
+                Goods selectedGood = goods_list[selectedIndex];
+
+                formWorkingWithGoods editForm = new formWorkingWithGoods("edit", selectedGood.ID);
+
+                editForm.tbNameGoods.Text = selectedGood.Name;
+                editForm.cbCategory.Text = selectedGood.Category;
+                editForm.tbManufacturingCountry.Text = selectedGood.ManufacturingCountry;
+                editForm.tbPrice.Text = selectedGood.Price.ToString();
+                editForm.cbWarrantyMonths.Text = selectedGood.WarrantyMonths.ToString();
+                editForm.rtbDescription.Text = selectedGood.Description;
+
+                if (!string.IsNullOrEmpty(selectedGood.Image) && File.Exists(selectedGood.Image))
+                {
+                    editForm.pbImageGoods.Image = Image.FromFile(selectedGood.Image);
+                }
+
+                if (editForm.ShowDialog() == DialogResult.OK)
+                {
+                    goods_list.Clear();
+                    dgvGoods.Rows.Clear();
+
+                    LoadData();
+                    ShowGoods(ref goods_list, ref dgvGoods);
+
+                    MessageBox.Show("Товар оновлено!", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+
+            else MessageBox.Show("Виберіть товар для редагування!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void btnDeleteGoods_Click(object sender, EventArgs e)
+        {
+            if (dgvGoods.SelectedRows.Count > 0)
+            {
+                int selectedIndex = dgvGoods.SelectedRows[0].Index;
+
+                Goods selectedGood = goods_list[selectedIndex];
+
+                DialogResult confirm = MessageBox.Show($"Ви впевнені, що хочете видалити товар '{selectedGood.Name}'?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (confirm == DialogResult.Yes)
+                {
+                    try
+                    {
+                        goods_list.Clear();
+                        dgvGoods.Rows.Clear();
+
+                        string deleteQuery = $"delete from goods where id_goods = {selectedGood.ID}";
+
+                        db.ExecuteNonQuery(file_db, deleteQuery);
+                        LoadData();
+                        ShowGoods(ref goods_list, ref dgvGoods);
+
+                        MessageBox.Show("Товар видалено!", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+
+            else MessageBox.Show("Виберіть товар для видалення!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

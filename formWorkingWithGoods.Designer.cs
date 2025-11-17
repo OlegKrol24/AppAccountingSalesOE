@@ -36,24 +36,27 @@
             this.lbPrice = new System.Windows.Forms.Label();
             this.lbWarrantyMonths = new System.Windows.Forms.Label();
             this.lbDescription = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.tbNameGoods = new System.Windows.Forms.TextBox();
+            this.tbManufacturingCountry = new System.Windows.Forms.TextBox();
+            this.tbPrice = new System.Windows.Forms.TextBox();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.cbWarrantyMonths = new System.Windows.Forms.ComboBox();
+            this.rtbDescription = new System.Windows.Forms.RichTextBox();
             this.btnChooseImage = new System.Windows.Forms.Button();
+            this.ofdImage = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pbImageGoods)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(646, 395);
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Location = new System.Drawing.Point(342, 436);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(125, 43);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Зберегти";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pbImageGoods
             // 
@@ -61,6 +64,7 @@
             this.pbImageGoods.Location = new System.Drawing.Point(53, 39);
             this.pbImageGoods.Name = "pbImageGoods";
             this.pbImageGoods.Size = new System.Drawing.Size(185, 232);
+            this.pbImageGoods.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbImageGoods.TabIndex = 1;
             this.pbImageGoods.TabStop = false;
             // 
@@ -118,72 +122,81 @@
             this.lbDescription.TabIndex = 7;
             this.lbDescription.Text = "Опис";
             // 
-            // textBox1
+            // tbNameGoods
             // 
-            this.textBox1.Location = new System.Drawing.Point(475, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(282, 22);
-            this.textBox1.TabIndex = 8;
+            this.tbNameGoods.Location = new System.Drawing.Point(475, 33);
+            this.tbNameGoods.Name = "tbNameGoods";
+            this.tbNameGoods.Size = new System.Drawing.Size(282, 22);
+            this.tbNameGoods.TabIndex = 8;
             // 
-            // textBox2
+            // tbManufacturingCountry
             // 
-            this.textBox2.Location = new System.Drawing.Point(475, 141);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(282, 22);
-            this.textBox2.TabIndex = 9;
+            this.tbManufacturingCountry.Location = new System.Drawing.Point(475, 141);
+            this.tbManufacturingCountry.Name = "tbManufacturingCountry";
+            this.tbManufacturingCountry.Size = new System.Drawing.Size(282, 22);
+            this.tbManufacturingCountry.TabIndex = 9;
             // 
-            // textBox3
+            // tbPrice
             // 
-            this.textBox3.Location = new System.Drawing.Point(475, 195);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(131, 22);
-            this.textBox3.TabIndex = 10;
+            this.tbPrice.Location = new System.Drawing.Point(475, 195);
+            this.tbPrice.Name = "tbPrice";
+            this.tbPrice.Size = new System.Drawing.Size(131, 22);
+            this.tbPrice.TabIndex = 10;
             // 
-            // comboBox1
+            // cbCategory
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(475, 89);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(112, 24);
-            this.comboBox1.TabIndex = 11;
+            this.cbCategory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Location = new System.Drawing.Point(475, 89);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(197, 24);
+            this.cbCategory.TabIndex = 11;
             // 
-            // comboBox2
+            // cbWarrantyMonths
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(475, 247);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(112, 24);
-            this.comboBox2.TabIndex = 12;
+            this.cbWarrantyMonths.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbWarrantyMonths.FormattingEnabled = true;
+            this.cbWarrantyMonths.Location = new System.Drawing.Point(475, 247);
+            this.cbWarrantyMonths.Name = "cbWarrantyMonths";
+            this.cbWarrantyMonths.Size = new System.Drawing.Size(112, 24);
+            this.cbWarrantyMonths.TabIndex = 12;
             // 
-            // richTextBox1
+            // rtbDescription
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(386, 306);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(385, 61);
-            this.richTextBox1.TabIndex = 13;
-            this.richTextBox1.Text = "";
+            this.rtbDescription.Location = new System.Drawing.Point(386, 306);
+            this.rtbDescription.Name = "rtbDescription";
+            this.rtbDescription.Size = new System.Drawing.Size(385, 95);
+            this.rtbDescription.TabIndex = 13;
+            this.rtbDescription.Text = "";
             // 
             // btnChooseImage
             // 
-            this.btnChooseImage.Location = new System.Drawing.Point(83, 306);
+            this.btnChooseImage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChooseImage.Location = new System.Drawing.Point(83, 296);
             this.btnChooseImage.Name = "btnChooseImage";
             this.btnChooseImage.Size = new System.Drawing.Size(125, 43);
             this.btnChooseImage.TabIndex = 14;
             this.btnChooseImage.Text = "Обрати фото";
             this.btnChooseImage.UseVisualStyleBackColor = true;
+            this.btnChooseImage.Click += new System.EventHandler(this.btnChooseImage_Click);
+            // 
+            // ofdImage
+            // 
+            this.ofdImage.FileName = "Image";
             // 
             // formWorkingWithGoods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(800, 481);
             this.Controls.Add(this.btnChooseImage);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.rtbDescription);
+            this.Controls.Add(this.cbWarrantyMonths);
+            this.Controls.Add(this.cbCategory);
+            this.Controls.Add(this.tbPrice);
+            this.Controls.Add(this.tbManufacturingCountry);
+            this.Controls.Add(this.tbNameGoods);
             this.Controls.Add(this.lbDescription);
             this.Controls.Add(this.lbWarrantyMonths);
             this.Controls.Add(this.lbPrice);
@@ -193,7 +206,9 @@
             this.Controls.Add(this.pbImageGoods);
             this.Controls.Add(this.btnSave);
             this.Name = "formWorkingWithGoods";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Додавання/редагування товару";
+            this.Load += new System.EventHandler(this.formWorkingWithGoods_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbImageGoods)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -203,19 +218,20 @@
         #endregion
 
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.PictureBox pbImageGoods;
         private System.Windows.Forms.Label lbNameGoods;
         private System.Windows.Forms.Label lbCategory;
         private System.Windows.Forms.Label lbManufacturingCountry;
         private System.Windows.Forms.Label lbPrice;
         private System.Windows.Forms.Label lbWarrantyMonths;
         private System.Windows.Forms.Label lbDescription;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button btnChooseImage;
+        private System.Windows.Forms.OpenFileDialog ofdImage;
+        public System.Windows.Forms.TextBox tbNameGoods;
+        public System.Windows.Forms.TextBox tbManufacturingCountry;
+        public System.Windows.Forms.TextBox tbPrice;
+        public System.Windows.Forms.ComboBox cbCategory;
+        public System.Windows.Forms.ComboBox cbWarrantyMonths;
+        public System.Windows.Forms.RichTextBox rtbDescription;
+        public System.Windows.Forms.PictureBox pbImageGoods;
     }
 }

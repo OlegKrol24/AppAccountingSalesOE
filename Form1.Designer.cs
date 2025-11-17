@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnReportExcel = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvGoods = new System.Windows.Forms.DataGridView();
             this.name_goods = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,7 +37,6 @@
             this.warranty_months = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnReportWord = new System.Windows.Forms.Button();
             this.btnAddGoods = new System.Windows.Forms.Button();
             this.btnEditGoods = new System.Windows.Forms.Button();
             this.btnDeleteGoods = new System.Windows.Forms.Button();
@@ -66,28 +64,17 @@
             this.msMainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnReportExcel
-            // 
-            this.btnReportExcel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportExcel.Location = new System.Drawing.Point(123, 710);
-            this.btnReportExcel.Name = "btnReportExcel";
-            this.btnReportExcel.Size = new System.Drawing.Size(203, 41);
-            this.btnReportExcel.TabIndex = 0;
-            this.btnReportExcel.Text = "Звіт у форматі Excel";
-            this.btnReportExcel.UseVisualStyleBackColor = true;
-            this.btnReportExcel.Click += new System.EventHandler(this.btnReport_Click);
-            // 
             // dgvGoods
             // 
             this.dgvGoods.BackgroundColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvGoods.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvGoods.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvGoods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGoods.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name_goods,
@@ -166,17 +153,6 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "Товари";
             // 
-            // btnReportWord
-            // 
-            this.btnReportWord.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportWord.Location = new System.Drawing.Point(518, 710);
-            this.btnReportWord.Name = "btnReportWord";
-            this.btnReportWord.Size = new System.Drawing.Size(203, 41);
-            this.btnReportWord.TabIndex = 26;
-            this.btnReportWord.Text = "Звіт у форматі Word";
-            this.btnReportWord.UseVisualStyleBackColor = true;
-            this.btnReportWord.Click += new System.EventHandler(this.btnReportWord_Click);
-            // 
             // btnAddGoods
             // 
             this.btnAddGoods.BackColor = System.Drawing.SystemColors.ScrollBar;
@@ -203,6 +179,7 @@
             this.btnEditGoods.TabIndex = 28;
             this.btnEditGoods.Text = "Редагувати";
             this.btnEditGoods.UseVisualStyleBackColor = false;
+            this.btnEditGoods.Click += new System.EventHandler(this.btnEditGoods_Click);
             // 
             // btnDeleteGoods
             // 
@@ -216,6 +193,7 @@
             this.btnDeleteGoods.TabIndex = 29;
             this.btnDeleteGoods.Text = "Видалити";
             this.btnDeleteGoods.UseVisualStyleBackColor = false;
+            this.btnDeleteGoods.Click += new System.EventHandler(this.btnDeleteGoods_Click);
             // 
             // pbMainMenu
             // 
@@ -334,7 +312,7 @@
             this.tsmiMainPage.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiMainPage.Margin = new System.Windows.Forms.Padding(0, 10, 5, 0);
             this.tsmiMainPage.Name = "tsmiMainPage";
-            this.tsmiMainPage.Size = new System.Drawing.Size(152, 29);
+            this.tsmiMainPage.Size = new System.Drawing.Size(144, 29);
             this.tsmiMainPage.Text = "Головна";
             this.tsmiMainPage.Click += new System.EventHandler(this.tsmiMainPage_Click);
             // 
@@ -344,7 +322,7 @@
             this.tsmiCustomers.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiCustomers.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiCustomers.Name = "tsmiCustomers";
-            this.tsmiCustomers.Size = new System.Drawing.Size(152, 29);
+            this.tsmiCustomers.Size = new System.Drawing.Size(144, 29);
             this.tsmiCustomers.Text = "Клієнти";
             this.tsmiCustomers.Click += new System.EventHandler(this.tsmiCustomers_Click);
             // 
@@ -354,7 +332,7 @@
             this.tsmiSales.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiSales.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiSales.Name = "tsmiSales";
-            this.tsmiSales.Size = new System.Drawing.Size(152, 29);
+            this.tsmiSales.Size = new System.Drawing.Size(144, 29);
             this.tsmiSales.Text = "Продажі";
             this.tsmiSales.Click += new System.EventHandler(this.tsmiSales_Click);
             // 
@@ -364,7 +342,7 @@
             this.tsmiSupplies.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiSupplies.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiSupplies.Name = "tsmiSupplies";
-            this.tsmiSupplies.Size = new System.Drawing.Size(152, 29);
+            this.tsmiSupplies.Size = new System.Drawing.Size(144, 29);
             this.tsmiSupplies.Text = "Поставки";
             this.tsmiSupplies.Click += new System.EventHandler(this.tsmiSupplies_Click);
             // 
@@ -374,7 +352,7 @@
             this.tsmiReports.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiReports.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiReports.Name = "tsmiReports";
-            this.tsmiReports.Size = new System.Drawing.Size(152, 29);
+            this.tsmiReports.Size = new System.Drawing.Size(144, 29);
             this.tsmiReports.Text = "Звіти";
             this.tsmiReports.Click += new System.EventHandler(this.tsmiReports_Click);
             // 
@@ -390,7 +368,6 @@
             this.Controls.Add(this.btnDeleteGoods);
             this.Controls.Add(this.btnEditGoods);
             this.Controls.Add(this.btnAddGoods);
-            this.Controls.Add(this.btnReportWord);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbMainMenu);
             this.Controls.Add(this.pbCart);
@@ -400,7 +377,6 @@
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvGoods);
-            this.Controls.Add(this.btnReportExcel);
             this.Name = "formGoods";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Сторінка з товарами";
@@ -421,8 +397,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnReportExcel;
         private System.Windows.Forms.DataGridView dgvGoods;
         private System.Windows.Forms.PictureBox pbMainMenu;
         private System.Windows.Forms.PictureBox pbCart;
@@ -432,7 +406,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnReportWord;
         private System.Windows.Forms.Button btnAddGoods;
         private System.Windows.Forms.Button btnEditGoods;
         private System.Windows.Forms.Button btnDeleteGoods;

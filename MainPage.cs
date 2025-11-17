@@ -23,6 +23,27 @@ namespace AppAccountingSalesOE
             {
                 lbRoleText.Text = currentUser.Role.ToUpper();
                 lbUserText.Text = currentUser.LastName + " " + currentUser.FirstName;
+
+                // Обмеження за роллю
+                if (currentUser.Role.Contains("клієнт"))
+                {
+                    btnCustomers.Enabled = false;
+                    btnSales.Enabled = false;
+                    btnDeliveries.Enabled = false;
+                    btnReports.Enabled = false;
+
+                    tsmiCustomers.Enabled = false;
+                    tsmiSales.Enabled = false;
+                    tsmiSupplies.Enabled = false;
+                    tsmiReports.Enabled = false;
+                }
+
+                if (currentUser.Role.Contains("менеджер"))
+                {
+                    btnDeliveries.Enabled = false;
+
+                    tsmiSupplies.Enabled = false;
+                }
             }
             
             else
@@ -30,12 +51,6 @@ namespace AppAccountingSalesOE
                 lbRoleText.Text = "Без ролі";
                 lbUserText.Text = "Невідомий";
             }
-
-            // Обмеження за роллю
-            // if (currentUser.Role.Contains("КЛІЄНТ"))
-            // {
-            //     btnDeliveries.Enabled = false;  // Ховаємо "Поставки" для клієнтів
-            // }
         }
 
         ClassDataBase db = new ClassDataBase();

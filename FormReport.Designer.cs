@@ -43,6 +43,8 @@
             this.tsmiCustomers = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSales = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSupplies = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnReportExcel = new System.Windows.Forms.Button();
+            this.btnReportWord = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbMainMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUA)).BeginInit();
@@ -148,7 +150,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(276, 162);
+            this.dataGridView1.Location = new System.Drawing.Point(272, 122);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -181,7 +183,7 @@
             this.tsmiMainPage.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiMainPage.Margin = new System.Windows.Forms.Padding(0, 10, 5, 0);
             this.tsmiMainPage.Name = "tsmiMainPage";
-            this.tsmiMainPage.Size = new System.Drawing.Size(142, 29);
+            this.tsmiMainPage.Size = new System.Drawing.Size(144, 29);
             this.tsmiMainPage.Text = "Головна";
             this.tsmiMainPage.Click += new System.EventHandler(this.tsmiMainPage_Click);
             // 
@@ -191,7 +193,7 @@
             this.tsmiGoods.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiGoods.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiGoods.Name = "tsmiGoods";
-            this.tsmiGoods.Size = new System.Drawing.Size(142, 29);
+            this.tsmiGoods.Size = new System.Drawing.Size(144, 29);
             this.tsmiGoods.Text = "Товари";
             this.tsmiGoods.Click += new System.EventHandler(this.tsmiGoods_Click);
             // 
@@ -201,7 +203,7 @@
             this.tsmiCustomers.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiCustomers.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiCustomers.Name = "tsmiCustomers";
-            this.tsmiCustomers.Size = new System.Drawing.Size(142, 29);
+            this.tsmiCustomers.Size = new System.Drawing.Size(144, 29);
             this.tsmiCustomers.Text = "Клієнти";
             this.tsmiCustomers.Click += new System.EventHandler(this.tsmiCustomers_Click);
             // 
@@ -211,7 +213,7 @@
             this.tsmiSales.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiSales.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiSales.Name = "tsmiSales";
-            this.tsmiSales.Size = new System.Drawing.Size(142, 29);
+            this.tsmiSales.Size = new System.Drawing.Size(144, 29);
             this.tsmiSales.Text = "Продажі";
             this.tsmiSales.Click += new System.EventHandler(this.tsmiSales_Click);
             // 
@@ -221,9 +223,31 @@
             this.tsmiSupplies.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiSupplies.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiSupplies.Name = "tsmiSupplies";
-            this.tsmiSupplies.Size = new System.Drawing.Size(142, 29);
+            this.tsmiSupplies.Size = new System.Drawing.Size(144, 29);
             this.tsmiSupplies.Text = "Поставки";
             this.tsmiSupplies.Click += new System.EventHandler(this.tsmiSupplies_Click);
+            // 
+            // btnReportExcel
+            // 
+            this.btnReportExcel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportExcel.Location = new System.Drawing.Point(51, 658);
+            this.btnReportExcel.Name = "btnReportExcel";
+            this.btnReportExcel.Size = new System.Drawing.Size(203, 41);
+            this.btnReportExcel.TabIndex = 44;
+            this.btnReportExcel.Text = "Звіт у форматі Excel";
+            this.btnReportExcel.UseVisualStyleBackColor = true;
+            this.btnReportExcel.Click += new System.EventHandler(this.btnReportExcel_Click);
+            // 
+            // btnReportWord
+            // 
+            this.btnReportWord.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportWord.Location = new System.Drawing.Point(318, 658);
+            this.btnReportWord.Name = "btnReportWord";
+            this.btnReportWord.Size = new System.Drawing.Size(203, 41);
+            this.btnReportWord.TabIndex = 45;
+            this.btnReportWord.Text = "Звіт у форматі Word";
+            this.btnReportWord.UseVisualStyleBackColor = true;
+            this.btnReportWord.Click += new System.EventHandler(this.btnReportWord_Click);
             // 
             // formReport
             // 
@@ -231,6 +255,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1302, 753);
+            this.Controls.Add(this.btnReportWord);
+            this.Controls.Add(this.btnReportExcel);
             this.Controls.Add(this.msMainMenu);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
@@ -276,5 +302,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiSales;
         private System.Windows.Forms.ToolStripMenuItem tsmiSupplies;
         private System.Windows.Forms.ToolStripMenuItem tsmiCustomers;
+        private System.Windows.Forms.Button btnReportExcel;
+        private System.Windows.Forms.Button btnReportWord;
     }
 }
