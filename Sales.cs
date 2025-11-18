@@ -18,6 +18,18 @@ namespace AppAccountingSalesOE
         {
             InitializeComponent();
             this.currentUser = currentUser;
+
+            if (currentUser != null)
+            {
+                // Обмеження за роллю
+                if (currentUser.Role.Contains("менеджер"))
+                {
+                    //btnEditSale.Enabled = false;
+                    //btnDeleteSale.Enabled = false;
+
+                    tsmiSupplies.Enabled = false;
+                }
+            }
         }
 
         private void formSales_FormClosing(object sender, FormClosingEventArgs e)

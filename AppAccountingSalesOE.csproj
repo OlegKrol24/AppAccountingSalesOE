@@ -132,6 +132,12 @@
     <Compile Include="formAuthorization.Designer.cs">
       <DependentUpon>formAuthorization.cs</DependentUpon>
     </Compile>
+    <Compile Include="formCart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formCart.Designer.cs">
+      <DependentUpon>formCart.cs</DependentUpon>
+    </Compile>
     <Compile Include="formFilter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,12 @@
     </Compile>
     <Compile Include="FormReport.Designer.cs">
       <DependentUpon>FormReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formWorkingWithCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formWorkingWithCustomers.Designer.cs">
+      <DependentUpon>formWorkingWithCustomers.cs</DependentUpon>
     </Compile>
     <Compile Include="formWorkingWithGoods.cs">
       <SubType>Form</SubType>
@@ -189,11 +201,17 @@
     <EmbeddedResource Include="formAuthorization.resx">
       <DependentUpon>formAuthorization.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formCart.resx">
+      <DependentUpon>formCart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formFilter.resx">
       <DependentUpon>formFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReport.resx">
       <DependentUpon>FormReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formWorkingWithCustomers.resx">
+      <DependentUpon>formWorkingWithCustomers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formWorkingWithGoods.resx">
       <DependentUpon>formWorkingWithGoods.cs</DependentUpon>
@@ -311,6 +329,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\Photos\Arrow_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Photos\Searching.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Photos\Searching %282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

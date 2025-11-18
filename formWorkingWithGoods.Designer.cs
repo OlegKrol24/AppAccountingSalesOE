@@ -50,7 +50,7 @@
             // btnSave
             // 
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Location = new System.Drawing.Point(342, 436);
+            this.btnSave.Location = new System.Drawing.Point(335, 437);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(125, 43);
             this.btnSave.TabIndex = 0;
@@ -61,9 +61,9 @@
             // pbImageGoods
             // 
             this.pbImageGoods.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.pbImageGoods.Location = new System.Drawing.Point(53, 39);
+            this.pbImageGoods.Location = new System.Drawing.Point(39, 26);
             this.pbImageGoods.Name = "pbImageGoods";
-            this.pbImageGoods.Size = new System.Drawing.Size(185, 232);
+            this.pbImageGoods.Size = new System.Drawing.Size(217, 270);
             this.pbImageGoods.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbImageGoods.TabIndex = 1;
             this.pbImageGoods.TabStop = false;
@@ -124,21 +124,21 @@
             // 
             // tbNameGoods
             // 
-            this.tbNameGoods.Location = new System.Drawing.Point(475, 33);
+            this.tbNameGoods.Location = new System.Drawing.Point(465, 36);
             this.tbNameGoods.Name = "tbNameGoods";
             this.tbNameGoods.Size = new System.Drawing.Size(282, 22);
             this.tbNameGoods.TabIndex = 8;
             // 
             // tbManufacturingCountry
             // 
-            this.tbManufacturingCountry.Location = new System.Drawing.Point(475, 141);
+            this.tbManufacturingCountry.Location = new System.Drawing.Point(465, 144);
             this.tbManufacturingCountry.Name = "tbManufacturingCountry";
             this.tbManufacturingCountry.Size = new System.Drawing.Size(282, 22);
             this.tbManufacturingCountry.TabIndex = 9;
             // 
             // tbPrice
             // 
-            this.tbPrice.Location = new System.Drawing.Point(475, 195);
+            this.tbPrice.Location = new System.Drawing.Point(465, 198);
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.Size = new System.Drawing.Size(131, 22);
             this.tbPrice.TabIndex = 10;
@@ -147,23 +147,23 @@
             // 
             this.cbCategory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(475, 89);
+            this.cbCategory.Location = new System.Drawing.Point(465, 84);
             this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(197, 24);
+            this.cbCategory.Size = new System.Drawing.Size(282, 24);
             this.cbCategory.TabIndex = 11;
             // 
             // cbWarrantyMonths
             // 
             this.cbWarrantyMonths.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbWarrantyMonths.FormattingEnabled = true;
-            this.cbWarrantyMonths.Location = new System.Drawing.Point(475, 247);
+            this.cbWarrantyMonths.Location = new System.Drawing.Point(465, 252);
             this.cbWarrantyMonths.Name = "cbWarrantyMonths";
             this.cbWarrantyMonths.Size = new System.Drawing.Size(112, 24);
             this.cbWarrantyMonths.TabIndex = 12;
             // 
             // rtbDescription
             // 
-            this.rtbDescription.Location = new System.Drawing.Point(386, 306);
+            this.rtbDescription.Location = new System.Drawing.Point(385, 309);
             this.rtbDescription.Name = "rtbDescription";
             this.rtbDescription.Size = new System.Drawing.Size(385, 95);
             this.rtbDescription.TabIndex = 13;
@@ -172,7 +172,7 @@
             // btnChooseImage
             // 
             this.btnChooseImage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnChooseImage.Location = new System.Drawing.Point(83, 296);
+            this.btnChooseImage.Location = new System.Drawing.Point(85, 323);
             this.btnChooseImage.Name = "btnChooseImage";
             this.btnChooseImage.Size = new System.Drawing.Size(125, 43);
             this.btnChooseImage.TabIndex = 14;
@@ -189,7 +189,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 481);
+            this.ClientSize = new System.Drawing.Size(800, 491);
             this.Controls.Add(this.btnChooseImage);
             this.Controls.Add(this.rtbDescription);
             this.Controls.Add(this.cbWarrantyMonths);

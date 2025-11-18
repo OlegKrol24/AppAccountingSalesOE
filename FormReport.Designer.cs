@@ -45,6 +45,7 @@
             this.tsmiSupplies = new System.Windows.Forms.ToolStripMenuItem();
             this.btnReportExcel = new System.Windows.Forms.Button();
             this.btnReportWord = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pbMainMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUA)).BeginInit();
@@ -53,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.msMainMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -150,11 +152,11 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(272, 122);
+            this.dataGridView1.Location = new System.Drawing.Point(586, 154);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(783, 505);
+            this.dataGridView1.Size = new System.Drawing.Size(704, 488);
             this.dataGridView1.TabIndex = 42;
             // 
             // msMainMenu
@@ -230,7 +232,7 @@
             // btnReportExcel
             // 
             this.btnReportExcel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportExcel.Location = new System.Drawing.Point(51, 658);
+            this.btnReportExcel.Location = new System.Drawing.Point(38, 715);
             this.btnReportExcel.Name = "btnReportExcel";
             this.btnReportExcel.Size = new System.Drawing.Size(203, 41);
             this.btnReportExcel.TabIndex = 44;
@@ -241,7 +243,7 @@
             // btnReportWord
             // 
             this.btnReportWord.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportWord.Location = new System.Drawing.Point(318, 658);
+            this.btnReportWord.Location = new System.Drawing.Point(330, 715);
             this.btnReportWord.Name = "btnReportWord";
             this.btnReportWord.Size = new System.Drawing.Size(203, 41);
             this.btnReportWord.TabIndex = 45;
@@ -249,12 +251,23 @@
             this.btnReportWord.UseVisualStyleBackColor = true;
             this.btnReportWord.Click += new System.EventHandler(this.btnReportWord_Click);
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(19, 91);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(540, 610);
+            this.dataGridView2.TabIndex = 46;
+            // 
             // formReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1302, 753);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.btnReportWord);
             this.Controls.Add(this.btnReportExcel);
             this.Controls.Add(this.msMainMenu);
@@ -268,6 +281,7 @@
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox1);
             this.Name = "formReport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Звітність";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formReport_FormClosing);
             this.Load += new System.EventHandler(this.FormReport_Load);
@@ -280,6 +294,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.msMainMenu.ResumeLayout(false);
             this.msMainMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,5 +319,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiCustomers;
         private System.Windows.Forms.Button btnReportExcel;
         private System.Windows.Forms.Button btnReportWord;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }

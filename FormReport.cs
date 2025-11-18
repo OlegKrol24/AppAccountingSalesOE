@@ -24,6 +24,17 @@ namespace AppAccountingSalesOE
         {
             InitializeComponent();
             this.currentUser = currentUser;
+
+            if (currentUser != null)
+            {
+                // Обмеження за роллю
+                if (currentUser.Role.Contains("менеджер"))
+                {
+                    //rbSupplies.Enabled = false;
+
+                    tsmiSupplies.Enabled = false;
+                }
+            }
         }
 
         ClassDataBase db = new ClassDataBase();
@@ -43,9 +54,9 @@ namespace AppAccountingSalesOE
         {
             LoadData();
 
-            pc.Size = new Size(this.Size.Width, this.Size.Height);
+            pc.Size = new Size(dataGridView2.Size.Width, dataGridView2.Size.Height);      
 
-            this.Controls.Add(pc);
+            dataGridView2.Controls.Add(pc);
 
             Report report = new Report();
 

@@ -20,6 +20,30 @@ namespace AppAccountingSalesOE
         {
             InitializeComponent();
             this.currentUser = currentUser;
+
+            if (currentUser != null)
+            {
+                // Обмеження за роллю
+                if (currentUser.Role.Contains("клієнт"))
+                {
+                    btnAddGoods.Enabled = false;
+                    btnEditGoods.Enabled = false;
+                    btnDeleteGoods.Enabled = false;
+
+                    tsmiCustomers.Enabled = false;
+                    tsmiSales.Enabled = false;
+                    tsmiSupplies.Enabled = false;
+                    tsmiReports.Enabled = false;
+                }
+
+                if (currentUser.Role.Contains("менеджер"))
+                {
+                    btnEditGoods.Enabled = false;
+                    btnDeleteGoods.Enabled = false;
+
+                    tsmiSupplies.Enabled = false;
+                }
+            }
         }
 
         ClassDataBase db = new ClassDataBase();
@@ -41,7 +65,7 @@ namespace AppAccountingSalesOE
             {
                 foreach (Goods g in temp_goods)
                 {
-                    data.Rows.Add(g.Name, g.Category, g.ManufacturingCountry, g.Price, g.WarrantyMonths);
+                    data.Rows.Add(g.Name, g.Category, g.ManufacturingCountry, g.Price);
                 }
             }
         }
@@ -154,7 +178,7 @@ namespace AppAccountingSalesOE
                     LoadData();
                     ShowGoods(ref goods_list, ref dgvGoods);
 
-                    MessageBox.Show("Товар оновлено!", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Дані про товар оновлено!", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
 
@@ -167,9 +191,9 @@ namespace AppAccountingSalesOE
             {
                 int selectedIndex = dgvGoods.SelectedRows[0].Index;
 
-                Goods selectedGood = goods_list[selectedIndex];
+                Goods selectedGoods = goods_list[selectedIndex];
 
-                DialogResult confirm = MessageBox.Show($"Ви впевнені, що хочете видалити товар '{selectedGood.Name}'?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult confirm = MessageBox.Show($"Ви впевнені, що хочете видалити товар '{selectedGoods.Name}'?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (confirm == DialogResult.Yes)
                 {
@@ -178,7 +202,7 @@ namespace AppAccountingSalesOE
                         goods_list.Clear();
                         dgvGoods.Rows.Clear();
 
-                        string deleteQuery = $"delete from goods where id_goods = {selectedGood.ID}";
+                        string deleteQuery = $"delete from goods where id_goods = {selectedGoods.ID}";
 
                         db.ExecuteNonQuery(file_db, deleteQuery);
                         LoadData();

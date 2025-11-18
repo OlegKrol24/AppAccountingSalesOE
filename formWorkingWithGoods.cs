@@ -23,6 +23,13 @@ namespace AppAccountingSalesOE
             this.mode = mode;
             this.goodId = id;
             this.Text = mode == "add" ? "Додавання товару" : "Редагування товару";
+
+            string path = Directory.GetCurrentDirectory() + "\\Photos";
+
+            if (Directory.Exists(path))
+            {
+                if (File.Exists(path + "\\NoGoods.png")) pbImageGoods.Image = Image.FromFile(path + "\\NoGoods.png");
+            }
         }
 
         ClassDataBase db = new ClassDataBase();
@@ -107,6 +114,7 @@ namespace AppAccountingSalesOE
 
                 File.Copy(ofdImage.FileName, Path.Combine(Directory.GetCurrentDirectory(), imagePath), true);
             }
+
             try
             {
                 string query;
@@ -118,18 +126,18 @@ namespace AppAccountingSalesOE
                     $"'{tbManufacturingCountry.Text.Replace("'", "''")}', {price.ToString(System.Globalization.CultureInfo.InvariantCulture)}, {warranty}, " +
                     $"'{rtbDescription.Text.Replace("'", "''")}', '{imagePath.Replace("'", "''")}')";
                 }
+
                 else  // edit
                 {
                     query = $"update goods set name_goods = '{tbNameGoods.Text.Replace("'", "''")}', " +
                     $"category = '{cbCategory.Text.Replace("'", "''")}', " +
                     $"manufacturing_country = '{tbManufacturingCountry.Text.Replace("'", "''")}', " +
                     $"price = {price.ToString(System.Globalization.CultureInfo.InvariantCulture)}, warranty_months = {warranty}, " +
-                    $"description = '{rtbDescription.Text.Replace("'", "''")}', " +
-                    $"image = '{imagePath.Replace("'", "''")}' " +
-                    $"WHERE id_goods = {goodId}";
+                    $"description = '{rtbDescription.Text.Replace("'", "''")}', image = '{imagePath.Replace("'", "''")}' " +
+                    $"where id_goods = {goodId}";
                 }
 
-                db.ExecuteNonQuery(file_db, query);  // Припустимо, що ClassDataBase має метод ExecuteNonQuery для INSERT/UPDATE
+                db.ExecuteNonQuery(file_db, query);
                 
                 this.DialogResult = DialogResult.OK;
                 this.Close();

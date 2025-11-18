@@ -97,6 +97,13 @@ namespace AppAccountingSalesOE
             Application.Exit();
         }
 
+        private void pbCart_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formCart formCart = new formCart();
+            formCart.Show();
+        }
+
         private void pbMenu_Click(object sender, EventArgs e)
         {
             if (msMainMenu.Visible == false) msMainMenu.Visible = true;
