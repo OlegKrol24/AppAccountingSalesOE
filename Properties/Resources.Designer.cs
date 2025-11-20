@@ -143,16 +143,6 @@ namespace AppAccountingSalesOE.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Searching {
-            get {
-                object obj = ResourceManager.GetObject("Searching", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Searching__2_ {
             get {
                 object obj = ResourceManager.GetObject("Searching (2)", resourceCulture);

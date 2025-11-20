@@ -30,31 +30,35 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.pbMainMenu = new System.Windows.Forms.PictureBox();
-            this.pbCart = new System.Windows.Forms.PictureBox();
             this.pbLanguageUA = new System.Windows.Forms.PictureBox();
             this.pbLanguageUS = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvDeliveries = new System.Windows.Forms.DataGridView();
+            this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Company_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delivery_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.msMainMenu = new System.Windows.Forms.MenuStrip();
             this.tsmiMainPage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiGoods = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCustomers = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSales = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiReports = new System.Windows.Forms.ToolStripMenuItem();
-            this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Company_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delivery_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pbCart = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbMainMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeliveries)).BeginInit();
             this.msMainMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -82,23 +86,11 @@
             this.pbMainMenu.TabStop = false;
             this.pbMainMenu.Click += new System.EventHandler(this.pbMainMenu_Click);
             // 
-            // pbCart
-            // 
-            this.pbCart.BackColor = System.Drawing.Color.SteelBlue;
-            this.pbCart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbCart.Image = global::AppAccountingSalesOE.Properties.Resources.Cart;
-            this.pbCart.Location = new System.Drawing.Point(917, 8);
-            this.pbCart.Name = "pbCart";
-            this.pbCart.Size = new System.Drawing.Size(56, 55);
-            this.pbCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbCart.TabIndex = 31;
-            this.pbCart.TabStop = false;
-            // 
             // pbLanguageUA
             // 
             this.pbLanguageUA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbLanguageUA.Image = global::AppAccountingSalesOE.Properties.Resources.Flag_UA;
-            this.pbLanguageUA.Location = new System.Drawing.Point(746, 9);
+            this.pbLanguageUA.Location = new System.Drawing.Point(710, 9);
             this.pbLanguageUA.Name = "pbLanguageUA";
             this.pbLanguageUA.Size = new System.Drawing.Size(91, 53);
             this.pbLanguageUA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -110,7 +102,7 @@
             this.pbLanguageUS.BackColor = System.Drawing.Color.SteelBlue;
             this.pbLanguageUS.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbLanguageUS.Image = global::AppAccountingSalesOE.Properties.Resources.Flag_USA;
-            this.pbLanguageUS.Location = new System.Drawing.Point(606, 9);
+            this.pbLanguageUS.Location = new System.Drawing.Point(580, 9);
             this.pbLanguageUS.Name = "pbLanguageUS";
             this.pbLanguageUS.Size = new System.Drawing.Size(91, 53);
             this.pbLanguageUS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -161,8 +153,40 @@
             this.dgvDeliveries.Name = "dgvDeliveries";
             this.dgvDeliveries.RowHeadersWidth = 51;
             this.dgvDeliveries.RowTemplate.Height = 24;
-            this.dgvDeliveries.Size = new System.Drawing.Size(756, 479);
+            this.dgvDeliveries.Size = new System.Drawing.Size(784, 479);
             this.dgvDeliveries.TabIndex = 34;
+            // 
+            // Supplier
+            // 
+            this.Supplier.HeaderText = "Постачальник";
+            this.Supplier.MinimumWidth = 6;
+            this.Supplier.Name = "Supplier";
+            this.Supplier.ReadOnly = true;
+            this.Supplier.Width = 125;
+            // 
+            // Company_name
+            // 
+            this.Company_name.HeaderText = "Назва компанії";
+            this.Company_name.MinimumWidth = 6;
+            this.Company_name.Name = "Company_name";
+            this.Company_name.ReadOnly = true;
+            this.Company_name.Width = 125;
+            // 
+            // Delivery_date
+            // 
+            this.Delivery_date.HeaderText = "Дата постачання";
+            this.Delivery_date.MinimumWidth = 6;
+            this.Delivery_date.Name = "Delivery_date";
+            this.Delivery_date.ReadOnly = true;
+            this.Delivery_date.Width = 125;
+            // 
+            // Total_cost
+            // 
+            this.Total_cost.HeaderText = "Загальна вартість";
+            this.Total_cost.MinimumWidth = 6;
+            this.Total_cost.Name = "Total_cost";
+            this.Total_cost.ReadOnly = true;
+            this.Total_cost.Width = 125;
             // 
             // msMainMenu
             // 
@@ -234,37 +258,45 @@
             this.tsmiReports.Text = "Звіти";
             this.tsmiReports.Click += new System.EventHandler(this.tsmiReports_Click);
             // 
-            // Supplier
+            // label4
             // 
-            this.Supplier.HeaderText = "Постачальник";
-            this.Supplier.MinimumWidth = 6;
-            this.Supplier.Name = "Supplier";
-            this.Supplier.ReadOnly = true;
-            this.Supplier.Width = 125;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(1001, 43);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 19);
+            this.label4.TabIndex = 39;
+            this.label4.Text = "0 грн";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Company_name
+            // label2
             // 
-            this.Company_name.HeaderText = "Назва компанії";
-            this.Company_name.MinimumWidth = 6;
-            this.Company_name.Name = "Company_name";
-            this.Company_name.ReadOnly = true;
-            this.Company_name.Width = 125;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(1002, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 19);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "0 шт";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Delivery_date
+            // pbCart
             // 
-            this.Delivery_date.HeaderText = "Дата постачання";
-            this.Delivery_date.MinimumWidth = 6;
-            this.Delivery_date.Name = "Delivery_date";
-            this.Delivery_date.ReadOnly = true;
-            this.Delivery_date.Width = 125;
+            this.pbCart.Image = global::AppAccountingSalesOE.Properties.Resources.Cart;
+            this.pbCart.Location = new System.Drawing.Point(855, 8);
+            this.pbCart.Name = "pbCart";
+            this.pbCart.Size = new System.Drawing.Size(56, 55);
+            this.pbCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCart.TabIndex = 37;
+            this.pbCart.TabStop = false;
             // 
-            // Total_cost
+            // pictureBox7
             // 
-            this.Total_cost.HeaderText = "Загальна вартість";
-            this.Total_cost.MinimumWidth = 6;
-            this.Total_cost.Name = "Total_cost";
-            this.Total_cost.ReadOnly = true;
-            this.Total_cost.Width = 125;
+            this.pictureBox7.Location = new System.Drawing.Point(850, 5);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(298, 63);
+            this.pictureBox7.TabIndex = 36;
+            this.pictureBox7.TabStop = false;
             // 
             // formDeliveries
             // 
@@ -272,11 +304,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1302, 753);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pbCart);
+            this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.msMainMenu);
             this.Controls.Add(this.dgvDeliveries);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbMainMenu);
-            this.Controls.Add(this.pbCart);
             this.Controls.Add(this.pbLanguageUA);
             this.Controls.Add(this.pbLanguageUS);
             this.Controls.Add(this.label5);
@@ -288,7 +323,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formDeliveries_FormClosing);
             this.Load += new System.EventHandler(this.formDeliveries_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbMainMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -296,6 +330,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeliveries)).EndInit();
             this.msMainMenu.ResumeLayout(false);
             this.msMainMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,7 +341,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pbMainMenu;
-        private System.Windows.Forms.PictureBox pbCart;
         private System.Windows.Forms.PictureBox pbLanguageUA;
         private System.Windows.Forms.PictureBox pbLanguageUS;
         private System.Windows.Forms.Label label5;
@@ -322,5 +357,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Company_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_date;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total_cost;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pbCart;
+        private System.Windows.Forms.PictureBox pictureBox7;
     }
 }

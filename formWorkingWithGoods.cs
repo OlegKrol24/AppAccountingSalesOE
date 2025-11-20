@@ -100,21 +100,28 @@ namespace AppAccountingSalesOE
                 return;
             }
 
-            string imagePath = "";
+            string imagePath = null;
 
-            if (pbImageGoods.Image != null && !string.IsNullOrEmpty(ofdImage.FileName))
+            if (pbImageGoods.Image != null && !string.IsNullOrEmpty(ofdImage.FileName) && File.Exists(ofdImage.FileName))
             {
                 string imagesFolder = Path.Combine(Directory.GetCurrentDirectory(), "Photos");
 
                 if (!Directory.Exists(imagesFolder)) Directory.CreateDirectory(imagesFolder);
 
                 string fileName = Path.GetFileName(ofdImage.FileName);
+                string destPath = Path.Combine(imagesFolder, fileName);
 
-                imagePath = Path.Combine("Photos", fileName);
-
-                File.Copy(ofdImage.FileName, Path.Combine(Directory.GetCurrentDirectory(), imagePath), true);
+                try
+                {
+                    File.Copy(ofdImage.FileName, destPath, true);
+                    imagePath = fileName;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Помилка копіювання файлу: " + ex.Message, "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
-
             try
             {
                 string query;
@@ -124,21 +131,25 @@ namespace AppAccountingSalesOE
                     query = $"insert into goods (name_goods, category, manufacturing_country, price, warranty_months, description, image) " +
                     $"values ('{tbNameGoods.Text.Replace("'", "''")}', '{cbCategory.Text.Replace("'", "''")}', " +
                     $"'{tbManufacturingCountry.Text.Replace("'", "''")}', {price.ToString(System.Globalization.CultureInfo.InvariantCulture)}, {warranty}, " +
-                    $"'{rtbDescription.Text.Replace("'", "''")}', '{imagePath.Replace("'", "''")}')";
+                    $"'{rtbDescription.Text.Replace("'", "''")}', '{(imagePath ?? "").Replace("'", "''")}')";
                 }
 
-                else  // edit
+                else // edit
                 {
-                    query = $"update goods set name_goods = '{tbNameGoods.Text.Replace("'", "''")}', " +
-                    $"category = '{cbCategory.Text.Replace("'", "''")}', " +
-                    $"manufacturing_country = '{tbManufacturingCountry.Text.Replace("'", "''")}', " +
-                    $"price = {price.ToString(System.Globalization.CultureInfo.InvariantCulture)}, warranty_months = {warranty}, " +
-                    $"description = '{rtbDescription.Text.Replace("'", "''")}', image = '{imagePath.Replace("'", "''")}' " +
-                    $"where id_goods = {goodId}";
+                    string updateFields = $"name_goods = '{tbNameGoods.Text.Replace("'", "''")}', " +
+                                          $"category = '{cbCategory.Text.Replace("'", "''")}', " +
+                                          $"manufacturing_country = '{tbManufacturingCountry.Text.Replace("'", "''")}', " +
+                                          $"price = {price.ToString(System.Globalization.CultureInfo.InvariantCulture)}, " +
+                                          $"warranty_months = {warranty}, " +
+                                          $"description = '{rtbDescription.Text.Replace("'", "''")}'";
+
+                    if (imagePath != null) updateFields += $", image = '{imagePath.Replace("'", "''")}'";
+
+                    query = $"update goods set {updateFields} where id_goods = {goodId}";
                 }
 
                 db.ExecuteNonQuery(file_db, query);
-                
+
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }

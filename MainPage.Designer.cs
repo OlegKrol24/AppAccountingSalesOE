@@ -55,13 +55,16 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pbMenu = new System.Windows.Forms.PictureBox();
-            this.pbCart = new System.Windows.Forms.PictureBox();
             this.pbLanguageUA = new System.Windows.Forms.PictureBox();
             this.pbLanguageUS = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pbCart = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.msMainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbArrowRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbArrowLeft)).BeginInit();
@@ -69,13 +72,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGoods
@@ -222,11 +226,11 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(610, 560);
+            this.label2.Location = new System.Drawing.Point(543, 560);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(381, 32);
+            this.label2.Size = new System.Drawing.Size(505, 32);
             this.label2.TabIndex = 24;
-            this.label2.Text = "Загальна кількість продажів";
+            this.label2.Text = "Загальна кількість продажів магазину";
             // 
             // label3
             // 
@@ -276,7 +280,7 @@
             this.tsmiGoods.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiGoods.Margin = new System.Windows.Forms.Padding(0, 10, 5, 0);
             this.tsmiGoods.Name = "tsmiGoods";
-            this.tsmiGoods.Size = new System.Drawing.Size(142, 29);
+            this.tsmiGoods.Size = new System.Drawing.Size(144, 29);
             this.tsmiGoods.Text = "Товари";
             this.tsmiGoods.Click += new System.EventHandler(this.tsmiGoods_Click);
             // 
@@ -286,7 +290,7 @@
             this.tsmiCustomers.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiCustomers.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiCustomers.Name = "tsmiCustomers";
-            this.tsmiCustomers.Size = new System.Drawing.Size(142, 29);
+            this.tsmiCustomers.Size = new System.Drawing.Size(144, 29);
             this.tsmiCustomers.Text = "Клієнти";
             this.tsmiCustomers.Click += new System.EventHandler(this.tsmiCustomers_Click);
             // 
@@ -296,7 +300,7 @@
             this.tsmiSales.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiSales.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiSales.Name = "tsmiSales";
-            this.tsmiSales.Size = new System.Drawing.Size(142, 29);
+            this.tsmiSales.Size = new System.Drawing.Size(144, 29);
             this.tsmiSales.Text = "Продажі";
             this.tsmiSales.Click += new System.EventHandler(this.tsmiSales_Click);
             // 
@@ -306,7 +310,7 @@
             this.tsmiSupplies.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiSupplies.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiSupplies.Name = "tsmiSupplies";
-            this.tsmiSupplies.Size = new System.Drawing.Size(142, 29);
+            this.tsmiSupplies.Size = new System.Drawing.Size(144, 29);
             this.tsmiSupplies.Text = "Поставки";
             this.tsmiSupplies.Click += new System.EventHandler(this.tsmiSupplies_Click);
             // 
@@ -316,7 +320,7 @@
             this.tsmiReports.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiReports.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiReports.Name = "tsmiReports";
-            this.tsmiReports.Size = new System.Drawing.Size(142, 29);
+            this.tsmiReports.Size = new System.Drawing.Size(144, 29);
             this.tsmiReports.Text = "Звіти";
             this.tsmiReports.Click += new System.EventHandler(this.tsmiReports_Click);
             // 
@@ -384,24 +388,11 @@
             this.pbMenu.TabStop = false;
             this.pbMenu.Click += new System.EventHandler(this.pbMenu_Click);
             // 
-            // pbCart
-            // 
-            this.pbCart.BackColor = System.Drawing.Color.SteelBlue;
-            this.pbCart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbCart.Image = global::AppAccountingSalesOE.Properties.Resources.Cart;
-            this.pbCart.Location = new System.Drawing.Point(917, 8);
-            this.pbCart.Name = "pbCart";
-            this.pbCart.Size = new System.Drawing.Size(56, 55);
-            this.pbCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbCart.TabIndex = 16;
-            this.pbCart.TabStop = false;
-            this.pbCart.Click += new System.EventHandler(this.pbCart_Click);
-            // 
             // pbLanguageUA
             // 
             this.pbLanguageUA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbLanguageUA.Image = global::AppAccountingSalesOE.Properties.Resources.Flag_UA;
-            this.pbLanguageUA.Location = new System.Drawing.Point(746, 9);
+            this.pbLanguageUA.Location = new System.Drawing.Point(710, 9);
             this.pbLanguageUA.Name = "pbLanguageUA";
             this.pbLanguageUA.Size = new System.Drawing.Size(91, 53);
             this.pbLanguageUA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -413,7 +404,7 @@
             this.pbLanguageUS.BackColor = System.Drawing.Color.SteelBlue;
             this.pbLanguageUS.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbLanguageUS.Image = global::AppAccountingSalesOE.Properties.Resources.Flag_USA;
-            this.pbLanguageUS.Location = new System.Drawing.Point(606, 9);
+            this.pbLanguageUS.Location = new System.Drawing.Point(580, 9);
             this.pbLanguageUS.Name = "pbLanguageUS";
             this.pbLanguageUS.Size = new System.Drawing.Size(91, 53);
             this.pbLanguageUS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -460,12 +451,57 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Location = new System.Drawing.Point(850, 5);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(298, 63);
+            this.pictureBox7.TabIndex = 29;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pbCart
+            // 
+            this.pbCart.Image = global::AppAccountingSalesOE.Properties.Resources.Cart;
+            this.pbCart.Location = new System.Drawing.Point(855, 8);
+            this.pbCart.Name = "pbCart";
+            this.pbCart.Size = new System.Drawing.Size(56, 55);
+            this.pbCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCart.TabIndex = 30;
+            this.pbCart.TabStop = false;
+            this.pbCart.Click += new System.EventHandler(this.pbCart_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(1002, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 19);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "0 шт";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(1001, 43);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 19);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "0 грн";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // formMainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1302, 753);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pbCart);
+            this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.msMainMenu);
             this.Controls.Add(this.lbTotalQuantitySales);
             this.Controls.Add(this.label3);
@@ -477,7 +513,6 @@
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pbMenu);
-            this.Controls.Add(this.pbCart);
             this.Controls.Add(this.pbLanguageUA);
             this.Controls.Add(this.pbLanguageUS);
             this.Controls.Add(this.label5);
@@ -506,13 +541,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -536,7 +572,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pbLanguageUS;
         private System.Windows.Forms.PictureBox pbLanguageUA;
-        private System.Windows.Forms.PictureBox pbCart;
         private System.Windows.Forms.PictureBox pbMenu;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
@@ -553,5 +588,9 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiSales;
         private System.Windows.Forms.ToolStripMenuItem tsmiSupplies;
         private System.Windows.Forms.ToolStripMenuItem tsmiReports;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pbCart;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
     }
 }

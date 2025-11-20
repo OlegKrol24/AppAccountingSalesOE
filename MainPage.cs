@@ -92,16 +92,16 @@ namespace AppAccountingSalesOE
             formReport.Show();
         }
 
-        private void MainPage_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void pbCart_Click(object sender, EventArgs e)
         {
             this.Hide();
             formCart formCart = new formCart();
             formCart.Show();
+        }
+
+        private void MainPage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
 
         private void pbMenu_Click(object sender, EventArgs e)

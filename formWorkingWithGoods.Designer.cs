@@ -49,19 +49,22 @@
             // 
             // btnSave
             // 
+            this.btnSave.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnSave.ForeColor = System.Drawing.Color.MidnightBlue;
             this.btnSave.Location = new System.Drawing.Point(335, 437);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(125, 43);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Зберегти";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pbImageGoods
             // 
             this.pbImageGoods.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.pbImageGoods.Location = new System.Drawing.Point(39, 26);
+            this.pbImageGoods.Location = new System.Drawing.Point(29, 26);
             this.pbImageGoods.Name = "pbImageGoods";
             this.pbImageGoods.Size = new System.Drawing.Size(217, 270);
             this.pbImageGoods.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -71,108 +74,121 @@
             // lbNameGoods
             // 
             this.lbNameGoods.AutoSize = true;
-            this.lbNameGoods.Location = new System.Drawing.Point(316, 39);
+            this.lbNameGoods.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNameGoods.Location = new System.Drawing.Point(294, 38);
             this.lbNameGoods.Name = "lbNameGoods";
-            this.lbNameGoods.Size = new System.Drawing.Size(99, 16);
+            this.lbNameGoods.Size = new System.Drawing.Size(101, 19);
             this.lbNameGoods.TabIndex = 2;
             this.lbNameGoods.Text = "Назва товару";
             // 
             // lbCategory
             // 
             this.lbCategory.AutoSize = true;
-            this.lbCategory.Location = new System.Drawing.Point(316, 92);
+            this.lbCategory.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCategory.Location = new System.Drawing.Point(294, 90);
             this.lbCategory.Name = "lbCategory";
-            this.lbCategory.Size = new System.Drawing.Size(70, 16);
+            this.lbCategory.Size = new System.Drawing.Size(79, 19);
             this.lbCategory.TabIndex = 3;
             this.lbCategory.Text = "Категорія";
             // 
             // lbManufacturingCountry
             // 
             this.lbManufacturingCountry.AutoSize = true;
-            this.lbManufacturingCountry.Location = new System.Drawing.Point(316, 147);
+            this.lbManufacturingCountry.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbManufacturingCountry.Location = new System.Drawing.Point(294, 145);
             this.lbManufacturingCountry.Name = "lbManufacturingCountry";
-            this.lbManufacturingCountry.Size = new System.Drawing.Size(116, 16);
+            this.lbManufacturingCountry.Size = new System.Drawing.Size(125, 19);
             this.lbManufacturingCountry.TabIndex = 4;
             this.lbManufacturingCountry.Text = "Країна виробник";
             // 
             // lbPrice
             // 
             this.lbPrice.AutoSize = true;
-            this.lbPrice.Location = new System.Drawing.Point(316, 201);
+            this.lbPrice.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPrice.Location = new System.Drawing.Point(294, 199);
             this.lbPrice.Name = "lbPrice";
-            this.lbPrice.Size = new System.Drawing.Size(35, 16);
+            this.lbPrice.Size = new System.Drawing.Size(41, 19);
             this.lbPrice.TabIndex = 5;
             this.lbPrice.Text = "Ціна";
             // 
             // lbWarrantyMonths
             // 
             this.lbWarrantyMonths.AutoSize = true;
-            this.lbWarrantyMonths.Location = new System.Drawing.Point(316, 255);
+            this.lbWarrantyMonths.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWarrantyMonths.Location = new System.Drawing.Point(294, 253);
             this.lbWarrantyMonths.Name = "lbWarrantyMonths";
-            this.lbWarrantyMonths.Size = new System.Drawing.Size(96, 16);
+            this.lbWarrantyMonths.Size = new System.Drawing.Size(113, 19);
             this.lbWarrantyMonths.TabIndex = 6;
             this.lbWarrantyMonths.Text = "Гарантія (міс.)";
             // 
             // lbDescription
             // 
             this.lbDescription.AutoSize = true;
-            this.lbDescription.Location = new System.Drawing.Point(316, 309);
+            this.lbDescription.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDescription.Location = new System.Drawing.Point(294, 307);
             this.lbDescription.Name = "lbDescription";
-            this.lbDescription.Size = new System.Drawing.Size(40, 16);
+            this.lbDescription.Size = new System.Drawing.Size(45, 19);
             this.lbDescription.TabIndex = 7;
             this.lbDescription.Text = "Опис";
             // 
             // tbNameGoods
             // 
-            this.tbNameGoods.Location = new System.Drawing.Point(465, 36);
+            this.tbNameGoods.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbNameGoods.Location = new System.Drawing.Point(427, 34);
             this.tbNameGoods.Name = "tbNameGoods";
-            this.tbNameGoods.Size = new System.Drawing.Size(282, 22);
+            this.tbNameGoods.Size = new System.Drawing.Size(361, 27);
             this.tbNameGoods.TabIndex = 8;
             // 
             // tbManufacturingCountry
             // 
-            this.tbManufacturingCountry.Location = new System.Drawing.Point(465, 144);
+            this.tbManufacturingCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbManufacturingCountry.Location = new System.Drawing.Point(427, 141);
             this.tbManufacturingCountry.Name = "tbManufacturingCountry";
-            this.tbManufacturingCountry.Size = new System.Drawing.Size(282, 22);
+            this.tbManufacturingCountry.Size = new System.Drawing.Size(291, 27);
             this.tbManufacturingCountry.TabIndex = 9;
             // 
             // tbPrice
             // 
-            this.tbPrice.Location = new System.Drawing.Point(465, 198);
+            this.tbPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbPrice.Location = new System.Drawing.Point(427, 195);
             this.tbPrice.Name = "tbPrice";
-            this.tbPrice.Size = new System.Drawing.Size(131, 22);
+            this.tbPrice.Size = new System.Drawing.Size(131, 27);
             this.tbPrice.TabIndex = 10;
             // 
             // cbCategory
             // 
             this.cbCategory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(465, 84);
+            this.cbCategory.Location = new System.Drawing.Point(427, 86);
             this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(282, 24);
+            this.cbCategory.Size = new System.Drawing.Size(361, 28);
             this.cbCategory.TabIndex = 11;
             // 
             // cbWarrantyMonths
             // 
             this.cbWarrantyMonths.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbWarrantyMonths.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbWarrantyMonths.FormattingEnabled = true;
-            this.cbWarrantyMonths.Location = new System.Drawing.Point(465, 252);
+            this.cbWarrantyMonths.Location = new System.Drawing.Point(427, 249);
             this.cbWarrantyMonths.Name = "cbWarrantyMonths";
-            this.cbWarrantyMonths.Size = new System.Drawing.Size(112, 24);
+            this.cbWarrantyMonths.Size = new System.Drawing.Size(112, 28);
             this.cbWarrantyMonths.TabIndex = 12;
             // 
             // rtbDescription
             // 
-            this.rtbDescription.Location = new System.Drawing.Point(385, 309);
+            this.rtbDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rtbDescription.Location = new System.Drawing.Point(363, 307);
             this.rtbDescription.Name = "rtbDescription";
-            this.rtbDescription.Size = new System.Drawing.Size(385, 95);
+            this.rtbDescription.Size = new System.Drawing.Size(425, 100);
             this.rtbDescription.TabIndex = 13;
             this.rtbDescription.Text = "";
             // 
             // btnChooseImage
             // 
             this.btnChooseImage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnChooseImage.Location = new System.Drawing.Point(85, 323);
+            this.btnChooseImage.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChooseImage.Location = new System.Drawing.Point(75, 323);
             this.btnChooseImage.Name = "btnChooseImage";
             this.btnChooseImage.Size = new System.Drawing.Size(125, 43);
             this.btnChooseImage.TabIndex = 14;

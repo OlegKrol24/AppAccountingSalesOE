@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.pbMainMenu = new System.Windows.Forms.PictureBox();
-            this.pbCart = new System.Windows.Forms.PictureBox();
             this.pbLanguageUA = new System.Windows.Forms.PictureBox();
             this.pbLanguageUS = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,8 +45,14 @@
             this.btnReportExcel = new System.Windows.Forms.Button();
             this.btnReportWord = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pbCart = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbMainMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -55,6 +60,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.msMainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -82,23 +89,11 @@
             this.pbMainMenu.TabStop = false;
             this.pbMainMenu.Click += new System.EventHandler(this.pbMainMenu_Click);
             // 
-            // pbCart
-            // 
-            this.pbCart.BackColor = System.Drawing.Color.SteelBlue;
-            this.pbCart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbCart.Image = global::AppAccountingSalesOE.Properties.Resources.Cart;
-            this.pbCart.Location = new System.Drawing.Point(917, 8);
-            this.pbCart.Name = "pbCart";
-            this.pbCart.Size = new System.Drawing.Size(56, 55);
-            this.pbCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbCart.TabIndex = 39;
-            this.pbCart.TabStop = false;
-            // 
             // pbLanguageUA
             // 
             this.pbLanguageUA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbLanguageUA.Image = global::AppAccountingSalesOE.Properties.Resources.Flag_UA;
-            this.pbLanguageUA.Location = new System.Drawing.Point(746, 9);
+            this.pbLanguageUA.Location = new System.Drawing.Point(710, 9);
             this.pbLanguageUA.Name = "pbLanguageUA";
             this.pbLanguageUA.Size = new System.Drawing.Size(91, 53);
             this.pbLanguageUA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -110,7 +105,7 @@
             this.pbLanguageUS.BackColor = System.Drawing.Color.SteelBlue;
             this.pbLanguageUS.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbLanguageUS.Image = global::AppAccountingSalesOE.Properties.Resources.Flag_USA;
-            this.pbLanguageUS.Location = new System.Drawing.Point(606, 9);
+            this.pbLanguageUS.Location = new System.Drawing.Point(580, 9);
             this.pbLanguageUS.Name = "pbLanguageUS";
             this.pbLanguageUS.Size = new System.Drawing.Size(91, 53);
             this.pbLanguageUS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -232,7 +227,7 @@
             // btnReportExcel
             // 
             this.btnReportExcel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportExcel.Location = new System.Drawing.Point(38, 715);
+            this.btnReportExcel.Location = new System.Drawing.Point(38, 713);
             this.btnReportExcel.Name = "btnReportExcel";
             this.btnReportExcel.Size = new System.Drawing.Size(203, 41);
             this.btnReportExcel.TabIndex = 44;
@@ -243,7 +238,7 @@
             // btnReportWord
             // 
             this.btnReportWord.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportWord.Location = new System.Drawing.Point(330, 715);
+            this.btnReportWord.Location = new System.Drawing.Point(330, 713);
             this.btnReportWord.Name = "btnReportWord";
             this.btnReportWord.Size = new System.Drawing.Size(203, 41);
             this.btnReportWord.TabIndex = 45;
@@ -261,12 +256,93 @@
             this.dataGridView2.Size = new System.Drawing.Size(540, 610);
             this.dataGridView2.TabIndex = 46;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(1001, 43);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 19);
+            this.label4.TabIndex = 50;
+            this.label4.Text = "0 грн";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(1002, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 19);
+            this.label2.TabIndex = 49;
+            this.label2.Text = "0 шт";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pbCart
+            // 
+            this.pbCart.Image = global::AppAccountingSalesOE.Properties.Resources.Cart;
+            this.pbCart.Location = new System.Drawing.Point(855, 8);
+            this.pbCart.Name = "pbCart";
+            this.pbCart.Size = new System.Drawing.Size(56, 55);
+            this.pbCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCart.TabIndex = 48;
+            this.pbCart.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Location = new System.Drawing.Point(850, 5);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(298, 63);
+            this.pictureBox7.TabIndex = 47;
+            this.pictureBox7.TabStop = false;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(610, 106);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(140, 20);
+            this.radioButton1.TabIndex = 51;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Звітність товарів";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(793, 106);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(142, 20);
+            this.radioButton2.TabIndex = 52;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Звітність клієнтів";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(979, 106);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(159, 20);
+            this.radioButton3.TabIndex = 53;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Звітність постачань";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
             // formReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1302, 753);
+            this.Controls.Add(this.radioButton3);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pbCart);
+            this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.btnReportWord);
             this.Controls.Add(this.btnReportExcel);
@@ -274,7 +350,6 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbMainMenu);
-            this.Controls.Add(this.pbCart);
             this.Controls.Add(this.pbLanguageUA);
             this.Controls.Add(this.pbLanguageUS);
             this.Controls.Add(this.label5);
@@ -286,7 +361,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formReport_FormClosing);
             this.Load += new System.EventHandler(this.FormReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbMainMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -295,6 +369,8 @@
             this.msMainMenu.ResumeLayout(false);
             this.msMainMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,7 +380,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pbMainMenu;
-        private System.Windows.Forms.PictureBox pbCart;
         private System.Windows.Forms.PictureBox pbLanguageUA;
         private System.Windows.Forms.PictureBox pbLanguageUS;
         private System.Windows.Forms.Label label5;
@@ -320,5 +395,12 @@
         private System.Windows.Forms.Button btnReportExcel;
         private System.Windows.Forms.Button btnReportWord;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pbCart;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton3;
     }
 }

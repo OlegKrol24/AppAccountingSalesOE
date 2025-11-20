@@ -331,9 +331,6 @@
     <None Include="bin\Debug\Photos\Arrow_right.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\Debug\Photos\Searching.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="bin\Debug\Photos\Searching %282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

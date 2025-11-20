@@ -70,10 +70,52 @@ namespace AppAccountingSalesOE
             }
         }
 
+        private ImageList imageList;
+
+        private void SetupListView()
+        {
+            lvGoods.View = View.LargeIcon;
+            lvGoods.LargeImageList = new ImageList();
+            imageList = lvGoods.LargeImageList;
+            imageList.ImageSize = new Size(105, 105);
+        }
+
+        private void LoadGoodsToListViewFiltration(List<Goods> filteredGoods = null)
+        {
+            var goodsToDisplay = filteredGoods ?? goods_list;
+
+            lvGoods.Items.Clear();
+            imageList.Images.Clear();
+
+            int imageIndex = 0;
+
+            foreach (var product in goodsToDisplay.Distinct())
+            {
+                string current_path = Path.Combine(Directory.GetCurrentDirectory(), "Goods", product.Image);
+
+                if (File.Exists(current_path))
+                {
+                    using (Image img = Image.FromFile(current_path))
+                    {
+                        imageList.Images.Add(img);
+                    }
+
+                    ListViewItem item = new ListViewItem(product.Name, imageIndex);
+                    lvGoods.Items.Add(item);
+
+                    imageIndex++;
+                }
+
+                else MessageBox.Show($"Файл не знайдено: {product.Image}");
+            }
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             LoadData();
             ShowGoods(ref goods_list, ref dgvGoods);
+            SetupListView();
+            LoadGoodsToListViewFiltration();
         }
 
         private void formGoods_FormClosing(object sender, FormClosingEventArgs e)
@@ -87,8 +129,40 @@ namespace AppAccountingSalesOE
 
             if (formFilter.ShowDialog() == DialogResult.OK)
             {
+                // Витягуємо значення фільтрів з публічних властивостей formFilter
+                decimal? minPrice = formFilter.MinPrice;
+                decimal? maxPrice = formFilter.MaxPrice;
+                string selectedCountry = formFilter.SelectedCountry;
+                List<string> selectedCategories = formFilter.SelectedCategories;
+                List<int> selectedWarranties = formFilter.SelectedWarranties;
+
+                var filteredGoods = goods_list.AsQueryable();
+
+                if (minPrice.HasValue) filteredGoods = filteredGoods.Where(g => g.Price >= minPrice.Value).OrderBy(g => g.Price);
+
+                if (maxPrice.HasValue) filteredGoods = filteredGoods.Where(g => g.Price <= maxPrice.Value).OrderBy(g => g.Price);
+
+                if (!string.IsNullOrEmpty(selectedCountry)) filteredGoods = filteredGoods.Where(g => g.ManufacturingCountry.Equals(selectedCountry, StringComparison.OrdinalIgnoreCase));
+
+                if (selectedCategories.Count > 0) filteredGoods = filteredGoods.Where(g => selectedCategories.Contains(g.Category));
+
+                if (selectedWarranties.Count > 0) filteredGoods = filteredGoods.Where(g => selectedWarranties.Contains(g.WarrantyMonths));
+
+                List<Goods> temp_goods = filteredGoods.ToList();
+
+                // Оновлюємо таблицю з відфільтрованими даними
+                ShowGoods(ref temp_goods, ref dgvGoods);
+                LoadGoodsToListViewFiltration(temp_goods);
+
                 MessageBox.Show("Фільтр застосовано!", "Інформація", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void pbCart_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formCart formCart = new formCart();
+            formCart.Show();
         }
 
         private void pbMainMenu_Click(object sender, EventArgs e)
@@ -218,6 +292,14 @@ namespace AppAccountingSalesOE
             }
 
             else MessageBox.Show("Виберіть товар для видалення!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            goods_list.Clear();
+            LoadData();
+            ShowGoods(ref goods_list, ref dgvGoods);
+            LoadGoodsToListViewFiltration();
         }
     }
 }

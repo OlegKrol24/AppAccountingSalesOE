@@ -32,7 +32,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pbMainMenu = new System.Windows.Forms.PictureBox();
-            this.pbCart = new System.Windows.Forms.PictureBox();
             this.pbLanguageUA = new System.Windows.Forms.PictureBox();
             this.pbLanguageUS = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -43,14 +42,19 @@
             this.tsmiCustomers = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSupplies = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiReports = new System.Windows.Forms.ToolStripMenuItem();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pbCart = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMainMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.msMainMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -80,7 +84,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(33, 186);
+            this.dataGridView1.Location = new System.Drawing.Point(62, 185);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -100,23 +104,11 @@
             this.pbMainMenu.TabStop = false;
             this.pbMainMenu.Click += new System.EventHandler(this.pbMainMenu_Click);
             // 
-            // pbCart
-            // 
-            this.pbCart.BackColor = System.Drawing.Color.SteelBlue;
-            this.pbCart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbCart.Image = global::AppAccountingSalesOE.Properties.Resources.Cart;
-            this.pbCart.Location = new System.Drawing.Point(917, 8);
-            this.pbCart.Name = "pbCart";
-            this.pbCart.Size = new System.Drawing.Size(56, 55);
-            this.pbCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbCart.TabIndex = 31;
-            this.pbCart.TabStop = false;
-            // 
             // pbLanguageUA
             // 
             this.pbLanguageUA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbLanguageUA.Image = global::AppAccountingSalesOE.Properties.Resources.Flag_UA;
-            this.pbLanguageUA.Location = new System.Drawing.Point(746, 9);
+            this.pbLanguageUA.Location = new System.Drawing.Point(710, 9);
             this.pbLanguageUA.Name = "pbLanguageUA";
             this.pbLanguageUA.Size = new System.Drawing.Size(91, 53);
             this.pbLanguageUA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -128,7 +120,7 @@
             this.pbLanguageUS.BackColor = System.Drawing.Color.SteelBlue;
             this.pbLanguageUS.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbLanguageUS.Image = global::AppAccountingSalesOE.Properties.Resources.Flag_USA;
-            this.pbLanguageUS.Location = new System.Drawing.Point(606, 9);
+            this.pbLanguageUS.Location = new System.Drawing.Point(580, 9);
             this.pbLanguageUS.Name = "pbLanguageUS";
             this.pbLanguageUS.Size = new System.Drawing.Size(91, 53);
             this.pbLanguageUS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -181,7 +173,7 @@
             this.tsmiMainPage.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiMainPage.Margin = new System.Windows.Forms.Padding(0, 10, 5, 0);
             this.tsmiMainPage.Name = "tsmiMainPage";
-            this.tsmiMainPage.Size = new System.Drawing.Size(142, 29);
+            this.tsmiMainPage.Size = new System.Drawing.Size(144, 29);
             this.tsmiMainPage.Text = "Головна";
             this.tsmiMainPage.Click += new System.EventHandler(this.tsmiMainPage_Click);
             // 
@@ -191,7 +183,7 @@
             this.tsmiGoods.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiGoods.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiGoods.Name = "tsmiGoods";
-            this.tsmiGoods.Size = new System.Drawing.Size(142, 29);
+            this.tsmiGoods.Size = new System.Drawing.Size(144, 29);
             this.tsmiGoods.Text = "Товари";
             this.tsmiGoods.Click += new System.EventHandler(this.tsmiGoods_Click);
             // 
@@ -201,7 +193,7 @@
             this.tsmiCustomers.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiCustomers.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiCustomers.Name = "tsmiCustomers";
-            this.tsmiCustomers.Size = new System.Drawing.Size(142, 29);
+            this.tsmiCustomers.Size = new System.Drawing.Size(144, 29);
             this.tsmiCustomers.Text = "Клієнти";
             this.tsmiCustomers.Click += new System.EventHandler(this.tsmiCustomers_Click);
             // 
@@ -211,7 +203,7 @@
             this.tsmiSupplies.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiSupplies.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiSupplies.Name = "tsmiSupplies";
-            this.tsmiSupplies.Size = new System.Drawing.Size(142, 29);
+            this.tsmiSupplies.Size = new System.Drawing.Size(144, 29);
             this.tsmiSupplies.Text = "Поставки";
             this.tsmiSupplies.Click += new System.EventHandler(this.tsmiSupplies_Click);
             // 
@@ -221,9 +213,49 @@
             this.tsmiReports.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiReports.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiReports.Name = "tsmiReports";
-            this.tsmiReports.Size = new System.Drawing.Size(142, 29);
+            this.tsmiReports.Size = new System.Drawing.Size(144, 29);
             this.tsmiReports.Text = "Звіти";
             this.tsmiReports.Click += new System.EventHandler(this.tsmiReports_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(1001, 43);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 19);
+            this.label4.TabIndex = 44;
+            this.label4.Text = "0 грн";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(1002, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 19);
+            this.label2.TabIndex = 43;
+            this.label2.Text = "0 шт";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pbCart
+            // 
+            this.pbCart.Image = global::AppAccountingSalesOE.Properties.Resources.Cart;
+            this.pbCart.Location = new System.Drawing.Point(855, 8);
+            this.pbCart.Name = "pbCart";
+            this.pbCart.Size = new System.Drawing.Size(56, 55);
+            this.pbCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCart.TabIndex = 42;
+            this.pbCart.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Location = new System.Drawing.Point(850, 5);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(298, 63);
+            this.pictureBox7.TabIndex = 41;
+            this.pictureBox7.TabStop = false;
             // 
             // formSales
             // 
@@ -231,11 +263,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1302, 753);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pbCart);
+            this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.msMainMenu);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbMainMenu);
-            this.Controls.Add(this.pbCart);
             this.Controls.Add(this.pbLanguageUA);
             this.Controls.Add(this.pbLanguageUS);
             this.Controls.Add(this.label5);
@@ -247,13 +282,14 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formSales_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMainMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.msMainMenu.ResumeLayout(false);
             this.msMainMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,7 +299,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pbMainMenu;
-        private System.Windows.Forms.PictureBox pbCart;
         private System.Windows.Forms.PictureBox pbLanguageUA;
         private System.Windows.Forms.PictureBox pbLanguageUS;
         private System.Windows.Forms.Label label5;
@@ -276,5 +311,9 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiCustomers;
         private System.Windows.Forms.ToolStripMenuItem tsmiSupplies;
         private System.Windows.Forms.ToolStripMenuItem tsmiReports;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pbCart;
+        private System.Windows.Forms.PictureBox pictureBox7;
     }
 }

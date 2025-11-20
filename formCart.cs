@@ -16,5 +16,10 @@ namespace AppAccountingSalesOE
         {
             InitializeComponent();
         }
+
+        private void pbMainMenu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
