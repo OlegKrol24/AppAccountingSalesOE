@@ -23,7 +23,6 @@ namespace AppAccountingSalesOE
 
             if (currentUser != null)
             {
-                // Обмеження за роллю
                 if (currentUser.Role.Contains("клієнт"))
                 {
                     btnAddGoods.Enabled = false;
@@ -95,10 +94,7 @@ namespace AppAccountingSalesOE
 
                 if (File.Exists(current_path))
                 {
-                    using (Image img = Image.FromFile(current_path))
-                    {
-                        imageList.Images.Add(img);
-                    }
+                    using (Image img = Image.FromFile(current_path)) imageList.Images.Add(img);
 
                     ListViewItem item = new ListViewItem(product.Name, imageIndex);
                     lvGoods.Items.Add(item);
@@ -116,6 +112,7 @@ namespace AppAccountingSalesOE
             ShowGoods(ref goods_list, ref dgvGoods);
             SetupListView();
             LoadGoodsToListViewFiltration();
+            UpdateCartLabels();
         }
 
         private void formGoods_FormClosing(object sender, FormClosingEventArgs e)
@@ -129,7 +126,6 @@ namespace AppAccountingSalesOE
 
             if (formFilter.ShowDialog() == DialogResult.OK)
             {
-                // Витягуємо значення фільтрів з публічних властивостей formFilter
                 decimal? minPrice = formFilter.MinPrice;
                 decimal? maxPrice = formFilter.MaxPrice;
                 string selectedCountry = formFilter.SelectedCountry;
@@ -150,7 +146,6 @@ namespace AppAccountingSalesOE
 
                 List<Goods> temp_goods = filteredGoods.ToList();
 
-                // Оновлюємо таблицю з відфільтрованими даними
                 ShowGoods(ref temp_goods, ref dgvGoods);
                 LoadGoodsToListViewFiltration(temp_goods);
 
@@ -161,7 +156,7 @@ namespace AppAccountingSalesOE
         private void pbCart_Click(object sender, EventArgs e)
         {
             this.Hide();
-            formCart formCart = new formCart();
+            formCart formCart = new formCart(currentUser);
             formCart.Show();
         }
 
@@ -300,6 +295,36 @@ namespace AppAccountingSalesOE
             LoadData();
             ShowGoods(ref goods_list, ref dgvGoods);
             LoadGoodsToListViewFiltration();
+            UpdateCartLabels();
+        }
+
+        private void UpdateCartLabels()
+        {
+            int totalQuantity = Cart.GoodsInCart.Sum(item => item.Quantity);
+            decimal totalPrice = Cart.GoodsInCart.Sum(item => item.Goods.Price * item.Quantity);
+
+            label2.Text = $"{totalQuantity} шт";
+            label4.Text = $"{totalPrice:F2} грн";
+        }
+
+        private void lvGoods_DoubleClick(object sender, EventArgs e)
+        {
+            if (lvGoods.SelectedItems.Count > 0)
+            {
+                var selectedItem = lvGoods.SelectedItems[0];
+                var selectedGoods = goods_list.FirstOrDefault(g => g.Name == selectedItem.Text);
+
+                if (selectedGoods != null)
+                {
+                    Cart.AddToCart(selectedGoods);
+
+                    MessageBox.Show($"{selectedGoods.Name} додано до кошика!", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                    UpdateCartLabels();
+                }
+
+                else MessageBox.Show("Товар не знайдено!");
+            }
         }
     }
 }

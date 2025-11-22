@@ -6,28 +6,29 @@ using System.Threading.Tasks;
 
 namespace AppAccountingSalesOE
 {
-    public class Cart
+    public static class Cart
     {
-        public List<Goods> GoodsInCart { get; set; }
+        public static List<CartItem> GoodsInCart { get; } = new List<CartItem>();
 
-        public Cart()
+        public static void AddToCart(Goods item)
         {
-            GoodsInCart = new List<Goods>();
+            var existing = GoodsInCart.FirstOrDefault(i => i.Goods.ID == item.ID);
+
+            if (existing != null) existing.Quantity++;
+
+            else GoodsInCart.Add(new CartItem { Goods = item });
         }
 
-        public decimal GetTotalPrice()
+        public static void RemoveFromCart(Goods item)
         {
-            return GoodsInCart.Sum(g => g.Price);
-        }
+            var existing = GoodsInCart.FirstOrDefault(i => i.Goods.ID == item.ID);
 
-        public void AddToCart(Goods item)
-        {
-            GoodsInCart.Add(item);
-        }
+            if (existing != null)
+            {
+                existing.Quantity--;
 
-        public void RemoveFromCart(Goods item)
-        {
-            GoodsInCart.Remove(item);
+                if (existing.Quantity <= 0) GoodsInCart.Remove(existing);
+            }
         }
     }
 }

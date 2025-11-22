@@ -98,6 +98,7 @@
             // 
             // name_goods
             // 
+            this.name_goods.Frozen = true;
             this.name_goods.HeaderText = "Назва товару";
             this.name_goods.MinimumWidth = 6;
             this.name_goods.Name = "name_goods";
@@ -202,6 +203,7 @@
             this.lvGoods.Size = new System.Drawing.Size(652, 576);
             this.lvGoods.TabIndex = 30;
             this.lvGoods.UseCompatibleStateImageBehavior = false;
+            this.lvGoods.DoubleClick += new System.EventHandler(this.lvGoods_DoubleClick);
             // 
             // btnFilterGoods
             // 
@@ -401,6 +403,7 @@
             // 
             // pbCart
             // 
+            this.pbCart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbCart.Image = global::AppAccountingSalesOE.Properties.Resources.Cart;
             this.pbCart.Location = new System.Drawing.Point(1000, 8);
             this.pbCart.Name = "pbCart";
@@ -447,7 +450,7 @@
             this.Controls.Add(this.dgvGoods);
             this.Name = "formGoods";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Сторінка з товарами";
+            this.Text = "Товари";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formGoods_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGoods)).EndInit();
@@ -486,10 +489,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiSupplies;
         private System.Windows.Forms.ToolStripMenuItem tsmiReports;
         private System.Windows.Forms.ToolStripMenuItem tsmiMainPage;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name_goods;
-        private System.Windows.Forms.DataGridViewTextBoxColumn category;
-        private System.Windows.Forms.DataGridViewTextBoxColumn manufacturing_country;
-        private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox tbSearching;
@@ -497,6 +496,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pbCart;
         private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name_goods;
+        private System.Windows.Forms.DataGridViewTextBoxColumn category;
+        private System.Windows.Forms.DataGridViewTextBoxColumn manufacturing_country;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
     }
 }
 

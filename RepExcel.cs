@@ -17,9 +17,9 @@ namespace AppAccountingSalesOE
         public Excel.Application excelapp;
         Excel.Workbooks excelappworkbooks;
         Excel.Workbook excelappworkbook;
-        private Excel.Sheets excelsheets; // колекція листів в екселі
+        private Excel.Sheets excelsheets;
         private Excel.Worksheet excelworksheet;
-        private Excel.Range excelcells; // діапазон ячеєк
+        private Excel.Range excelcells;
 
         private static readonly LoggerService loggerService = new LoggerService();
 
@@ -66,7 +66,7 @@ namespace AppAccountingSalesOE
                 excelapp.Workbooks.Add(Type.Missing);
                 excelapp.DisplayAlerts = false;
                 excelappworkbooks = excelapp.Workbooks;
-                excelappworkbook = excelappworkbooks[1]; // Нумерація від 1
+                excelappworkbook = excelappworkbooks[1];
                 excelsheets = excelappworkbook.Worksheets;
                 excelworksheet = (Excel.Worksheet)excelsheets.get_Item(1);
                 excelworksheet.UsedRange.Columns.AutoFit();
@@ -237,7 +237,7 @@ namespace AppAccountingSalesOE
             catch (Exception ex)
             {
                 loggerService.Error(ex, "GetValue page - " + pageName + " address - " + address);
-                return string.Empty; // Повертаємо порожній рядок у разі помилки
+                return string.Empty;
             }
         }
 
@@ -293,7 +293,7 @@ namespace AppAccountingSalesOE
 
                 excelsheets = excelappworkbook.Worksheets;
                 excelworksheet = (Excel.Worksheet)excelsheets[pageName];
-                excelworksheet.UsedRange.Columns.AutoFit(); // Один рядок для всіх колонок
+                excelworksheet.UsedRange.Columns.AutoFit();
                 loggerService.Info("AutoFitColumns on page " + pageName + " OK");
             }
             catch (Exception ex)

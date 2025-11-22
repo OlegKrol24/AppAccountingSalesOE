@@ -241,6 +241,7 @@
             // 
             // pbCart
             // 
+            this.pbCart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbCart.Image = global::AppAccountingSalesOE.Properties.Resources.Cart;
             this.pbCart.Location = new System.Drawing.Point(855, 8);
             this.pbCart.Name = "pbCart";
@@ -278,7 +279,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "formSales";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Сторінка з продажами";
+            this.Text = "Продажі";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formSales_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMainMenu)).EndInit();

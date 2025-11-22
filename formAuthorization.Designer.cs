@@ -127,7 +127,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "formAuthorization";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Сторінка авторизації";
+            this.Text = "Авторизація";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formAuthorization_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pbEye)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

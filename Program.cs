@@ -16,7 +16,7 @@ namespace AppAccountingSalesOE
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formMainPage(null));
+            Application.Run(new formAuthorization());
         }
     }
 }

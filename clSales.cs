@@ -50,8 +50,8 @@ namespace AppAccountingSalesOE
                 {
                     try { iD = Convert.ToInt32(values[0]); } catch (Exception ex) { iD = -1; }
                     try { sale_date = Convert.ToDateTime(values[1]); } catch (Exception ex) { sale_date = DateTime.Today; }
-                    try { iD_customer = Convert.ToInt32(values[0]); } catch (Exception ex) { iD_customer = -1; }
-                    try { iD_employee = Convert.ToInt32(values[0]); } catch (Exception ex) { iD_employee = -1; }
+                    try { iD_customer = Convert.ToInt32(values[2]); } catch (Exception ex) { iD_customer = -1; }
+                    try { iD_employee = Convert.ToInt32(values[3]); } catch (Exception ex) { iD_employee = -1; }
                     try { total_amount = Convert.ToDecimal(values[4]); } catch (Exception ex) { total_amount = 0; }
                 }
             }

@@ -95,7 +95,7 @@ namespace AppAccountingSalesOE
         private void pbCart_Click(object sender, EventArgs e)
         {
             this.Hide();
-            formCart formCart = new formCart();
+            formCart formCart = new formCart(currentUser);
             formCart.Show();
         }
 

@@ -78,6 +78,29 @@ namespace AppAccountingSalesOE
 
             }
         }
+
+        public object ExecuteScalar(string setupProgram, string sSql)
+        {
+            object result = null;
+            try
+            {
+                using (SqliteConnection con = new SqliteConnection(string.Format("Data Source={0};", setupProgram)))
+                {
+                    con.Open();
+                    using (SqliteCommand sqlCommand = con.CreateCommand())
+                    {
+                        sqlCommand.CommandText = sSql;
+                        result = sqlCommand.ExecuteScalar();
+                    }
+                    con.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                
+            }
+            return result;
+        }
         #endregion
     }
 }

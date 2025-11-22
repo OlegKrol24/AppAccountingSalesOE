@@ -280,6 +280,7 @@
             // 
             // pbCart
             // 
+            this.pbCart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbCart.Image = global::AppAccountingSalesOE.Properties.Resources.Cart;
             this.pbCart.Location = new System.Drawing.Point(855, 8);
             this.pbCart.Name = "pbCart";
