@@ -153,11 +153,23 @@
     <Compile Include="FormReport.Designer.cs">
       <DependentUpon>FormReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="formSuppliers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formSuppliers.Designer.cs">
+      <DependentUpon>formSuppliers.cs</DependentUpon>
+    </Compile>
     <Compile Include="formWorkingWithCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formWorkingWithCustomers.Designer.cs">
       <DependentUpon>formWorkingWithCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formWorkingWithDeliveries.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formWorkingWithDeliveries.Designer.cs">
+      <DependentUpon>formWorkingWithDeliveries.cs</DependentUpon>
     </Compile>
     <Compile Include="formWorkingWithGoods.cs">
       <SubType>Form</SubType>
@@ -216,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formWorkingWithCustomers.resx">
       <DependentUpon>formWorkingWithCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formWorkingWithDeliveries.resx">
+      <DependentUpon>formWorkingWithDeliveries.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formWorkingWithGoods.resx">
       <DependentUpon>formWorkingWithGoods.cs</DependentUpon>

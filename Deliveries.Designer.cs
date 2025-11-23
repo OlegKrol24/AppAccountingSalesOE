@@ -35,11 +35,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dgvDeliveries = new System.Windows.Forms.DataGridView();
-            this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Company_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delivery_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSupplies = new System.Windows.Forms.DataGridView();
             this.msMainMenu = new System.Windows.Forms.MenuStrip();
             this.tsmiMainPage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiGoods = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,12 +46,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pbCart = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.btnDeleteSupplies = new System.Windows.Forms.Button();
+            this.btnEditSupplies = new System.Windows.Forms.Button();
+            this.btnAddSupplies = new System.Windows.Forms.Button();
+            this.btnSuppliers = new System.Windows.Forms.Button();
+            this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Company_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delivery_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbMainMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDeliveries)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSupplies)).BeginInit();
             this.msMainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -141,52 +145,20 @@
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
             // 
-            // dgvDeliveries
+            // dgvSupplies
             // 
-            this.dgvDeliveries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDeliveries.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvSupplies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSupplies.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Supplier,
             this.Company_name,
             this.Delivery_date,
             this.Total_cost});
-            this.dgvDeliveries.Location = new System.Drawing.Point(81, 160);
-            this.dgvDeliveries.Name = "dgvDeliveries";
-            this.dgvDeliveries.RowHeadersWidth = 51;
-            this.dgvDeliveries.RowTemplate.Height = 24;
-            this.dgvDeliveries.Size = new System.Drawing.Size(784, 479);
-            this.dgvDeliveries.TabIndex = 34;
-            // 
-            // Supplier
-            // 
-            this.Supplier.HeaderText = "Постачальник";
-            this.Supplier.MinimumWidth = 6;
-            this.Supplier.Name = "Supplier";
-            this.Supplier.ReadOnly = true;
-            this.Supplier.Width = 125;
-            // 
-            // Company_name
-            // 
-            this.Company_name.HeaderText = "Назва компанії";
-            this.Company_name.MinimumWidth = 6;
-            this.Company_name.Name = "Company_name";
-            this.Company_name.ReadOnly = true;
-            this.Company_name.Width = 125;
-            // 
-            // Delivery_date
-            // 
-            this.Delivery_date.HeaderText = "Дата постачання";
-            this.Delivery_date.MinimumWidth = 6;
-            this.Delivery_date.Name = "Delivery_date";
-            this.Delivery_date.ReadOnly = true;
-            this.Delivery_date.Width = 125;
-            // 
-            // Total_cost
-            // 
-            this.Total_cost.HeaderText = "Загальна вартість";
-            this.Total_cost.MinimumWidth = 6;
-            this.Total_cost.Name = "Total_cost";
-            this.Total_cost.ReadOnly = true;
-            this.Total_cost.Width = 125;
+            this.dgvSupplies.Location = new System.Drawing.Point(161, 167);
+            this.dgvSupplies.Name = "dgvSupplies";
+            this.dgvSupplies.RowHeadersWidth = 51;
+            this.dgvSupplies.RowTemplate.Height = 24;
+            this.dgvSupplies.Size = new System.Drawing.Size(987, 479);
+            this.dgvSupplies.TabIndex = 34;
             // 
             // msMainMenu
             // 
@@ -299,18 +271,110 @@
             this.pictureBox7.TabIndex = 36;
             this.pictureBox7.TabStop = false;
             // 
+            // btnDeleteSupplies
+            // 
+            this.btnDeleteSupplies.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnDeleteSupplies.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteSupplies.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnDeleteSupplies.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnDeleteSupplies.Location = new System.Drawing.Point(725, 100);
+            this.btnDeleteSupplies.Name = "btnDeleteSupplies";
+            this.btnDeleteSupplies.Size = new System.Drawing.Size(130, 43);
+            this.btnDeleteSupplies.TabIndex = 42;
+            this.btnDeleteSupplies.Text = "Видалити";
+            this.btnDeleteSupplies.UseVisualStyleBackColor = false;
+            this.btnDeleteSupplies.Click += new System.EventHandler(this.btnDeleteSupplies_Click);
+            // 
+            // btnEditSupplies
+            // 
+            this.btnEditSupplies.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnEditSupplies.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditSupplies.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnEditSupplies.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnEditSupplies.Location = new System.Drawing.Point(565, 100);
+            this.btnEditSupplies.Name = "btnEditSupplies";
+            this.btnEditSupplies.Size = new System.Drawing.Size(130, 43);
+            this.btnEditSupplies.TabIndex = 41;
+            this.btnEditSupplies.Text = "Редагувати";
+            this.btnEditSupplies.UseVisualStyleBackColor = false;
+            this.btnEditSupplies.Click += new System.EventHandler(this.btnEditSupplies_Click);
+            // 
+            // btnAddSupplies
+            // 
+            this.btnAddSupplies.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnAddSupplies.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddSupplies.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAddSupplies.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnAddSupplies.Location = new System.Drawing.Point(405, 100);
+            this.btnAddSupplies.Name = "btnAddSupplies";
+            this.btnAddSupplies.Size = new System.Drawing.Size(130, 43);
+            this.btnAddSupplies.TabIndex = 40;
+            this.btnAddSupplies.Text = "Додати";
+            this.btnAddSupplies.UseVisualStyleBackColor = false;
+            this.btnAddSupplies.Click += new System.EventHandler(this.btnAddSupplies_Click);
+            // 
+            // btnSuppliers
+            // 
+            this.btnSuppliers.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnSuppliers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSuppliers.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnSuppliers.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnSuppliers.Location = new System.Drawing.Point(172, 100);
+            this.btnSuppliers.Name = "btnSuppliers";
+            this.btnSuppliers.Size = new System.Drawing.Size(176, 43);
+            this.btnSuppliers.TabIndex = 43;
+            this.btnSuppliers.Text = "Постачальники";
+            this.btnSuppliers.UseVisualStyleBackColor = false;
+            this.btnSuppliers.Click += new System.EventHandler(this.btnSuppliers_Click);
+            // 
+            // Supplier
+            // 
+            this.Supplier.HeaderText = "Постачальник";
+            this.Supplier.MinimumWidth = 6;
+            this.Supplier.Name = "Supplier";
+            this.Supplier.ReadOnly = true;
+            this.Supplier.Width = 150;
+            // 
+            // Company_name
+            // 
+            this.Company_name.HeaderText = "Назва компанії";
+            this.Company_name.MinimumWidth = 6;
+            this.Company_name.Name = "Company_name";
+            this.Company_name.ReadOnly = true;
+            this.Company_name.Width = 170;
+            // 
+            // Delivery_date
+            // 
+            this.Delivery_date.HeaderText = "Дата постачання";
+            this.Delivery_date.MinimumWidth = 6;
+            this.Delivery_date.Name = "Delivery_date";
+            this.Delivery_date.ReadOnly = true;
+            this.Delivery_date.Width = 125;
+            // 
+            // Total_cost
+            // 
+            this.Total_cost.HeaderText = "Загальна вартість";
+            this.Total_cost.MinimumWidth = 6;
+            this.Total_cost.Name = "Total_cost";
+            this.Total_cost.ReadOnly = true;
+            this.Total_cost.Width = 125;
+            // 
             // formDeliveries
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1302, 753);
+            this.Controls.Add(this.btnSuppliers);
+            this.Controls.Add(this.btnDeleteSupplies);
+            this.Controls.Add(this.btnEditSupplies);
+            this.Controls.Add(this.btnAddSupplies);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pbCart);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.msMainMenu);
-            this.Controls.Add(this.dgvDeliveries);
+            this.Controls.Add(this.dgvSupplies);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbMainMenu);
             this.Controls.Add(this.pbLanguageUA);
@@ -328,7 +392,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDeliveries)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSupplies)).EndInit();
             this.msMainMenu.ResumeLayout(false);
             this.msMainMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCart)).EndInit();
@@ -347,20 +411,24 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dgvDeliveries;
+        private System.Windows.Forms.DataGridView dgvSupplies;
         private System.Windows.Forms.MenuStrip msMainMenu;
         private System.Windows.Forms.ToolStripMenuItem tsmiMainPage;
         private System.Windows.Forms.ToolStripMenuItem tsmiCustomers;
         private System.Windows.Forms.ToolStripMenuItem tsmiSales;
         private System.Windows.Forms.ToolStripMenuItem tsmiGoods;
         private System.Windows.Forms.ToolStripMenuItem tsmiReports;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Supplier;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Company_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total_cost;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pbCart;
         private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Button btnDeleteSupplies;
+        private System.Windows.Forms.Button btnEditSupplies;
+        private System.Windows.Forms.Button btnAddSupplies;
+        private System.Windows.Forms.Button btnSuppliers;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Supplier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Company_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total_cost;
     }
 }

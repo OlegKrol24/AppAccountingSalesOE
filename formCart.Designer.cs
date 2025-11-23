@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvCart = new System.Windows.Forms.DataGridView();
@@ -91,14 +91,14 @@
             // 
             // dgvCart
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Goods,
@@ -109,14 +109,14 @@
             this.dgvCart.Location = new System.Drawing.Point(159, 121);
             this.dgvCart.Name = "dgvCart";
             this.dgvCart.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCart.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCart.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCart.RowHeadersWidth = 51;
             this.dgvCart.RowTemplate.Height = 24;
             this.dgvCart.Size = new System.Drawing.Size(1039, 525);
@@ -150,7 +150,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(270, 666);
+            this.label3.Location = new System.Drawing.Point(162, 672);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(187, 26);
             this.label3.TabIndex = 39;
@@ -160,7 +160,7 @@
             // 
             this.lbTotalAmount.AutoSize = true;
             this.lbTotalAmount.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbTotalAmount.Location = new System.Drawing.Point(270, 709);
+            this.lbTotalAmount.Location = new System.Drawing.Point(162, 715);
             this.lbTotalAmount.Name = "lbTotalAmount";
             this.lbTotalAmount.Size = new System.Drawing.Size(168, 25);
             this.lbTotalAmount.TabIndex = 40;
@@ -172,9 +172,9 @@
             this.btnContinueShopping.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnContinueShopping.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContinueShopping.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnContinueShopping.Location = new System.Drawing.Point(715, 690);
+            this.btnContinueShopping.Location = new System.Drawing.Point(710, 691);
             this.btnContinueShopping.Name = "btnContinueShopping";
-            this.btnContinueShopping.Size = new System.Drawing.Size(252, 52);
+            this.btnContinueShopping.Size = new System.Drawing.Size(292, 52);
             this.btnContinueShopping.TabIndex = 41;
             this.btnContinueShopping.Text = "Продовжити покупки";
             this.btnContinueShopping.UseVisualStyleBackColor = false;
@@ -186,7 +186,7 @@
             this.btnBuy.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuy.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuy.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnBuy.Location = new System.Drawing.Point(988, 690);
+            this.btnBuy.Location = new System.Drawing.Point(1038, 689);
             this.btnBuy.Name = "btnBuy";
             this.btnBuy.Size = new System.Drawing.Size(160, 52);
             this.btnBuy.TabIndex = 42;
@@ -198,7 +198,7 @@
             // 
             this.pbAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbAdd.Image = global::AppAccountingSalesOE.Properties.Resources.Add;
-            this.pbAdd.Location = new System.Drawing.Point(610, 683);
+            this.pbAdd.Location = new System.Drawing.Point(553, 683);
             this.pbAdd.Name = "pbAdd";
             this.pbAdd.Size = new System.Drawing.Size(60, 60);
             this.pbAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -210,7 +210,7 @@
             // 
             this.pbDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbDelete.Image = global::AppAccountingSalesOE.Properties.Resources.Minus;
-            this.pbDelete.Location = new System.Drawing.Point(510, 683);
+            this.pbDelete.Location = new System.Drawing.Point(453, 683);
             this.pbDelete.Name = "pbDelete";
             this.pbDelete.Size = new System.Drawing.Size(60, 60);
             this.pbDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -331,7 +331,7 @@
             this.Deletion.Name = "Deletion";
             this.Deletion.ReadOnly = true;
             this.Deletion.Text = "Видалити";
-            this.Deletion.Width = 125;
+            this.Deletion.Width = 135;
             // 
             // formCart
             // 
