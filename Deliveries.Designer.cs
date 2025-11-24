@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.pbMainMenu = new System.Windows.Forms.PictureBox();
             this.pbLanguageUA = new System.Windows.Forms.PictureBox();
@@ -147,17 +149,35 @@
             // 
             // dgvSupplies
             // 
+            this.dgvSupplies.BackgroundColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSupplies.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSupplies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSupplies.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Supplier,
             this.Company_name,
             this.Delivery_date,
             this.Total_cost});
-            this.dgvSupplies.Location = new System.Drawing.Point(161, 167);
+            this.dgvSupplies.Location = new System.Drawing.Point(20, 167);
             this.dgvSupplies.Name = "dgvSupplies";
+            this.dgvSupplies.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSupplies.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvSupplies.RowHeadersWidth = 51;
             this.dgvSupplies.RowTemplate.Height = 24;
-            this.dgvSupplies.Size = new System.Drawing.Size(987, 479);
+            this.dgvSupplies.Size = new System.Drawing.Size(987, 546);
             this.dgvSupplies.TabIndex = 34;
             // 
             // msMainMenu
@@ -277,7 +297,7 @@
             this.btnDeleteSupplies.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeleteSupplies.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnDeleteSupplies.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnDeleteSupplies.Location = new System.Drawing.Point(725, 100);
+            this.btnDeleteSupplies.Location = new System.Drawing.Point(582, 100);
             this.btnDeleteSupplies.Name = "btnDeleteSupplies";
             this.btnDeleteSupplies.Size = new System.Drawing.Size(130, 43);
             this.btnDeleteSupplies.TabIndex = 42;
@@ -291,7 +311,7 @@
             this.btnEditSupplies.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditSupplies.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnEditSupplies.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnEditSupplies.Location = new System.Drawing.Point(565, 100);
+            this.btnEditSupplies.Location = new System.Drawing.Point(422, 100);
             this.btnEditSupplies.Name = "btnEditSupplies";
             this.btnEditSupplies.Size = new System.Drawing.Size(130, 43);
             this.btnEditSupplies.TabIndex = 41;
@@ -305,7 +325,7 @@
             this.btnAddSupplies.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddSupplies.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAddSupplies.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnAddSupplies.Location = new System.Drawing.Point(405, 100);
+            this.btnAddSupplies.Location = new System.Drawing.Point(262, 100);
             this.btnAddSupplies.Name = "btnAddSupplies";
             this.btnAddSupplies.Size = new System.Drawing.Size(130, 43);
             this.btnAddSupplies.TabIndex = 40;
@@ -319,7 +339,7 @@
             this.btnSuppliers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSuppliers.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSuppliers.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnSuppliers.Location = new System.Drawing.Point(172, 100);
+            this.btnSuppliers.Location = new System.Drawing.Point(29, 100);
             this.btnSuppliers.Name = "btnSuppliers";
             this.btnSuppliers.Size = new System.Drawing.Size(176, 43);
             this.btnSuppliers.TabIndex = 43;
@@ -333,7 +353,7 @@
             this.Supplier.MinimumWidth = 6;
             this.Supplier.Name = "Supplier";
             this.Supplier.ReadOnly = true;
-            this.Supplier.Width = 150;
+            this.Supplier.Width = 170;
             // 
             // Company_name
             // 
@@ -341,7 +361,7 @@
             this.Company_name.MinimumWidth = 6;
             this.Company_name.Name = "Company_name";
             this.Company_name.ReadOnly = true;
-            this.Company_name.Width = 170;
+            this.Company_name.Width = 190;
             // 
             // Delivery_date
             // 
@@ -349,7 +369,7 @@
             this.Delivery_date.MinimumWidth = 6;
             this.Delivery_date.Name = "Delivery_date";
             this.Delivery_date.ReadOnly = true;
-            this.Delivery_date.Width = 125;
+            this.Delivery_date.Width = 130;
             // 
             // Total_cost
             // 
@@ -357,7 +377,7 @@
             this.Total_cost.MinimumWidth = 6;
             this.Total_cost.Name = "Total_cost";
             this.Total_cost.ReadOnly = true;
-            this.Total_cost.Width = 125;
+            this.Total_cost.Width = 135;
             // 
             // formDeliveries
             // 

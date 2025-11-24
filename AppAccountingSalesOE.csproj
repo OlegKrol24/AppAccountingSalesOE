@@ -177,6 +177,12 @@
     <Compile Include="formWorkingWithGoods.Designer.cs">
       <DependentUpon>formWorkingWithGoods.cs</DependentUpon>
     </Compile>
+    <Compile Include="formWorkingWithSuppliers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formWorkingWithSuppliers.Designer.cs">
+      <DependentUpon>formWorkingWithSuppliers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Goods.cs" />
     <Compile Include="LoggerService.cs" />
     <Compile Include="MainPage.cs">
@@ -226,6 +232,9 @@
     <EmbeddedResource Include="FormReport.resx">
       <DependentUpon>FormReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formSuppliers.resx">
+      <DependentUpon>formSuppliers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formWorkingWithCustomers.resx">
       <DependentUpon>formWorkingWithCustomers.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formWorkingWithGoods.resx">
       <DependentUpon>formWorkingWithGoods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formWorkingWithSuppliers.resx">
+      <DependentUpon>formWorkingWithSuppliers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>

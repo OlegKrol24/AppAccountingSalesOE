@@ -139,6 +139,7 @@ namespace AppAccountingSalesOE
             if (stockItem != null && stockItem.Quantity > selectedCartItem.Quantity)
             {
                 selectedCartItem.Quantity++;
+
                 LoadCartItems();
                 UpdateCartLabels();
             }

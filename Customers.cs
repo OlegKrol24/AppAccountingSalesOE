@@ -189,6 +189,26 @@ namespace AppAccountingSalesOE
             else MessageBox.Show("Виберіть клієнта для видалення!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
+        private void pbSearch_Click(object sender, EventArgs e)
+        {
+            string searchText = tbSearching.Text.Trim().ToLower();
 
+            if (string.IsNullOrEmpty(searchText))
+            {
+                ShowCustomers(ref customers_list, ref dgvCustomers);
+                return;
+            }
+
+            var filtered = customers_list
+                .Where(c =>
+                    (c.Full_name?.ToLower().Contains(searchText) ?? false) ||
+                    (c.Phone_number?.ToLower().Contains(searchText) ?? false) ||
+                    (c.Email?.ToLower().Contains(searchText) ?? false) ||
+                    (c.Address?.ToLower().Contains(searchText) ?? false)
+                )
+                .ToList();
+
+            ShowCustomers(ref filtered, ref dgvCustomers);
+        }
     }
 }

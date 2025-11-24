@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -12,40 +12,40 @@ using System.Windows.Forms;
 
 namespace AppAccountingSalesOE
 {
-    public partial class formWorkingWithCustomers : Form
+    public partial class formWorkingWithSuppliers : Form
     {
-        private string mode;
-        private int customerId;
 
-        public formWorkingWithCustomers(string mode, int id)
+        private string mode;
+        private int supplierId;
+        public formWorkingWithSuppliers(string mode, int id)
         {
             InitializeComponent();
 
             this.mode = mode;
-            this.customerId = id;
-            this.Text = mode == "add" ? "Додавання клієнта" : "Редагування клієнта";
+            this.supplierId = id;
+            this.Text = mode == "add" ? "Додавання постачальника" : "Редагування постачальника";
         }
 
         ClassDataBase db = new ClassDataBase();
         string file_db = "Сourse_ASOE";
 
-        public List<clCustomers> customers_list = new List<clCustomers>();
+        List<Suppliers> suppliers_list = new List<Suppliers>();
 
         void LoadData()
         {
-            try { db.Execute<clCustomers>(file_db, "select c.id_customer, c.full_name, c.phone_number, c.email, c.address from customers c", ref customers_list); }
+            try { db.Execute<Suppliers>(file_db, "select id_supplier, full_name, company_name, phone_number, email from suppliers", ref suppliers_list); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-        private void formWorkingWithCustomers_Load(object sender, EventArgs e)
+        private void formWorkingWithSuppliers_Load(object sender, EventArgs e)
         {
             LoadData();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(tbFullNameCustomers.Text) || string.IsNullOrWhiteSpace(tbPhoneNumber.Text) ||
-                string.IsNullOrWhiteSpace(tbEmail.Text) || string.IsNullOrWhiteSpace(tbAddress.Text))
+            if (string.IsNullOrWhiteSpace(tbFullNameSupplier.Text) || string.IsNullOrWhiteSpace(tbCompanyName.Text) ||
+                string.IsNullOrWhiteSpace(tbPhoneNumber.Text) || string.IsNullOrWhiteSpace(tbEmail.Text))
             {
                 MessageBox.Show("Заповніть всі обов'язкові поля!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -76,17 +76,17 @@ namespace AppAccountingSalesOE
 
                 if (mode == "add")
                 {
-                    query = $"insert into customers (full_name, phone_number, email, address) " +
-                    $"values ('{tbFullNameCustomers.Text.Replace("'", "''")}', '{tbPhoneNumber.Text.Replace("'", "''")}', " +
-                    $"'{tbEmail.Text.Replace("'", "''")}', '{tbAddress.Text.Replace("'", "'")}')";
+                    query = $"insert into suppliers (full_name, company_name, phone_number, email) " +
+                    $"values ('{tbFullNameSupplier.Text.Replace("'", "''")}', '{tbCompanyName.Text.Replace("'", "''")}', " +
+                    $"'{tbPhoneNumber.Text.Replace("'", "''")}', '{tbEmail.Text.Replace("'", "'")}')";
                 }
 
                 else
                 {
-                    query = $"update customers set full_name = '{tbFullNameCustomers.Text.Replace("'", "''")}', " +
-                    $"phone_number = '{tbPhoneNumber.Text.Replace("'", "''")}', " + 
-                    $"email = '{tbEmail.Text.Replace("'", "''")}', address = '{tbAddress.Text.Replace("'", "''")}' " +
-                    $"where id_customer = {customerId}";
+                    query = $"update suppliers set full_name = '{tbFullNameSupplier.Text.Replace("'", "''")}', " +
+                    $"company_name = '{tbCompanyName.Text.Replace("'", "''")}', " +
+                    $"phone_number = '{tbPhoneNumber.Text.Replace("'", "''")}', email = '{tbEmail.Text.Replace("'", "''")}' " +
+                    $"where id_supplier = {supplierId}";
                 }
 
                 db.ExecuteNonQuery(file_db, query);

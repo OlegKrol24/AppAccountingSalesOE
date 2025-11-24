@@ -326,5 +326,24 @@ namespace AppAccountingSalesOE
                 else MessageBox.Show("Товар не знайдено!");
             }
         }
+
+        private void pbSearch_Click(object sender, EventArgs e)
+        {
+            string searchText = tbSearching.Text.Trim().ToLower();
+
+            if (string.IsNullOrEmpty(searchText))
+            {
+                ShowGoods(ref goods_list, ref dgvGoods);
+                LoadGoodsToListViewFiltration(goods_list);
+                return;
+            }
+
+            var filtered = goods_list.Where(g => (g.Name?.ToLower().Contains(searchText) ?? false) ||
+                                           (g.ManufacturingCountry?.ToLower().Contains(searchText) ?? false) ||
+                                           (g.Category?.ToLower().Contains(searchText) ?? false)).ToList();
+
+            ShowGoods(ref filtered, ref dgvGoods);
+            LoadGoodsToListViewFiltration(filtered);
+        }
     }
 }

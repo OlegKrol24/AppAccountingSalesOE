@@ -21,13 +21,45 @@ namespace AppAccountingSalesOE
 
             if (currentUser != null)
             {
-                // Обмеження за роллю
                 if (currentUser.Role.Contains("менеджер"))
                 {
                     //btnEditSale.Enabled = false;
                     //btnDeleteSale.Enabled = false;
 
                     tsmiSupplies.Enabled = false;
+                }
+            }
+        }
+
+        ClassDataBase db = new ClassDataBase();
+        string file_db = "Сourse_ASOE";
+
+        List<clSales> sales_list = new List<clSales>();
+        List<Employees> employees = new List<Employees>();
+        List<clCustomers> customers = new List<clCustomers>();
+
+        void LoadData()
+        {
+            try { db.Execute<clSales>(file_db, "select id_sale, sale_date, id_customer, id_employee, total_amount from sales", ref sales_list); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            try { db.Execute<Employees>(file_db, "select e.id_employee, e.full_name, e.\"position\", e.phone_number, e.email, e.address, e.sex from employees e", ref employees); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            try { db.Execute<clCustomers>(file_db, "select c.id_customer, c.full_name, c.phone_number, c.email, c.address from customers c", ref customers); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        void ShowSales(ref DataGridView data)
+        {
+            data.Rows.Clear();
+
+            foreach (clSales sal in sales_list)
+            {
+                clCustomers customer = customers.FirstOrDefault(cust => cust.ID == sal.ID_Customer);
+                Employees employee = employees.FirstOrDefault(emp => emp.ID == sal.ID_Employee);
+
+                if (customer != null && employee != null)
+                {
+                    data.Rows.Add(sal.SaleDate.ToString("dd.MM.yyyy"), customer.Full_name, employee.Full_name, sal.TotalAmount.ToString("N2"));
                 }
             }
         }
@@ -76,6 +108,12 @@ namespace AppAccountingSalesOE
             this.Hide();
             formReport formReport = new formReport(currentUser);
             formReport.Show();
+        }
+
+        private void formSales_Load(object sender, EventArgs e)
+        {
+            LoadData();
+            ShowSales(ref dgvSales);
         }
     }
 }
