@@ -63,7 +63,7 @@
             // 
             this.btnLogIn.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnLogIn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnLogIn.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogIn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnLogIn.Location = new System.Drawing.Point(281, 668);
             this.btnLogIn.Name = "btnLogIn";
@@ -105,7 +105,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::AppAccountingSalesOE.Properties.Resources.Authorization;
-            this.pictureBox1.Location = new System.Drawing.Point(172, 26);
+            this.pictureBox1.Location = new System.Drawing.Point(174, 26);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(384, 405);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbManufacturingCountry = new System.Windows.Forms.Label();
             this.lbCategory = new System.Windows.Forms.Label();
             this.lbNameGoods = new System.Windows.Forms.Label();
@@ -43,6 +45,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tbQuantity = new System.Windows.Forms.TextBox();
             this.tbUnitCost = new System.Windows.Forms.TextBox();
+            this.btnEditDetail = new System.Windows.Forms.Button();
+            this.btnDeleteDetail = new System.Windows.Forms.Button();
             this.Name_goods = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Unit_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,10 +57,10 @@
             // lbManufacturingCountry
             // 
             this.lbManufacturingCountry.AutoSize = true;
-            this.lbManufacturingCountry.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbManufacturingCountry.Location = new System.Drawing.Point(344, 604);
+            this.lbManufacturingCountry.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbManufacturingCountry.Location = new System.Drawing.Point(484, 599);
             this.lbManufacturingCountry.Name = "lbManufacturingCountry";
-            this.lbManufacturingCountry.Size = new System.Drawing.Size(132, 19);
+            this.lbManufacturingCountry.Size = new System.Drawing.Size(143, 20);
             this.lbManufacturingCountry.TabIndex = 7;
             this.lbManufacturingCountry.Text = "Загальна вартість";
             // 
@@ -82,25 +86,30 @@
             // 
             // cbSupplier
             // 
+            this.cbSupplier.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbSupplier.FormattingEnabled = true;
             this.cbSupplier.Location = new System.Drawing.Point(348, 42);
             this.cbSupplier.Name = "cbSupplier";
-            this.cbSupplier.Size = new System.Drawing.Size(262, 24);
+            this.cbSupplier.Size = new System.Drawing.Size(311, 27);
             this.cbSupplier.TabIndex = 8;
             // 
             // dtpDeliveryDate
             // 
+            this.dtpDeliveryDate.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dtpDeliveryDate.Location = new System.Drawing.Point(348, 99);
             this.dtpDeliveryDate.Name = "dtpDeliveryDate";
-            this.dtpDeliveryDate.Size = new System.Drawing.Size(264, 22);
+            this.dtpDeliveryDate.Size = new System.Drawing.Size(264, 27);
             this.dtpDeliveryDate.TabIndex = 9;
             // 
             // tbTotalCost
             // 
-            this.tbTotalCost.Location = new System.Drawing.Point(513, 604);
+            this.tbTotalCost.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbTotalCost.Location = new System.Drawing.Point(650, 596);
             this.tbTotalCost.Name = "tbTotalCost";
-            this.tbTotalCost.Size = new System.Drawing.Size(162, 22);
+            this.tbTotalCost.ReadOnly = true;
+            this.tbTotalCost.Size = new System.Drawing.Size(162, 27);
             this.tbTotalCost.TabIndex = 10;
+            this.tbTotalCost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnSave
             // 
@@ -108,9 +117,9 @@
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSave.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnSave.Location = new System.Drawing.Point(638, 647);
+            this.btnSave.Location = new System.Drawing.Point(701, 660);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(125, 43);
+            this.btnSave.Size = new System.Drawing.Size(125, 51);
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "Зберегти";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -118,10 +127,11 @@
             // 
             // cbGoods
             // 
+            this.cbGoods.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbGoods.FormattingEnabled = true;
             this.cbGoods.Location = new System.Drawing.Point(348, 150);
             this.cbGoods.Name = "cbGoods";
-            this.cbGoods.Size = new System.Drawing.Size(363, 24);
+            this.cbGoods.Size = new System.Drawing.Size(388, 27);
             this.cbGoods.TabIndex = 12;
             // 
             // label1
@@ -136,18 +146,35 @@
             // 
             // dgvDetails
             // 
+            this.dgvDetails.BackgroundColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Name_goods,
             this.Quantity,
             this.Unit_cost,
             this.Total_cost});
-            this.dgvDetails.Location = new System.Drawing.Point(20, 315);
+            this.dgvDetails.Location = new System.Drawing.Point(17, 315);
             this.dgvDetails.Name = "dgvDetails";
             this.dgvDetails.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDetails.RowHeadersWidth = 51;
             this.dgvDetails.RowTemplate.Height = 24;
-            this.dgvDetails.Size = new System.Drawing.Size(760, 261);
+            this.dgvDetails.Size = new System.Drawing.Size(809, 261);
             this.dgvDetails.TabIndex = 14;
             // 
             // btnAddDetail
@@ -156,9 +183,9 @@
             this.btnAddDetail.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddDetail.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAddDetail.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnAddDetail.Location = new System.Drawing.Point(24, 639);
+            this.btnAddDetail.Location = new System.Drawing.Point(17, 660);
             this.btnAddDetail.Name = "btnAddDetail";
-            this.btnAddDetail.Size = new System.Drawing.Size(273, 51);
+            this.btnAddDetail.Size = new System.Drawing.Size(260, 51);
             this.btnAddDetail.TabIndex = 15;
             this.btnAddDetail.Text = "Додати деталі про поставку";
             this.btnAddDetail.UseVisualStyleBackColor = false;
@@ -186,17 +213,47 @@
             // 
             // tbQuantity
             // 
+            this.tbQuantity.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbQuantity.Location = new System.Drawing.Point(348, 202);
             this.tbQuantity.Name = "tbQuantity";
-            this.tbQuantity.Size = new System.Drawing.Size(189, 22);
+            this.tbQuantity.Size = new System.Drawing.Size(189, 27);
             this.tbQuantity.TabIndex = 18;
             // 
             // tbUnitCost
             // 
+            this.tbUnitCost.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbUnitCost.Location = new System.Drawing.Point(348, 254);
             this.tbUnitCost.Name = "tbUnitCost";
-            this.tbUnitCost.Size = new System.Drawing.Size(189, 22);
+            this.tbUnitCost.Size = new System.Drawing.Size(189, 27);
             this.tbUnitCost.TabIndex = 19;
+            // 
+            // btnEditDetail
+            // 
+            this.btnEditDetail.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnEditDetail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditDetail.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnEditDetail.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnEditDetail.Location = new System.Drawing.Point(285, 660);
+            this.btnEditDetail.Name = "btnEditDetail";
+            this.btnEditDetail.Size = new System.Drawing.Size(260, 51);
+            this.btnEditDetail.TabIndex = 20;
+            this.btnEditDetail.Text = "Редагувати деталі поставки";
+            this.btnEditDetail.UseVisualStyleBackColor = false;
+            this.btnEditDetail.Click += new System.EventHandler(this.btnEditDetail_Click);
+            // 
+            // btnDeleteDetail
+            // 
+            this.btnDeleteDetail.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnDeleteDetail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteDetail.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnDeleteDetail.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnDeleteDetail.Location = new System.Drawing.Point(566, 660);
+            this.btnDeleteDetail.Name = "btnDeleteDetail";
+            this.btnDeleteDetail.Size = new System.Drawing.Size(125, 51);
+            this.btnDeleteDetail.TabIndex = 21;
+            this.btnDeleteDetail.Text = "Видалити";
+            this.btnDeleteDetail.UseVisualStyleBackColor = false;
+            this.btnDeleteDetail.Click += new System.EventHandler(this.btnDeleteDetail_Click);
             // 
             // Name_goods
             // 
@@ -204,7 +261,7 @@
             this.Name_goods.MinimumWidth = 6;
             this.Name_goods.Name = "Name_goods";
             this.Name_goods.ReadOnly = true;
-            this.Name_goods.Width = 170;
+            this.Name_goods.Width = 215;
             // 
             // Quantity
             // 
@@ -212,7 +269,7 @@
             this.Quantity.MinimumWidth = 6;
             this.Quantity.Name = "Quantity";
             this.Quantity.ReadOnly = true;
-            this.Quantity.Width = 125;
+            this.Quantity.Width = 115;
             // 
             // Unit_cost
             // 
@@ -235,7 +292,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 702);
+            this.ClientSize = new System.Drawing.Size(841, 713);
+            this.Controls.Add(this.btnDeleteDetail);
+            this.Controls.Add(this.btnEditDetail);
             this.Controls.Add(this.tbUnitCost);
             this.Controls.Add(this.tbQuantity);
             this.Controls.Add(this.label2);
@@ -278,6 +337,8 @@
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox tbQuantity;
         public System.Windows.Forms.TextBox tbUnitCost;
+        private System.Windows.Forms.Button btnEditDetail;
+        private System.Windows.Forms.Button btnDeleteDetail;
         private System.Windows.Forms.DataGridViewTextBoxColumn Name_goods;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Unit_cost;

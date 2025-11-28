@@ -16,10 +16,10 @@ namespace AppAccountingSalesOE
         private string address;
 
         public int ID { get => iD; }
-        public string Full_name { get => full_name; }
-        public string Phone_number { get => phone_number; }
-        public string Email { get => email; }
-        public string Address { get => address; }
+        public string Full_name { get => full_name; set; }
+        public string Phone_number { get => phone_number; set; }
+        public string Email { get => email; set; }
+        public string Address { get => address; set; }
 
         public clCustomers()
         {

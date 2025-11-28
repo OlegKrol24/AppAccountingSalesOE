@@ -17,10 +17,10 @@ namespace AppAccountingSalesOE
         private decimal total_amount;
 
         public int ID { get => iD; }
-        public DateTime SaleDate { get => sale_date; }
-        public int ID_Customer { get => iD_customer; }
-        public int ID_Employee { get => iD_employee; }
-        public decimal TotalAmount { get => total_amount; }
+        public DateTime SaleDate { get => sale_date; set; }
+        public int ID_Customer { get => iD_customer; set; }
+        public int ID_Employee { get => iD_employee; set; }
+        public decimal TotalAmount { get => total_amount; set; }
 
         public clSales()
         {

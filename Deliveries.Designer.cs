@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.pbMainMenu = new System.Windows.Forms.PictureBox();
             this.pbLanguageUA = new System.Windows.Forms.PictureBox();
@@ -38,6 +38,10 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvSupplies = new System.Windows.Forms.DataGridView();
+            this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Company_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delivery_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.msMainMenu = new System.Windows.Forms.MenuStrip();
             this.tsmiMainPage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiGoods = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,10 +56,14 @@
             this.btnEditSupplies = new System.Windows.Forms.Button();
             this.btnAddSupplies = new System.Windows.Forms.Button();
             this.btnSuppliers = new System.Windows.Forms.Button();
-            this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Company_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delivery_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnApplyFilter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbMainMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUS)).BeginInit();
@@ -150,14 +158,14 @@
             // dgvSupplies
             // 
             this.dgvSupplies.BackgroundColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSupplies.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSupplies.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvSupplies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSupplies.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Supplier,
@@ -167,18 +175,50 @@
             this.dgvSupplies.Location = new System.Drawing.Point(20, 167);
             this.dgvSupplies.Name = "dgvSupplies";
             this.dgvSupplies.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSupplies.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSupplies.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvSupplies.RowHeadersWidth = 51;
             this.dgvSupplies.RowTemplate.Height = 24;
-            this.dgvSupplies.Size = new System.Drawing.Size(987, 546);
+            this.dgvSupplies.Size = new System.Drawing.Size(947, 561);
             this.dgvSupplies.TabIndex = 34;
+            // 
+            // Supplier
+            // 
+            this.Supplier.HeaderText = "Постачальник";
+            this.Supplier.MinimumWidth = 6;
+            this.Supplier.Name = "Supplier";
+            this.Supplier.ReadOnly = true;
+            this.Supplier.Width = 180;
+            // 
+            // Company_name
+            // 
+            this.Company_name.HeaderText = "Назва компанії";
+            this.Company_name.MinimumWidth = 6;
+            this.Company_name.Name = "Company_name";
+            this.Company_name.ReadOnly = true;
+            this.Company_name.Width = 190;
+            // 
+            // Delivery_date
+            // 
+            this.Delivery_date.HeaderText = "Дата постачання";
+            this.Delivery_date.MinimumWidth = 6;
+            this.Delivery_date.Name = "Delivery_date";
+            this.Delivery_date.ReadOnly = true;
+            this.Delivery_date.Width = 120;
+            // 
+            // Total_cost
+            // 
+            this.Total_cost.HeaderText = "Загальна вартість";
+            this.Total_cost.MinimumWidth = 6;
+            this.Total_cost.Name = "Total_cost";
+            this.Total_cost.ReadOnly = true;
+            this.Total_cost.Width = 125;
             // 
             // msMainMenu
             // 
@@ -347,37 +387,81 @@
             this.btnSuppliers.UseVisualStyleBackColor = false;
             this.btnSuppliers.Click += new System.EventHandler(this.btnSuppliers_Click);
             // 
-            // Supplier
+            // label7
             // 
-            this.Supplier.HeaderText = "Постачальник";
-            this.Supplier.MinimumWidth = 6;
-            this.Supplier.Name = "Supplier";
-            this.Supplier.ReadOnly = true;
-            this.Supplier.Width = 170;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(1037, 563);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(145, 19);
+            this.label7.TabIndex = 56;
+            this.label7.Text = "За назвою компанії";
             // 
-            // Company_name
+            // label6
             // 
-            this.Company_name.HeaderText = "Назва компанії";
-            this.Company_name.MinimumWidth = 6;
-            this.Company_name.Name = "Company_name";
-            this.Company_name.ReadOnly = true;
-            this.Company_name.Width = 190;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(1037, 487);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(142, 19);
+            this.label6.TabIndex = 55;
+            this.label6.Text = "За постачальником";
             // 
-            // Delivery_date
+            // label3
             // 
-            this.Delivery_date.HeaderText = "Дата постачання";
-            this.Delivery_date.MinimumWidth = 6;
-            this.Delivery_date.Name = "Delivery_date";
-            this.Delivery_date.ReadOnly = true;
-            this.Delivery_date.Width = 130;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(1037, 233);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(156, 19);
+            this.label3.TabIndex = 54;
+            this.label3.Text = "За датою постачання";
             // 
-            // Total_cost
+            // comboBox2
             // 
-            this.Total_cost.HeaderText = "Загальна вартість";
-            this.Total_cost.MinimumWidth = 6;
-            this.Total_cost.Name = "Total_cost";
-            this.Total_cost.ReadOnly = true;
-            this.Total_cost.Width = 135;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(1040, 591);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(189, 24);
+            this.comboBox2.TabIndex = 53;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(1037, 518);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(189, 24);
+            this.comboBox1.TabIndex = 52;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(1037, 260);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 51;
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnReset.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnReset.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnReset.Location = new System.Drawing.Point(1155, 676);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(135, 49);
+            this.btnReset.TabIndex = 58;
+            this.btnReset.Text = "Скинути";
+            this.btnReset.UseVisualStyleBackColor = false;
+            // 
+            // btnApplyFilter
+            // 
+            this.btnApplyFilter.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnApplyFilter.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnApplyFilter.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnApplyFilter.Location = new System.Drawing.Point(1005, 676);
+            this.btnApplyFilter.Name = "btnApplyFilter";
+            this.btnApplyFilter.Size = new System.Drawing.Size(135, 49);
+            this.btnApplyFilter.TabIndex = 57;
+            this.btnApplyFilter.Text = "Пошук";
+            this.btnApplyFilter.UseVisualStyleBackColor = false;
             // 
             // formDeliveries
             // 
@@ -385,6 +469,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1302, 753);
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.btnApplyFilter);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.btnSuppliers);
             this.Controls.Add(this.btnDeleteSupplies);
             this.Controls.Add(this.btnEditSupplies);
@@ -450,5 +542,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Company_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_date;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total_cost;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnApplyFilter;
     }
 }

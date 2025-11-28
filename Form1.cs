@@ -43,16 +43,24 @@ namespace AppAccountingSalesOE
                     tsmiSupplies.Enabled = false;
                 }
             }
+
+            dgvGoods.CellMouseClick += dgvGoods_CellMouseClick;
         }
 
         ClassDataBase db = new ClassDataBase();
         string file_db = "Сourse_ASOE";
 
         public List<Goods> goods_list = new List<Goods>();
+        public List<Stock> stock_list = new List<Stock>();
+
+        private int currentTooltipRowIndex = -1;
 
         void LoadData()
         {
             try { db.Execute<Goods>(file_db, "select g.id_goods, g.name_goods, g.category, g.manufacturing_country, g.price, g.warranty_months, g.description, g.image from goods g", ref goods_list); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+
+            try { db.Execute<Stock>(file_db, "select id_stock as ID, id_goods as ID_Goods, quantity as Quantity from stock", ref stock_list); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
@@ -64,7 +72,8 @@ namespace AppAccountingSalesOE
             {
                 foreach (Goods g in temp_goods)
                 {
-                    data.Rows.Add(g.Name, g.Category, g.ManufacturingCountry, g.Price);
+                    int rowIndex = data.Rows.Add(g.Name, g.ManufacturingCountry, g.Category);
+                    data.Rows[rowIndex].Tag = g;
                 }
             }
         }
@@ -212,6 +221,7 @@ namespace AppAccountingSalesOE
 
                 LoadData();
                 ShowGoods(ref goods_list, ref dgvGoods);
+                LoadGoodsToListViewFiltration(goods_list);
 
                 MessageBox.Show("Товар додано!", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -234,9 +244,11 @@ namespace AppAccountingSalesOE
                 editForm.cbWarrantyMonths.Text = selectedGood.WarrantyMonths.ToString();
                 editForm.rtbDescription.Text = selectedGood.Description;
 
-                if (!string.IsNullOrEmpty(selectedGood.Image) && File.Exists(selectedGood.Image))
+                string imagePath = Path.Combine(Directory.GetCurrentDirectory(), "Goods", selectedGood.Image);
+
+                if (!string.IsNullOrEmpty(selectedGood.Image) && File.Exists(imagePath))
                 {
-                    editForm.pbImageGoods.Image = Image.FromFile(selectedGood.Image);
+                    editForm.pbImageGoods.Image = Image.FromFile(imagePath);
                 }
 
                 if (editForm.ShowDialog() == DialogResult.OK)
@@ -246,6 +258,7 @@ namespace AppAccountingSalesOE
 
                     LoadData();
                     ShowGoods(ref goods_list, ref dgvGoods);
+                    LoadGoodsToListViewFiltration(goods_list);
 
                     MessageBox.Show("Дані про товар оновлено!", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -276,6 +289,7 @@ namespace AppAccountingSalesOE
                         db.ExecuteNonQuery(file_db, deleteQuery);
                         LoadData();
                         ShowGoods(ref goods_list, ref dgvGoods);
+                        LoadGoodsToListViewFiltration(goods_list);
 
                         MessageBox.Show("Товар видалено!", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -344,6 +358,27 @@ namespace AppAccountingSalesOE
 
             ShowGoods(ref filtered, ref dgvGoods);
             LoadGoodsToListViewFiltration(filtered);
+        }
+
+        private void dgvGoods_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dgvGoods.Rows.Count)
+            {
+                Goods g = dgvGoods.Rows[e.RowIndex].Tag as Goods;
+
+                if (g != null)
+                {
+                    int quantity = stock_list.FirstOrDefault(s => s.ID_Goods == g.ID)?.Quantity ?? 0;
+
+                    string hint = $"Ціна: {g.Price:N2} грн\n" +
+                    $"Термін гарантії: {g.WarrantyMonths} місяців\n" +
+                    $"Кількість: {quantity} шт\n" +
+                    $"Опис: {g.Description}";
+
+                    Point location = dgvGoods.PointToClient(Cursor.Position);
+                    ttGoods.Show(hint, dgvGoods, location.X + 15, location.Y + 15);
+                }
+            }
         }
     }
 }

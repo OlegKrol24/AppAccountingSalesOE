@@ -13,8 +13,8 @@ namespace AppAccountingSalesOE
 {
     public partial class formWorkingWithGoods : Form
     {
-        private string mode;  // "add" або "edit"
-        private int goodId;   // ID для редагування
+        private string mode;
+        private int goodId;
 
         public formWorkingWithGoods(string mode, int id)
         {
@@ -24,11 +24,11 @@ namespace AppAccountingSalesOE
             this.goodId = id;
             this.Text = mode == "add" ? "Додавання товару" : "Редагування товару";
 
-            string path = Directory.GetCurrentDirectory() + "\\Photos";
+            string path = Path.Combine(Directory.GetCurrentDirectory(), "Photos");
 
-            if (Directory.Exists(path))
+            if (mode == "add" && Directory.Exists(path) && File.Exists(Path.Combine(path, "NoGoods.png")))
             {
-                if (File.Exists(path + "\\NoGoods.png")) pbImageGoods.Image = Image.FromFile(path + "\\NoGoods.png");
+                pbImageGoods.Image = Image.FromFile(Path.Combine(path, "NoGoods.png"));
             }
         }
 
@@ -56,7 +56,7 @@ namespace AppAccountingSalesOE
         {
             comboBox.Items.Clear();
 
-            var uniqueWarranties = temp_goods.Select(g => g.WarrantyMonths).Distinct().ToList();
+            var uniqueWarranties = temp_goods.Select(g => g.WarrantyMonths).OrderBy(g => g).Distinct().ToList();
 
             foreach (var type in uniqueWarranties) comboBox.Items.Add(type);
         }
@@ -104,7 +104,7 @@ namespace AppAccountingSalesOE
 
             if (pbImageGoods.Image != null && !string.IsNullOrEmpty(ofdImage.FileName) && File.Exists(ofdImage.FileName))
             {
-                string imagesFolder = Path.Combine(Directory.GetCurrentDirectory(), "Photos");
+                string imagesFolder = Path.Combine(Directory.GetCurrentDirectory(), "Goods");
 
                 if (!Directory.Exists(imagesFolder)) Directory.CreateDirectory(imagesFolder);
 
@@ -134,7 +134,7 @@ namespace AppAccountingSalesOE
                     $"'{rtbDescription.Text.Replace("'", "''")}', '{(imagePath ?? "").Replace("'", "''")}')";
                 }
 
-                else // edit
+                else
                 {
                     string updateFields = $"name_goods = '{tbNameGoods.Text.Replace("'", "''")}', " +
                                           $"category = '{cbCategory.Text.Replace("'", "''")}', " +

@@ -49,9 +49,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pbCart = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.rbGoods = new System.Windows.Forms.RadioButton();
+            this.rbCustomers = new System.Windows.Forms.RadioButton();
+            this.rbSales = new System.Windows.Forms.RadioButton();
+            this.rbSupplies = new System.Windows.Forms.RadioButton();
+            this.mcReportDate = new System.Windows.Forms.MonthCalendar();
             ((System.ComponentModel.ISupportInitialize)(this.pbMainMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUS)).BeginInit();
@@ -147,7 +149,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(586, 154);
+            this.dataGridView1.Location = new System.Drawing.Point(585, 154);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -227,7 +229,7 @@
             // btnReportExcel
             // 
             this.btnReportExcel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportExcel.Location = new System.Drawing.Point(38, 713);
+            this.btnReportExcel.Location = new System.Drawing.Point(38, 712);
             this.btnReportExcel.Name = "btnReportExcel";
             this.btnReportExcel.Size = new System.Drawing.Size(203, 41);
             this.btnReportExcel.TabIndex = 44;
@@ -238,7 +240,7 @@
             // btnReportWord
             // 
             this.btnReportWord.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportWord.Location = new System.Drawing.Point(330, 713);
+            this.btnReportWord.Location = new System.Drawing.Point(330, 712);
             this.btnReportWord.Name = "btnReportWord";
             this.btnReportWord.Size = new System.Drawing.Size(203, 41);
             this.btnReportWord.TabIndex = 45;
@@ -297,39 +299,58 @@
             this.pictureBox7.TabIndex = 47;
             this.pictureBox7.TabStop = false;
             // 
-            // radioButton1
+            // rbGoods
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(610, 106);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(140, 20);
-            this.radioButton1.TabIndex = 51;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Звітність товарів";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbGoods.AutoSize = true;
+            this.rbGoods.Checked = true;
+            this.rbGoods.Location = new System.Drawing.Point(590, 106);
+            this.rbGoods.Name = "rbGoods";
+            this.rbGoods.Size = new System.Drawing.Size(140, 20);
+            this.rbGoods.TabIndex = 51;
+            this.rbGoods.TabStop = true;
+            this.rbGoods.Text = "Звітність товарів";
+            this.rbGoods.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbCustomers
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(793, 106);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(142, 20);
-            this.radioButton2.TabIndex = 52;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Звітність клієнтів";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbCustomers.AutoSize = true;
+            this.rbCustomers.Location = new System.Drawing.Point(760, 106);
+            this.rbCustomers.Name = "rbCustomers";
+            this.rbCustomers.Size = new System.Drawing.Size(142, 20);
+            this.rbCustomers.TabIndex = 52;
+            this.rbCustomers.TabStop = true;
+            this.rbCustomers.Text = "Звітність клієнтів";
+            this.rbCustomers.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rbSales
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(979, 106);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(159, 20);
-            this.radioButton3.TabIndex = 53;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Звітність постачань";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbSales.AutoSize = true;
+            this.rbSales.Location = new System.Drawing.Point(930, 106);
+            this.rbSales.Name = "rbSales";
+            this.rbSales.Size = new System.Drawing.Size(150, 20);
+            this.rbSales.TabIndex = 53;
+            this.rbSales.TabStop = true;
+            this.rbSales.Text = "Звітність продажів";
+            this.rbSales.UseVisualStyleBackColor = true;
+            // 
+            // rbSupplies
+            // 
+            this.rbSupplies.AutoSize = true;
+            this.rbSupplies.Location = new System.Drawing.Point(1110, 106);
+            this.rbSupplies.Name = "rbSupplies";
+            this.rbSupplies.Size = new System.Drawing.Size(159, 20);
+            this.rbSupplies.TabIndex = 54;
+            this.rbSupplies.TabStop = true;
+            this.rbSupplies.Text = "Звітність постачань";
+            this.rbSupplies.UseVisualStyleBackColor = true;
+            // 
+            // mcReportDate
+            // 
+            this.mcReportDate.Location = new System.Drawing.Point(855, 546);
+            this.mcReportDate.MaxDate = new System.DateTime(2026, 12, 31, 0, 0, 0, 0);
+            this.mcReportDate.MinDate = new System.DateTime(2025, 1, 1, 0, 0, 0, 0);
+            this.mcReportDate.Name = "mcReportDate";
+            this.mcReportDate.TabIndex = 55;
             // 
             // formReport
             // 
@@ -337,9 +358,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1302, 753);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.mcReportDate);
+            this.Controls.Add(this.rbSupplies);
+            this.Controls.Add(this.rbSales);
+            this.Controls.Add(this.rbCustomers);
+            this.Controls.Add(this.rbGoods);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pbCart);
@@ -400,8 +423,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pbCart;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton rbGoods;
+        private System.Windows.Forms.RadioButton rbCustomers;
+        private System.Windows.Forms.RadioButton rbSales;
+        private System.Windows.Forms.RadioButton rbSupplies;
+        private System.Windows.Forms.MonthCalendar mcReportDate;
     }
 }

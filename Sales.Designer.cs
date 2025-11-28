@@ -33,6 +33,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvSales = new System.Windows.Forms.DataGridView();
+            this.Sale_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Full_name_customers = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Full_name_employee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total_amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.msMainMenu = new System.Windows.Forms.MenuStrip();
             this.tsmiMainPage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiGoods = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,10 +45,6 @@
             this.tsmiReports = new System.Windows.Forms.ToolStripMenuItem();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.Sale_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Full_name_customers = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Full_name_employee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total_amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pbCart = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pbMainMenu = new System.Windows.Forms.PictureBox();
@@ -52,12 +52,14 @@
             this.pbLanguageUS = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.mcSaleDate = new System.Windows.Forms.MonthCalendar();
+            this.cbCustomers = new System.Windows.Forms.ComboBox();
+            this.cbEmployees = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnApplyFilter = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSales)).BeginInit();
             this.msMainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
@@ -75,7 +77,7 @@
             this.label1.BackColor = System.Drawing.Color.SteelBlue;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(83, 15);
+            this.label1.Location = new System.Drawing.Point(83, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(142, 37);
             this.label1.TabIndex = 33;
@@ -95,6 +97,7 @@
             // 
             // dgvSales
             // 
+            this.dgvSales.BackgroundColor = System.Drawing.SystemColors.Info;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -122,8 +125,40 @@
             this.dgvSales.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvSales.RowHeadersWidth = 51;
             this.dgvSales.RowTemplate.Height = 24;
-            this.dgvSales.Size = new System.Drawing.Size(937, 581);
+            this.dgvSales.Size = new System.Drawing.Size(941, 591);
             this.dgvSales.TabIndex = 34;
+            // 
+            // Sale_date
+            // 
+            this.Sale_date.HeaderText = "Дата продажу";
+            this.Sale_date.MinimumWidth = 6;
+            this.Sale_date.Name = "Sale_date";
+            this.Sale_date.ReadOnly = true;
+            this.Sale_date.Width = 140;
+            // 
+            // Full_name_customers
+            // 
+            this.Full_name_customers.HeaderText = "Клієнт";
+            this.Full_name_customers.MinimumWidth = 6;
+            this.Full_name_customers.Name = "Full_name_customers";
+            this.Full_name_customers.ReadOnly = true;
+            this.Full_name_customers.Width = 170;
+            // 
+            // Full_name_employee
+            // 
+            this.Full_name_employee.HeaderText = "Працівник";
+            this.Full_name_employee.MinimumWidth = 6;
+            this.Full_name_employee.Name = "Full_name_employee";
+            this.Full_name_employee.ReadOnly = true;
+            this.Full_name_employee.Width = 170;
+            // 
+            // Total_amount
+            // 
+            this.Total_amount.HeaderText = "Загальна сума";
+            this.Total_amount.MinimumWidth = 6;
+            this.Total_amount.Name = "Total_amount";
+            this.Total_amount.ReadOnly = true;
+            this.Total_amount.Width = 140;
             // 
             // msMainMenu
             // 
@@ -217,38 +252,6 @@
             this.label2.Text = "0 шт";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Sale_date
-            // 
-            this.Sale_date.HeaderText = "Дата продажу";
-            this.Sale_date.MinimumWidth = 6;
-            this.Sale_date.Name = "Sale_date";
-            this.Sale_date.ReadOnly = true;
-            this.Sale_date.Width = 140;
-            // 
-            // Full_name_customers
-            // 
-            this.Full_name_customers.HeaderText = "Клієнт";
-            this.Full_name_customers.MinimumWidth = 6;
-            this.Full_name_customers.Name = "Full_name_customers";
-            this.Full_name_customers.ReadOnly = true;
-            this.Full_name_customers.Width = 170;
-            // 
-            // Full_name_employee
-            // 
-            this.Full_name_employee.HeaderText = "Працівник";
-            this.Full_name_employee.MinimumWidth = 6;
-            this.Full_name_employee.Name = "Full_name_employee";
-            this.Full_name_employee.ReadOnly = true;
-            this.Full_name_employee.Width = 170;
-            // 
-            // Total_amount
-            // 
-            this.Total_amount.HeaderText = "Загальна сума";
-            this.Total_amount.MinimumWidth = 6;
-            this.Total_amount.Name = "Total_amount";
-            this.Total_amount.ReadOnly = true;
-            this.Total_amount.Width = 140;
-            // 
             // pbCart
             // 
             this.pbCart.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -324,54 +327,86 @@
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
             // 
-            // monthCalendar1
+            // mcSaleDate
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(1031, 274);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 45;
+            this.mcSaleDate.Location = new System.Drawing.Point(1005, 247);
+            this.mcSaleDate.MinDate = new System.DateTime(2025, 1, 1, 0, 0, 0, 0);
+            this.mcSaleDate.Name = "mcSaleDate";
+            this.mcSaleDate.TabIndex = 45;
             // 
-            // comboBox1
+            // cbCustomers
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(1031, 532);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(189, 24);
-            this.comboBox1.TabIndex = 46;
+            this.cbCustomers.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cbCustomers.FormattingEnabled = true;
+            this.cbCustomers.Location = new System.Drawing.Point(1005, 505);
+            this.cbCustomers.Name = "cbCustomers";
+            this.cbCustomers.Size = new System.Drawing.Size(272, 27);
+            this.cbCustomers.TabIndex = 46;
             // 
-            // comboBox2
+            // cbEmployees
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(1034, 605);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(189, 24);
-            this.comboBox2.TabIndex = 47;
+            this.cbEmployees.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cbEmployees.FormattingEnabled = true;
+            this.cbEmployees.Location = new System.Drawing.Point(1005, 581);
+            this.cbEmployees.Name = "cbEmployees";
+            this.cbEmployees.Size = new System.Drawing.Size(272, 27);
+            this.cbEmployees.TabIndex = 47;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1031, 247);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(1001, 219);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 16);
+            this.label3.Size = new System.Drawing.Size(138, 19);
             this.label3.TabIndex = 48;
             this.label3.Text = "За датою продажу";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1031, 501);
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(1001, 473);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 16);
+            this.label6.Size = new System.Drawing.Size(93, 19);
             this.label6.TabIndex = 49;
             this.label6.Text = "За клієнтом";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1031, 577);
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(1001, 549);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(110, 16);
+            this.label7.Size = new System.Drawing.Size(116, 19);
             this.label7.TabIndex = 50;
             this.label7.Text = "За працівником";
+            // 
+            // btnApplyFilter
+            // 
+            this.btnApplyFilter.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnApplyFilter.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnApplyFilter.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnApplyFilter.Location = new System.Drawing.Point(1005, 676);
+            this.btnApplyFilter.Name = "btnApplyFilter";
+            this.btnApplyFilter.Size = new System.Drawing.Size(135, 49);
+            this.btnApplyFilter.TabIndex = 51;
+            this.btnApplyFilter.Text = "Пошук";
+            this.btnApplyFilter.UseVisualStyleBackColor = false;
+            this.btnApplyFilter.Click += new System.EventHandler(this.btnApplyFilter_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnReset.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnReset.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnReset.Location = new System.Drawing.Point(1155, 676);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(135, 49);
+            this.btnReset.TabIndex = 52;
+            this.btnReset.Text = "Скинути";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // formSales
             // 
@@ -379,12 +414,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1302, 753);
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.btnApplyFilter);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.cbEmployees);
+            this.Controls.Add(this.cbCustomers);
+            this.Controls.Add(this.mcSaleDate);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pbCart);
@@ -442,11 +479,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Full_name_customers;
         private System.Windows.Forms.DataGridViewTextBoxColumn Full_name_employee;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total_amount;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.MonthCalendar mcSaleDate;
+        private System.Windows.Forms.ComboBox cbCustomers;
+        private System.Windows.Forms.ComboBox cbEmployees;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnApplyFilter;
+        private System.Windows.Forms.Button btnReset;
     }
 }

@@ -21,13 +21,7 @@ namespace AppAccountingSalesOE
 
             if (currentUser != null)
             {
-                if (currentUser.Role.Contains("менеджер"))
-                {
-                    //btnEditSale.Enabled = false;
-                    //btnDeleteSale.Enabled = false;
-
-                    tsmiSupplies.Enabled = false;
-                }
+                if (currentUser.Role.Contains("менеджер")) tsmiSupplies.Enabled = false;
             }
         }
 
@@ -48,11 +42,13 @@ namespace AppAccountingSalesOE
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-        void ShowSales(ref DataGridView data)
+        void ShowSales(ref DataGridView data, List<clSales> filteredSales = null)
         {
             data.Rows.Clear();
 
-            foreach (clSales sal in sales_list)
+            var salesToShow = filteredSales ?? sales_list;
+
+            foreach (clSales sal in salesToShow)
             {
                 clCustomers customer = customers.FirstOrDefault(cust => cust.ID == sal.ID_Customer);
                 Employees employee = employees.FirstOrDefault(emp => emp.ID == sal.ID_Employee);
@@ -113,6 +109,72 @@ namespace AppAccountingSalesOE
         private void formSales_Load(object sender, EventArgs e)
         {
             LoadData();
+            ShowSales(ref dgvSales);
+
+            cbCustomers.DataSource = customers;
+            cbCustomers.DisplayMember = "Full_name";
+            cbCustomers.ValueMember = "ID";
+            cbCustomers.SelectedIndex = -1;
+
+            cbEmployees.DataSource = employees;
+            cbEmployees.DisplayMember = "Full_name";
+            cbEmployees.ValueMember = "ID";
+            cbEmployees.SelectedIndex = -1;
+        }
+
+        private void btnApplyFilter_Click(object sender, EventArgs e)
+        {
+            DateTime? fromDate = null;
+            DateTime? toDate = null;
+            int? filterCustomerId = null;
+            int? filterEmployeeId = null;
+
+            if (mcSaleDate.SelectionStart != mcSaleDate.MinDate)
+            {
+                fromDate = mcSaleDate.SelectionRange.Start.Date;
+                toDate = mcSaleDate.SelectionRange.End.Date;
+
+                MessageBox.Show($"Обраний діапазон дат: {fromDate.Value:dd.MM.yyyy} - {toDate.Value:dd.MM.yyyy}");
+            }
+
+            else MessageBox.Show("Дата не обрана — ігноруємо фільтр за датою");
+
+            if (cbCustomers.SelectedValue != null)
+            {
+                filterCustomerId = (int)cbCustomers.SelectedValue;
+
+                MessageBox.Show($"Обраний клієнт ID: {filterCustomerId.Value}");
+            }
+
+            else MessageBox.Show("Клієнт не обраний — ігноруємо");
+
+            if (cbEmployees.SelectedValue != null)
+            {
+                filterEmployeeId = (int)cbEmployees.SelectedValue;
+
+                MessageBox.Show($"Обраний працівник ID: {filterEmployeeId.Value}");
+            }
+
+            else MessageBox.Show("Працівник не обраний — ігноруємо");
+
+            var filteredSales = sales_list.Where(s =>
+                (!fromDate.HasValue || (s.SaleDate.Date >= fromDate.Value && s.SaleDate.Date <= toDate.Value)) &&
+                (!filterCustomerId.HasValue || s.ID_Customer == filterCustomerId.Value) &&
+                (!filterEmployeeId.HasValue || s.ID_Employee == filterEmployeeId.Value)
+            ).ToList();
+
+            MessageBox.Show($"Кількість відфільтрованих продажів: {filteredSales.Count}");
+
+            ShowSales(ref dgvSales, filteredSales);
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            cbCustomers.SelectedIndex = -1;
+            cbEmployees.SelectedIndex = -1;
+            mcSaleDate.SelectionStart = mcSaleDate.MinDate;
+            mcSaleDate.SelectionEnd = mcSaleDate.MinDate;
+
             ShowSales(ref dgvSales);
         }
     }

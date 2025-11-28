@@ -14,9 +14,9 @@ namespace AppAccountingSalesOE
         private decimal total_cost;
 
         public int ID { get => iD; }
-        public int ID_Supplier { get => iD_supplier; }
-        public DateTime DeliveryDate { get => delivery_date; }
-        public decimal TotalCost { get => total_cost; }
+        public int ID_Supplier { get => iD_supplier; set; }
+        public DateTime DeliveryDate { get => delivery_date; set; }
+        public decimal TotalCost { get => total_cost; set; }
 
         public Supplies()
         {

@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvGoods = new System.Windows.Forms.DataGridView();
             this.name_goods = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.manufacturing_country = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddGoods = new System.Windows.Forms.Button();
@@ -59,6 +60,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pbCart = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.ttGoods = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGoods)).BeginInit();
             this.msMainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMainMenu)).BeginInit();
@@ -74,27 +76,35 @@
             // dgvGoods
             // 
             this.dgvGoods.BackgroundColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvGoods.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvGoods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGoods.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.name_goods,
+            this.manufacturing_country,
+            this.category});
+            this.dgvGoods.Location = new System.Drawing.Point(29, 152);
+            this.dgvGoods.Name = "dgvGoods";
+            this.dgvGoods.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvGoods.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvGoods.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGoods.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.name_goods,
-            this.category,
-            this.manufacturing_country,
-            this.price});
-            this.dgvGoods.Location = new System.Drawing.Point(29, 152);
-            this.dgvGoods.Name = "dgvGoods";
-            this.dgvGoods.ReadOnly = true;
+            this.dgvGoods.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvGoods.RowHeadersWidth = 51;
             this.dgvGoods.RowTemplate.Height = 24;
             this.dgvGoods.Size = new System.Drawing.Size(823, 576);
             this.dgvGoods.TabIndex = 1;
+            this.dgvGoods.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvGoods_CellMouseClick);
             // 
             // name_goods
             // 
@@ -105,14 +115,6 @@
             this.name_goods.ReadOnly = true;
             this.name_goods.Width = 240;
             // 
-            // category
-            // 
-            this.category.HeaderText = "Категорія";
-            this.category.MinimumWidth = 6;
-            this.category.Name = "category";
-            this.category.ReadOnly = true;
-            this.category.Width = 200;
-            // 
             // manufacturing_country
             // 
             this.manufacturing_country.HeaderText = "Країна виробник";
@@ -121,13 +123,13 @@
             this.manufacturing_country.ReadOnly = true;
             this.manufacturing_country.Width = 115;
             // 
-            // price
+            // category
             // 
-            this.price.HeaderText = "Ціна";
-            this.price.MinimumWidth = 6;
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            this.price.Width = 70;
+            this.category.HeaderText = "Категорія";
+            this.category.MinimumWidth = 6;
+            this.category.Name = "category";
+            this.category.ReadOnly = true;
+            this.category.Width = 200;
             // 
             // label5
             // 
@@ -423,6 +425,14 @@
             this.pictureBox7.TabIndex = 44;
             this.pictureBox7.TabStop = false;
             // 
+            // ttGoods
+            // 
+            this.ttGoods.AutoPopDelay = 10000;
+            this.ttGoods.InitialDelay = 500;
+            this.ttGoods.ReshowDelay = 100;
+            this.ttGoods.UseAnimation = false;
+            this.ttGoods.UseFading = false;
+            // 
             // formGoods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -499,9 +509,9 @@
         private System.Windows.Forms.PictureBox pbCart;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.DataGridViewTextBoxColumn name_goods;
-        private System.Windows.Forms.DataGridViewTextBoxColumn category;
         private System.Windows.Forms.DataGridViewTextBoxColumn manufacturing_country;
-        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn category;
+        private System.Windows.Forms.ToolTip ttGoods;
     }
 }
 

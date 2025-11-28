@@ -27,6 +27,7 @@ namespace AppAccountingSalesOE
         public List<Supplies> supplies_list = new List<Supplies>();
         public List<Supplies_details> supplies_details_list = new List<Supplies_details>();
         public List<Suppliers> suppliers_list = new List<Suppliers>();
+        List<Stock> stock_list = new List<Stock>();
 
         void LoadData()
         {
@@ -34,6 +35,7 @@ namespace AppAccountingSalesOE
             supplies_list.Clear();
             suppliers_list.Clear();
             supplies_details_list.Clear();
+            stock_list.Clear();
 
             try { db.Execute<Goods>(file_db, "select id_goods, name_goods, category, manufacturing_country, price, warranty_months, description, image from goods", ref globalgoods); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -45,6 +47,9 @@ namespace AppAccountingSalesOE
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
             try { db.Execute<Suppliers>(file_db, "select sp.id_supplier, sp.full_name, sp.company_name, sp.phone_number, sp.email from suppliers sp", ref suppliers_list); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+
+            try { db.Execute<Stock>(file_db, "select id_stock, id_goods, quantity from stock", ref stock_list); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
@@ -156,12 +161,17 @@ namespace AppAccountingSalesOE
                 editForm.tbTotalCost.Text = selectedSupply.TotalCost.ToString();
 
                 List<Supplies_details> details = supplies_details_list.Where(sd => sd.ID_supply == selectedSupply.ID).ToList();
-                
+
                 foreach (var detail in details)
                 {
                     Goods good = globalgoods.FirstOrDefault(g => g.ID == detail.ID_goods);
-                    
-                    if (good != null) editForm.dgvDetails.Rows.Add(good.Name, detail.Quantity, detail.Unit_cost);
+
+                    if (good != null)
+                    {
+                        decimal totalPrice = detail.Quantity * detail.Unit_cost;
+
+                        editForm.dgvDetails.Rows.Add(good.Name, detail.Quantity, detail.Unit_cost, totalPrice);
+                    }
                 }
 
                 if (editForm.ShowDialog() == DialogResult.OK)
@@ -176,30 +186,57 @@ namespace AppAccountingSalesOE
             else MessageBox.Show("Виберіть поставку для редагування!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
+        private void UpdateStock(int id_goods, int deltaQuantity)
+        {
+            string checkQuery = $"select quantity from stock where id_goods = {id_goods}";
+            object currentQtyObj = db.ExecuteScalar(file_db, checkQuery);
+
+            if (currentQtyObj != null)
+            {
+                int currentQty = Convert.ToInt32(currentQtyObj);
+                int newQty = currentQty + deltaQuantity;
+
+                if (newQty < 0) newQty = 0;
+
+                string updateQuery = $"update stock set quantity = {newQty} where id_goods = {id_goods}";
+
+                db.ExecuteNonQuery(file_db, updateQuery);
+            }
+
+            else if (deltaQuantity > 0)
+            {
+                string insertQuery = $"insert into stock (id_goods, quantity) values ({id_goods}, {deltaQuantity})";
+
+                db.ExecuteNonQuery(file_db, insertQuery);
+            }
+        }
+
         private void btnDeleteSupplies_Click(object sender, EventArgs e)
         {
             if (dgvSupplies.SelectedRows.Count > 0)
             {
                 int selectedIndex = dgvSupplies.SelectedRows[0].Index;
-
                 Supplies selectedSupply = supplies_list[selectedIndex];
-
                 DialogResult confirm = MessageBox.Show($"Ви впевнені, що хочете видалити поставку від {selectedSupply.DeliveryDate:dd.MM.yyyy}?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                
+
                 if (confirm == DialogResult.Yes)
                 {
                     try
                     {
+                        List<Supplies_details> detailsToDelete = supplies_details_list.Where(sd => sd.ID_supply == selectedSupply.ID).ToList();
+                        
+                        foreach (var detail in detailsToDelete) UpdateStock(detail.ID_goods, -detail.Quantity);
+
                         string deleteDetailsQuery = $"delete from supplies_details where id_supply = {selectedSupply.ID}";
+                        
                         db.ExecuteNonQuery(file_db, deleteDetailsQuery);
-
+                        
                         string deleteQuery = $"delete from supplies where id_supply = {selectedSupply.ID}";
-
+                        
                         db.ExecuteNonQuery(file_db, deleteQuery);
-
                         LoadData();
+                        
                         ShowSupplies(ref dgvSupplies);
-
                         MessageBox.Show("Поставку видалено!", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)
