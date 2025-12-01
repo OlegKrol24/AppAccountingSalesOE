@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FastReport;
 
 namespace AppAccountingSalesOE
 {
@@ -19,6 +21,19 @@ namespace AppAccountingSalesOE
         {
             InitializeComponent();
             this.currentUser = currentUser;
+
+            if (currentUser != null)
+            {
+                if (currentUser.Role.Contains("клієнт"))
+                {
+                    tsmiCustomers.Enabled = false;
+                    tsmiSales.Enabled = false;
+                    tsmiSupplies.Enabled = false;
+                    tsmiReports.Enabled = false;
+                }
+
+                if (currentUser.Role.Contains("менеджер")) tsmiSupplies.Enabled = false;
+            }
         }
 
         ClassDataBase db = new ClassDataBase();
@@ -31,23 +46,23 @@ namespace AppAccountingSalesOE
         List<clSales> sales = new List<clSales>();
         List<clSalesDetails> salesDetails = new List<clSalesDetails>();
 
-        public static class CartManager
-        {
-            public static List<Goods> CartItems { get; } = new List<Goods>();
-        }
-
         void LoadData()
         {
             try { db.Execute<Goods>(file_db, "select id_goods, name_goods, category, manufacturing_country, price, warranty_months, description, image from goods", ref globalgoods); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+            
             try { db.Execute<Stock>(file_db, "select id_stock, id_goods, quantity from stock", ref stock); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+            
             try { db.Execute<Employees>(file_db, "select e.id_employee, e.full_name, e.\"position\", e.phone_number, e.email, e.address, e.sex from employees e", ref employees); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+            
             try { db.Execute<clCustomers>(file_db, "select c.id_customer, c.full_name, c.phone_number, c.email, c.address from customers c", ref customers); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+            
             try { db.Execute<clSales>(file_db, "select id_sale, sale_date, id_customer, id_employee, total_amount from sales", ref sales); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+            
             try { db.Execute<clSalesDetails>(file_db, "select id_sale_details, id_sale, id_goods, quantity, unit_price from sales_details", ref salesDetails); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -182,6 +197,7 @@ namespace AppAccountingSalesOE
                     if (int.TryParse(row.Cells[2].Value?.ToString(), out newQuantity) && newQuantity > 0)
                     {
                         var cartItem = Cart.GoodsInCart.FirstOrDefault(item => item.Goods.Name == name);
+
                         if (cartItem != null)
                         {
                             var stockItem = stock.FirstOrDefault(s => s.ID_Goods == cartItem.Goods.ID);
@@ -269,6 +285,8 @@ namespace AppAccountingSalesOE
             decimal totalAmount = Cart.GoodsInCart.Sum(item => item.Goods.Price * item.Quantity);
             int? customerId = null;
             int? employeeId = null;
+            string customerName = "Роздрібний покупець";
+            string employeeName = "Касир";
 
             Random rand = new Random();
 
@@ -276,14 +294,34 @@ namespace AppAccountingSalesOE
             {
                 customerId = currentUser.ID;
 
-                if (employees.Count > 0) employeeId = employees[rand.Next(employees.Count)].ID;
+                var cust = customers.FirstOrDefault(c => c.ID == customerId);
+
+                if (cust != null) customerName = cust.Full_name;
+
+                if (employees.Count > 0)
+                {
+                    var emp = employees[rand.Next(employees.Count)];
+
+                    employeeId = emp.ID;
+                    employeeName = emp.Full_name;
+                }
             }
 
             else if (currentUser.Role.Contains("менеджер"))
             {
                 employeeId = currentUser.ID;
+                
+                var emp = employees.FirstOrDefault(e => e.ID == employeeId);
 
-                if (customers.Count > 0) customerId = customers[rand.Next(customers.Count)].ID;
+                if (emp != null) employeeName = emp.Full_name;
+
+                if (customers.Count > 0)
+                {
+                    var cust = customers[rand.Next(customers.Count)];
+                    
+                    customerId = cust.ID;
+                    customerName = cust.Full_name;
+                }
             }
 
             int saleId = InsertSale(DateTime.Now, customerId, employeeId, totalAmount);
@@ -292,18 +330,64 @@ namespace AppAccountingSalesOE
             InsertSalesDetails(saleId);
             UpdateStockAfterPurchase();
 
+
+            var chequeReport = new List<ChequeReportDTO>
+            {
+                new ChequeReportDTO
+                {
+                    CustomerFullName = customerName,
+                    EmployeeFullName = employeeName,
+                    TotalAmount = totalAmount,
+                    Details = Cart.GoodsInCart.Select((item, index) => new ChequeDetailDTO
+                    {
+                        ID = index + 1,
+                        GoodsName = item.Goods.Name,
+                        Quantity = item.Quantity,
+                        UnitPrice = item.Goods.Price
+                    }).ToList()
+                }
+            };
+
+            string chequeXmlPath = Path.Combine(Directory.GetCurrentDirectory(), "cheque.xml");
+
+            ClassSerialize.SerializeToXml(ref chequeReport, chequeXmlPath);
+
+            try
+            {
+                using (var report = new Report())
+                {
+                    string reportPath = Path.Combine(Directory.GetCurrentDirectory(), "Reports", "Cheque.frx");
+
+                    if (!File.Exists(reportPath))
+                    {
+                        MessageBox.Show("Не знайдено файл Cheque.frx у папці Reports", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    report.Load(reportPath);
+
+                    report.RegisterData(chequeXmlPath, "Cheque");
+
+                    report.Prepare();
+                    report.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Помилка чеку: " + ex.Message);
+            }
+
             Cart.GoodsInCart.Clear();
             LoadCartItems();
+            UpdateCartLabels();
 
-            MessageBox.Show("Замовлення оформлено!", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            // Regex for report and repeipt
+            MessageBox.Show("Замовлення успішно оформлено!\nЧек сформовано.", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void pbMainMenu_Click(object sender, EventArgs e)
         {
-            //if (msMainMenu.Visible == false) msMainMenu.Visible = true;
-            //else msMainMenu.Visible = false;
+            if (msMainMenu.Visible == false) msMainMenu.Visible = true;
+            else msMainMenu.Visible = false;
         }
 
         private void formCart_FormClosing(object sender, FormClosingEventArgs e)
@@ -316,6 +400,55 @@ namespace AppAccountingSalesOE
             this.Hide();
             formGoods formGoods = new formGoods(currentUser);
             formGoods.Show();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Cart.GoodsInCart.Clear();
+            LoadCartItems();
+            UpdateCartLabels();
+        }
+
+        private void tsmiMainPage_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formMainPage mainPage = new formMainPage(currentUser);
+            mainPage.Show();
+        }
+
+        private void tsmiGoods_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formGoods formGoods = new formGoods(currentUser);
+            formGoods.Show();
+        }
+
+        private void tsmiCustomers_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formCustomers formCustomers = new formCustomers(currentUser);
+            formCustomers.Show();
+        }
+
+        private void tsmiSales_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formSales formSales = new formSales(currentUser);
+            formSales.Show();
+        }
+
+        private void tsmiSupplies_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formDeliveries formDeliveries = new formDeliveries(currentUser);
+            formDeliveries.Show();
+        }
+
+        private void tsmiReports_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formReport formReport = new formReport(currentUser);
+            formReport.Show();
         }
     }
 }

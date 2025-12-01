@@ -48,7 +48,6 @@ namespace AppAccountingSalesOE
             return true;
         }
 
-        // Хешування паролів
         string GetMd5Hash(string input)
         {
             using (MD5 md5 = MD5.Create())
@@ -68,7 +67,6 @@ namespace AppAccountingSalesOE
 
         private bool AuthorizeUser(string login, string password)
         {
-            // Хешуємо введений пароль перед порівнянням
             string hashedPassword = GetMd5Hash(password);
 
             string query = "select u.id_user, u.login, u.password, u.role,\r\ncase\r\n\twhen u.role like 'адміністратор%' or u.role like 'менеджер%' then e.full_name\r\n    when u.role like 'клієнт%' then c.full_name\r\n    else '' \r\nend as full_name\r\nfrom users u\r\nleft join employees e on u.id_employee = e.id_employee \r\nleft join customers c on u.id_customer = c.id_customer\r\nwhere u.login = '" + login + "' and u.password = '" + hashedPassword + "'";
@@ -99,7 +97,6 @@ namespace AppAccountingSalesOE
                 MessageBox.Show($"Авторизація успішна!\nЛаскаво просимо, {fullName}", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
 
-                // Передаємо об'єкт авторизованого користувача (users[0])
                 formMainPage mainPage = new formMainPage(users[0]);
                 mainPage.Show();
             }

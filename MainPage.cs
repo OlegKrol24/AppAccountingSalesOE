@@ -12,7 +12,7 @@ namespace AppAccountingSalesOE
 {
     public partial class formMainPage : Form
     {
-        private User currentUser;  // Зберігаємо користувача
+        private User currentUser;
 
         public formMainPage(User currentUser)
         {
@@ -24,7 +24,6 @@ namespace AppAccountingSalesOE
                 lbRoleText.Text = currentUser.Role.ToUpper();
                 lbUserText.Text = currentUser.LastName + " " + currentUser.FirstName;
 
-                // Обмеження за роллю
                 if (currentUser.Role.Contains("клієнт"))
                 {
                     btnCustomers.Enabled = false;
@@ -56,6 +55,12 @@ namespace AppAccountingSalesOE
         ClassDataBase db = new ClassDataBase();
         string file_db = "Сourse_ASOE";
         public List<clSales> sales = new List<clSales>();
+
+        void LoadData()
+        {
+            try { db.Execute<clSales>(file_db, "select id_sale, sale_date, id_customer, id_employee, total_amount from sales", ref sales); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
 
         private void btnGoods_Click(object sender, EventArgs e)
         {
@@ -143,6 +148,21 @@ namespace AppAccountingSalesOE
             this.Hide();
             formReport formReport = new formReport(currentUser);
             formReport.Show();
+        }
+
+        private void UpdateCartLabels()
+        {
+            int totalQuantity = Cart.GoodsInCart.Sum(item => item.Quantity);
+            decimal totalPrice = Cart.GoodsInCart.Sum(item => item.Goods.Price * item.Quantity);
+
+            lbQuantityCart.Text = $"{totalQuantity} шт";
+            lbTotalAmountCart.Text = $"{totalPrice:F2} грн";
+        }
+
+        private void formMainPage_Load(object sender, EventArgs e)
+        {
+            LoadData();
+            UpdateCartLabels();
         }
     }
 }

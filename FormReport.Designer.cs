@@ -45,8 +45,8 @@
             this.btnReportExcel = new System.Windows.Forms.Button();
             this.btnReportWord = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbTotalAmountCart = new System.Windows.Forms.Label();
+            this.lbQuantityCart = new System.Windows.Forms.Label();
             this.pbCart = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.rbGoods = new System.Windows.Forms.RadioButton();
@@ -228,24 +228,30 @@
             // 
             // btnReportExcel
             // 
+            this.btnReportExcel.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.btnReportExcel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportExcel.Location = new System.Drawing.Point(38, 712);
+            this.btnReportExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnReportExcel.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnReportExcel.Location = new System.Drawing.Point(19, 712);
             this.btnReportExcel.Name = "btnReportExcel";
-            this.btnReportExcel.Size = new System.Drawing.Size(203, 41);
+            this.btnReportExcel.Size = new System.Drawing.Size(235, 41);
             this.btnReportExcel.TabIndex = 44;
             this.btnReportExcel.Text = "Звіт у форматі Excel";
-            this.btnReportExcel.UseVisualStyleBackColor = true;
+            this.btnReportExcel.UseVisualStyleBackColor = false;
             this.btnReportExcel.Click += new System.EventHandler(this.btnReportExcel_Click);
             // 
             // btnReportWord
             // 
+            this.btnReportWord.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.btnReportWord.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportWord.Location = new System.Drawing.Point(330, 712);
+            this.btnReportWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnReportWord.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnReportWord.Location = new System.Drawing.Point(324, 712);
             this.btnReportWord.Name = "btnReportWord";
-            this.btnReportWord.Size = new System.Drawing.Size(203, 41);
+            this.btnReportWord.Size = new System.Drawing.Size(235, 41);
             this.btnReportWord.TabIndex = 45;
             this.btnReportWord.Text = "Звіт у форматі Word";
-            this.btnReportWord.UseVisualStyleBackColor = true;
+            this.btnReportWord.UseVisualStyleBackColor = false;
             this.btnReportWord.Click += new System.EventHandler(this.btnReportWord_Click);
             // 
             // dataGridView2
@@ -258,27 +264,27 @@
             this.dataGridView2.Size = new System.Drawing.Size(540, 610);
             this.dataGridView2.TabIndex = 46;
             // 
-            // label4
+            // lbTotalAmountCart
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1001, 43);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 19);
-            this.label4.TabIndex = 50;
-            this.label4.Text = "0 грн";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbTotalAmountCart.AutoSize = true;
+            this.lbTotalAmountCart.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalAmountCart.Location = new System.Drawing.Point(972, 43);
+            this.lbTotalAmountCart.Name = "lbTotalAmountCart";
+            this.lbTotalAmountCart.Size = new System.Drawing.Size(45, 19);
+            this.lbTotalAmountCart.TabIndex = 50;
+            this.lbTotalAmountCart.Text = "0 грн";
+            this.lbTotalAmountCart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // lbQuantityCart
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1002, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 19);
-            this.label2.TabIndex = 49;
-            this.label2.Text = "0 шт";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbQuantityCart.AutoSize = true;
+            this.lbQuantityCart.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQuantityCart.Location = new System.Drawing.Point(972, 13);
+            this.lbQuantityCart.Name = "lbQuantityCart";
+            this.lbQuantityCart.Size = new System.Drawing.Size(42, 19);
+            this.lbQuantityCart.TabIndex = 49;
+            this.lbQuantityCart.Text = "0 шт";
+            this.lbQuantityCart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pbCart
             // 
@@ -290,6 +296,7 @@
             this.pbCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCart.TabIndex = 48;
             this.pbCart.TabStop = false;
+            this.pbCart.Click += new System.EventHandler(this.pbCart_Click);
             // 
             // pictureBox7
             // 
@@ -303,6 +310,7 @@
             // 
             this.rbGoods.AutoSize = true;
             this.rbGoods.Checked = true;
+            this.rbGoods.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.rbGoods.Location = new System.Drawing.Point(590, 106);
             this.rbGoods.Name = "rbGoods";
             this.rbGoods.Size = new System.Drawing.Size(140, 20);
@@ -314,6 +322,7 @@
             // rbCustomers
             // 
             this.rbCustomers.AutoSize = true;
+            this.rbCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.rbCustomers.Location = new System.Drawing.Point(760, 106);
             this.rbCustomers.Name = "rbCustomers";
             this.rbCustomers.Size = new System.Drawing.Size(142, 20);
@@ -325,6 +334,7 @@
             // rbSales
             // 
             this.rbSales.AutoSize = true;
+            this.rbSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.rbSales.Location = new System.Drawing.Point(930, 106);
             this.rbSales.Name = "rbSales";
             this.rbSales.Size = new System.Drawing.Size(150, 20);
@@ -336,6 +346,7 @@
             // rbSupplies
             // 
             this.rbSupplies.AutoSize = true;
+            this.rbSupplies.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.rbSupplies.Location = new System.Drawing.Point(1110, 106);
             this.rbSupplies.Name = "rbSupplies";
             this.rbSupplies.Size = new System.Drawing.Size(159, 20);
@@ -363,8 +374,8 @@
             this.Controls.Add(this.rbSales);
             this.Controls.Add(this.rbCustomers);
             this.Controls.Add(this.rbGoods);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbTotalAmountCart);
+            this.Controls.Add(this.lbQuantityCart);
             this.Controls.Add(this.pbCart);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.dataGridView2);
@@ -419,8 +430,8 @@
         private System.Windows.Forms.Button btnReportExcel;
         private System.Windows.Forms.Button btnReportWord;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbTotalAmountCart;
+        private System.Windows.Forms.Label lbQuantityCart;
         private System.Windows.Forms.PictureBox pbCart;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.RadioButton rbGoods;

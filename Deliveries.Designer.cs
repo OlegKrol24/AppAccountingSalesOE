@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.pbMainMenu = new System.Windows.Forms.PictureBox();
             this.pbLanguageUA = new System.Windows.Forms.PictureBox();
@@ -48,8 +48,8 @@
             this.tsmiCustomers = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiSales = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiReports = new System.Windows.Forms.ToolStripMenuItem();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbTotalAmountCart = new System.Windows.Forms.Label();
+            this.lbQuantityCart = new System.Windows.Forms.Label();
             this.pbCart = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.btnDeleteSupplies = new System.Windows.Forms.Button();
@@ -158,14 +158,14 @@
             // dgvSupplies
             // 
             this.dgvSupplies.BackgroundColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSupplies.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSupplies.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSupplies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSupplies.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Supplier,
@@ -175,14 +175,14 @@
             this.dgvSupplies.Location = new System.Drawing.Point(20, 167);
             this.dgvSupplies.Name = "dgvSupplies";
             this.dgvSupplies.ReadOnly = true;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSupplies.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSupplies.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSupplies.RowHeadersWidth = 51;
             this.dgvSupplies.RowTemplate.Height = 24;
             this.dgvSupplies.Size = new System.Drawing.Size(947, 561);
@@ -290,27 +290,27 @@
             this.tsmiReports.Text = "Звіти";
             this.tsmiReports.Click += new System.EventHandler(this.tsmiReports_Click);
             // 
-            // label4
+            // lbTotalAmountCart
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1001, 43);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 19);
-            this.label4.TabIndex = 39;
-            this.label4.Text = "0 грн";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbTotalAmountCart.AutoSize = true;
+            this.lbTotalAmountCart.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalAmountCart.Location = new System.Drawing.Point(972, 43);
+            this.lbTotalAmountCart.Name = "lbTotalAmountCart";
+            this.lbTotalAmountCart.Size = new System.Drawing.Size(45, 19);
+            this.lbTotalAmountCart.TabIndex = 39;
+            this.lbTotalAmountCart.Text = "0 грн";
+            this.lbTotalAmountCart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // lbQuantityCart
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1002, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 19);
-            this.label2.TabIndex = 38;
-            this.label2.Text = "0 шт";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbQuantityCart.AutoSize = true;
+            this.lbQuantityCart.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQuantityCart.Location = new System.Drawing.Point(972, 13);
+            this.lbQuantityCart.Name = "lbQuantityCart";
+            this.lbQuantityCart.Size = new System.Drawing.Size(42, 19);
+            this.lbQuantityCart.TabIndex = 38;
+            this.lbQuantityCart.Text = "0 шт";
+            this.lbQuantityCart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pbCart
             // 
@@ -322,6 +322,7 @@
             this.pbCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCart.TabIndex = 37;
             this.pbCart.TabStop = false;
+            this.pbCart.Click += new System.EventHandler(this.pbCart_Click);
             // 
             // pictureBox7
             // 
@@ -442,6 +443,7 @@
             // btnReset
             // 
             this.btnReset.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReset.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnReset.ForeColor = System.Drawing.Color.MidnightBlue;
             this.btnReset.Location = new System.Drawing.Point(1155, 676);
@@ -450,18 +452,21 @@
             this.btnReset.TabIndex = 58;
             this.btnReset.Text = "Скинути";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnApplyFilter
             // 
             this.btnApplyFilter.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnApplyFilter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnApplyFilter.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnApplyFilter.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnApplyFilter.Location = new System.Drawing.Point(1005, 676);
+            this.btnApplyFilter.Location = new System.Drawing.Point(991, 676);
             this.btnApplyFilter.Name = "btnApplyFilter";
             this.btnApplyFilter.Size = new System.Drawing.Size(135, 49);
             this.btnApplyFilter.TabIndex = 57;
             this.btnApplyFilter.Text = "Пошук";
             this.btnApplyFilter.UseVisualStyleBackColor = false;
+            this.btnApplyFilter.Click += new System.EventHandler(this.btnApplyFilter_Click);
             // 
             // formDeliveries
             // 
@@ -481,8 +486,8 @@
             this.Controls.Add(this.btnDeleteSupplies);
             this.Controls.Add(this.btnEditSupplies);
             this.Controls.Add(this.btnAddSupplies);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbTotalAmountCart);
+            this.Controls.Add(this.lbQuantityCart);
             this.Controls.Add(this.pbCart);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.msMainMenu);
@@ -530,8 +535,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiSales;
         private System.Windows.Forms.ToolStripMenuItem tsmiGoods;
         private System.Windows.Forms.ToolStripMenuItem tsmiReports;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbTotalAmountCart;
+        private System.Windows.Forms.Label lbQuantityCart;
         private System.Windows.Forms.PictureBox pbCart;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Button btnDeleteSupplies;

@@ -63,8 +63,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pbCart = new System.Windows.Forms.PictureBox();
+            this.lbQuantityCart = new System.Windows.Forms.Label();
+            this.lbTotalAmountCart = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.msMainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbArrowRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbArrowLeft)).BeginInit();
@@ -248,7 +249,7 @@
             this.lbTotalQuantitySales.AutoSize = true;
             this.lbTotalQuantitySales.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.lbTotalQuantitySales.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbTotalQuantitySales.Location = new System.Drawing.Point(771, 625);
+            this.lbTotalQuantitySales.Location = new System.Drawing.Point(793, 623);
             this.lbTotalQuantitySales.Name = "lbTotalQuantitySales";
             this.lbTotalQuantitySales.Size = new System.Drawing.Size(56, 32);
             this.lbTotalQuantitySales.TabIndex = 26;
@@ -471,27 +472,38 @@
             this.pbCart.TabStop = false;
             this.pbCart.Click += new System.EventHandler(this.pbCart_Click);
             // 
+            // lbQuantityCart
+            // 
+            this.lbQuantityCart.AutoSize = true;
+            this.lbQuantityCart.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbQuantityCart.Location = new System.Drawing.Point(972, 13);
+            this.lbQuantityCart.Name = "lbQuantityCart";
+            this.lbQuantityCart.Size = new System.Drawing.Size(42, 19);
+            this.lbQuantityCart.TabIndex = 31;
+            this.lbQuantityCart.Text = "0 шт";
+            this.lbQuantityCart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbTotalAmountCart
+            // 
+            this.lbTotalAmountCart.AutoSize = true;
+            this.lbTotalAmountCart.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalAmountCart.Location = new System.Drawing.Point(972, 43);
+            this.lbTotalAmountCart.Name = "lbTotalAmountCart";
+            this.lbTotalAmountCart.Size = new System.Drawing.Size(45, 19);
+            this.lbTotalAmountCart.TabIndex = 32;
+            this.lbTotalAmountCart.Text = "0 грн";
+            this.lbTotalAmountCart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1002, 13);
+            this.label1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(755, 623);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 19);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "0 шт";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1001, 43);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 19);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "0 грн";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Size = new System.Drawing.Size(43, 32);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "5 /";
             // 
             // formMainPage
             // 
@@ -499,8 +511,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1302, 753);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbTotalAmountCart);
+            this.Controls.Add(this.lbQuantityCart);
             this.Controls.Add(this.pbCart);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.msMainMenu);
@@ -534,6 +547,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Головна сторінка";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainPage_FormClosing);
+            this.Load += new System.EventHandler(this.formMainPage_Load);
             this.msMainMenu.ResumeLayout(false);
             this.msMainMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbArrowRight)).EndInit();
@@ -591,7 +605,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiReports;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pbCart;
+        private System.Windows.Forms.Label lbQuantityCart;
+        private System.Windows.Forms.Label lbTotalAmountCart;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
     }
 }

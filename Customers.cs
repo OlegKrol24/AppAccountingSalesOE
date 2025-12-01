@@ -21,7 +21,6 @@ namespace AppAccountingSalesOE
 
             if (currentUser != null)
             {
-                // Обмеження за роллю
                 if (currentUser.Role.Contains("менеджер"))
                 {
                     btnEditCustomer.Enabled = false;
@@ -60,6 +59,7 @@ namespace AppAccountingSalesOE
         {
             LoadData();
             ShowCustomers(ref customers_list, ref dgvCustomers);
+            UpdateCartLabels();
         }
 
         private void formCustomers_FormClosing(object sender, FormClosingEventArgs e)
@@ -209,6 +209,22 @@ namespace AppAccountingSalesOE
                 .ToList();
 
             ShowCustomers(ref filtered, ref dgvCustomers);
+        }
+
+        private void UpdateCartLabels()
+        {
+            int totalQuantity = Cart.GoodsInCart.Sum(item => item.Quantity);
+            decimal totalPrice = Cart.GoodsInCart.Sum(item => item.Goods.Price * item.Quantity);
+
+            lbQuantityCart.Text = $"{totalQuantity} шт";
+            lbTotalAmountCart.Text = $"{totalPrice:F2} грн";
+        }
+
+        private void pbCart_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formCart formCart = new formCart(currentUser);
+            formCart.Show();
         }
     }
 }

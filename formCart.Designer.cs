@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvCart = new System.Windows.Forms.DataGridView();
@@ -48,6 +48,14 @@
             this.pbLanguageUS = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.msMainMenu = new System.Windows.Forms.MenuStrip();
+            this.tsmiMainPage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiGoods = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSales = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSupplies = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiReports = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCustomers = new System.Windows.Forms.ToolStripMenuItem();
             this.Goods = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.msMainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -91,14 +100,14 @@
             // 
             // dgvCart
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Goods,
@@ -106,20 +115,20 @@
             this.Quantity,
             this.Total_price,
             this.Deletion});
-            this.dgvCart.Location = new System.Drawing.Point(138, 121);
+            this.dgvCart.Location = new System.Drawing.Point(76, 108);
             this.dgvCart.Name = "dgvCart";
             this.dgvCart.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCart.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCart.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCart.RowHeadersWidth = 51;
             this.dgvCart.RowTemplate.Height = 24;
-            this.dgvCart.Size = new System.Drawing.Size(1060, 525);
+            this.dgvCart.Size = new System.Drawing.Size(1150, 539);
             this.dgvCart.TabIndex = 34;
             this.dgvCart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCart_CellClick);
             this.dgvCart.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCart_CellValueChanged);
@@ -128,7 +137,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1001, 43);
+            this.label4.Location = new System.Drawing.Point(972, 43);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 19);
             this.label4.TabIndex = 38;
@@ -139,7 +148,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1002, 13);
+            this.label2.Location = new System.Drawing.Point(972, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 19);
             this.label2.TabIndex = 37;
@@ -150,7 +159,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(133, 674);
+            this.label3.Location = new System.Drawing.Point(80, 671);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(187, 26);
             this.label3.TabIndex = 39;
@@ -160,7 +169,7 @@
             // 
             this.lbTotalAmount.AutoSize = true;
             this.lbTotalAmount.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbTotalAmount.Location = new System.Drawing.Point(133, 717);
+            this.lbTotalAmount.Location = new System.Drawing.Point(80, 718);
             this.lbTotalAmount.Name = "lbTotalAmount";
             this.lbTotalAmount.Size = new System.Drawing.Size(168, 25);
             this.lbTotalAmount.TabIndex = 40;
@@ -172,7 +181,7 @@
             this.btnContinueShopping.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnContinueShopping.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContinueShopping.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnContinueShopping.Location = new System.Drawing.Point(710, 691);
+            this.btnContinueShopping.Location = new System.Drawing.Point(738, 689);
             this.btnContinueShopping.Name = "btnContinueShopping";
             this.btnContinueShopping.Size = new System.Drawing.Size(292, 52);
             this.btnContinueShopping.TabIndex = 41;
@@ -186,7 +195,7 @@
             this.btnBuy.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuy.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuy.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnBuy.Location = new System.Drawing.Point(1038, 689);
+            this.btnBuy.Location = new System.Drawing.Point(1048, 689);
             this.btnBuy.Name = "btnBuy";
             this.btnBuy.Size = new System.Drawing.Size(160, 52);
             this.btnBuy.TabIndex = 42;
@@ -198,7 +207,7 @@
             // 
             this.pbAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbAdd.Image = global::AppAccountingSalesOE.Properties.Resources.Add;
-            this.pbAdd.Location = new System.Drawing.Point(527, 683);
+            this.pbAdd.Location = new System.Drawing.Point(626, 681);
             this.pbAdd.Name = "pbAdd";
             this.pbAdd.Size = new System.Drawing.Size(60, 60);
             this.pbAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -210,7 +219,7 @@
             // 
             this.pbDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbDelete.Image = global::AppAccountingSalesOE.Properties.Resources.Minus;
-            this.pbDelete.Location = new System.Drawing.Point(427, 683);
+            this.pbDelete.Location = new System.Drawing.Point(526, 681);
             this.pbDelete.Name = "pbDelete";
             this.pbDelete.Size = new System.Drawing.Size(60, 60);
             this.pbDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -292,13 +301,108 @@
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
             // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClear.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnClear.Location = new System.Drawing.Point(307, 689);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(160, 52);
+            this.btnClear.TabIndex = 45;
+            this.btnClear.Text = "Очистити";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // msMainMenu
+            // 
+            this.msMainMenu.AutoSize = false;
+            this.msMainMenu.BackColor = System.Drawing.Color.SteelBlue;
+            this.msMainMenu.Dock = System.Windows.Forms.DockStyle.None;
+            this.msMainMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.msMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiMainPage,
+            this.tsmiGoods,
+            this.tsmiCustomers,
+            this.tsmiSales,
+            this.tsmiSupplies,
+            this.tsmiReports});
+            this.msMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
+            this.msMainMenu.Location = new System.Drawing.Point(1145, 74);
+            this.msMainMenu.Name = "msMainMenu";
+            this.msMainMenu.Size = new System.Drawing.Size(156, 305);
+            this.msMainMenu.TabIndex = 46;
+            this.msMainMenu.Text = "menuStrip1";
+            this.msMainMenu.Visible = false;
+            // 
+            // tsmiMainPage
+            // 
+            this.tsmiMainPage.BackColor = System.Drawing.Color.PowderBlue;
+            this.tsmiMainPage.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tsmiMainPage.Margin = new System.Windows.Forms.Padding(0, 10, 5, 0);
+            this.tsmiMainPage.Name = "tsmiMainPage";
+            this.tsmiMainPage.Size = new System.Drawing.Size(144, 29);
+            this.tsmiMainPage.Text = "Головна";
+            this.tsmiMainPage.Click += new System.EventHandler(this.tsmiMainPage_Click);
+            // 
+            // tsmiGoods
+            // 
+            this.tsmiGoods.BackColor = System.Drawing.Color.PowderBlue;
+            this.tsmiGoods.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tsmiGoods.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
+            this.tsmiGoods.Name = "tsmiGoods";
+            this.tsmiGoods.Size = new System.Drawing.Size(144, 29);
+            this.tsmiGoods.Text = "Товари";
+            this.tsmiGoods.Click += new System.EventHandler(this.tsmiGoods_Click);
+            // 
+            // tsmiSales
+            // 
+            this.tsmiSales.BackColor = System.Drawing.Color.PowderBlue;
+            this.tsmiSales.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tsmiSales.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
+            this.tsmiSales.Name = "tsmiSales";
+            this.tsmiSales.Size = new System.Drawing.Size(144, 29);
+            this.tsmiSales.Text = "Продажі";
+            this.tsmiSales.Click += new System.EventHandler(this.tsmiSales_Click);
+            // 
+            // tsmiSupplies
+            // 
+            this.tsmiSupplies.BackColor = System.Drawing.Color.PowderBlue;
+            this.tsmiSupplies.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tsmiSupplies.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
+            this.tsmiSupplies.Name = "tsmiSupplies";
+            this.tsmiSupplies.Size = new System.Drawing.Size(144, 29);
+            this.tsmiSupplies.Text = "Поставки";
+            this.tsmiSupplies.Click += new System.EventHandler(this.tsmiSupplies_Click);
+            // 
+            // tsmiReports
+            // 
+            this.tsmiReports.BackColor = System.Drawing.Color.PowderBlue;
+            this.tsmiReports.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tsmiReports.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
+            this.tsmiReports.Name = "tsmiReports";
+            this.tsmiReports.Size = new System.Drawing.Size(144, 29);
+            this.tsmiReports.Text = "Звіти";
+            this.tsmiReports.Click += new System.EventHandler(this.tsmiReports_Click);
+            // 
+            // tsmiCustomers
+            // 
+            this.tsmiCustomers.BackColor = System.Drawing.Color.PowderBlue;
+            this.tsmiCustomers.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
+            this.tsmiCustomers.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
+            this.tsmiCustomers.Name = "tsmiCustomers";
+            this.tsmiCustomers.Size = new System.Drawing.Size(144, 29);
+            this.tsmiCustomers.Text = "Клієнти";
+            this.tsmiCustomers.Click += new System.EventHandler(this.tsmiCustomers_Click);
+            // 
             // Goods
             // 
             this.Goods.HeaderText = "Товар";
             this.Goods.MinimumWidth = 6;
             this.Goods.Name = "Goods";
             this.Goods.ReadOnly = true;
-            this.Goods.Width = 240;
+            this.Goods.Width = 250;
             // 
             // Price
             // 
@@ -339,6 +443,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1302, 753);
+            this.Controls.Add(this.msMainMenu);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.pbAdd);
             this.Controls.Add(this.pbDelete);
             this.Controls.Add(this.btnBuy);
@@ -372,6 +478,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.msMainMenu.ResumeLayout(false);
+            this.msMainMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,6 +505,14 @@
         private System.Windows.Forms.Button btnBuy;
         private System.Windows.Forms.PictureBox pbDelete;
         private System.Windows.Forms.PictureBox pbAdd;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.MenuStrip msMainMenu;
+        private System.Windows.Forms.ToolStripMenuItem tsmiMainPage;
+        private System.Windows.Forms.ToolStripMenuItem tsmiGoods;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSales;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSupplies;
+        private System.Windows.Forms.ToolStripMenuItem tsmiReports;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCustomers;
         private System.Windows.Forms.DataGridViewTextBoxColumn Goods;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;

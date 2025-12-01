@@ -110,6 +110,7 @@ namespace AppAccountingSalesOE
         {
             LoadData();
             ShowSales(ref dgvSales);
+            UpdateCartLabels();
 
             cbCustomers.DataSource = customers;
             cbCustomers.DisplayMember = "Full_name";
@@ -176,6 +177,22 @@ namespace AppAccountingSalesOE
             mcSaleDate.SelectionEnd = mcSaleDate.MinDate;
 
             ShowSales(ref dgvSales);
+        }
+
+        private void UpdateCartLabels()
+        {
+            int totalQuantity = Cart.GoodsInCart.Sum(item => item.Quantity);
+            decimal totalPrice = Cart.GoodsInCart.Sum(item => item.Goods.Price * item.Quantity);
+
+            lbQuantityCart.Text = $"{totalQuantity} шт";
+            lbTotalAmountCart.Text = $"{totalPrice:F2} грн";
+        }
+
+        private void pbCart_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formCart formCart = new formCart(currentUser);
+            formCart.Show();
         }
     }
 }

@@ -92,10 +92,67 @@ namespace AppAccountingSalesOE
             try { db.Execute<Stock>(file_db, "select id_stock, id_goods, quantity from stock", ref stock_list); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
+            List<SalesReportDTO> salesReport = new List<SalesReportDTO>();
+
+            foreach (var sale in sales_list)
+            {
+                string customerName = customers_list.FirstOrDefault(c => c.ID == sale.ID_Customer)?.Full_name ?? "Невідомий";
+                string employeeName = employees_list.FirstOrDefault(emp => emp.ID == sale.ID_Employee)?.Full_name ?? "Невідомий";
+
+                var saleDetails = sales_details_list.Where(sd => sd.ID_Sale == sale.ID).Select(sd => new SalesDetailReportDTO
+                {
+                    ID = sd.ID,
+                    GoodsName = goods_list.FirstOrDefault(g => g.ID == sd.ID_Goods)?.Name ?? "Невідомий товар",
+                    Quantity = sd.Quantity,
+                    UnitPrice = sd.UnitPrice
+                }).ToList();
+
+                string goodsListString = string.Join(",\n", saleDetails.Select(x => $"{x.GoodsName} ({x.Quantity} шт.)"));
+
+                salesReport.Add(new SalesReportDTO
+                {
+                    ID = sale.ID,
+                    SaleDate = sale.SaleDate,
+                    CustomerFullName = customerName,
+                    EmployeeFullName = employeeName,
+                    TotalAmount = sale.TotalAmount,
+                    Details = saleDetails,
+                    GoodsSummary = goodsListString
+                });
+            }
+
+            List<SuppliesReportDTO> suppliesReport = new List<SuppliesReportDTO>();
+
+            foreach (var supply in supplies_list)
+            {
+                string supplierFullName = suppliers_list.FirstOrDefault(sp => sp.ID == supply.ID_Supplier)?.Full_name ?? "Невідомий";
+                string companyName = suppliers_list.FirstOrDefault(sp => sp.ID == supply.ID_Supplier)?.Company_name ?? "Невідома";
+
+                var supplyDetails = supplies_details_list.Where(sd => sd.ID_supply == supply.ID).Select(sd => new SuppliesDetailReportDTO
+                {
+                    ID = sd.ID,
+                    ID_Supply = sd.ID_supply,
+                    GoodsName = goods_list.FirstOrDefault(g => g.ID == sd.ID_goods)?.Name ?? "Невідомий товар",
+                    Quantity = sd.Quantity,
+                    UnitCost = sd.Unit_cost
+                }).ToList();
+
+                suppliesReport.Add(new SuppliesReportDTO
+                {
+                    ID = supply.ID,
+                    ID_Supplier = supply.ID_Supplier,
+                    DeliveryDate = supply.DeliveryDate,
+                    TotalCost = supply.TotalCost,
+                    SupplierFullName = supplierFullName,
+                    CompanyName = companyName,
+                    Details = supplyDetails
+                });
+            }
+
             ClassSerialize.SerializeToXml(ref goods_list, "goods.xml");
             ClassSerialize.SerializeToXml(ref customers_list, "customers.xml");
-            ClassSerialize.SerializeToXml(ref sales_list, "sales.xml");
-            ClassSerialize.SerializeToXml(ref supplies_list, "supplies.xml");
+            ClassSerialize.SerializeToXml(ref salesReport, "sales.xml");
+            ClassSerialize.SerializeToXml(ref suppliesReport, "supplies.xml");
         }
 
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
@@ -114,25 +171,25 @@ namespace AppAccountingSalesOE
 
             if (rbGoods.Checked)
             {
-                reportFile = "GoodsReport.frx";
+                reportFile = "Reports\\GoodsReport.frx";
                 xmlFile = "goods.xml";
             }
 
             else if (rbCustomers.Checked)
             {
-                reportFile = "CustomersReport.frx";
+                reportFile = "Reports\\CustomersReport.frx";
                 xmlFile = "customers.xml";
             }
 
             else if (rbSales.Checked)
             {
-                reportFile = "SalesReport.frx";
+                reportFile = "Reports\\SalesReport.frx";
                 xmlFile = "sales.xml";
             }
 
             else if (rbSupplies.Checked)
             {
-                reportFile = "SuppliesReport.frx";
+                reportFile = "Reports\\SuppliesReport.frx";
                 xmlFile = "supplies.xml";
             }
 
@@ -297,6 +354,8 @@ namespace AppAccountingSalesOE
             pc.Size = new Size(dataGridView2.Size.Width, dataGridView2.Size.Height);
 
             dataGridView2.Controls.Add(pc);
+
+            UpdateCartLabels();
         }
 
         private void formReport_FormClosing(object sender, FormClosingEventArgs e)
@@ -343,6 +402,15 @@ namespace AppAccountingSalesOE
             this.Hide();
             formDeliveries formDeliveries = new formDeliveries(currentUser);
             formDeliveries.Show();
+        }
+
+        private void UpdateCartLabels()
+        {
+            int totalQuantity = Cart.GoodsInCart.Sum(item => item.Quantity);
+            decimal totalPrice = Cart.GoodsInCart.Sum(item => item.Goods.Price * item.Quantity);
+
+            lbQuantityCart.Text = $"{totalQuantity} шт";
+            lbTotalAmountCart.Text = $"{totalPrice:F2} грн";
         }
 
         private void btnReportExcel_Click(object sender, EventArgs e)
@@ -442,6 +510,13 @@ namespace AppAccountingSalesOE
                     MessageBox.Show("Помилка при створенні документа: " + ex.Message, "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void pbCart_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formCart formCart = new formCart(currentUser);
+            formCart.Show();
         }
     }
 }

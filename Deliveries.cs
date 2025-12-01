@@ -118,6 +118,7 @@ namespace AppAccountingSalesOE
         {
             LoadData();
             ShowSupplies(ref dgvSupplies);
+            UpdateCartLabels();
         }
 
         private void btnSuppliers_Click(object sender, EventArgs e)
@@ -247,6 +248,32 @@ namespace AppAccountingSalesOE
             }
 
             else MessageBox.Show("Виберіть поставку для видалення!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void UpdateCartLabels()
+        {
+            int totalQuantity = Cart.GoodsInCart.Sum(item => item.Quantity);
+            decimal totalPrice = Cart.GoodsInCart.Sum(item => item.Goods.Price * item.Quantity);
+
+            lbQuantityCart.Text = $"{totalQuantity} шт";
+            lbTotalAmountCart.Text = $"{totalPrice:F2} грн";
+        }
+
+        private void pbCart_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formCart formCart = new formCart(currentUser);
+            formCart.Show();
+        }
+
+        private void btnApplyFilter_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

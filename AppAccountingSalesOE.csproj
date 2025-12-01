@@ -105,6 +105,7 @@
   <ItemGroup>
     <Compile Include="Cart.cs" />
     <Compile Include="CartItem.cs" />
+    <Compile Include="ChequeReportDTO.cs" />
     <Compile Include="ClassDataBase.cs" />
     <Compile Include="ClassSerialize.cs" />
     <Compile Include="clCustomers.cs" />
@@ -206,9 +207,11 @@
     <Compile Include="Sales.Designer.cs">
       <DependentUpon>Sales.cs</DependentUpon>
     </Compile>
+    <Compile Include="SalesReportDTO.cs" />
     <Compile Include="Stock.cs" />
     <Compile Include="Suppliers.cs" />
     <Compile Include="Supplies.cs" />
+    <Compile Include="SuppliesReportDTO.cs" />
     <Compile Include="Supplies_details.cs" />
     <Compile Include="User.cs" />
     <EmbeddedResource Include="Customers.resx">
