@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMainPage));
             this.btnGoods = new System.Windows.Forms.Button();
             this.btnCustomers = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@
             this.lbPopularGoods = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lbTotalQuantitySales = new System.Windows.Forms.Label();
             this.msMainMenu = new System.Windows.Forms.MenuStrip();
             this.tsmiGoods = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCustomers = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,7 +65,8 @@
             this.pbCart = new System.Windows.Forms.PictureBox();
             this.lbQuantityCart = new System.Windows.Forms.Label();
             this.lbTotalAmountCart = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbSoldInfo = new System.Windows.Forms.Label();
+            this.ttPopularGoods = new System.Windows.Forms.ToolTip(this.components);
             this.msMainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbArrowRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbArrowLeft)).BeginInit();
@@ -224,36 +225,25 @@
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(543, 560);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(525, 550);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(505, 32);
+            this.label2.Size = new System.Drawing.Size(540, 62);
             this.label2.TabIndex = 24;
-            this.label2.Text = "Загальна кількість продажів магазину";
+            this.label2.Text = "Кількість проданого товару з загальної\r\nкількості продажів магазину";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(545, 694);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(557, 694);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(495, 32);
+            this.label3.Size = new System.Drawing.Size(482, 32);
             this.label3.TabIndex = 25;
             this.label3.Text = "Оргтехніка, яка працює на ваш успіх!";
-            // 
-            // lbTotalQuantitySales
-            // 
-            this.lbTotalQuantitySales.AutoSize = true;
-            this.lbTotalQuantitySales.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.lbTotalQuantitySales.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbTotalQuantitySales.Location = new System.Drawing.Point(793, 623);
-            this.lbTotalQuantitySales.Name = "lbTotalQuantitySales";
-            this.lbTotalQuantitySales.Size = new System.Drawing.Size(56, 32);
-            this.lbTotalQuantitySales.TabIndex = 26;
-            this.lbTotalQuantitySales.Text = "143";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // msMainMenu
             // 
@@ -336,6 +326,7 @@
             this.pbArrowRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbArrowRight.TabIndex = 23;
             this.pbArrowRight.TabStop = false;
+            this.pbArrowRight.Click += new System.EventHandler(this.pbArrowRight_Click);
             // 
             // pbArrowLeft
             // 
@@ -348,6 +339,7 @@
             this.pbArrowLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbArrowLeft.TabIndex = 22;
             this.pbArrowLeft.TabStop = false;
+            this.pbArrowLeft.Click += new System.EventHandler(this.pbArrowLeft_Click);
             // 
             // pbPopularGoods
             // 
@@ -355,6 +347,7 @@
             this.pbPopularGoods.Location = new System.Drawing.Point(547, 173);
             this.pbPopularGoods.Name = "pbPopularGoods";
             this.pbPopularGoods.Size = new System.Drawing.Size(505, 334);
+            this.pbPopularGoods.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPopularGoods.TabIndex = 20;
             this.pbPopularGoods.TabStop = false;
             // 
@@ -494,16 +487,16 @@
             this.lbTotalAmountCart.Text = "0 грн";
             this.lbTotalAmountCart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // lbSoldInfo
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(755, 623);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 32);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "5 /";
+            this.lbSoldInfo.AutoSize = true;
+            this.lbSoldInfo.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.lbSoldInfo.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbSoldInfo.Location = new System.Drawing.Point(770, 633);
+            this.lbSoldInfo.Name = "lbSoldInfo";
+            this.lbSoldInfo.Size = new System.Drawing.Size(78, 25);
+            this.lbSoldInfo.TabIndex = 33;
+            this.lbSoldInfo.Text = "5 / 143";
             // 
             // formMainPage
             // 
@@ -511,13 +504,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1302, 753);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbSoldInfo);
             this.Controls.Add(this.lbTotalAmountCart);
             this.Controls.Add(this.lbQuantityCart);
             this.Controls.Add(this.pbCart);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.msMainMenu);
-            this.Controls.Add(this.lbTotalQuantitySales);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pbArrowRight);
@@ -596,7 +588,6 @@
         private System.Windows.Forms.PictureBox pbArrowRight;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lbTotalQuantitySales;
         private System.Windows.Forms.MenuStrip msMainMenu;
         private System.Windows.Forms.ToolStripMenuItem tsmiGoods;
         private System.Windows.Forms.ToolStripMenuItem tsmiCustomers;
@@ -607,6 +598,7 @@
         private System.Windows.Forms.PictureBox pbCart;
         private System.Windows.Forms.Label lbQuantityCart;
         private System.Windows.Forms.Label lbTotalAmountCart;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbSoldInfo;
+        private System.Windows.Forms.ToolTip ttPopularGoods;
     }
 }

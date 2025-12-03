@@ -25,7 +25,7 @@ namespace AppAccountingSalesOE
         public decimal Price { get => price; set; }
         public int WarrantyMonths { get => warranty_months; set; }
         public string Description { get => description; set; }
-        public string Image { get => image; }
+        public string Image { get => image; set; }
 
         public Goods()
         {

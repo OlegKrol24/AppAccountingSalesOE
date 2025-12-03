@@ -14,6 +14,7 @@ namespace AppAccountingSalesOE
         public decimal TotalCost { get; set; }
         public string SupplierFullName { get; set; }
         public string CompanyName { get; set; }
+        public string GoodsSummary { get; set; }
         public List<SuppliesDetailReportDTO> Details { get; set; } = new List<SuppliesDetailReportDTO>();
     }
 

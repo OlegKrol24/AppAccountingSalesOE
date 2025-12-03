@@ -137,6 +137,8 @@ namespace AppAccountingSalesOE
                     UnitCost = sd.Unit_cost
                 }).ToList();
 
+                string goodsListString = string.Join(",\n", supplyDetails.Select(x => $"{x.GoodsName} ({x.Quantity} шт.)"));
+
                 suppliesReport.Add(new SuppliesReportDTO
                 {
                     ID = supply.ID,
@@ -145,7 +147,8 @@ namespace AppAccountingSalesOE
                     TotalCost = supply.TotalCost,
                     SupplierFullName = supplierFullName,
                     CompanyName = companyName,
-                    Details = supplyDetails
+                    Details = supplyDetails,
+                    GoodsSummary = goodsListString
                 });
             }
 
@@ -197,15 +200,24 @@ namespace AppAccountingSalesOE
             {
                 report.Load(reportFile);
                 report.Prepare();
-                report.Preview = pc;
-                report.Show();
+
+                formReportView viewForm = new formReportView();
+
+                FastReport.Preview.PreviewControl pcForView = new FastReport.Preview.PreviewControl();
+                pcForView.Dock = DockStyle.Fill;
+
+                viewForm.pnlReportPreview.Controls.Add(pcForView); 
+
+                report.Preview = pcForView;
+
+                report.Show(false);
+
+                viewForm.ShowDialog();
             }
         }
 
         private void UpdateDataGridViews()
         {
-            dataGridView2.Rows.Clear();
-            dataGridView2.Columns.Clear();
             dataGridView1.Rows.Clear();
             dataGridView1.Columns.Clear();
 
@@ -336,11 +348,7 @@ namespace AppAccountingSalesOE
                 dataGridView1.Rows.Add("Кількість поставок", suppliesCount);
                 dataGridView1.Rows.Add("Середня сума поставки", avgSupply.ToString("N2"));
             }
-
-            UpdateReport();
         }
-
-        FastReport.Preview.PreviewControl pc = new FastReport.Preview.PreviewControl();
 
         private void FormReport_Load(object sender, EventArgs e)
         {
@@ -350,11 +358,6 @@ namespace AppAccountingSalesOE
             mcReportDate.SelectionEnd = mcReportDate.MinDate;
 
             UpdateDataGridViews();
-
-            pc.Size = new Size(dataGridView2.Size.Width, dataGridView2.Size.Height);
-
-            dataGridView2.Controls.Add(pc);
-
             UpdateCartLabels();
         }
 
@@ -424,33 +427,33 @@ namespace AppAccountingSalesOE
                     repExcel.CreateNewBook(excelFilePath);
                     repExcel.OpenBook(excelFilePath);
 
-                    repExcel.SetValue("Sheet1", "A1", "Дані", "string", true);
-                    
-                    for (int col = 0; col < dataGridView2.Columns.Count; col++)
+                    repExcel.SetValue("Sheet1", "A1", "Звіт", "string", true);
+
+                    int currentRow = 2;
+
+                    for (int col = 0; col < dataGridView1.Columns.Count; col++)
                     {
-                        repExcel.SetValue("Sheet1", $"{(char)('A' + col)}2", dataGridView2.Columns[col].HeaderText, "string", true);
+                        repExcel.SetValue("Sheet1", $"{(char)('A' + col)}{currentRow}", dataGridView1.Columns[col].HeaderText, "string", true);
                     }
 
-                    for (int row = 0; row < dataGridView2.Rows.Count; row++)
-                    {
-                        for (int col = 0; col < dataGridView2.Columns.Count; col++)
-                        {
-                            repExcel.SetValue("Sheet1", $"{(char)('A' + col)}{row + 3}", dataGridView2.Rows[row].Cells[col].Value?.ToString(), "string");
-                        }
-                    }
-                    
-                    repExcel.SetValue("Sheet1", "A" + (dataGridView2.Rows.Count + 4), "Звіт", "string", true);
-                    
+                    currentRow++;
+
                     for (int row = 0; row < dataGridView1.Rows.Count; row++)
                     {
-                        repExcel.SetValue("Sheet1", "A" + (dataGridView2.Rows.Count + row + 5), dataGridView1.Rows[row].Cells[0].Value?.ToString(), "string");
-                        repExcel.SetValue("Sheet1", "B" + (dataGridView2.Rows.Count + row + 5), dataGridView1.Rows[row].Cells[1].Value?.ToString(), "string");
+                        if (dataGridView1.Rows[row].IsNewRow) continue;
+
+                        for (int col = 0; col < dataGridView1.Columns.Count; col++)
+                        {
+                            repExcel.SetValue("Sheet1", $"{(char)('A' + col)}{currentRow}", dataGridView1.Rows[row].Cells[col].Value?.ToString(), "string");
+                        }
+
+                        currentRow++;
                     }
 
                     repExcel.AutoFitColumns("Sheet1");
                     repExcel.Save(excelFilePath);
                     repExcel.CloseBook();
-                    
+
                     MessageBox.Show($"Звіт створено: {excelFilePath}", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
@@ -472,37 +475,29 @@ namespace AppAccountingSalesOE
                     repWord.InsertText("Звіт", true, "center");
 
                     List<List<string>> tableData = new List<List<string>>();
-                    List<string> headers2 = new List<string>();
-                    
-                    for (int i = 0; i < dataGridView2.Columns.Count; i++) headers2.Add(dataGridView2.Columns[i].HeaderText);
-                    
-                    tableData.Add(headers2);
-                    
-                    for (int row = 0; row < dataGridView2.Rows.Count; row++)
+
+                    List<string> headers = new List<string>();
+
+                    for (int i = 0; i < dataGridView1.Columns.Count; i++) headers.Add(dataGridView1.Columns[i].HeaderText);
+                    tableData.Add(headers);
+
+                    for (int row = 0; row < dataGridView1.Rows.Count; row++)
                     {
+                        if (dataGridView1.Rows[row].IsNewRow) continue;
+
                         List<string> rowData = new List<string>();
-                        for (int col = 0; col < dataGridView2.Columns.Count; col++) rowData.Add(dataGridView2.Rows[row].Cells[col].Value?.ToString());
+
+                        for (int col = 0; col < dataGridView1.Columns.Count; col++) rowData.Add(dataGridView1.Rows[row].Cells[col].Value?.ToString());
+
                         tableData.Add(rowData);
                     }
 
                     repWord.InsertTable(tableData);
-                    repWord.InsertText("\nЗвітні метрики:", true, "left");
 
-                    List<List<string>> reportTable = new List<List<string>>();
-                    
-                    List<string> headers1 = new List<string> { "Метрика", "Значення" };
-                    
-                    reportTable.Add(headers1);
-                    for (int row = 0; row < dataGridView1.Rows.Count; row++)
-                    {
-                        reportTable.Add(new List<string> { dataGridView1.Rows[row].Cells[0].Value?.ToString(), dataGridView1.Rows[row].Cells[1].Value?.ToString() });
-                    }
-
-                    repWord.InsertTable(reportTable);
                     repWord.Save(wordFilePath);
                     repWord.ExportToPdf(wordFilePath.Replace(".docx", ".pdf"));
                     repWord.CloseDocument();
-                    
+
                     MessageBox.Show($"Документ створено: {wordFilePath}", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
@@ -517,6 +512,20 @@ namespace AppAccountingSalesOE
             this.Hide();
             formCart formCart = new formCart(currentUser);
             formCart.Show();
+        }
+
+        private void btnGenerateReport_Click(object sender, EventArgs e)
+        {
+            UpdateDataGridViews();
+            UpdateReport();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            mcReportDate.SelectionStart = mcReportDate.MinDate;
+            mcReportDate.SelectionEnd = mcReportDate.MinDate;
+
+            UpdateDataGridViews();
         }
     }
 }

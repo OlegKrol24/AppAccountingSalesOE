@@ -101,6 +101,28 @@ namespace AppAccountingSalesOE
             }
             return result;
         }
+
+        public SqliteDataReader ExecuteReader(string setupProgram, string sSql, out SqliteConnection con)
+        {
+            con = new SqliteConnection(string.Format("Data Source={0};", setupProgram));
+            try
+            {
+                con.Open();
+                SqliteCommand sqlCommand = con.CreateCommand();
+                sqlCommand.CommandText = sSql;
+
+                return sqlCommand.ExecuteReader(CommandBehavior.CloseConnection);
+            }
+            catch (Exception)
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+                con = null;
+                return null;
+            }
+        }
         #endregion
     }
 }
