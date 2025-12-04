@@ -272,7 +272,7 @@
             this.tsmiSupplies,
             this.tsmiReports});
             this.msMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.msMainMenu.Location = new System.Drawing.Point(1145, 74);
+            this.msMainMenu.Location = new System.Drawing.Point(1147, 74);
             this.msMainMenu.Name = "msMainMenu";
             this.msMainMenu.Size = new System.Drawing.Size(156, 260);
             this.msMainMenu.TabIndex = 39;

@@ -31,18 +31,20 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvSuppliers = new System.Windows.Forms.DataGridView();
-            this.btnDeleteSuppliers = new System.Windows.Forms.Button();
-            this.btnEditSuppliers = new System.Windows.Forms.Button();
-            this.btnAddSuppliers = new System.Windows.Forms.Button();
             this.Full_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Company_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phone_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDeleteSuppliers = new System.Windows.Forms.Button();
+            this.btnEditSuppliers = new System.Windows.Forms.Button();
+            this.btnAddSuppliers = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliers)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvSuppliers
             // 
+            this.dgvSuppliers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvSuppliers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvSuppliers.BackgroundColor = System.Drawing.SystemColors.Info;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -58,7 +60,7 @@
             this.Company_name,
             this.Phone_number,
             this.Email});
-            this.dgvSuppliers.Location = new System.Drawing.Point(18, 102);
+            this.dgvSuppliers.Location = new System.Drawing.Point(13, 102);
             this.dgvSuppliers.Name = "dgvSuppliers";
             this.dgvSuppliers.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -71,8 +73,40 @@
             this.dgvSuppliers.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSuppliers.RowHeadersWidth = 51;
             this.dgvSuppliers.RowTemplate.Height = 24;
-            this.dgvSuppliers.Size = new System.Drawing.Size(870, 434);
+            this.dgvSuppliers.Size = new System.Drawing.Size(879, 446);
             this.dgvSuppliers.TabIndex = 0;
+            // 
+            // Full_name
+            // 
+            this.Full_name.HeaderText = "Постачальник";
+            this.Full_name.MinimumWidth = 6;
+            this.Full_name.Name = "Full_name";
+            this.Full_name.ReadOnly = true;
+            this.Full_name.Width = 150;
+            // 
+            // Company_name
+            // 
+            this.Company_name.HeaderText = "Назва компанії";
+            this.Company_name.MinimumWidth = 6;
+            this.Company_name.Name = "Company_name";
+            this.Company_name.ReadOnly = true;
+            this.Company_name.Width = 145;
+            // 
+            // Phone_number
+            // 
+            this.Phone_number.HeaderText = "Номер телефону";
+            this.Phone_number.MinimumWidth = 6;
+            this.Phone_number.Name = "Phone_number";
+            this.Phone_number.ReadOnly = true;
+            this.Phone_number.Width = 152;
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Електронна пошта";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 168;
             // 
             // btnDeleteSuppliers
             // 
@@ -115,38 +149,6 @@
             this.btnAddSuppliers.Text = "Додати";
             this.btnAddSuppliers.UseVisualStyleBackColor = false;
             this.btnAddSuppliers.Click += new System.EventHandler(this.btnAddSuppliers_Click);
-            // 
-            // Full_name
-            // 
-            this.Full_name.HeaderText = "Постачальник";
-            this.Full_name.MinimumWidth = 6;
-            this.Full_name.Name = "Full_name";
-            this.Full_name.ReadOnly = true;
-            this.Full_name.Width = 155;
-            // 
-            // Company_name
-            // 
-            this.Company_name.HeaderText = "Назва компанії";
-            this.Company_name.MinimumWidth = 6;
-            this.Company_name.Name = "Company_name";
-            this.Company_name.ReadOnly = true;
-            this.Company_name.Width = 155;
-            // 
-            // Phone_number
-            // 
-            this.Phone_number.HeaderText = "Номер телефону";
-            this.Phone_number.MinimumWidth = 6;
-            this.Phone_number.Name = "Phone_number";
-            this.Phone_number.ReadOnly = true;
-            this.Phone_number.Width = 125;
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Електронна пошта";
-            this.Email.MinimumWidth = 6;
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.Width = 155;
             // 
             // formSuppliers
             // 

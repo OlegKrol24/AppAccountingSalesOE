@@ -44,7 +44,9 @@ namespace AppAccountingSalesOE
                 }
             }
 
-            dgvGoods.CellMouseClick += dgvGoods_CellMouseClick;
+            dgvGoods.ShowCellToolTips = false;
+
+            dgvGoods.CellMouseMove += dgvGoods_CellMouseMove;
         }
 
         ClassDataBase db = new ClassDataBase();
@@ -360,24 +362,37 @@ namespace AppAccountingSalesOE
             LoadGoodsToListViewFiltration(filtered);
         }
 
-        private void dgvGoods_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void dgvGoods_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < dgvGoods.Rows.Count)
+            if (e.RowIndex < 0)
             {
-                Goods g = dgvGoods.Rows[e.RowIndex].Tag as Goods;
+                ttGoods.Hide(dgvGoods);
+                currentTooltipRowIndex = -1;
+                return;
+            }
+
+            if (e.RowIndex != currentTooltipRowIndex)
+            {
+                ttGoods.Hide(dgvGoods);
+                currentTooltipRowIndex = e.RowIndex;
+
+                DataGridViewRow row = dgvGoods.Rows[e.RowIndex];
+                Goods g = row.Tag as Goods;
 
                 if (g != null)
                 {
                     int quantity = stock_list.FirstOrDefault(s => s.ID_Goods == g.ID)?.Quantity ?? 0;
 
                     string hint = $"Ціна: {g.Price:N2} грн\n" +
-                    $"Термін гарантії: {g.WarrantyMonths} місяців\n" +
-                    $"Кількість: {quantity} шт\n" +
-                    $"Опис: {g.Description}";
+                                  $"Термін гарантії: {g.WarrantyMonths} місяців\n" +
+                                  $"Кількість: {quantity} шт\n" +
+                                  $"Опис: {g.Description}";
 
                     Point location = dgvGoods.PointToClient(Cursor.Position);
                     ttGoods.Show(hint, dgvGoods, location.X + 15, location.Y + 15);
                 }
+
+                else ttGoods.Hide(dgvGoods);
             }
         }
     }

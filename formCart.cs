@@ -404,6 +404,12 @@ namespace AppAccountingSalesOE
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            if (Cart.GoodsInCart.Count == 0)
+            {
+                MessageBox.Show("Кошик порожній", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             Cart.GoodsInCart.Clear();
             LoadCartItems();
             UpdateCartLabels();

@@ -53,17 +53,21 @@ namespace AppAccountingSalesOE
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-        void ShowSupplies(ref DataGridView data)
+        void ShowSupplies(ref DataGridView data, List<Supplies> filteredSupplies = null)
         {
             data.Rows.Clear();
 
-            foreach (Supplies s in supplies_list)
+            var suppliesToShow = filteredSupplies ?? supplies_list;
+
+            var sortedSupplies = suppliesToShow.OrderBy(s => s.DeliveryDate).ToList();
+
+            foreach (Supplies s in sortedSupplies)
             {
                 Suppliers supplier = suppliers_list.FirstOrDefault(sp => sp.ID == s.ID_Supplier);
 
                 if (supplier != null)
                 {
-                    data.Rows.Add(supplier.Full_name, supplier.Company_name, s.DeliveryDate.ToString("dd.MM.yyyy"), s.TotalCost.ToString("N2"));
+                    data.Rows.Add(s.DeliveryDate.ToString("dd.MM.yyyy"), supplier.Full_name, supplier.Company_name, s.TotalCost.ToString("N2"));
                 }
             }
         }
@@ -117,6 +121,17 @@ namespace AppAccountingSalesOE
         private void formDeliveries_Load(object sender, EventArgs e)
         {
             LoadData();
+
+            cbSuppliers.DataSource = suppliers_list;
+            cbSuppliers.DisplayMember = "Full_name";
+            cbSuppliers.ValueMember = "ID";
+            cbSuppliers.SelectedIndex = -1;
+
+            cbCompanyName.DataSource = suppliers_list;
+            cbCompanyName.DisplayMember = "Company_name";
+            cbCompanyName.ValueMember = "ID";
+            cbCompanyName.SelectedIndex = -1;
+
             ShowSupplies(ref dgvSupplies);
             UpdateCartLabels();
         }
@@ -268,12 +283,38 @@ namespace AppAccountingSalesOE
 
         private void btnApplyFilter_Click(object sender, EventArgs e)
         {
+            DateTime? fromDate = null;
+            DateTime? toDate = null;
+            int? filterSupplierId = null;
+            int? filterCompanyNameId = null;
 
+            if (mcDeliveryDate.SelectionStart != mcDeliveryDate.MinDate)
+            {
+                fromDate = mcDeliveryDate.SelectionRange.Start.Date;
+                toDate = mcDeliveryDate.SelectionRange.End.Date;
+            }
+
+            if (cbSuppliers.SelectedValue != null) filterSupplierId = (int)cbSuppliers.SelectedValue;
+
+            if (cbCompanyName.SelectedValue != null) filterCompanyNameId = (int)cbCompanyName.SelectedValue;
+
+            var filteredSupplies = supplies_list.Where(s =>
+                (!fromDate.HasValue || (s.DeliveryDate.Date >= fromDate.Value && s.DeliveryDate.Date <= toDate.Value)) &&
+                (!filterSupplierId.HasValue || s.ID_Supplier == filterSupplierId.Value) &&
+                (!filterCompanyNameId.HasValue || s.ID_Supplier == filterCompanyNameId.Value)
+            ).ToList();
+
+            ShowSupplies(ref dgvSupplies, filteredSupplies);
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            cbSuppliers.SelectedIndex = -1;
+            cbCompanyName.SelectedIndex = -1;
+            mcDeliveryDate.SelectionStart = mcDeliveryDate.MinDate;
+            mcDeliveryDate.SelectionEnd = mcDeliveryDate.MinDate;
 
+            ShowSupplies(ref dgvSupplies);
         }
     }
 }

@@ -91,10 +91,27 @@ namespace AppAccountingSalesOE
 
             try { db.Execute<Stock>(file_db, "select id_stock, id_goods, quantity from stock", ref stock_list); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void RadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = sender as RadioButton;
+
+            if (rb.Checked) UpdateDataGridViews();
+        }
+
+        private void PrepareReportData(DateTime? fromDate, DateTime? toDate)
+        {
+            ClassSerialize.SerializeToXml(ref goods_list, "goods.xml");
+
+            var filteredSales = sales_list.Where(s =>
+                (!fromDate.HasValue || s.SaleDate.Date >= fromDate.Value) &&
+                (!toDate.HasValue || s.SaleDate.Date <= toDate.Value)
+            ).OrderBy(s => s.SaleDate).ToList();
 
             List<SalesReportDTO> salesReport = new List<SalesReportDTO>();
 
-            foreach (var sale in sales_list)
+            foreach (var sale in filteredSales)
             {
                 string customerName = customers_list.FirstOrDefault(c => c.ID == sale.ID_Customer)?.Full_name ?? "Невідомий";
                 string employeeName = employees_list.FirstOrDefault(emp => emp.ID == sale.ID_Employee)?.Full_name ?? "Невідомий";
@@ -117,13 +134,25 @@ namespace AppAccountingSalesOE
                     EmployeeFullName = employeeName,
                     TotalAmount = sale.TotalAmount,
                     Details = saleDetails,
-                    GoodsSummary = goodsListString
+                    GoodsSummary = goodsListString,
+                    FromDate = fromDate ?? DateTime.MinValue,
+                    ToDate = toDate ?? DateTime.MaxValue
                 });
             }
 
+            ClassSerialize.SerializeToXml(ref salesReport, "sales.xml");
+
+            DateTime actualFromDate = fromDate ?? DateTime.MinValue;
+            DateTime actualToDate = toDate ?? DateTime.MaxValue;
+
+            var filteredSupplies = supplies_list.Where(s =>
+                (!fromDate.HasValue || s.DeliveryDate.Date >= fromDate.Value) &&
+                (!toDate.HasValue || s.DeliveryDate.Date <= toDate.Value)
+            ).OrderBy(s => s.DeliveryDate).ToList();
+
             List<SuppliesReportDTO> suppliesReport = new List<SuppliesReportDTO>();
 
-            foreach (var supply in supplies_list)
+            foreach (var supply in filteredSupplies)
             {
                 string supplierFullName = suppliers_list.FirstOrDefault(sp => sp.ID == supply.ID_Supplier)?.Full_name ?? "Невідомий";
                 string companyName = suppliers_list.FirstOrDefault(sp => sp.ID == supply.ID_Supplier)?.Company_name ?? "Невідома";
@@ -148,21 +177,24 @@ namespace AppAccountingSalesOE
                     SupplierFullName = supplierFullName,
                     CompanyName = companyName,
                     Details = supplyDetails,
-                    GoodsSummary = goodsListString
+                    GoodsSummary = goodsListString,
+                    FromDate = fromDate ?? DateTime.MinValue,
+                    ToDate = toDate ?? DateTime.MaxValue
                 });
             }
 
-            ClassSerialize.SerializeToXml(ref goods_list, "goods.xml");
-            ClassSerialize.SerializeToXml(ref customers_list, "customers.xml");
-            ClassSerialize.SerializeToXml(ref salesReport, "sales.xml");
             ClassSerialize.SerializeToXml(ref suppliesReport, "supplies.xml");
-        }
 
-        private void RadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            RadioButton rb = sender as RadioButton;
+            var customerSalesForXml = customers_list.Select(c => new
+            {
+                Customer = c,
+                SalesSum = sales_list.Where(s => s.ID_Customer == c.ID &&
+                    (!fromDate.HasValue || s.SaleDate.Date >= fromDate.Value) &&
+                    (!toDate.HasValue || s.SaleDate.Date <= toDate.Value))
+                    .Sum(s => s.TotalAmount)
+            }).ToList();
 
-            if (rb.Checked) UpdateDataGridViews();
+            ClassSerialize.SerializeToXml(ref customers_list, "customers.xml");
         }
 
         private void UpdateReport()
@@ -218,45 +250,45 @@ namespace AppAccountingSalesOE
 
         private void UpdateDataGridViews()
         {
-            dataGridView1.Rows.Clear();
-            dataGridView1.Columns.Clear();
+            dgvReport.Rows.Clear();
+            dgvReport.Columns.Clear();
 
             DateTime? fromDate = mcReportDate.SelectionStart != mcReportDate.MinDate ? mcReportDate.SelectionRange.Start.Date : (DateTime?)null;
             DateTime? toDate = mcReportDate.SelectionStart != mcReportDate.MinDate ? mcReportDate.SelectionRange.End.Date : (DateTime?)null;
 
             if (rbGoods.Checked)
             {
-                dataGridView1.Columns.Clear();
-                dataGridView1.Columns.Add("Name", "Назва");
-                dataGridView1.Columns.Add("Category", "Категорія");
-                dataGridView1.Columns.Add("Country", "Країна");
-                dataGridView1.Columns.Add("Price", "Ціна");
-                dataGridView1.Columns.Add("Warranty", "Гарантія (міс.)");
-                dataGridView1.Columns.Add("Description", "Опис");
+                dgvReport.Columns.Clear();
+                dgvReport.Columns.Add("Name", "Назва");
+                dgvReport.Columns.Add("Category", "Категорія");
+                dgvReport.Columns.Add("Country", "Країна");
+                dgvReport.Columns.Add("Price", "Ціна");
+                dgvReport.Columns.Add("Warranty", "Гарантія (міс.)");
+                dgvReport.Columns.Add("Description", "Опис");
 
                 foreach (var g in goods_list)
                 {
-                    dataGridView1.Rows.Add(g.Name, g.Category, g.ManufacturingCountry, g.Price, g.WarrantyMonths, g.Description);
+                    dgvReport.Rows.Add(g.Name, g.Category, g.ManufacturingCountry, g.Price, g.WarrantyMonths, g.Description);
                 }
 
                 decimal totalPrice = goods_list.Sum(g => g.Price);
                 int count = goods_list.Count;
                 decimal avgPrice = count > 0 ? totalPrice / count : 0;
 
-                dataGridView1.Rows.Add("");
-                dataGridView1.Rows.Add("Загальна сума цін", totalPrice.ToString("N2"));
-                dataGridView1.Rows.Add("Кількість товарів", count);
-                dataGridView1.Rows.Add("Середня ціна", avgPrice.ToString("N2"));
+                dgvReport.Rows.Add("");
+                dgvReport.Rows.Add("Загальна сума цін", totalPrice.ToString("N2"));
+                dgvReport.Rows.Add("Кількість товарів", count);
+                dgvReport.Rows.Add("Середня ціна", avgPrice.ToString("N2"));
             }
 
             else if (rbCustomers.Checked)
             {
-                dataGridView1.Columns.Clear();
-                dataGridView1.Columns.Add("FullName", "ПІБ");
-                dataGridView1.Columns.Add("Phone", "Телефон");
-                dataGridView1.Columns.Add("Email", "Email");
-                dataGridView1.Columns.Add("Address", "Адреса");
-                dataGridView1.Columns.Add("TotalSales", "Загальна сума покупок");
+                dgvReport.Columns.Clear();
+                dgvReport.Columns.Add("FullName", "ПІБ");
+                dgvReport.Columns.Add("Phone", "Телефон");
+                dgvReport.Columns.Add("Email", "Email");
+                dgvReport.Columns.Add("Address", "Адреса");
+                dgvReport.Columns.Add("TotalSales", "Загальна сума покупок");
 
                 var customerSales = customers_list.Select(c => new
                 {
@@ -269,31 +301,31 @@ namespace AppAccountingSalesOE
 
                 foreach (var cs in customerSales)
                 {
-                    dataGridView1.Rows.Add(cs.Customer.Full_name, cs.Customer.Phone_number, cs.Customer.Email, cs.Customer.Address, cs.SalesSum.ToString("N2"));
+                    dgvReport.Rows.Add(cs.Customer.Full_name, cs.Customer.Phone_number, cs.Customer.Email, cs.Customer.Address, cs.SalesSum.ToString("N2"));
                 }
 
                 decimal totalCustomerSales = customerSales.Sum(cs => cs.SalesSum);
                 int customerCount = customerSales.Count(cs => cs.SalesSum > 0);
                 decimal avgCustomerSales = customerCount > 0 ? totalCustomerSales / customerCount : 0;
 
-                dataGridView1.Rows.Add("");
-                dataGridView1.Rows.Add("Загальна сума покупок клієнтів", totalCustomerSales.ToString("N2"));
-                dataGridView1.Rows.Add("Кількість активних клієнтів", customerCount);
-                dataGridView1.Rows.Add("Середня сума на клієнта", avgCustomerSales.ToString("N2"));
+                dgvReport.Rows.Add("");
+                dgvReport.Rows.Add("Загальна сума покупок клієнтів", totalCustomerSales.ToString("N2"));
+                dgvReport.Rows.Add("Кількість активних клієнтів", customerCount);
+                dgvReport.Rows.Add("Середня сума на клієнта", avgCustomerSales.ToString("N2"));
             }
 
             else if (rbSales.Checked)
             {
-                dataGridView1.Columns.Clear();
-                dataGridView1.Columns.Add("SaleDate", "Дата продажу");
-                dataGridView1.Columns.Add("Customer", "Клієнт");
-                dataGridView1.Columns.Add("Employee", "Працівник");
-                dataGridView1.Columns.Add("TotalAmount", "Сума");
+                dgvReport.Columns.Clear();
+                dgvReport.Columns.Add("SaleDate", "Дата продажу");
+                dgvReport.Columns.Add("Customer", "Клієнт");
+                dgvReport.Columns.Add("Employee", "Працівник");
+                dgvReport.Columns.Add("TotalAmount", "Сума");
 
                 var filteredSales = sales_list.Where(s =>
                     (!fromDate.HasValue || s.SaleDate.Date >= fromDate.Value) &&
                     (!toDate.HasValue || s.SaleDate.Date <= toDate.Value)
-                ).ToList();
+                ).OrderBy(s => s.SaleDate).ToList();
 
                 foreach (var s in filteredSales)
                 {
@@ -302,7 +334,7 @@ namespace AppAccountingSalesOE
                     
                     if (customer != null && employee != null)
                     {
-                        dataGridView1.Rows.Add(s.SaleDate.ToString("dd.MM.yyyy"), customer.Full_name, employee.Full_name, s.TotalAmount.ToString("N2"));
+                        dgvReport.Rows.Add(s.SaleDate.ToString("dd.MM.yyyy"), customer.Full_name, employee.Full_name, s.TotalAmount.ToString("N2"));
                     }
                 }
 
@@ -310,24 +342,24 @@ namespace AppAccountingSalesOE
                 int salesCount = filteredSales.Count;
                 decimal avgSale = salesCount > 0 ? totalSales / salesCount : 0;
 
-                dataGridView1.Rows.Add("");
-                dataGridView1.Rows.Add("Загальна сума продажів", totalSales.ToString("N2"));
-                dataGridView1.Rows.Add("Кількість продажів", salesCount);
-                dataGridView1.Rows.Add("Середня сума продажу", avgSale.ToString("N2"));
+                dgvReport.Rows.Add("");
+                dgvReport.Rows.Add("Загальна сума продажів", totalSales.ToString("N2"));
+                dgvReport.Rows.Add("Кількість продажів", salesCount);
+                dgvReport.Rows.Add("Середня сума продажу", avgSale.ToString("N2"));
             }
 
             else if (rbSupplies.Checked)
             {
-                dataGridView1.Columns.Clear();
-                dataGridView1.Columns.Add("DeliveryDate", "Дата поставки");
-                dataGridView1.Columns.Add("Supplier", "Постачальник");
-                dataGridView1.Columns.Add("Company", "Компанія");
-                dataGridView1.Columns.Add("TotalCost", "Сума");
+                dgvReport.Columns.Clear();
+                dgvReport.Columns.Add("DeliveryDate", "Дата поставки");
+                dgvReport.Columns.Add("Supplier", "Постачальник");
+                dgvReport.Columns.Add("Company", "Компанія");
+                dgvReport.Columns.Add("TotalCost", "Сума");
 
                 var filteredSupplies = supplies_list.Where(s =>
                     (!fromDate.HasValue || s.DeliveryDate.Date >= fromDate.Value) &&
                     (!toDate.HasValue || s.DeliveryDate.Date <= toDate.Value)
-                ).ToList();
+                ).OrderBy(s => s.DeliveryDate).ToList();
 
                 foreach (var s in filteredSupplies)
                 {
@@ -335,7 +367,7 @@ namespace AppAccountingSalesOE
                     
                     if (supplier != null)
                     {
-                        dataGridView1.Rows.Add(s.DeliveryDate.ToString("dd.MM.yyyy"), supplier.Full_name, supplier.Company_name, s.TotalCost.ToString("N2"));
+                        dgvReport.Rows.Add(s.DeliveryDate.ToString("dd.MM.yyyy"), supplier.Full_name, supplier.Company_name, s.TotalCost.ToString("N2"));
                     }
                 }
 
@@ -343,10 +375,10 @@ namespace AppAccountingSalesOE
                 int suppliesCount = filteredSupplies.Count;
                 decimal avgSupply = suppliesCount > 0 ? totalSupplies / suppliesCount : 0;
 
-                dataGridView1.Rows.Add("");
-                dataGridView1.Rows.Add("Загальна сума поставок", totalSupplies.ToString("N2"));
-                dataGridView1.Rows.Add("Кількість поставок", suppliesCount);
-                dataGridView1.Rows.Add("Середня сума поставки", avgSupply.ToString("N2"));
+                dgvReport.Rows.Add("");
+                dgvReport.Rows.Add("Загальна сума поставок", totalSupplies.ToString("N2"));
+                dgvReport.Rows.Add("Кількість поставок", suppliesCount);
+                dgvReport.Rows.Add("Середня сума поставки", avgSupply.ToString("N2"));
             }
         }
 
@@ -431,20 +463,20 @@ namespace AppAccountingSalesOE
 
                     int currentRow = 2;
 
-                    for (int col = 0; col < dataGridView1.Columns.Count; col++)
+                    for (int col = 0; col < dgvReport.Columns.Count; col++)
                     {
-                        repExcel.SetValue("Sheet1", $"{(char)('A' + col)}{currentRow}", dataGridView1.Columns[col].HeaderText, "string", true);
+                        repExcel.SetValue("Sheet1", $"{(char)('A' + col)}{currentRow}", dgvReport.Columns[col].HeaderText, "string", true);
                     }
 
                     currentRow++;
 
-                    for (int row = 0; row < dataGridView1.Rows.Count; row++)
+                    for (int row = 0; row < dgvReport.Rows.Count; row++)
                     {
-                        if (dataGridView1.Rows[row].IsNewRow) continue;
+                        if (dgvReport.Rows[row].IsNewRow) continue;
 
-                        for (int col = 0; col < dataGridView1.Columns.Count; col++)
+                        for (int col = 0; col < dgvReport.Columns.Count; col++)
                         {
-                            repExcel.SetValue("Sheet1", $"{(char)('A' + col)}{currentRow}", dataGridView1.Rows[row].Cells[col].Value?.ToString(), "string");
+                            repExcel.SetValue("Sheet1", $"{(char)('A' + col)}{currentRow}", dgvReport.Rows[row].Cells[col].Value?.ToString(), "string");
                         }
 
                         currentRow++;
@@ -478,16 +510,16 @@ namespace AppAccountingSalesOE
 
                     List<string> headers = new List<string>();
 
-                    for (int i = 0; i < dataGridView1.Columns.Count; i++) headers.Add(dataGridView1.Columns[i].HeaderText);
+                    for (int i = 0; i < dgvReport.Columns.Count; i++) headers.Add(dgvReport.Columns[i].HeaderText);
                     tableData.Add(headers);
 
-                    for (int row = 0; row < dataGridView1.Rows.Count; row++)
+                    for (int row = 0; row < dgvReport.Rows.Count; row++)
                     {
-                        if (dataGridView1.Rows[row].IsNewRow) continue;
+                        if (dgvReport.Rows[row].IsNewRow) continue;
 
                         List<string> rowData = new List<string>();
 
-                        for (int col = 0; col < dataGridView1.Columns.Count; col++) rowData.Add(dataGridView1.Rows[row].Cells[col].Value?.ToString());
+                        for (int col = 0; col < dgvReport.Columns.Count; col++) rowData.Add(dgvReport.Rows[row].Cells[col].Value?.ToString());
 
                         tableData.Add(rowData);
                     }
@@ -516,8 +548,16 @@ namespace AppAccountingSalesOE
 
         private void btnGenerateReport_Click(object sender, EventArgs e)
         {
+            DateTime? fromDate = mcReportDate.SelectionStart != mcReportDate.MinDate ? mcReportDate.SelectionRange.Start.Date : (DateTime?)null;
+            DateTime? toDate = mcReportDate.SelectionStart != mcReportDate.MinDate ? mcReportDate.SelectionRange.End.Date : (DateTime?)null;
+
+            PrepareReportData(fromDate, toDate);
+
             UpdateDataGridViews();
             UpdateReport();
+
+            //UpdateDataGridViews();
+            //UpdateReport();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

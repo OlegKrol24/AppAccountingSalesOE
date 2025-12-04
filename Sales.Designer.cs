@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvSales = new System.Windows.Forms.DataGridView();
@@ -97,35 +97,37 @@
             // 
             // dgvSales
             // 
+            this.dgvSales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvSales.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvSales.BackgroundColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Sale_date,
             this.Full_name_customers,
             this.Full_name_employee,
             this.Total_amount});
-            this.dgvSales.Location = new System.Drawing.Point(20, 134);
+            this.dgvSales.Location = new System.Drawing.Point(20, 125);
             this.dgvSales.Name = "dgvSales";
             this.dgvSales.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSales.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSales.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvSales.RowHeadersWidth = 51;
             this.dgvSales.RowTemplate.Height = 24;
-            this.dgvSales.Size = new System.Drawing.Size(925, 591);
+            this.dgvSales.Size = new System.Drawing.Size(925, 600);
             this.dgvSales.TabIndex = 34;
             // 
             // Sale_date
@@ -134,7 +136,7 @@
             this.Sale_date.MinimumWidth = 6;
             this.Sale_date.Name = "Sale_date";
             this.Sale_date.ReadOnly = true;
-            this.Sale_date.Width = 140;
+            this.Sale_date.Width = 131;
             // 
             // Full_name_customers
             // 
@@ -142,7 +144,7 @@
             this.Full_name_customers.MinimumWidth = 6;
             this.Full_name_customers.Name = "Full_name_customers";
             this.Full_name_customers.ReadOnly = true;
-            this.Full_name_customers.Width = 170;
+            this.Full_name_customers.Width = 91;
             // 
             // Full_name_employee
             // 
@@ -150,7 +152,7 @@
             this.Full_name_employee.MinimumWidth = 6;
             this.Full_name_employee.Name = "Full_name_employee";
             this.Full_name_employee.ReadOnly = true;
-            this.Full_name_employee.Width = 170;
+            this.Full_name_employee.Width = 123;
             // 
             // Total_amount
             // 
@@ -158,7 +160,7 @@
             this.Total_amount.MinimumWidth = 6;
             this.Total_amount.Name = "Total_amount";
             this.Total_amount.ReadOnly = true;
-            this.Total_amount.Width = 140;
+            this.Total_amount.Width = 136;
             // 
             // msMainMenu
             // 
@@ -173,7 +175,7 @@
             this.tsmiSupplies,
             this.tsmiReports});
             this.msMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.msMainMenu.Location = new System.Drawing.Point(1145, 74);
+            this.msMainMenu.Location = new System.Drawing.Point(1147, 74);
             this.msMainMenu.Name = "msMainMenu";
             this.msMainMenu.Size = new System.Drawing.Size(156, 260);
             this.msMainMenu.TabIndex = 40;
@@ -330,58 +332,64 @@
             // 
             // mcSaleDate
             // 
-            this.mcSaleDate.Location = new System.Drawing.Point(1005, 247);
+            this.mcSaleDate.Location = new System.Drawing.Point(1005, 171);
             this.mcSaleDate.MinDate = new System.DateTime(2025, 1, 1, 0, 0, 0, 0);
             this.mcSaleDate.Name = "mcSaleDate";
             this.mcSaleDate.TabIndex = 45;
             // 
             // cbCustomers
             // 
+            this.cbCustomers.DropDownHeight = 50;
             this.cbCustomers.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbCustomers.FormattingEnabled = true;
-            this.cbCustomers.Location = new System.Drawing.Point(1005, 505);
+            this.cbCustomers.IntegralHeight = false;
+            this.cbCustomers.Location = new System.Drawing.Point(982, 457);
+            this.cbCustomers.MaxDropDownItems = 5;
             this.cbCustomers.Name = "cbCustomers";
-            this.cbCustomers.Size = new System.Drawing.Size(272, 27);
+            this.cbCustomers.Size = new System.Drawing.Size(295, 27);
             this.cbCustomers.TabIndex = 46;
             // 
             // cbEmployees
             // 
+            this.cbEmployees.DropDownHeight = 50;
             this.cbEmployees.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cbEmployees.FormattingEnabled = true;
-            this.cbEmployees.Location = new System.Drawing.Point(1005, 581);
+            this.cbEmployees.IntegralHeight = false;
+            this.cbEmployees.Location = new System.Drawing.Point(982, 573);
+            this.cbEmployees.MaxDropDownItems = 5;
             this.cbEmployees.Name = "cbEmployees";
-            this.cbEmployees.Size = new System.Drawing.Size(272, 27);
+            this.cbEmployees.Size = new System.Drawing.Size(295, 27);
             this.cbEmployees.TabIndex = 47;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(1001, 219);
+            this.label3.Location = new System.Drawing.Point(1001, 134);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(138, 19);
+            this.label3.Size = new System.Drawing.Size(143, 19);
             this.label3.TabIndex = 48;
-            this.label3.Text = "За датою продажу";
+            this.label3.Text = "За датою продажу:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(1001, 473);
+            this.label6.Location = new System.Drawing.Point(1001, 422);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(93, 19);
+            this.label6.Size = new System.Drawing.Size(98, 19);
             this.label6.TabIndex = 49;
-            this.label6.Text = "За клієнтом";
+            this.label6.Text = "За клієнтом:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(1001, 549);
+            this.label7.Location = new System.Drawing.Point(1001, 538);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(116, 19);
+            this.label7.Size = new System.Drawing.Size(121, 19);
             this.label7.TabIndex = 50;
-            this.label7.Text = "За працівником";
+            this.label7.Text = "За працівником:";
             // 
             // btnApplyFilter
             // 
@@ -417,6 +425,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1302, 753);
+            this.Controls.Add(this.msMainMenu);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnApplyFilter);
             this.Controls.Add(this.label7);
@@ -429,7 +438,6 @@
             this.Controls.Add(this.lbQuantityCart);
             this.Controls.Add(this.pbCart);
             this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.msMainMenu);
             this.Controls.Add(this.dgvSales);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbMainMenu);

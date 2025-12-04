@@ -14,6 +14,8 @@ namespace AppAccountingSalesOE
         public string EmployeeFullName { get; set; }
         public decimal TotalAmount { get; set; }
         public string GoodsSummary { get; set; }
+        public DateTime FromDate { get; set; }
+        public DateTime ToDate { get; set; }
         public List<SalesDetailReportDTO> Details { get; set; } = new List<SalesDetailReportDTO>();
     }
 

@@ -35,14 +35,14 @@
             // 
             this.pnlReportPreview.Location = new System.Drawing.Point(13, 11);
             this.pnlReportPreview.Name = "pnlReportPreview";
-            this.pnlReportPreview.Size = new System.Drawing.Size(754, 737);
+            this.pnlReportPreview.Size = new System.Drawing.Size(755, 770);
             this.pnlReportPreview.TabIndex = 0;
             // 
             // formReportView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 755);
+            this.ClientSize = new System.Drawing.Size(782, 793);
             this.Controls.Add(this.pnlReportPreview);
             this.Name = "formReportView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -15,6 +15,8 @@ namespace AppAccountingSalesOE
         public string SupplierFullName { get; set; }
         public string CompanyName { get; set; }
         public string GoodsSummary { get; set; }
+        public DateTime FromDate { get; set; }
+        public DateTime ToDate { get; set; }
         public List<SuppliesDetailReportDTO> Details { get; set; } = new List<SuppliesDetailReportDTO>();
     }
 

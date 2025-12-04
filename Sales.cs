@@ -48,7 +48,9 @@ namespace AppAccountingSalesOE
 
             var salesToShow = filteredSales ?? sales_list;
 
-            foreach (clSales sal in salesToShow)
+            var sortedSales = salesToShow.OrderBy(s => s.SaleDate).ToList();
+
+            foreach (clSales sal in sortedSales)
             {
                 clCustomers customer = customers.FirstOrDefault(cust => cust.ID == sal.ID_Customer);
                 Employees employee = employees.FirstOrDefault(emp => emp.ID == sal.ID_Employee);
@@ -134,37 +136,17 @@ namespace AppAccountingSalesOE
             {
                 fromDate = mcSaleDate.SelectionRange.Start.Date;
                 toDate = mcSaleDate.SelectionRange.End.Date;
-
-                MessageBox.Show($"Обраний діапазон дат: {fromDate.Value:dd.MM.yyyy} - {toDate.Value:dd.MM.yyyy}");
             }
 
-            else MessageBox.Show("Дата не обрана — ігноруємо фільтр за датою");
+            if (cbCustomers.SelectedValue != null) filterCustomerId = (int)cbCustomers.SelectedValue;
 
-            if (cbCustomers.SelectedValue != null)
-            {
-                filterCustomerId = (int)cbCustomers.SelectedValue;
-
-                MessageBox.Show($"Обраний клієнт ID: {filterCustomerId.Value}");
-            }
-
-            else MessageBox.Show("Клієнт не обраний — ігноруємо");
-
-            if (cbEmployees.SelectedValue != null)
-            {
-                filterEmployeeId = (int)cbEmployees.SelectedValue;
-
-                MessageBox.Show($"Обраний працівник ID: {filterEmployeeId.Value}");
-            }
-
-            else MessageBox.Show("Працівник не обраний — ігноруємо");
+            if (cbEmployees.SelectedValue != null) filterEmployeeId = (int)cbEmployees.SelectedValue;
 
             var filteredSales = sales_list.Where(s =>
                 (!fromDate.HasValue || (s.SaleDate.Date >= fromDate.Value && s.SaleDate.Date <= toDate.Value)) &&
                 (!filterCustomerId.HasValue || s.ID_Customer == filterCustomerId.Value) &&
                 (!filterEmployeeId.HasValue || s.ID_Employee == filterEmployeeId.Value)
             ).ToList();
-
-            MessageBox.Show($"Кількість відфільтрованих продажів: {filteredSales.Count}");
 
             ShowSales(ref dgvSales, filteredSales);
         }
