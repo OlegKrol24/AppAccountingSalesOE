@@ -44,27 +44,28 @@ namespace AppAccountingSalesOE
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(tbFullNameSupplier.Text) || string.IsNullOrWhiteSpace(tbCompanyName.Text) ||
-                string.IsNullOrWhiteSpace(tbPhoneNumber.Text) || string.IsNullOrWhiteSpace(tbEmail.Text))
+            string fullName = tbFullNameSupplier.Text.Trim();
+            string companyName = tbCompanyName.Text.Trim();
+            string phone = tbPhoneNumber.Text.Trim();
+            string email = tbEmail.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(fullName) || string.IsNullOrWhiteSpace(companyName) || string.IsNullOrWhiteSpace(phone) || string.IsNullOrWhiteSpace(email))
             {
                 MessageBox.Show("Заповніть всі обов'язкові поля!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            string pattern_phone_number = @"^\+?380\d{9}$";
-            string pattern_email = @"^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$";
+            string patternPhone = @"^\+?380\d{9}$";
 
-            string phone_number;
-
-            if (!Regex.IsMatch(tbPhoneNumber.Text.Trim(), pattern_phone_number))
+            if (!Regex.IsMatch(phone, patternPhone))
             {
-                MessageBox.Show("Некоректний номер телефону!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Некоректний номер телефону! Формат: +380XXXXXXXXX", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            string email;
+            string pattern_email = @"^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$";
 
-            if (!Regex.IsMatch(tbEmail.Text.Trim(), pattern_email))
+            if (!Regex.IsMatch(email, pattern_email))
             {
                 MessageBox.Show("Некоректна електронна пошта!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -72,6 +73,24 @@ namespace AppAccountingSalesOE
 
             try
             {
+                List<Suppliers> checkSuppliers = new List<Suppliers>();
+
+                string checkQuery = $"select * from suppliers " +
+                                    $"where lower(full_name) = lower('{fullName}') " +
+                                    $"and lower(company_name) = lower('{companyName}') " +
+                                    $"and lower(phone_number) = lower('{phone}') " +
+                                    $"and lower(email) = lower('{email}')";
+
+                if (mode == "edit") checkQuery += $" and id_supplier <> {supplierId}";
+
+                db.Execute(file_db, checkQuery, ref checkSuppliers);
+
+                if (checkSuppliers.Count > 0)
+                {
+                    MessageBox.Show("Постачальник з такими даними вже існує! Будь ласка, перевірте введені дані або відредагуйте вже існуючого", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 string query;
 
                 if (mode == "add")
@@ -98,6 +117,14 @@ namespace AppAccountingSalesOE
             {
                 MessageBox.Show(ex.Message, "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            tbFullNameSupplier.Clear();
+            tbCompanyName.Clear();
+            tbPhoneNumber.Clear();
+            tbEmail.Clear();
         }
     }
 }

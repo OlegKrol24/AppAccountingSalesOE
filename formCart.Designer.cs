@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCart));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvCart = new System.Windows.Forms.DataGridView();
@@ -39,6 +40,14 @@
             this.lbTotalAmount = new System.Windows.Forms.Label();
             this.btnContinueShopping = new System.Windows.Forms.Button();
             this.btnBuy = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.msMainMenu = new System.Windows.Forms.MenuStrip();
+            this.tsmiMainPage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiGoods = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCustomers = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSales = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSupplies = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiReports = new System.Windows.Forms.ToolStripMenuItem();
             this.pbAdd = new System.Windows.Forms.PictureBox();
             this.pbDelete = new System.Windows.Forms.PictureBox();
             this.pbCart = new System.Windows.Forms.PictureBox();
@@ -48,20 +57,13 @@
             this.pbLanguageUS = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.msMainMenu = new System.Windows.Forms.MenuStrip();
-            this.tsmiMainPage = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiGoods = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiSales = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiSupplies = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiReports = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiCustomers = new System.Windows.Forms.ToolStripMenuItem();
             this.Goods = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Deletion = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
+            this.msMainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
@@ -71,43 +73,33 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.msMainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            resources.ApplyResources(this.label1, "label1");
             this.label1.BackColor = System.Drawing.Color.SteelBlue;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(89, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 37);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Кошик";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
+            resources.ApplyResources(this.label5, "label5");
             this.label5.BackColor = System.Drawing.Color.SteelBlue;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(400, 24);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(150, 26);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "012 345 67 89";
             // 
             // dgvCart
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            resources.ApplyResources(this.dgvCart, "dgvCart");
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Goods,
@@ -115,211 +107,74 @@
             this.Quantity,
             this.Total_price,
             this.Deletion});
-            this.dgvCart.Location = new System.Drawing.Point(76, 108);
             this.dgvCart.Name = "dgvCart";
             this.dgvCart.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCart.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvCart.RowHeadersWidth = 51;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCart.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvCart.RowTemplate.Height = 24;
-            this.dgvCart.Size = new System.Drawing.Size(1150, 539);
-            this.dgvCart.TabIndex = 34;
             this.dgvCart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCart_CellClick);
             this.dgvCart.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCart_CellValueChanged);
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(972, 43);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 19);
-            this.label4.TabIndex = 38;
-            this.label4.Text = "0 грн";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(972, 13);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 19);
-            this.label2.TabIndex = 37;
-            this.label2.Text = "0 шт";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(80, 671);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(187, 26);
-            this.label3.TabIndex = 39;
-            this.label3.Text = "Сума замовлення:";
             // 
             // lbTotalAmount
             // 
-            this.lbTotalAmount.AutoSize = true;
-            this.lbTotalAmount.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbTotalAmount.Location = new System.Drawing.Point(80, 718);
+            resources.ApplyResources(this.lbTotalAmount, "lbTotalAmount");
             this.lbTotalAmount.Name = "lbTotalAmount";
-            this.lbTotalAmount.Size = new System.Drawing.Size(168, 25);
-            this.lbTotalAmount.TabIndex = 40;
-            this.lbTotalAmount.Text = "000 000, 00 грн";
             // 
             // btnContinueShopping
             // 
+            resources.ApplyResources(this.btnContinueShopping, "btnContinueShopping");
             this.btnContinueShopping.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.btnContinueShopping.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnContinueShopping.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContinueShopping.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnContinueShopping.Location = new System.Drawing.Point(738, 689);
             this.btnContinueShopping.Name = "btnContinueShopping";
-            this.btnContinueShopping.Size = new System.Drawing.Size(292, 52);
-            this.btnContinueShopping.TabIndex = 41;
-            this.btnContinueShopping.Text = "Продовжити покупки";
             this.btnContinueShopping.UseVisualStyleBackColor = false;
             this.btnContinueShopping.Click += new System.EventHandler(this.btnContinueShopping_Click);
             // 
             // btnBuy
             // 
+            resources.ApplyResources(this.btnBuy, "btnBuy");
             this.btnBuy.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.btnBuy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuy.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuy.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnBuy.Location = new System.Drawing.Point(1048, 689);
             this.btnBuy.Name = "btnBuy";
-            this.btnBuy.Size = new System.Drawing.Size(160, 52);
-            this.btnBuy.TabIndex = 42;
-            this.btnBuy.Text = "Купити";
             this.btnBuy.UseVisualStyleBackColor = false;
             this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
             // 
-            // pbAdd
-            // 
-            this.pbAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbAdd.Image = global::AppAccountingSalesOE.Properties.Resources.Add;
-            this.pbAdd.Location = new System.Drawing.Point(626, 681);
-            this.pbAdd.Name = "pbAdd";
-            this.pbAdd.Size = new System.Drawing.Size(60, 60);
-            this.pbAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbAdd.TabIndex = 44;
-            this.pbAdd.TabStop = false;
-            this.pbAdd.Click += new System.EventHandler(this.pbAdd_Click);
-            // 
-            // pbDelete
-            // 
-            this.pbDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbDelete.Image = global::AppAccountingSalesOE.Properties.Resources.Minus;
-            this.pbDelete.Location = new System.Drawing.Point(526, 681);
-            this.pbDelete.Name = "pbDelete";
-            this.pbDelete.Size = new System.Drawing.Size(60, 60);
-            this.pbDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbDelete.TabIndex = 43;
-            this.pbDelete.TabStop = false;
-            this.pbDelete.Click += new System.EventHandler(this.pbDelete_Click);
-            // 
-            // pbCart
-            // 
-            this.pbCart.Image = global::AppAccountingSalesOE.Properties.Resources.Cart;
-            this.pbCart.Location = new System.Drawing.Point(855, 8);
-            this.pbCart.Name = "pbCart";
-            this.pbCart.Size = new System.Drawing.Size(56, 55);
-            this.pbCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbCart.TabIndex = 36;
-            this.pbCart.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Location = new System.Drawing.Point(850, 5);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(298, 63);
-            this.pictureBox7.TabIndex = 35;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pbMainMenu
-            // 
-            this.pbMainMenu.BackColor = System.Drawing.Color.SteelBlue;
-            this.pbMainMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbMainMenu.Image = global::AppAccountingSalesOE.Properties.Resources.Menu;
-            this.pbMainMenu.Location = new System.Drawing.Point(1187, 1);
-            this.pbMainMenu.Name = "pbMainMenu";
-            this.pbMainMenu.Size = new System.Drawing.Size(74, 70);
-            this.pbMainMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbMainMenu.TabIndex = 32;
-            this.pbMainMenu.TabStop = false;
-            this.pbMainMenu.Click += new System.EventHandler(this.pbMainMenu_Click);
-            // 
-            // pbLanguageUA
-            // 
-            this.pbLanguageUA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbLanguageUA.Image = global::AppAccountingSalesOE.Properties.Resources.Flag_UA;
-            this.pbLanguageUA.Location = new System.Drawing.Point(710, 9);
-            this.pbLanguageUA.Name = "pbLanguageUA";
-            this.pbLanguageUA.Size = new System.Drawing.Size(91, 53);
-            this.pbLanguageUA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbLanguageUA.TabIndex = 30;
-            this.pbLanguageUA.TabStop = false;
-            // 
-            // pbLanguageUS
-            // 
-            this.pbLanguageUS.BackColor = System.Drawing.Color.SteelBlue;
-            this.pbLanguageUS.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbLanguageUS.Image = global::AppAccountingSalesOE.Properties.Resources.Flag_USA;
-            this.pbLanguageUS.Location = new System.Drawing.Point(580, 9);
-            this.pbLanguageUS.Name = "pbLanguageUS";
-            this.pbLanguageUS.Size = new System.Drawing.Size(91, 53);
-            this.pbLanguageUS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbLanguageUS.TabIndex = 29;
-            this.pbLanguageUS.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.SteelBlue;
-            this.pictureBox4.Image = global::AppAccountingSalesOE.Properties.Resources.Phone;
-            this.pictureBox4.Location = new System.Drawing.Point(318, 4);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(67, 62);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 27;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.SteelBlue;
-            this.pictureBox1.Location = new System.Drawing.Point(-5, -7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1309, 81);
-            this.pictureBox1.TabIndex = 26;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnClear
             // 
+            resources.ApplyResources(this.btnClear, "btnClear");
             this.btnClear.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClear.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnClear.Location = new System.Drawing.Point(307, 689);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(160, 52);
-            this.btnClear.TabIndex = 45;
-            this.btnClear.Text = "Очистити";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // msMainMenu
             // 
-            this.msMainMenu.AutoSize = false;
+            resources.ApplyResources(this.msMainMenu, "msMainMenu");
             this.msMainMenu.BackColor = System.Drawing.Color.SteelBlue;
-            this.msMainMenu.Dock = System.Windows.Forms.DockStyle.None;
             this.msMainMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.msMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiMainPage,
@@ -329,120 +184,165 @@
             this.tsmiSupplies,
             this.tsmiReports});
             this.msMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.msMainMenu.Location = new System.Drawing.Point(1145, 74);
             this.msMainMenu.Name = "msMainMenu";
-            this.msMainMenu.Size = new System.Drawing.Size(156, 305);
-            this.msMainMenu.TabIndex = 46;
-            this.msMainMenu.Text = "menuStrip1";
-            this.msMainMenu.Visible = false;
             // 
             // tsmiMainPage
             // 
+            resources.ApplyResources(this.tsmiMainPage, "tsmiMainPage");
             this.tsmiMainPage.BackColor = System.Drawing.Color.PowderBlue;
-            this.tsmiMainPage.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiMainPage.Margin = new System.Windows.Forms.Padding(0, 10, 5, 0);
             this.tsmiMainPage.Name = "tsmiMainPage";
-            this.tsmiMainPage.Size = new System.Drawing.Size(144, 29);
-            this.tsmiMainPage.Text = "Головна";
             this.tsmiMainPage.Click += new System.EventHandler(this.tsmiMainPage_Click);
             // 
             // tsmiGoods
             // 
+            resources.ApplyResources(this.tsmiGoods, "tsmiGoods");
             this.tsmiGoods.BackColor = System.Drawing.Color.PowderBlue;
-            this.tsmiGoods.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiGoods.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiGoods.Name = "tsmiGoods";
-            this.tsmiGoods.Size = new System.Drawing.Size(144, 29);
-            this.tsmiGoods.Text = "Товари";
             this.tsmiGoods.Click += new System.EventHandler(this.tsmiGoods_Click);
+            // 
+            // tsmiCustomers
+            // 
+            resources.ApplyResources(this.tsmiCustomers, "tsmiCustomers");
+            this.tsmiCustomers.BackColor = System.Drawing.Color.PowderBlue;
+            this.tsmiCustomers.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
+            this.tsmiCustomers.Name = "tsmiCustomers";
+            this.tsmiCustomers.Click += new System.EventHandler(this.tsmiCustomers_Click);
             // 
             // tsmiSales
             // 
+            resources.ApplyResources(this.tsmiSales, "tsmiSales");
             this.tsmiSales.BackColor = System.Drawing.Color.PowderBlue;
-            this.tsmiSales.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiSales.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiSales.Name = "tsmiSales";
-            this.tsmiSales.Size = new System.Drawing.Size(144, 29);
-            this.tsmiSales.Text = "Продажі";
             this.tsmiSales.Click += new System.EventHandler(this.tsmiSales_Click);
             // 
             // tsmiSupplies
             // 
+            resources.ApplyResources(this.tsmiSupplies, "tsmiSupplies");
             this.tsmiSupplies.BackColor = System.Drawing.Color.PowderBlue;
-            this.tsmiSupplies.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiSupplies.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiSupplies.Name = "tsmiSupplies";
-            this.tsmiSupplies.Size = new System.Drawing.Size(144, 29);
-            this.tsmiSupplies.Text = "Поставки";
             this.tsmiSupplies.Click += new System.EventHandler(this.tsmiSupplies_Click);
             // 
             // tsmiReports
             // 
+            resources.ApplyResources(this.tsmiReports, "tsmiReports");
             this.tsmiReports.BackColor = System.Drawing.Color.PowderBlue;
-            this.tsmiReports.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tsmiReports.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiReports.Name = "tsmiReports";
-            this.tsmiReports.Size = new System.Drawing.Size(144, 29);
-            this.tsmiReports.Text = "Звіти";
             this.tsmiReports.Click += new System.EventHandler(this.tsmiReports_Click);
             // 
-            // tsmiCustomers
+            // pbAdd
             // 
-            this.tsmiCustomers.BackColor = System.Drawing.Color.PowderBlue;
-            this.tsmiCustomers.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
-            this.tsmiCustomers.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
-            this.tsmiCustomers.Name = "tsmiCustomers";
-            this.tsmiCustomers.Size = new System.Drawing.Size(144, 29);
-            this.tsmiCustomers.Text = "Клієнти";
-            this.tsmiCustomers.Click += new System.EventHandler(this.tsmiCustomers_Click);
+            resources.ApplyResources(this.pbAdd, "pbAdd");
+            this.pbAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbAdd.Image = global::AppAccountingSalesOE.Properties.Resources.Add;
+            this.pbAdd.Name = "pbAdd";
+            this.pbAdd.TabStop = false;
+            this.pbAdd.Click += new System.EventHandler(this.pbAdd_Click);
+            // 
+            // pbDelete
+            // 
+            resources.ApplyResources(this.pbDelete, "pbDelete");
+            this.pbDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbDelete.Image = global::AppAccountingSalesOE.Properties.Resources.Minus;
+            this.pbDelete.Name = "pbDelete";
+            this.pbDelete.TabStop = false;
+            this.pbDelete.Click += new System.EventHandler(this.pbDelete_Click);
+            // 
+            // pbCart
+            // 
+            resources.ApplyResources(this.pbCart, "pbCart");
+            this.pbCart.Image = global::AppAccountingSalesOE.Properties.Resources.Cart;
+            this.pbCart.Name = "pbCart";
+            this.pbCart.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            resources.ApplyResources(this.pictureBox7, "pictureBox7");
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.TabStop = false;
+            // 
+            // pbMainMenu
+            // 
+            resources.ApplyResources(this.pbMainMenu, "pbMainMenu");
+            this.pbMainMenu.BackColor = System.Drawing.Color.SteelBlue;
+            this.pbMainMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbMainMenu.Image = global::AppAccountingSalesOE.Properties.Resources.Menu;
+            this.pbMainMenu.Name = "pbMainMenu";
+            this.pbMainMenu.TabStop = false;
+            this.pbMainMenu.Click += new System.EventHandler(this.pbMainMenu_Click);
+            // 
+            // pbLanguageUA
+            // 
+            resources.ApplyResources(this.pbLanguageUA, "pbLanguageUA");
+            this.pbLanguageUA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbLanguageUA.Image = global::AppAccountingSalesOE.Properties.Resources.Flag_UA;
+            this.pbLanguageUA.Name = "pbLanguageUA";
+            this.pbLanguageUA.TabStop = false;
+            // 
+            // pbLanguageUS
+            // 
+            resources.ApplyResources(this.pbLanguageUS, "pbLanguageUS");
+            this.pbLanguageUS.BackColor = System.Drawing.Color.SteelBlue;
+            this.pbLanguageUS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbLanguageUS.Image = global::AppAccountingSalesOE.Properties.Resources.Flag_USA;
+            this.pbLanguageUS.Name = "pbLanguageUS";
+            this.pbLanguageUS.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            resources.ApplyResources(this.pictureBox4, "pictureBox4");
+            this.pictureBox4.BackColor = System.Drawing.Color.SteelBlue;
+            this.pictureBox4.Image = global::AppAccountingSalesOE.Properties.Resources.Phone;
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.BackColor = System.Drawing.Color.SteelBlue;
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
             // 
             // Goods
             // 
-            this.Goods.HeaderText = "Товар";
-            this.Goods.MinimumWidth = 6;
+            resources.ApplyResources(this.Goods, "Goods");
             this.Goods.Name = "Goods";
             this.Goods.ReadOnly = true;
-            this.Goods.Width = 250;
             // 
             // Price
             // 
-            this.Price.HeaderText = "Ціна";
-            this.Price.MinimumWidth = 6;
+            resources.ApplyResources(this.Price, "Price");
             this.Price.Name = "Price";
             this.Price.ReadOnly = true;
-            this.Price.Width = 125;
             // 
             // Quantity
             // 
-            this.Quantity.HeaderText = "Кількість";
-            this.Quantity.MinimumWidth = 6;
+            resources.ApplyResources(this.Quantity, "Quantity");
             this.Quantity.Name = "Quantity";
             this.Quantity.ReadOnly = true;
-            this.Quantity.Width = 125;
             // 
             // Total_price
             // 
-            this.Total_price.HeaderText = "Загальна ціна";
-            this.Total_price.MinimumWidth = 6;
+            resources.ApplyResources(this.Total_price, "Total_price");
             this.Total_price.Name = "Total_price";
             this.Total_price.ReadOnly = true;
-            this.Total_price.Width = 130;
             // 
             // Deletion
             // 
-            this.Deletion.HeaderText = "Видалення";
-            this.Deletion.MinimumWidth = 6;
+            resources.ApplyResources(this.Deletion, "Deletion");
             this.Deletion.Name = "Deletion";
             this.Deletion.ReadOnly = true;
             this.Deletion.Text = "Видалити";
-            this.Deletion.Width = 130;
             // 
             // formCart
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1302, 753);
             this.Controls.Add(this.msMainMenu);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.pbAdd);
@@ -464,11 +364,11 @@
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox1);
             this.Name = "formCart";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Кошик";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formCart_FormClosing);
             this.Load += new System.EventHandler(this.formCart_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).EndInit();
+            this.msMainMenu.ResumeLayout(false);
+            this.msMainMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCart)).EndInit();
@@ -478,8 +378,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbLanguageUS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.msMainMenu.ResumeLayout(false);
-            this.msMainMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

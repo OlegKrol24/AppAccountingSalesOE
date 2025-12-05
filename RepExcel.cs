@@ -57,12 +57,11 @@ namespace AppAccountingSalesOE
             GC.GetTotalMemory(true);
         }
 
-        // Створюємо нову книгу
         public void CreateNewBook(string fullPathAndFilename)
         {
             try
             {
-                excelapp.SheetsInNewWorkbook = 2;
+                excelapp.SheetsInNewWorkbook = 1;
                 excelapp.Workbooks.Add(Type.Missing);
                 excelapp.DisplayAlerts = false;
                 excelappworkbooks = excelapp.Workbooks;
@@ -149,7 +148,8 @@ namespace AppAccountingSalesOE
             catch (Exception ex)
             {
                 loggerService.Error(ex, "Save");
-                MessageBox.Show("Виникла проблема при збереженні файлу. " + ex.Message); // Розкоментуй для GUI
+
+                MessageBox.Show("Виникла проблема при збереженні файлу. " + ex.Message);
             }
         }
 

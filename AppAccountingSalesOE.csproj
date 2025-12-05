@@ -220,11 +220,20 @@
     <Compile Include="SuppliesReportDTO.cs" />
     <Compile Include="Supplies_details.cs" />
     <Compile Include="User.cs" />
+    <EmbeddedResource Include="Customers.en-US.resx">
+      <DependentUpon>Customers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customers.resx">
       <DependentUpon>Customers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Deliveries.en-US.resx">
+      <DependentUpon>Deliveries.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Deliveries.resx">
       <DependentUpon>Deliveries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.en-US.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -232,32 +241,62 @@
     <EmbeddedResource Include="formAuthorization.resx">
       <DependentUpon>formAuthorization.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formCart.en-US.resx">
+      <DependentUpon>formCart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formCart.resx">
       <DependentUpon>formCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formFilter.en-US.resx">
+      <DependentUpon>formFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formFilter.resx">
       <DependentUpon>formFilter.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormReport.en-US.resx">
+      <DependentUpon>FormReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormReport.resx">
       <DependentUpon>FormReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formReportView.en-US.resx">
+      <DependentUpon>formReportView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formReportView.resx">
       <DependentUpon>formReportView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formSuppliers.en-US.resx">
+      <DependentUpon>formSuppliers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formSuppliers.resx">
       <DependentUpon>formSuppliers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formWorkingWithCustomers.en-US.resx">
+      <DependentUpon>formWorkingWithCustomers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formWorkingWithCustomers.resx">
       <DependentUpon>formWorkingWithCustomers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formWorkingWithDeliveries.en-US.resx">
+      <DependentUpon>formWorkingWithDeliveries.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formWorkingWithDeliveries.resx">
       <DependentUpon>formWorkingWithDeliveries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formWorkingWithGoods.en-US.resx">
+      <DependentUpon>formWorkingWithGoods.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formWorkingWithGoods.resx">
       <DependentUpon>formWorkingWithGoods.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formWorkingWithSuppliers.en-US.resx">
+      <DependentUpon>formWorkingWithSuppliers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formWorkingWithSuppliers.resx">
       <DependentUpon>formWorkingWithSuppliers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainPage.en-US.resx">
+      <DependentUpon>MainPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>
@@ -266,6 +305,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales.en-US.resx">
+      <DependentUpon>Sales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sales.resx">
       <DependentUpon>Sales.cs</DependentUpon>

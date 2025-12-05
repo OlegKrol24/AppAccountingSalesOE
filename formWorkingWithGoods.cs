@@ -100,6 +100,24 @@ namespace AppAccountingSalesOE
                 return;
             }
 
+            List<Goods> checkGoods = new List<Goods>();
+
+            string checkQuery = $"select * from goods where lower(name_goods) = lower('{tbNameGoods.Text.Replace("'", "''")}') " +
+                                                             $"and lower(category) = lower('{cbCategory.Text.Replace("'", "''")}') " +
+                                                             $"and lower(manufacturing_country) = lower('{tbManufacturingCountry.Text.Replace("'", "''")}') " +
+                                                             $"and price = {price.ToString(System.Globalization.CultureInfo.InvariantCulture)} " +
+                                                             $"and warranty_months = {warranty}";
+
+            if (mode == "edit") checkQuery += $" and id_goods <> {goodId}";
+
+            db.Execute(file_db, checkQuery, ref checkGoods);
+
+            if (checkGoods.Count > 0)
+            {
+                MessageBox.Show("Товар з такими характеристиками вже існує! Будь ласка, перевірте дані або відредагуйте вже існуючий", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             string imagePath = null;
 
             if (pbImageGoods.Image != null && !string.IsNullOrEmpty(ofdImage.FileName) && File.Exists(ofdImage.FileName))
@@ -157,6 +175,19 @@ namespace AppAccountingSalesOE
             {
                 MessageBox.Show(ex.Message, "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            string path = Path.Combine(Directory.GetCurrentDirectory(), "Photos");
+
+            pbImageGoods.Image = Image.FromFile(Path.Combine(path, "NoGoods.png"));
+            tbNameGoods.Clear();
+            cbCategory.SelectedIndex = -1;
+            tbManufacturingCountry.Clear();
+            tbPrice.Clear();
+            cbWarrantyMonths.SelectedIndex = -1;
+            rtbDescription.Clear();
         }
     }
 }

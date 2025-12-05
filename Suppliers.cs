@@ -43,6 +43,7 @@ namespace AppAccountingSalesOE
             if (info != null)
             {
                 string[] values = info.Split('|');
+
                 if (info.Length >= 4)
                 {
                     try { iD = Convert.ToInt32(values[0]); } catch (Exception ex) { iD = -1; }

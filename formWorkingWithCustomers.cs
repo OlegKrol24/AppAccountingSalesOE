@@ -24,6 +24,9 @@ namespace AppAccountingSalesOE
             this.mode = mode;
             this.customerId = id;
             this.Text = mode == "add" ? "Додавання клієнта" : "Редагування клієнта";
+
+            //this.Text = (mode == "add" && this.Text == "Додавання/редагування клієнта") ? "Додавання клієнта" : "Редагування клієнта";
+            //this.Text = (mode == "add" && this.Text == "Adding/editing a client") ? "Adding a client" : "Client editing";
         }
 
         ClassDataBase db = new ClassDataBase();
@@ -70,6 +73,23 @@ namespace AppAccountingSalesOE
                 return;
             }
 
+            List<clCustomers> checkCustomers = new List<clCustomers>();
+
+            string checkQuery = $"select * from customers where lower(full_name) = lower('{tbFullNameCustomers.Text.Replace("'", "''")}') " +
+                                                           $"and phone_number = '{tbPhoneNumber.Text.Replace("'", "''")}' " +
+                                                           $"and lower(email) = lower('{tbEmail.Text.Replace("'", "''")}') " +
+                                                           $"and lower(address) = lower('{tbAddress.Text.Replace("'", "''")}')";
+
+            if (mode == "edit") checkQuery += $" and id_customer <> {customerId}";
+
+            db.Execute(file_db, checkQuery, ref checkCustomers);
+
+            if (checkCustomers.Count > 0)
+            {
+                MessageBox.Show("Клієнт з такими даними вже існує! Будь ласка, перевірте правильність введення або відредагуйте вже існуючого", "Попередження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
                 string query;
@@ -98,6 +118,14 @@ namespace AppAccountingSalesOE
             {
                 MessageBox.Show(ex.Message, "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            tbFullNameCustomers.Clear();
+            tbPhoneNumber.Clear();
+            tbEmail.Clear();
+            tbAddress.Clear();
         }
     }
 }

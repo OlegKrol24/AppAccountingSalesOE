@@ -20,8 +20,6 @@ namespace AppAccountingSalesOE
         ClassDataBase db = new ClassDataBase();
         string file_db = "Сourse_ASOE";
         public List<Goods> goods_list = new List<Goods>();
-
-        // Публічні властивості для доступу до значень фільтрів ззовні
         public decimal? MinPrice { get; private set; }
         public decimal? MaxPrice { get; private set; }
         public string SelectedCountry { get; private set; }
@@ -73,7 +71,6 @@ namespace AppAccountingSalesOE
 
         private void btnApplyFilter_Click(object sender, EventArgs e)
         {
-            // Валідація полів
             decimal minP = 0, maxP = 0;
             bool hasMinPrice = !string.IsNullOrWhiteSpace(tbPriceFrom.Text);
             bool hasMaxPrice = !string.IsNullOrWhiteSpace(tbPriceTo.Text);
@@ -96,7 +93,6 @@ namespace AppAccountingSalesOE
                 return;
             }
 
-            // Збереження значень у властивості
             MinPrice = hasMinPrice ? (decimal?)minP : null;
             MaxPrice = hasMaxPrice ? (decimal?)maxP : null;
             SelectedCountry = cbManufCountries.SelectedItem?.ToString() ?? "";

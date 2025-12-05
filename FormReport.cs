@@ -555,9 +555,6 @@ namespace AppAccountingSalesOE
 
             UpdateDataGridViews();
             UpdateReport();
-
-            //UpdateDataGridViews();
-            //UpdateReport();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

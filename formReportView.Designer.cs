@@ -28,25 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formReportView));
             this.pnlReportPreview = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // pnlReportPreview
             // 
-            this.pnlReportPreview.Location = new System.Drawing.Point(13, 11);
+            resources.ApplyResources(this.pnlReportPreview, "pnlReportPreview");
             this.pnlReportPreview.Name = "pnlReportPreview";
-            this.pnlReportPreview.Size = new System.Drawing.Size(755, 770);
-            this.pnlReportPreview.TabIndex = 0;
             // 
             // formReportView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 793);
             this.Controls.Add(this.pnlReportPreview);
             this.Name = "formReportView";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Перегляд звіту";
             this.ResumeLayout(false);
 
         }

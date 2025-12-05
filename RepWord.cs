@@ -17,7 +17,7 @@ namespace AppAccountingSalesOE
         public Word.Application wordapp;
         Word.Documents wordappdocuments;
         Word.Document wordappdocument;
-        private Word.Range wordrange; // Діапазон для вставки тексту
+        private Word.Range wordrange;
         private static readonly LoggerService loggerService = new LoggerService();
 
         public RepWord()
@@ -52,7 +52,6 @@ namespace AppAccountingSalesOE
             GC.GetTotalMemory(true);
         }
 
-        // Створюємо новий документ
         public void CreateNewDocument(string fullPathAndFilename)
         {
             try
@@ -167,7 +166,6 @@ namespace AppAccountingSalesOE
             }
         }
 
-        // Вставка тексту в кінець документа
         public void InsertText(string text, bool isBold = false, string alignment = "left")
         {
             try
@@ -182,7 +180,6 @@ namespace AppAccountingSalesOE
 
                 if (isBold) wordrange.Font.Bold = 1;
 
-                // Встановлення вирівнювання
                 switch (alignment.ToLower())
                 {
                     case "left":
@@ -197,8 +194,7 @@ namespace AppAccountingSalesOE
                         wordrange.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphRight;
                         break;
 
-                    default:
-                        throw new ArgumentException("Невалідне вирівнювання: " + alignment + ". Допустимі значення: left, center, right.");
+                    default: throw new ArgumentException("Невалідне вирівнювання: " + alignment + ". Допустимі значення: left, center, right.");
                 }
 
                 loggerService.Info("InsertText: " + text + " з вирівнюванням " + alignment + " OK");
@@ -209,7 +205,6 @@ namespace AppAccountingSalesOE
             }
         }
 
-        // Вставка таблиці
         public void InsertTable(List<List<string>> data)
         {
             try
@@ -223,7 +218,7 @@ namespace AppAccountingSalesOE
                 wordrange = wordappdocument.Range(wordappdocument.Content.End - 1, wordappdocument.Content.End - 1);
                 
                 int rows = data.Count;
-                int cols = data[0].Count; // Припускаємо, що всі рядки однакові
+                int cols = data[0].Count;
 
                 Word.Table table = wordappdocument.Tables.Add(wordrange, rows, cols);
 
@@ -232,7 +227,7 @@ namespace AppAccountingSalesOE
                     for (int j = 0; j < cols; j++) table.Cell(i + 1, j + 1).Range.Text = data[i][j];
                 }
 
-                table.Borders.Enable = 1; // Увімкнути рамки
+                table.Borders.Enable = 1;
 
                 loggerService.Info("InsertTable OK");
             }
@@ -242,7 +237,6 @@ namespace AppAccountingSalesOE
             }
         }
 
-        // Експорт документа в PDF
         public void ExportToPdf(string pdfPath)
         {
             try
