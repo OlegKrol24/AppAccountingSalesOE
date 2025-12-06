@@ -185,8 +185,11 @@
   <data name="&gt;&gt;tbPrice.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="pbImageGoods.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 42</value>
+  <data name="lbNameGoods.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tbPrice.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
   </data>
   <data name="&gt;&gt;tbNameGoods.Name" xml:space="preserve">
     <value>tbNameGoods</value>
@@ -218,8 +221,8 @@
   <data name="&gt;&gt;lbPrice.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;lbPrice.ZOrder" xml:space="preserve">
-    <value>10</value>
+  <data name="pbImageGoods.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 42</value>
   </data>
   <data name="cbCategory.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -254,9 +257,6 @@
   </data>
   <data name="lbNameGoods.Size" type="System.Drawing.Size, System.Drawing">
     <value>101, 19</value>
-  </data>
-  <data name="lbCategory.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
   </data>
   <data name="&gt;&gt;lbCategory.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -390,6 +390,9 @@
   <data name="&gt;&gt;tbManufacturingCountry.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="&gt;&gt;tbManufacturingCountry.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="lbPrice.Text" xml:space="preserve">
     <value>Ціна</value>
   </data>
@@ -420,9 +423,6 @@
   <data name="&gt;&gt;tbNameGoods.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbPrice.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;cbCategory.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -438,8 +438,8 @@
   <data name="lbWarrantyMonths.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 10.2pt</value>
   </data>
-  <data name="lbNameGoods.Location" type="System.Drawing.Point, System.Drawing">
-    <value>288, 38</value>
+  <data name="&gt;&gt;lbPrice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbWarrantyMonths.Parent" xml:space="preserve">
     <value>$this</value>
@@ -453,8 +453,8 @@
   <data name="lbWarrantyMonths.Text" xml:space="preserve">
     <value>Гарантія (міс.)</value>
   </data>
-  <data name="lbNameGoods.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="&gt;&gt;lbPrice.ZOrder" xml:space="preserve">
+    <value>10</value>
   </data>
   <data name="tbManufacturingCountry.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 10.2pt</value>
@@ -501,6 +501,9 @@
   <data name="&gt;&gt;lbNameGoods.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="lbNameGoods.Location" type="System.Drawing.Point, System.Drawing">
+    <value>288, 38</value>
+  </data>
   <data name="lbCategory.Location" type="System.Drawing.Point, System.Drawing">
     <value>288, 90</value>
   </data>
@@ -537,9 +540,6 @@
   <data name="&gt;&gt;btnSave.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="tbPrice.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
-  </data>
   <data name="tbManufacturingCountry.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
@@ -561,8 +561,8 @@
   <data name="&gt;&gt;ofdImage.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tbManufacturingCountry.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="lbCategory.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
   </data>
   <data name="&gt;&gt;cbWarrantyMonths.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -586,7 +586,7 @@
     <value>True</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>en-US</value>
+    <value>uk-UA</value>
   </metadata>
   <metadata name="ofdImage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

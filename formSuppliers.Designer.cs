@@ -32,13 +32,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvSuppliers = new System.Windows.Forms.DataGridView();
-            this.btnDeleteSuppliers = new System.Windows.Forms.Button();
-            this.btnEditSuppliers = new System.Windows.Forms.Button();
-            this.btnAddSuppliers = new System.Windows.Forms.Button();
             this.Full_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Company_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phone_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDeleteSuppliers = new System.Windows.Forms.Button();
+            this.btnEditSuppliers = new System.Windows.Forms.Button();
+            this.btnAddSuppliers = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,6 +74,30 @@
             this.dgvSuppliers.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSuppliers.RowTemplate.Height = 24;
             // 
+            // Full_name
+            // 
+            resources.ApplyResources(this.Full_name, "Full_name");
+            this.Full_name.Name = "Full_name";
+            this.Full_name.ReadOnly = true;
+            // 
+            // Company_name
+            // 
+            resources.ApplyResources(this.Company_name, "Company_name");
+            this.Company_name.Name = "Company_name";
+            this.Company_name.ReadOnly = true;
+            // 
+            // Phone_number
+            // 
+            resources.ApplyResources(this.Phone_number, "Phone_number");
+            this.Phone_number.Name = "Phone_number";
+            this.Phone_number.ReadOnly = true;
+            // 
+            // Email
+            // 
+            resources.ApplyResources(this.Email, "Email");
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
             // btnDeleteSuppliers
             // 
             resources.ApplyResources(this.btnDeleteSuppliers, "btnDeleteSuppliers");
@@ -103,30 +127,6 @@
             this.btnAddSuppliers.Name = "btnAddSuppliers";
             this.btnAddSuppliers.UseVisualStyleBackColor = false;
             this.btnAddSuppliers.Click += new System.EventHandler(this.btnAddSuppliers_Click);
-            // 
-            // Full_name
-            // 
-            resources.ApplyResources(this.Full_name, "Full_name");
-            this.Full_name.Name = "Full_name";
-            this.Full_name.ReadOnly = true;
-            // 
-            // Company_name
-            // 
-            resources.ApplyResources(this.Company_name, "Company_name");
-            this.Company_name.Name = "Company_name";
-            this.Company_name.ReadOnly = true;
-            // 
-            // Phone_number
-            // 
-            resources.ApplyResources(this.Phone_number, "Phone_number");
-            this.Phone_number.Name = "Phone_number";
-            this.Phone_number.ReadOnly = true;
-            // 
-            // Email
-            // 
-            resources.ApplyResources(this.Email, "Email");
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
             // 
             // formSuppliers
             // 

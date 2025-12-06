@@ -204,32 +204,17 @@ store sales</value>
   <data name="label3.Text" xml:space="preserve">
     <value>Office equipment that works for your success!</value>
   </data>
-  <data name="tsmiGoods.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 29</value>
-  </data>
   <data name="tsmiGoods.Text" xml:space="preserve">
     <value>Goods</value>
-  </data>
-  <data name="tsmiCustomers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 29</value>
   </data>
   <data name="tsmiCustomers.Text" xml:space="preserve">
     <value>Clients</value>
   </data>
-  <data name="tsmiSales.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 29</value>
-  </data>
   <data name="tsmiSales.Text" xml:space="preserve">
     <value>Sales</value>
   </data>
-  <data name="tsmiSupplies.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 29</value>
-  </data>
   <data name="tsmiSupplies.Text" xml:space="preserve">
     <value>Deliveries</value>
-  </data>
-  <data name="tsmiReports.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 29</value>
   </data>
   <data name="tsmiReports.Text" xml:space="preserve">
     <value>Reports</value>
@@ -35776,9 +35761,6 @@ store sales</value>
     <value>NoControl</value>
   </data>
   <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">

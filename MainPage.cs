@@ -301,8 +301,11 @@ namespace AppAccountingSalesOE
 
         private void formMainPage_Load(object sender, EventArgs e)
         {
-            LoadData();
             UpdateCartLabels();
+
+            LocalizationHelper.ApplyLocalization(this, LanguageManager.CurrentCulture);
+
+            LoadData();
         }
 
         private void pbArrowLeft_Click(object sender, EventArgs e)
@@ -323,6 +326,26 @@ namespace AppAccountingSalesOE
             currentIndex = (currentIndex + 1) % popularGoods.Count;
 
             ShowCurrentGoods();
+        }
+
+        private void ChangeGlobalLanguageAndReload(string newLanguageString)
+        {
+            LanguageManager.SetCulture(newLanguageString);
+
+            this.Hide();
+
+            formMainPage mainPage = new formMainPage(currentUser);
+            mainPage.Show();
+        }
+
+        private void pbLanguageUA_Click(object sender, EventArgs e)
+        {
+            ChangeGlobalLanguageAndReload("uk-UA");
+        }
+
+        private void pbLanguageUS_Click(object sender, EventArgs e)
+        {
+            ChangeGlobalLanguageAndReload("en-US");
         }
     }
 }

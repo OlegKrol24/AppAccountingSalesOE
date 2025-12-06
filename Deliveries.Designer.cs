@@ -34,6 +34,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvSupplies = new System.Windows.Forms.DataGridView();
+            this.Delivery_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Company_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.msMainMenu = new System.Windows.Forms.MenuStrip();
             this.tsmiMainPage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiGoods = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,10 +58,6 @@
             this.mcDeliveryDate = new System.Windows.Forms.MonthCalendar();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnApplyFilter = new System.Windows.Forms.Button();
-            this.Delivery_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Company_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pbCart = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pbMainMenu = new System.Windows.Forms.PictureBox();
@@ -121,6 +121,30 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvSupplies.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSupplies.RowTemplate.Height = 24;
+            // 
+            // Delivery_date
+            // 
+            resources.ApplyResources(this.Delivery_date, "Delivery_date");
+            this.Delivery_date.Name = "Delivery_date";
+            this.Delivery_date.ReadOnly = true;
+            // 
+            // Supplier
+            // 
+            resources.ApplyResources(this.Supplier, "Supplier");
+            this.Supplier.Name = "Supplier";
+            this.Supplier.ReadOnly = true;
+            // 
+            // Company_name
+            // 
+            resources.ApplyResources(this.Company_name, "Company_name");
+            this.Company_name.Name = "Company_name";
+            this.Company_name.ReadOnly = true;
+            // 
+            // Total_cost
+            // 
+            resources.ApplyResources(this.Total_cost, "Total_cost");
+            this.Total_cost.Name = "Total_cost";
+            this.Total_cost.ReadOnly = true;
             // 
             // msMainMenu
             // 
@@ -282,30 +306,6 @@
             this.btnApplyFilter.UseVisualStyleBackColor = false;
             this.btnApplyFilter.Click += new System.EventHandler(this.btnApplyFilter_Click);
             // 
-            // Delivery_date
-            // 
-            resources.ApplyResources(this.Delivery_date, "Delivery_date");
-            this.Delivery_date.Name = "Delivery_date";
-            this.Delivery_date.ReadOnly = true;
-            // 
-            // Supplier
-            // 
-            resources.ApplyResources(this.Supplier, "Supplier");
-            this.Supplier.Name = "Supplier";
-            this.Supplier.ReadOnly = true;
-            // 
-            // Company_name
-            // 
-            resources.ApplyResources(this.Company_name, "Company_name");
-            this.Company_name.Name = "Company_name";
-            this.Company_name.ReadOnly = true;
-            // 
-            // Total_cost
-            // 
-            resources.ApplyResources(this.Total_cost, "Total_cost");
-            this.Total_cost.Name = "Total_cost";
-            this.Total_cost.ReadOnly = true;
-            // 
             // pbCart
             // 
             resources.ApplyResources(this.pbCart, "pbCart");
@@ -338,6 +338,7 @@
             this.pbLanguageUA.Image = global::AppAccountingSalesOE.Properties.Resources.Flag_UA;
             this.pbLanguageUA.Name = "pbLanguageUA";
             this.pbLanguageUA.TabStop = false;
+            this.pbLanguageUA.Click += new System.EventHandler(this.pbLanguageUA_Click);
             // 
             // pbLanguageUS
             // 
@@ -347,6 +348,7 @@
             this.pbLanguageUS.Image = global::AppAccountingSalesOE.Properties.Resources.Flag_USA;
             this.pbLanguageUS.Name = "pbLanguageUS";
             this.pbLanguageUS.TabStop = false;
+            this.pbLanguageUS.Click += new System.EventHandler(this.pbLanguageUS_Click);
             // 
             // pictureBox4
             // 

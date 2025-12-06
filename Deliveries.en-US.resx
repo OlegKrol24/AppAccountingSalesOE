@@ -156,17 +156,32 @@
   <data name="Total_cost.Width" type="System.Int32, mscorlib">
     <value>101</value>
   </data>
+  <data name="tsmiMainPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 29</value>
+  </data>
   <data name="tsmiMainPage.Text" xml:space="preserve">
     <value>Home</value>
+  </data>
+  <data name="tsmiGoods.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 29</value>
   </data>
   <data name="tsmiGoods.Text" xml:space="preserve">
     <value>Goods</value>
   </data>
+  <data name="tsmiCustomers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 29</value>
+  </data>
   <data name="tsmiCustomers.Text" xml:space="preserve">
     <value>Clients</value>
   </data>
+  <data name="tsmiSales.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 29</value>
+  </data>
   <data name="tsmiSales.Text" xml:space="preserve">
     <value>Sales</value>
+  </data>
+  <data name="tsmiReports.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 29</value>
   </data>
   <data name="tsmiReports.Text" xml:space="preserve">
     <value>Reports</value>

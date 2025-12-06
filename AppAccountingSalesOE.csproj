@@ -191,6 +191,8 @@
       <DependentUpon>formWorkingWithSuppliers.cs</DependentUpon>
     </Compile>
     <Compile Include="Goods.cs" />
+    <Compile Include="LanguageManager.cs" />
+    <Compile Include="LocalizationHelper.cs" />
     <Compile Include="LoggerService.cs" />
     <Compile Include="MainPage.cs">
       <SubType>Form</SubType>
@@ -226,16 +228,25 @@
     <EmbeddedResource Include="Customers.resx">
       <DependentUpon>Customers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Customers.uk-UA.resx">
+      <DependentUpon>Customers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Deliveries.en-US.resx">
       <DependentUpon>Deliveries.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Deliveries.resx">
       <DependentUpon>Deliveries.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Deliveries.uk-UA.resx">
+      <DependentUpon>Deliveries.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.en-US.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.uk-UA.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formAuthorization.resx">
@@ -245,6 +256,9 @@
       <DependentUpon>formCart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formCart.resx">
+      <DependentUpon>formCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formCart.uk-UA.resx">
       <DependentUpon>formCart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formFilter.en-US.resx">
@@ -257,6 +271,9 @@
       <DependentUpon>FormReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReport.resx">
+      <DependentUpon>FormReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReport.uk-UA.resx">
       <DependentUpon>FormReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formReportView.en-US.resx">
@@ -302,6 +319,9 @@
       <DependentUpon>MainPage.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainPage.uk-UA.resx">
+      <DependentUpon>MainPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -310,6 +330,9 @@
       <DependentUpon>Sales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sales.resx">
+      <DependentUpon>Sales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales.uk-UA.resx">
       <DependentUpon>Sales.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

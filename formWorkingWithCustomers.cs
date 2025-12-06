@@ -24,9 +24,6 @@ namespace AppAccountingSalesOE
             this.mode = mode;
             this.customerId = id;
             this.Text = mode == "add" ? "Додавання клієнта" : "Редагування клієнта";
-
-            //this.Text = (mode == "add" && this.Text == "Додавання/редагування клієнта") ? "Додавання клієнта" : "Редагування клієнта";
-            //this.Text = (mode == "add" && this.Text == "Adding/editing a client") ? "Adding a client" : "Client editing";
         }
 
         ClassDataBase db = new ClassDataBase();
@@ -43,6 +40,8 @@ namespace AppAccountingSalesOE
         private void formWorkingWithCustomers_Load(object sender, EventArgs e)
         {
             LoadData();
+
+            LocalizationHelper.ApplyLocalization(this, LanguageManager.CurrentCulture);
         }
 
         private void btnSave_Click(object sender, EventArgs e)

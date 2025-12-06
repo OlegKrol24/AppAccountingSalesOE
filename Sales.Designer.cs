@@ -29,11 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formSales));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvSales = new System.Windows.Forms.DataGridView();
+            this.Sale_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Full_name_customers = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Full_name_employee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total_amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.msMainMenu = new System.Windows.Forms.MenuStrip();
             this.tsmiMainPage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiGoods = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,10 +61,6 @@
             this.pbLanguageUS = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Sale_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Full_name_customers = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Full_name_employee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total_amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSales)).BeginInit();
             this.msMainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
@@ -92,14 +92,14 @@
             this.dgvSales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvSales.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvSales.BackgroundColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Sale_date,
@@ -108,15 +108,39 @@
             this.Total_amount});
             this.dgvSales.Name = "dgvSales";
             this.dgvSales.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSales.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSales.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSales.RowTemplate.Height = 24;
+            // 
+            // Sale_date
+            // 
+            resources.ApplyResources(this.Sale_date, "Sale_date");
+            this.Sale_date.Name = "Sale_date";
+            this.Sale_date.ReadOnly = true;
+            // 
+            // Full_name_customers
+            // 
+            resources.ApplyResources(this.Full_name_customers, "Full_name_customers");
+            this.Full_name_customers.Name = "Full_name_customers";
+            this.Full_name_customers.ReadOnly = true;
+            // 
+            // Full_name_employee
+            // 
+            resources.ApplyResources(this.Full_name_employee, "Full_name_employee");
+            this.Full_name_employee.Name = "Full_name_employee";
+            this.Full_name_employee.ReadOnly = true;
+            // 
+            // Total_amount
+            // 
+            resources.ApplyResources(this.Total_amount, "Total_amount");
+            this.Total_amount.Name = "Total_amount";
+            this.Total_amount.ReadOnly = true;
             // 
             // msMainMenu
             // 
@@ -269,6 +293,7 @@
             this.pbLanguageUA.Image = global::AppAccountingSalesOE.Properties.Resources.Flag_UA;
             this.pbLanguageUA.Name = "pbLanguageUA";
             this.pbLanguageUA.TabStop = false;
+            this.pbLanguageUA.Click += new System.EventHandler(this.pbLanguageUA_Click);
             // 
             // pbLanguageUS
             // 
@@ -278,6 +303,7 @@
             this.pbLanguageUS.Image = global::AppAccountingSalesOE.Properties.Resources.Flag_USA;
             this.pbLanguageUS.Name = "pbLanguageUS";
             this.pbLanguageUS.TabStop = false;
+            this.pbLanguageUS.Click += new System.EventHandler(this.pbLanguageUS_Click);
             // 
             // pictureBox4
             // 
@@ -293,30 +319,6 @@
             this.pictureBox1.BackColor = System.Drawing.Color.SteelBlue;
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
-            // 
-            // Sale_date
-            // 
-            resources.ApplyResources(this.Sale_date, "Sale_date");
-            this.Sale_date.Name = "Sale_date";
-            this.Sale_date.ReadOnly = true;
-            // 
-            // Full_name_customers
-            // 
-            resources.ApplyResources(this.Full_name_customers, "Full_name_customers");
-            this.Full_name_customers.Name = "Full_name_customers";
-            this.Full_name_customers.ReadOnly = true;
-            // 
-            // Full_name_employee
-            // 
-            resources.ApplyResources(this.Full_name_employee, "Full_name_employee");
-            this.Full_name_employee.Name = "Full_name_employee";
-            this.Full_name_employee.ReadOnly = true;
-            // 
-            // Total_amount
-            // 
-            resources.ApplyResources(this.Total_amount, "Total_amount");
-            this.Total_amount.Name = "Total_amount";
-            this.Total_amount.ReadOnly = true;
             // 
             // formSales
             // 

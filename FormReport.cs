@@ -286,7 +286,7 @@ namespace AppAccountingSalesOE
                 dgvReport.Columns.Clear();
                 dgvReport.Columns.Add("FullName", "ПІБ");
                 dgvReport.Columns.Add("Phone", "Телефон");
-                dgvReport.Columns.Add("Email", "Email");
+                dgvReport.Columns.Add("Email", "Електронна пошта");
                 dgvReport.Columns.Add("Address", "Адреса");
                 dgvReport.Columns.Add("TotalSales", "Загальна сума покупок");
 
@@ -391,6 +391,8 @@ namespace AppAccountingSalesOE
 
             UpdateDataGridViews();
             UpdateCartLabels();
+
+            LocalizationHelper.ApplyLocalization(this, LanguageManager.CurrentCulture);
         }
 
         private void formReport_FormClosing(object sender, FormClosingEventArgs e)
@@ -563,6 +565,26 @@ namespace AppAccountingSalesOE
             mcReportDate.SelectionEnd = mcReportDate.MinDate;
 
             UpdateDataGridViews();
+        }
+
+        private void ChangeGlobalLanguageAndReload(string newLanguageString)
+        {
+            LanguageManager.SetCulture(newLanguageString);
+
+            this.Hide();
+
+            formMainPage mainPage = new formMainPage(currentUser);
+            mainPage.Show();
+        }
+
+        private void pbLanguageUA_Click(object sender, EventArgs e)
+        {
+            ChangeGlobalLanguageAndReload("uk-UA");
+        }
+
+        private void pbLanguageUS_Click(object sender, EventArgs e)
+        {
+            ChangeGlobalLanguageAndReload("en-US");
         }
     }
 }

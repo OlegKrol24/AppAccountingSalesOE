@@ -134,6 +134,8 @@ namespace AppAccountingSalesOE
 
             ShowSupplies(ref dgvSupplies);
             UpdateCartLabels();
+
+            LocalizationHelper.ApplyLocalization(this, LanguageManager.CurrentCulture);
         }
 
         private void btnSuppliers_Click(object sender, EventArgs e)
@@ -315,6 +317,26 @@ namespace AppAccountingSalesOE
             mcDeliveryDate.SelectionEnd = mcDeliveryDate.MinDate;
 
             ShowSupplies(ref dgvSupplies);
+        }
+
+        private void ChangeGlobalLanguageAndReload(string newLanguageString)
+        {
+            LanguageManager.SetCulture(newLanguageString);
+
+            this.Hide();
+
+            formMainPage mainPage = new formMainPage(currentUser);
+            mainPage.Show();
+        }
+
+        private void pbLanguageUA_Click(object sender, EventArgs e)
+        {
+            ChangeGlobalLanguageAndReload("uk-UA");
+        }
+
+        private void pbLanguageUS_Click(object sender, EventArgs e)
+        {
+            ChangeGlobalLanguageAndReload("en-US");
         }
     }
 }

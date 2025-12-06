@@ -49,6 +49,8 @@ namespace AppAccountingSalesOE
             {
                 db.Execute<Supplies_details>(file_db, $"select id_supply_details, id_supply, id_goods, quantity, unit_cost from supplies_details where id_supply = {supplyId}", ref old_details_list);
             }
+
+            LocalizationHelper.ApplyLocalization(this, LanguageManager.CurrentCulture);
         }
 
         private void btnAddDetail_Click(object sender, EventArgs e)

@@ -66,6 +66,8 @@ namespace AppAccountingSalesOE
             LoadData();
             ShowCategories(ref goods_list, ref cbCategory);
             ShowWarranties(ref goods_list, ref cbWarrantyMonths);
+
+            LocalizationHelper.ApplyLocalization(this, LanguageManager.CurrentCulture);
         }
 
         private void btnChooseImage_Click(object sender, EventArgs e)

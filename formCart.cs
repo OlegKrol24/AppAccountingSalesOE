@@ -99,6 +99,8 @@ namespace AppAccountingSalesOE
             LoadData();
             LoadCartItems();
             UpdateCartLabels();
+
+            LocalizationHelper.ApplyLocalization(this, LanguageManager.CurrentCulture);
         }
 
         private CartItem selectedCartItem = null;
@@ -455,6 +457,26 @@ namespace AppAccountingSalesOE
             this.Hide();
             formReport formReport = new formReport(currentUser);
             formReport.Show();
+        }
+
+        private void ChangeGlobalLanguageAndReload(string newLanguageString)
+        {
+            LanguageManager.SetCulture(newLanguageString);
+
+            this.Hide();
+
+            formMainPage mainPage = new formMainPage(currentUser);
+            mainPage.Show();
+        }
+
+        private void pbLanguageUA_Click(object sender, EventArgs e)
+        {
+            ChangeGlobalLanguageAndReload("uk-UA");
+        }
+
+        private void pbLanguageUS_Click(object sender, EventArgs e)
+        {
+            ChangeGlobalLanguageAndReload("en-US");
         }
     }
 }

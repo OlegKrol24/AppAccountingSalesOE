@@ -41,6 +41,10 @@
             this.cbGoods = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDetails = new System.Windows.Forms.DataGridView();
+            this.Name_goods = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unit_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAddDetail = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,10 +52,6 @@
             this.tbUnitCost = new System.Windows.Forms.TextBox();
             this.btnEditDetail = new System.Windows.Forms.Button();
             this.btnDeleteDetail = new System.Windows.Forms.Button();
-            this.Name_goods = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unit_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total_cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetails)).BeginInit();
             this.SuspendLayout();
             // 
@@ -140,6 +140,30 @@
             this.dgvDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDetails.RowTemplate.Height = 24;
             // 
+            // Name_goods
+            // 
+            resources.ApplyResources(this.Name_goods, "Name_goods");
+            this.Name_goods.Name = "Name_goods";
+            this.Name_goods.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            resources.ApplyResources(this.Quantity, "Quantity");
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            // 
+            // Unit_cost
+            // 
+            resources.ApplyResources(this.Unit_cost, "Unit_cost");
+            this.Unit_cost.Name = "Unit_cost";
+            this.Unit_cost.ReadOnly = true;
+            // 
+            // Total_cost
+            // 
+            resources.ApplyResources(this.Total_cost, "Total_cost");
+            this.Total_cost.Name = "Total_cost";
+            this.Total_cost.ReadOnly = true;
+            // 
             // btnAddDetail
             // 
             resources.ApplyResources(this.btnAddDetail, "btnAddDetail");
@@ -189,30 +213,6 @@
             this.btnDeleteDetail.Name = "btnDeleteDetail";
             this.btnDeleteDetail.UseVisualStyleBackColor = false;
             this.btnDeleteDetail.Click += new System.EventHandler(this.btnDeleteDetail_Click);
-            // 
-            // Name_goods
-            // 
-            resources.ApplyResources(this.Name_goods, "Name_goods");
-            this.Name_goods.Name = "Name_goods";
-            this.Name_goods.ReadOnly = true;
-            // 
-            // Quantity
-            // 
-            resources.ApplyResources(this.Quantity, "Quantity");
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            // 
-            // Unit_cost
-            // 
-            resources.ApplyResources(this.Unit_cost, "Unit_cost");
-            this.Unit_cost.Name = "Unit_cost";
-            this.Unit_cost.ReadOnly = true;
-            // 
-            // Total_cost
-            // 
-            resources.ApplyResources(this.Total_cost, "Total_cost");
-            this.Total_cost.Name = "Total_cost";
-            this.Total_cost.ReadOnly = true;
             // 
             // formWorkingWithDeliveries
             // 

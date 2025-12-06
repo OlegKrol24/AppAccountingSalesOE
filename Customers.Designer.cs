@@ -35,6 +35,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvCustomers = new System.Windows.Forms.DataGridView();
+            this.Full_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phone_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDeleteCustomer = new System.Windows.Forms.Button();
             this.btnEditCustomer = new System.Windows.Forms.Button();
             this.btnAddCustomer = new System.Windows.Forms.Button();
@@ -55,10 +59,6 @@
             this.pbLanguageUS = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Full_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Phone_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
             this.msMainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCart)).BeginInit();
@@ -122,6 +122,30 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCustomers.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCustomers.RowTemplate.Height = 24;
+            // 
+            // Full_name
+            // 
+            resources.ApplyResources(this.Full_name, "Full_name");
+            this.Full_name.Name = "Full_name";
+            this.Full_name.ReadOnly = true;
+            // 
+            // Phone_number
+            // 
+            resources.ApplyResources(this.Phone_number, "Phone_number");
+            this.Phone_number.Name = "Phone_number";
+            this.Phone_number.ReadOnly = true;
+            // 
+            // Email
+            // 
+            resources.ApplyResources(this.Email, "Email");
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // Address
+            // 
+            resources.ApplyResources(this.Address, "Address");
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
             // 
             // btnDeleteCustomer
             // 
@@ -264,6 +288,7 @@
             this.pbLanguageUA.Image = global::AppAccountingSalesOE.Properties.Resources.Flag_UA;
             this.pbLanguageUA.Name = "pbLanguageUA";
             this.pbLanguageUA.TabStop = false;
+            this.pbLanguageUA.Click += new System.EventHandler(this.pbLanguageUA_Click);
             // 
             // pbLanguageUS
             // 
@@ -273,6 +298,7 @@
             this.pbLanguageUS.Image = global::AppAccountingSalesOE.Properties.Resources.Flag_USA;
             this.pbLanguageUS.Name = "pbLanguageUS";
             this.pbLanguageUS.TabStop = false;
+            this.pbLanguageUS.Click += new System.EventHandler(this.pbLanguageUS_Click);
             // 
             // pictureBox4
             // 
@@ -288,30 +314,6 @@
             this.pictureBox1.BackColor = System.Drawing.Color.SteelBlue;
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
-            // 
-            // Full_name
-            // 
-            resources.ApplyResources(this.Full_name, "Full_name");
-            this.Full_name.Name = "Full_name";
-            this.Full_name.ReadOnly = true;
-            // 
-            // Phone_number
-            // 
-            resources.ApplyResources(this.Phone_number, "Phone_number");
-            this.Phone_number.Name = "Phone_number";
-            this.Phone_number.ReadOnly = true;
-            // 
-            // Email
-            // 
-            resources.ApplyResources(this.Email, "Email");
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            // 
-            // Address
-            // 
-            resources.ApplyResources(this.Address, "Address");
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
             // 
             // formCustomers
             // 

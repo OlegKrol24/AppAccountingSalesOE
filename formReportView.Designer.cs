@@ -43,6 +43,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlReportPreview);
             this.Name = "formReportView";
+            this.Load += new System.EventHandler(this.formReportView_Load);
             this.ResumeLayout(false);
 
         }

@@ -164,17 +164,32 @@
   <data name="btnFilterGoods.Text" xml:space="preserve">
     <value>Filtration</value>
   </data>
+  <data name="tsmiMainPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 29</value>
+  </data>
   <data name="tsmiMainPage.Text" xml:space="preserve">
     <value>Home</value>
+  </data>
+  <data name="tsmiCustomers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 29</value>
   </data>
   <data name="tsmiCustomers.Text" xml:space="preserve">
     <value>Clients</value>
   </data>
+  <data name="tsmiSales.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 29</value>
+  </data>
   <data name="tsmiSales.Text" xml:space="preserve">
     <value>Sales</value>
   </data>
+  <data name="tsmiSupplies.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 29</value>
+  </data>
   <data name="tsmiSupplies.Text" xml:space="preserve">
     <value>Deliveries</value>
+  </data>
+  <data name="tsmiReports.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 29</value>
   </data>
   <data name="tsmiReports.Text" xml:space="preserve">
     <value>Reports</value>
@@ -225,9 +240,6 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">

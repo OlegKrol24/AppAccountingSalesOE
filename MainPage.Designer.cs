@@ -354,6 +354,7 @@
             this.pbLanguageUA.Name = "pbLanguageUA";
             this.pbLanguageUA.TabStop = false;
             this.ttPopularGoods.SetToolTip(this.pbLanguageUA, resources.GetString("pbLanguageUA.ToolTip"));
+            this.pbLanguageUA.Click += new System.EventHandler(this.pbLanguageUA_Click);
             // 
             // pbLanguageUS
             // 
@@ -364,6 +365,7 @@
             this.pbLanguageUS.Name = "pbLanguageUS";
             this.pbLanguageUS.TabStop = false;
             this.ttPopularGoods.SetToolTip(this.pbLanguageUS, resources.GetString("pbLanguageUS.ToolTip"));
+            this.pbLanguageUS.Click += new System.EventHandler(this.pbLanguageUS_Click);
             // 
             // pictureBox4
             // 
