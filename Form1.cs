@@ -124,8 +124,6 @@ namespace AppAccountingSalesOE
             SetupListView();
             LoadGoodsToListViewFiltration();
             UpdateCartLabels();
-
-            LocalizationHelper.ApplyLocalization(this, LanguageManager.CurrentCulture);
         }
 
         private void formGoods_FormClosing(object sender, FormClosingEventArgs e)
@@ -240,20 +238,6 @@ namespace AppAccountingSalesOE
                 Goods selectedGood = goods_list[selectedIndex];
 
                 formWorkingWithGoods editForm = new formWorkingWithGoods("edit", selectedGood.ID);
-
-                editForm.tbNameGoods.Text = selectedGood.Name;
-                editForm.cbCategory.Text = selectedGood.Category;
-                editForm.tbManufacturingCountry.Text = selectedGood.ManufacturingCountry;
-                editForm.tbPrice.Text = selectedGood.Price.ToString();
-                editForm.cbWarrantyMonths.Text = selectedGood.WarrantyMonths.ToString();
-                editForm.rtbDescription.Text = selectedGood.Description;
-
-                string imagePath = Path.Combine(Directory.GetCurrentDirectory(), "Goods", selectedGood.Image);
-
-                if (!string.IsNullOrEmpty(selectedGood.Image) && File.Exists(imagePath))
-                {
-                    editForm.pbImageGoods.Image = Image.FromFile(imagePath);
-                }
 
                 if (editForm.ShowDialog() == DialogResult.OK)
                 {
@@ -396,26 +380,6 @@ namespace AppAccountingSalesOE
 
                 else ttGoods.Hide(dgvGoods);
             }
-        }
-
-        private void ChangeGlobalLanguageAndReload(string newLanguageString)
-        {
-            LanguageManager.SetCulture(newLanguageString);
-
-            this.Hide();
-
-            formMainPage mainPage = new formMainPage(currentUser);
-            mainPage.Show();
-        }
-
-        private void pbLanguageUA_Click(object sender, EventArgs e)
-        {
-            ChangeGlobalLanguageAndReload("uk-UA");
-        }
-
-        private void pbLanguageUS_Click(object sender, EventArgs e)
-        {
-            ChangeGlobalLanguageAndReload("en-US");
         }
     }
 }

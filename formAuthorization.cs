@@ -101,7 +101,13 @@ namespace AppAccountingSalesOE
                 mainPage.Show();
             }
 
-            else MessageBox.Show("Невірний логін або пароль", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                MessageBox.Show("Невірний логін або пароль", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                tbPassword.Clear();
+                tbLogin.Focus();
+            }
         }
 
         private void LoadEyeImages()

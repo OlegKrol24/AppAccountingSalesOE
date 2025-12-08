@@ -67,7 +67,27 @@ namespace AppAccountingSalesOE
             ShowCategories(ref goods_list, ref cbCategory);
             ShowWarranties(ref goods_list, ref cbWarrantyMonths);
 
-            LocalizationHelper.ApplyLocalization(this, LanguageManager.CurrentCulture);
+            if (mode == "edit")
+            {
+                Goods goodToEdit = goods_list.FirstOrDefault(g => g.ID == goodId);
+
+                if (goodToEdit != null)
+                {
+                    tbNameGoods.Text = goodToEdit.Name;
+                    cbCategory.Text = goodToEdit.Category;
+                    tbManufacturingCountry.Text = goodToEdit.ManufacturingCountry;
+                    tbPrice.Text = goodToEdit.Price.ToString();
+                    cbWarrantyMonths.Text = goodToEdit.WarrantyMonths.ToString();
+                    rtbDescription.Text = goodToEdit.Description;
+
+                    string imagePath = Path.Combine(Directory.GetCurrentDirectory(), "Goods", goodToEdit.Image);
+
+                    if (!string.IsNullOrEmpty(goodToEdit.Image) && File.Exists(imagePath))
+                    {
+                        pbImageGoods.Image = Image.FromFile(imagePath);
+                    }
+                }
+            }
         }
 
         private void btnChooseImage_Click(object sender, EventArgs e)

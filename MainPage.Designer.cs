@@ -86,122 +86,183 @@
             // 
             // btnGoods
             // 
-            resources.ApplyResources(this.btnGoods, "btnGoods");
             this.btnGoods.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnGoods.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGoods.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold);
             this.btnGoods.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnGoods.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnGoods.Location = new System.Drawing.Point(60, 260);
             this.btnGoods.Name = "btnGoods";
-            this.ttPopularGoods.SetToolTip(this.btnGoods, resources.GetString("btnGoods.ToolTip"));
+            this.btnGoods.Size = new System.Drawing.Size(166, 44);
+            this.btnGoods.TabIndex = 3;
+            this.btnGoods.Text = "Товари";
             this.btnGoods.UseVisualStyleBackColor = false;
             this.btnGoods.Click += new System.EventHandler(this.btnGoods_Click);
             // 
             // btnCustomers
             // 
-            resources.ApplyResources(this.btnCustomers, "btnCustomers");
             this.btnCustomers.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnCustomers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCustomers.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold);
             this.btnCustomers.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCustomers.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnCustomers.Location = new System.Drawing.Point(60, 335);
             this.btnCustomers.Name = "btnCustomers";
-            this.ttPopularGoods.SetToolTip(this.btnCustomers, resources.GetString("btnCustomers.ToolTip"));
+            this.btnCustomers.Size = new System.Drawing.Size(166, 44);
+            this.btnCustomers.TabIndex = 4;
+            this.btnCustomers.Text = "Клієнти";
             this.btnCustomers.UseVisualStyleBackColor = false;
             this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
             // 
             // btnSales
             // 
-            resources.ApplyResources(this.btnSales, "btnSales");
             this.btnSales.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnSales.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSales.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold);
             this.btnSales.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSales.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnSales.Location = new System.Drawing.Point(60, 410);
             this.btnSales.Name = "btnSales";
-            this.ttPopularGoods.SetToolTip(this.btnSales, resources.GetString("btnSales.ToolTip"));
+            this.btnSales.Size = new System.Drawing.Size(166, 44);
+            this.btnSales.TabIndex = 5;
+            this.btnSales.Text = "Продажі";
             this.btnSales.UseVisualStyleBackColor = false;
             this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
             // 
             // btnDeliveries
             // 
-            resources.ApplyResources(this.btnDeliveries, "btnDeliveries");
             this.btnDeliveries.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnDeliveries.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeliveries.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold);
             this.btnDeliveries.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDeliveries.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnDeliveries.Location = new System.Drawing.Point(60, 485);
             this.btnDeliveries.Name = "btnDeliveries";
-            this.ttPopularGoods.SetToolTip(this.btnDeliveries, resources.GetString("btnDeliveries.ToolTip"));
+            this.btnDeliveries.Size = new System.Drawing.Size(166, 44);
+            this.btnDeliveries.TabIndex = 6;
+            this.btnDeliveries.Text = "Поставки";
             this.btnDeliveries.UseVisualStyleBackColor = false;
             this.btnDeliveries.Click += new System.EventHandler(this.btnDeliveries_Click);
             // 
             // btnReports
             // 
-            resources.ApplyResources(this.btnReports, "btnReports");
             this.btnReports.BackColor = System.Drawing.Color.LightSlateGray;
             this.btnReports.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReports.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold);
             this.btnReports.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnReports.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnReports.Location = new System.Drawing.Point(60, 560);
             this.btnReports.Name = "btnReports";
-            this.ttPopularGoods.SetToolTip(this.btnReports, resources.GetString("btnReports.ToolTip"));
+            this.btnReports.Size = new System.Drawing.Size(166, 44);
+            this.btnReports.TabIndex = 7;
+            this.btnReports.Text = "Звіти";
             this.btnReports.UseVisualStyleBackColor = false;
             this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
             // 
             // lbRole
             // 
-            resources.ApplyResources(this.lbRole, "lbRole");
+            this.lbRole.AutoSize = true;
             this.lbRole.BackColor = System.Drawing.Color.SteelBlue;
+            this.lbRole.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
             this.lbRole.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbRole.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbRole.Location = new System.Drawing.Point(60, 670);
             this.lbRole.Name = "lbRole";
-            this.ttPopularGoods.SetToolTip(this.lbRole, resources.GetString("lbRole.ToolTip"));
+            this.lbRole.Size = new System.Drawing.Size(46, 17);
+            this.lbRole.TabIndex = 8;
+            this.lbRole.Text = "Роль:";
             // 
             // lbUser
             // 
-            resources.ApplyResources(this.lbUser, "lbUser");
+            this.lbUser.AutoSize = true;
             this.lbUser.BackColor = System.Drawing.Color.SteelBlue;
+            this.lbUser.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
             this.lbUser.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbUser.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbUser.Location = new System.Drawing.Point(14, 709);
             this.lbUser.Name = "lbUser";
-            this.ttPopularGoods.SetToolTip(this.lbUser, resources.GetString("lbUser.ToolTip"));
+            this.lbUser.Size = new System.Drawing.Size(92, 17);
+            this.lbUser.TabIndex = 9;
+            this.lbUser.Text = "Користувач:";
             // 
             // lbRoleText
             // 
-            resources.ApplyResources(this.lbRoleText, "lbRoleText");
+            this.lbRoleText.AutoSize = true;
             this.lbRoleText.BackColor = System.Drawing.Color.SteelBlue;
+            this.lbRoleText.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.lbRoleText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbRoleText.Location = new System.Drawing.Point(116, 670);
             this.lbRoleText.Name = "lbRoleText";
-            this.ttPopularGoods.SetToolTip(this.lbRoleText, resources.GetString("lbRoleText.ToolTip"));
+            this.lbRoleText.Size = new System.Drawing.Size(82, 17);
+            this.lbRoleText.TabIndex = 10;
+            this.lbRoleText.Text = "Менеджер";
             // 
             // lbUserText
             // 
-            resources.ApplyResources(this.lbUserText, "lbUserText");
+            this.lbUserText.AutoSize = true;
             this.lbUserText.BackColor = System.Drawing.Color.SteelBlue;
+            this.lbUserText.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.lbUserText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbUserText.Location = new System.Drawing.Point(116, 708);
             this.lbUserText.Name = "lbUserText";
-            this.ttPopularGoods.SetToolTip(this.lbUserText, resources.GetString("lbUserText.ToolTip"));
+            this.lbUserText.Size = new System.Drawing.Size(123, 17);
+            this.lbUserText.TabIndex = 11;
+            this.lbUserText.Text = "Кролевець Олег";
             // 
             // label5
             // 
-            resources.ApplyResources(this.label5, "label5");
+            this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.SteelBlue;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
+            this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label5.Location = new System.Drawing.Point(400, 24);
             this.label5.Name = "label5";
-            this.ttPopularGoods.SetToolTip(this.label5, resources.GetString("label5.ToolTip"));
+            this.label5.Size = new System.Drawing.Size(150, 26);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "012 345 67 89";
             // 
             // lbPopularGoods
             // 
-            resources.ApplyResources(this.lbPopularGoods, "lbPopularGoods");
+            this.lbPopularGoods.AutoSize = true;
             this.lbPopularGoods.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.lbPopularGoods.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold);
+            this.lbPopularGoods.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbPopularGoods.Location = new System.Drawing.Point(677, 127);
             this.lbPopularGoods.Name = "lbPopularGoods";
-            this.ttPopularGoods.SetToolTip(this.lbPopularGoods, resources.GetString("lbPopularGoods.ToolTip"));
+            this.lbPopularGoods.Size = new System.Drawing.Size(245, 32);
+            this.lbPopularGoods.TabIndex = 21;
+            this.lbPopularGoods.Text = "Популярні товари";
             // 
             // label2
             // 
-            resources.ApplyResources(this.label2, "label2");
             this.label2.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(525, 550);
             this.label2.Name = "label2";
-            this.ttPopularGoods.SetToolTip(this.label2, resources.GetString("label2.ToolTip"));
+            this.label2.Size = new System.Drawing.Size(540, 62);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Кількість проданого товару з загальної\r\nкількості продажів магазину";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
-            resources.ApplyResources(this.label3, "label3");
             this.label3.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label3.Location = new System.Drawing.Point(557, 694);
             this.label3.Name = "label3";
-            this.ttPopularGoods.SetToolTip(this.label3, resources.GetString("label3.ToolTip"));
+            this.label3.Size = new System.Drawing.Size(482, 32);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Оргтехніка, яка працює на ваш успіх!";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // msMainMenu
             // 
-            resources.ApplyResources(this.msMainMenu, "msMainMenu");
+            this.msMainMenu.AutoSize = false;
             this.msMainMenu.BackColor = System.Drawing.Color.SteelBlue;
+            this.msMainMenu.Dock = System.Windows.Forms.DockStyle.None;
             this.msMainMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.msMainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiGoods,
@@ -210,201 +271,269 @@
             this.tsmiSupplies,
             this.tsmiReports});
             this.msMainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
+            this.msMainMenu.Location = new System.Drawing.Point(1147, 74);
             this.msMainMenu.Name = "msMainMenu";
-            this.ttPopularGoods.SetToolTip(this.msMainMenu, resources.GetString("msMainMenu.ToolTip"));
+            this.msMainMenu.Size = new System.Drawing.Size(156, 260);
+            this.msMainMenu.TabIndex = 28;
+            this.msMainMenu.Text = "menuStrip1";
+            this.msMainMenu.Visible = false;
             // 
             // tsmiGoods
             // 
-            resources.ApplyResources(this.tsmiGoods, "tsmiGoods");
             this.tsmiGoods.BackColor = System.Drawing.Color.PowderBlue;
+            this.tsmiGoods.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
             this.tsmiGoods.Margin = new System.Windows.Forms.Padding(0, 10, 5, 0);
             this.tsmiGoods.Name = "tsmiGoods";
+            this.tsmiGoods.Size = new System.Drawing.Size(144, 29);
+            this.tsmiGoods.Text = "Товари";
             this.tsmiGoods.Click += new System.EventHandler(this.tsmiGoods_Click);
             // 
             // tsmiCustomers
             // 
-            resources.ApplyResources(this.tsmiCustomers, "tsmiCustomers");
             this.tsmiCustomers.BackColor = System.Drawing.Color.PowderBlue;
+            this.tsmiCustomers.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
             this.tsmiCustomers.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiCustomers.Name = "tsmiCustomers";
+            this.tsmiCustomers.Size = new System.Drawing.Size(144, 29);
+            this.tsmiCustomers.Text = "Клієнти";
             this.tsmiCustomers.Click += new System.EventHandler(this.tsmiCustomers_Click);
             // 
             // tsmiSales
             // 
-            resources.ApplyResources(this.tsmiSales, "tsmiSales");
             this.tsmiSales.BackColor = System.Drawing.Color.PowderBlue;
+            this.tsmiSales.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
             this.tsmiSales.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiSales.Name = "tsmiSales";
+            this.tsmiSales.Size = new System.Drawing.Size(144, 29);
+            this.tsmiSales.Text = "Продажі";
             this.tsmiSales.Click += new System.EventHandler(this.tsmiSales_Click);
             // 
             // tsmiSupplies
             // 
-            resources.ApplyResources(this.tsmiSupplies, "tsmiSupplies");
             this.tsmiSupplies.BackColor = System.Drawing.Color.PowderBlue;
+            this.tsmiSupplies.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
             this.tsmiSupplies.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiSupplies.Name = "tsmiSupplies";
+            this.tsmiSupplies.Size = new System.Drawing.Size(144, 29);
+            this.tsmiSupplies.Text = "Поставки";
             this.tsmiSupplies.Click += new System.EventHandler(this.tsmiSupplies_Click);
             // 
             // tsmiReports
             // 
-            resources.ApplyResources(this.tsmiReports, "tsmiReports");
             this.tsmiReports.BackColor = System.Drawing.Color.PowderBlue;
+            this.tsmiReports.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
             this.tsmiReports.Margin = new System.Windows.Forms.Padding(0, 15, 5, 0);
             this.tsmiReports.Name = "tsmiReports";
+            this.tsmiReports.Size = new System.Drawing.Size(144, 29);
+            this.tsmiReports.Text = "Звіти";
             this.tsmiReports.Click += new System.EventHandler(this.tsmiReports_Click);
             // 
             // lbQuantityCart
             // 
-            resources.ApplyResources(this.lbQuantityCart, "lbQuantityCart");
+            this.lbQuantityCart.AutoSize = true;
+            this.lbQuantityCart.Font = new System.Drawing.Font("Times New Roman", 10.2F);
+            this.lbQuantityCart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbQuantityCart.Location = new System.Drawing.Point(972, 13);
             this.lbQuantityCart.Name = "lbQuantityCart";
-            this.ttPopularGoods.SetToolTip(this.lbQuantityCart, resources.GetString("lbQuantityCart.ToolTip"));
+            this.lbQuantityCart.Size = new System.Drawing.Size(42, 19);
+            this.lbQuantityCart.TabIndex = 31;
+            this.lbQuantityCart.Text = "0 шт";
+            this.lbQuantityCart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbTotalAmountCart
             // 
-            resources.ApplyResources(this.lbTotalAmountCart, "lbTotalAmountCart");
+            this.lbTotalAmountCart.AutoSize = true;
+            this.lbTotalAmountCart.Font = new System.Drawing.Font("Times New Roman", 10.2F);
+            this.lbTotalAmountCart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbTotalAmountCart.Location = new System.Drawing.Point(972, 43);
             this.lbTotalAmountCart.Name = "lbTotalAmountCart";
-            this.ttPopularGoods.SetToolTip(this.lbTotalAmountCart, resources.GetString("lbTotalAmountCart.ToolTip"));
+            this.lbTotalAmountCart.Size = new System.Drawing.Size(45, 19);
+            this.lbTotalAmountCart.TabIndex = 32;
+            this.lbTotalAmountCart.Text = "0 грн";
+            this.lbTotalAmountCart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbSoldInfo
             // 
-            resources.ApplyResources(this.lbSoldInfo, "lbSoldInfo");
+            this.lbSoldInfo.AutoSize = true;
             this.lbSoldInfo.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.lbSoldInfo.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
+            this.lbSoldInfo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbSoldInfo.Location = new System.Drawing.Point(770, 633);
             this.lbSoldInfo.Name = "lbSoldInfo";
-            this.ttPopularGoods.SetToolTip(this.lbSoldInfo, resources.GetString("lbSoldInfo.ToolTip"));
+            this.lbSoldInfo.Size = new System.Drawing.Size(54, 25);
+            this.lbSoldInfo.TabIndex = 33;
+            this.lbSoldInfo.Text = "0 / 0";
             // 
             // pbCart
             // 
-            resources.ApplyResources(this.pbCart, "pbCart");
             this.pbCart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbCart.Image = global::AppAccountingSalesOE.Properties.Resources.Cart;
+            this.pbCart.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pbCart.Location = new System.Drawing.Point(855, 8);
             this.pbCart.Name = "pbCart";
+            this.pbCart.Size = new System.Drawing.Size(56, 55);
+            this.pbCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCart.TabIndex = 30;
             this.pbCart.TabStop = false;
-            this.ttPopularGoods.SetToolTip(this.pbCart, resources.GetString("pbCart.ToolTip"));
             this.pbCart.Click += new System.EventHandler(this.pbCart_Click);
             // 
             // pictureBox7
             // 
-            resources.ApplyResources(this.pictureBox7, "pictureBox7");
+            this.pictureBox7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox7.Location = new System.Drawing.Point(850, 5);
             this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(298, 63);
+            this.pictureBox7.TabIndex = 29;
             this.pictureBox7.TabStop = false;
-            this.ttPopularGoods.SetToolTip(this.pictureBox7, resources.GetString("pictureBox7.ToolTip"));
             // 
             // pbArrowRight
             // 
-            resources.ApplyResources(this.pbArrowRight, "pbArrowRight");
             this.pbArrowRight.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.pbArrowRight.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbArrowRight.Image = global::AppAccountingSalesOE.Properties.Resources.Arrow_right;
+            this.pbArrowRight.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pbArrowRight.Location = new System.Drawing.Point(1105, 284);
             this.pbArrowRight.Name = "pbArrowRight";
+            this.pbArrowRight.Size = new System.Drawing.Size(103, 104);
+            this.pbArrowRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbArrowRight.TabIndex = 23;
             this.pbArrowRight.TabStop = false;
-            this.ttPopularGoods.SetToolTip(this.pbArrowRight, resources.GetString("pbArrowRight.ToolTip"));
             this.pbArrowRight.Click += new System.EventHandler(this.pbArrowRight_Click);
             // 
             // pbArrowLeft
             // 
-            resources.ApplyResources(this.pbArrowLeft, "pbArrowLeft");
             this.pbArrowLeft.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.pbArrowLeft.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbArrowLeft.Image = global::AppAccountingSalesOE.Properties.Resources.Arrow_left;
+            this.pbArrowLeft.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pbArrowLeft.Location = new System.Drawing.Point(390, 284);
             this.pbArrowLeft.Name = "pbArrowLeft";
+            this.pbArrowLeft.Size = new System.Drawing.Size(103, 104);
+            this.pbArrowLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbArrowLeft.TabIndex = 22;
             this.pbArrowLeft.TabStop = false;
-            this.ttPopularGoods.SetToolTip(this.pbArrowLeft, resources.GetString("pbArrowLeft.ToolTip"));
             this.pbArrowLeft.Click += new System.EventHandler(this.pbArrowLeft_Click);
             // 
             // pbPopularGoods
             // 
-            resources.ApplyResources(this.pbPopularGoods, "pbPopularGoods");
             this.pbPopularGoods.BackColor = System.Drawing.SystemColors.Window;
+            this.pbPopularGoods.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pbPopularGoods.Location = new System.Drawing.Point(547, 173);
             this.pbPopularGoods.Name = "pbPopularGoods";
+            this.pbPopularGoods.Size = new System.Drawing.Size(505, 334);
+            this.pbPopularGoods.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPopularGoods.TabIndex = 20;
             this.pbPopularGoods.TabStop = false;
-            this.ttPopularGoods.SetToolTip(this.pbPopularGoods, resources.GetString("pbPopularGoods.ToolTip"));
             // 
             // pictureBox6
             // 
-            resources.ApplyResources(this.pictureBox6, "pictureBox6");
             this.pictureBox6.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.pictureBox6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox6.Location = new System.Drawing.Point(513, 549);
             this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(565, 187);
+            this.pictureBox6.TabIndex = 19;
             this.pictureBox6.TabStop = false;
-            this.ttPopularGoods.SetToolTip(this.pictureBox6, resources.GetString("pictureBox6.ToolTip"));
             // 
             // pictureBox5
             // 
-            resources.ApplyResources(this.pictureBox5, "pictureBox5");
             this.pictureBox5.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.pictureBox5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox5.Location = new System.Drawing.Point(362, 116);
             this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(875, 413);
+            this.pictureBox5.TabIndex = 18;
             this.pictureBox5.TabStop = false;
-            this.ttPopularGoods.SetToolTip(this.pictureBox5, resources.GetString("pictureBox5.ToolTip"));
             // 
             // pbMenu
             // 
-            resources.ApplyResources(this.pbMenu, "pbMenu");
             this.pbMenu.BackColor = System.Drawing.Color.SteelBlue;
             this.pbMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbMenu.Image = global::AppAccountingSalesOE.Properties.Resources.Menu;
+            this.pbMenu.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pbMenu.Location = new System.Drawing.Point(1187, 1);
             this.pbMenu.Name = "pbMenu";
+            this.pbMenu.Size = new System.Drawing.Size(74, 70);
+            this.pbMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbMenu.TabIndex = 17;
             this.pbMenu.TabStop = false;
-            this.ttPopularGoods.SetToolTip(this.pbMenu, resources.GetString("pbMenu.ToolTip"));
             this.pbMenu.Click += new System.EventHandler(this.pbMenu_Click);
             // 
             // pbLanguageUA
             // 
-            resources.ApplyResources(this.pbLanguageUA, "pbLanguageUA");
             this.pbLanguageUA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbLanguageUA.Image = global::AppAccountingSalesOE.Properties.Resources.Flag_UA;
+            this.pbLanguageUA.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pbLanguageUA.Location = new System.Drawing.Point(710, 9);
             this.pbLanguageUA.Name = "pbLanguageUA";
+            this.pbLanguageUA.Size = new System.Drawing.Size(91, 53);
+            this.pbLanguageUA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbLanguageUA.TabIndex = 15;
             this.pbLanguageUA.TabStop = false;
-            this.ttPopularGoods.SetToolTip(this.pbLanguageUA, resources.GetString("pbLanguageUA.ToolTip"));
-            this.pbLanguageUA.Click += new System.EventHandler(this.pbLanguageUA_Click);
             // 
             // pbLanguageUS
             // 
-            resources.ApplyResources(this.pbLanguageUS, "pbLanguageUS");
             this.pbLanguageUS.BackColor = System.Drawing.Color.SteelBlue;
             this.pbLanguageUS.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbLanguageUS.Image = global::AppAccountingSalesOE.Properties.Resources.Flag_USA;
+            this.pbLanguageUS.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pbLanguageUS.Location = new System.Drawing.Point(580, 9);
             this.pbLanguageUS.Name = "pbLanguageUS";
+            this.pbLanguageUS.Size = new System.Drawing.Size(91, 53);
+            this.pbLanguageUS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbLanguageUS.TabIndex = 14;
             this.pbLanguageUS.TabStop = false;
-            this.ttPopularGoods.SetToolTip(this.pbLanguageUS, resources.GetString("pbLanguageUS.ToolTip"));
-            this.pbLanguageUS.Click += new System.EventHandler(this.pbLanguageUS_Click);
             // 
             // pictureBox4
             // 
-            resources.ApplyResources(this.pictureBox4, "pictureBox4");
             this.pictureBox4.BackColor = System.Drawing.Color.SteelBlue;
             this.pictureBox4.Image = global::AppAccountingSalesOE.Properties.Resources.Phone;
+            this.pictureBox4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox4.Location = new System.Drawing.Point(318, 4);
             this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(67, 62);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 12;
             this.pictureBox4.TabStop = false;
-            this.ttPopularGoods.SetToolTip(this.pictureBox4, resources.GetString("pictureBox4.ToolTip"));
             // 
             // pictureBox3
             // 
-            resources.ApplyResources(this.pictureBox3, "pictureBox3");
             this.pictureBox3.BackColor = System.Drawing.Color.SteelBlue;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox3.Location = new System.Drawing.Point(40, 5);
             this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(208, 216);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
-            this.ttPopularGoods.SetToolTip(this.pictureBox3, resources.GetString("pictureBox3.ToolTip"));
             // 
             // pictureBox2
             // 
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
             this.pictureBox2.BackColor = System.Drawing.Color.SteelBlue;
+            this.pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox2.Location = new System.Drawing.Point(-1, -5);
             this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(289, 758);
+            this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
-            this.ttPopularGoods.SetToolTip(this.pictureBox2, resources.GetString("pictureBox2.ToolTip"));
             // 
             // pictureBox1
             // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.BackColor = System.Drawing.Color.SteelBlue;
+            this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox1.Location = new System.Drawing.Point(287, -7);
             this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1017, 81);
+            this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.ttPopularGoods.SetToolTip(this.pictureBox1, resources.GetString("pictureBox1.ToolTip"));
             // 
             // formMainPage
             // 
-            resources.ApplyResources(this, "$this");
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ClientSize = new System.Drawing.Size(1302, 753);
             this.Controls.Add(this.lbSoldInfo);
             this.Controls.Add(this.lbTotalAmountCart);
             this.Controls.Add(this.lbQuantityCart);
@@ -437,7 +566,8 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Name = "formMainPage";
-            this.ttPopularGoods.SetToolTip(this, resources.GetString("$this.ToolTip"));
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Головна сторінка";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainPage_FormClosing);
             this.Load += new System.EventHandler(this.formMainPage_Load);
             this.msMainMenu.ResumeLayout(false);

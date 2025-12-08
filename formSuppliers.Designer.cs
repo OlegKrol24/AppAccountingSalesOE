@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formSuppliers));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvSuppliers = new System.Windows.Forms.DataGridView();
@@ -44,7 +43,6 @@
             // 
             // dgvSuppliers
             // 
-            resources.ApplyResources(this.dgvSuppliers, "dgvSuppliers");
             this.dgvSuppliers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvSuppliers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvSuppliers.BackgroundColor = System.Drawing.SystemColors.Info;
@@ -62,6 +60,7 @@
             this.Company_name,
             this.Phone_number,
             this.Email});
+            this.dgvSuppliers.Location = new System.Drawing.Point(13, 102);
             this.dgvSuppliers.Name = "dgvSuppliers";
             this.dgvSuppliers.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -72,72 +71,98 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvSuppliers.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvSuppliers.RowHeadersWidth = 51;
             this.dgvSuppliers.RowTemplate.Height = 24;
+            this.dgvSuppliers.Size = new System.Drawing.Size(879, 446);
+            this.dgvSuppliers.TabIndex = 0;
             // 
             // Full_name
             // 
-            resources.ApplyResources(this.Full_name, "Full_name");
+            this.Full_name.HeaderText = "Постачальник";
+            this.Full_name.MinimumWidth = 6;
             this.Full_name.Name = "Full_name";
             this.Full_name.ReadOnly = true;
+            this.Full_name.Width = 150;
             // 
             // Company_name
             // 
-            resources.ApplyResources(this.Company_name, "Company_name");
+            this.Company_name.HeaderText = "Назва компанії";
+            this.Company_name.MinimumWidth = 6;
             this.Company_name.Name = "Company_name";
             this.Company_name.ReadOnly = true;
+            this.Company_name.Width = 145;
             // 
             // Phone_number
             // 
-            resources.ApplyResources(this.Phone_number, "Phone_number");
+            this.Phone_number.HeaderText = "Номер телефону";
+            this.Phone_number.MinimumWidth = 6;
             this.Phone_number.Name = "Phone_number";
             this.Phone_number.ReadOnly = true;
+            this.Phone_number.Width = 152;
             // 
             // Email
             // 
-            resources.ApplyResources(this.Email, "Email");
+            this.Email.HeaderText = "Електронна пошта";
+            this.Email.MinimumWidth = 6;
             this.Email.Name = "Email";
             this.Email.ReadOnly = true;
+            this.Email.Width = 168;
             // 
             // btnDeleteSuppliers
             // 
-            resources.ApplyResources(this.btnDeleteSuppliers, "btnDeleteSuppliers");
             this.btnDeleteSuppliers.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.btnDeleteSuppliers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteSuppliers.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnDeleteSuppliers.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnDeleteSuppliers.Location = new System.Drawing.Point(539, 28);
             this.btnDeleteSuppliers.Name = "btnDeleteSuppliers";
+            this.btnDeleteSuppliers.Size = new System.Drawing.Size(130, 43);
+            this.btnDeleteSuppliers.TabIndex = 45;
+            this.btnDeleteSuppliers.Text = "Видалити";
             this.btnDeleteSuppliers.UseVisualStyleBackColor = false;
             this.btnDeleteSuppliers.Click += new System.EventHandler(this.btnDeleteSuppliers_Click);
             // 
             // btnEditSuppliers
             // 
-            resources.ApplyResources(this.btnEditSuppliers, "btnEditSuppliers");
             this.btnEditSuppliers.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.btnEditSuppliers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditSuppliers.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnEditSuppliers.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnEditSuppliers.Location = new System.Drawing.Point(379, 28);
             this.btnEditSuppliers.Name = "btnEditSuppliers";
+            this.btnEditSuppliers.Size = new System.Drawing.Size(130, 43);
+            this.btnEditSuppliers.TabIndex = 44;
+            this.btnEditSuppliers.Text = "Редагувати";
             this.btnEditSuppliers.UseVisualStyleBackColor = false;
             this.btnEditSuppliers.Click += new System.EventHandler(this.btnEditSuppliers_Click);
             // 
             // btnAddSuppliers
             // 
-            resources.ApplyResources(this.btnAddSuppliers, "btnAddSuppliers");
             this.btnAddSuppliers.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.btnAddSuppliers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddSuppliers.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnAddSuppliers.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnAddSuppliers.Location = new System.Drawing.Point(219, 28);
             this.btnAddSuppliers.Name = "btnAddSuppliers";
+            this.btnAddSuppliers.Size = new System.Drawing.Size(130, 43);
+            this.btnAddSuppliers.TabIndex = 43;
+            this.btnAddSuppliers.Text = "Додати";
             this.btnAddSuppliers.UseVisualStyleBackColor = false;
             this.btnAddSuppliers.Click += new System.EventHandler(this.btnAddSuppliers_Click);
             // 
             // formSuppliers
             // 
-            resources.ApplyResources(this, "$this");
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(904, 560);
             this.Controls.Add(this.btnDeleteSuppliers);
             this.Controls.Add(this.btnEditSuppliers);
             this.Controls.Add(this.btnAddSuppliers);
             this.Controls.Add(this.dgvSuppliers);
             this.Name = "formSuppliers";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Постачальники";
             this.Load += new System.EventHandler(this.formSuppliers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliers)).EndInit();
             this.ResumeLayout(false);

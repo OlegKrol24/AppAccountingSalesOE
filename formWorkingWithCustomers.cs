@@ -40,8 +40,6 @@ namespace AppAccountingSalesOE
         private void formWorkingWithCustomers_Load(object sender, EventArgs e)
         {
             LoadData();
-
-            LocalizationHelper.ApplyLocalization(this, LanguageManager.CurrentCulture);
         }
 
         private void btnSave_Click(object sender, EventArgs e)

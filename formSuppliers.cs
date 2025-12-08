@@ -39,8 +39,6 @@ namespace AppAccountingSalesOE
         {
             LoadData();
             ShowSuppliers(ref dgvSuppliers);
-
-            LocalizationHelper.ApplyLocalization(this, LanguageManager.CurrentCulture);
         }
 
         private void btnAddSuppliers_Click(object sender, EventArgs e)

@@ -16,10 +16,5 @@ namespace AppAccountingSalesOE
         {
             InitializeComponent();
         }
-
-        private void formReportView_Load(object sender, EventArgs e)
-        {
-            LocalizationHelper.ApplyLocalization(this, LanguageManager.CurrentCulture);
-        }
     }
 }

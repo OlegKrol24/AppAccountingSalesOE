@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formWorkingWithCustomers));
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbPhoneNumber = new System.Windows.Forms.TextBox();
             this.tbFullNameCustomers = new System.Windows.Forms.TextBox();
@@ -43,69 +42,113 @@
             // 
             // tbEmail
             // 
-            resources.ApplyResources(this.tbEmail, "tbEmail");
+            this.tbEmail.Font = new System.Drawing.Font("Times New Roman", 10.2F);
+            this.tbEmail.Location = new System.Drawing.Point(339, 194);
+            this.tbEmail.MaxLength = 60;
             this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(263, 27);
+            this.tbEmail.TabIndex = 18;
             // 
             // tbPhoneNumber
             // 
-            resources.ApplyResources(this.tbPhoneNumber, "tbPhoneNumber");
+            this.tbPhoneNumber.Font = new System.Drawing.Font("Times New Roman", 10.2F);
+            this.tbPhoneNumber.Location = new System.Drawing.Point(339, 124);
+            this.tbPhoneNumber.MaxLength = 13;
             this.tbPhoneNumber.Name = "tbPhoneNumber";
+            this.tbPhoneNumber.Size = new System.Drawing.Size(263, 27);
+            this.tbPhoneNumber.TabIndex = 17;
             // 
             // tbFullNameCustomers
             // 
-            resources.ApplyResources(this.tbFullNameCustomers, "tbFullNameCustomers");
+            this.tbFullNameCustomers.Font = new System.Drawing.Font("Times New Roman", 10.2F);
+            this.tbFullNameCustomers.Location = new System.Drawing.Point(339, 63);
             this.tbFullNameCustomers.Name = "tbFullNameCustomers";
+            this.tbFullNameCustomers.Size = new System.Drawing.Size(340, 27);
+            this.tbFullNameCustomers.TabIndex = 16;
             // 
             // lbAddress
             // 
-            resources.ApplyResources(this.lbAddress, "lbAddress");
+            this.lbAddress.AutoSize = true;
+            this.lbAddress.Font = new System.Drawing.Font("Times New Roman", 10.2F);
+            this.lbAddress.Location = new System.Drawing.Point(151, 259);
             this.lbAddress.Name = "lbAddress";
+            this.lbAddress.Size = new System.Drawing.Size(60, 19);
+            this.lbAddress.TabIndex = 15;
+            this.lbAddress.Text = "Адреса";
             // 
             // lbEmail
             // 
-            resources.ApplyResources(this.lbEmail, "lbEmail");
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.Font = new System.Drawing.Font("Times New Roman", 10.2F);
+            this.lbEmail.Location = new System.Drawing.Point(151, 197);
             this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(130, 19);
+            this.lbEmail.TabIndex = 14;
+            this.lbEmail.Text = "Елетронна пошта";
             // 
             // lbPhoneNumber
             // 
-            resources.ApplyResources(this.lbPhoneNumber, "lbPhoneNumber");
+            this.lbPhoneNumber.AutoSize = true;
+            this.lbPhoneNumber.Font = new System.Drawing.Font("Times New Roman", 10.2F);
+            this.lbPhoneNumber.Location = new System.Drawing.Point(151, 127);
             this.lbPhoneNumber.Name = "lbPhoneNumber";
+            this.lbPhoneNumber.Size = new System.Drawing.Size(128, 19);
+            this.lbPhoneNumber.TabIndex = 13;
+            this.lbPhoneNumber.Text = "Номер телефону";
             // 
             // lbFullNameCustomer
             // 
-            resources.ApplyResources(this.lbFullNameCustomer, "lbFullNameCustomer");
+            this.lbFullNameCustomer.AutoSize = true;
+            this.lbFullNameCustomer.Font = new System.Drawing.Font("Times New Roman", 10.2F);
+            this.lbFullNameCustomer.Location = new System.Drawing.Point(151, 66);
             this.lbFullNameCustomer.Name = "lbFullNameCustomer";
+            this.lbFullNameCustomer.Size = new System.Drawing.Size(91, 19);
+            this.lbFullNameCustomer.TabIndex = 12;
+            this.lbFullNameCustomer.Text = "ПІБ клієнта";
             // 
             // btnSave
             // 
-            resources.ApplyResources(this.btnSave, "btnSave");
             this.btnSave.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnSave.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnSave.Location = new System.Drawing.Point(236, 350);
             this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(125, 43);
+            this.btnSave.TabIndex = 11;
+            this.btnSave.Text = "Зберегти";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // tbAddress
             // 
-            resources.ApplyResources(this.tbAddress, "tbAddress");
+            this.tbAddress.Font = new System.Drawing.Font("Times New Roman", 10.2F);
+            this.tbAddress.Location = new System.Drawing.Point(339, 256);
+            this.tbAddress.MaxLength = 50;
             this.tbAddress.Name = "tbAddress";
+            this.tbAddress.Size = new System.Drawing.Size(340, 27);
+            this.tbAddress.TabIndex = 19;
             // 
             // btnClear
             // 
-            resources.ApplyResources(this.btnClear, "btnClear");
             this.btnClear.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClear.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnClear.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnClear.Location = new System.Drawing.Point(439, 350);
             this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(125, 43);
+            this.btnClear.TabIndex = 20;
+            this.btnClear.Text = "Скинути";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // formWorkingWithCustomers
             // 
-            resources.ApplyResources(this, "$this");
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(800, 413);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.tbAddress);
             this.Controls.Add(this.tbEmail);
@@ -117,6 +160,8 @@
             this.Controls.Add(this.lbFullNameCustomer);
             this.Controls.Add(this.btnSave);
             this.Name = "formWorkingWithCustomers";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Додавання/редагування клієнта";
             this.Load += new System.EventHandler(this.formWorkingWithCustomers_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

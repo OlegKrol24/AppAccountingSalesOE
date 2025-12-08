@@ -158,15 +158,15 @@
   <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 13.8pt</value>
   </data>
+  <data name="&gt;&gt;Deletion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;label4.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pbMainMenu.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="tsmiReports.Text" xml:space="preserve">
     <value>Звіти</value>
@@ -177,8 +177,8 @@
   <data name="&gt;&gt;pictureBox4.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 26</value>
+  <data name="pbCart.Location" type="System.Drawing.Point, System.Drawing">
+    <value>855, 8</value>
   </data>
   <data name="&gt;&gt;Goods.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -215,12 +215,6 @@
   </data>
   <data name="&gt;&gt;pbLanguageUA.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Deletion.Width" type="System.Int32, mscorlib">
-    <value>130</value>
-  </data>
-  <data name="btnBuy.Text" xml:space="preserve">
-    <value>Купити</value>
   </data>
   <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -261,9 +255,6 @@
   <data name="pbMainMenu.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
   </data>
-  <data name="dgvCart.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
-  </data>
   <data name="&gt;&gt;pbAdd.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
@@ -282,9 +273,6 @@
   <data name="btnContinueShopping.TabIndex" type="System.Int32, mscorlib">
     <value>41</value>
   </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 19.8pt, style=Bold</value>
-  </data>
   <data name="lbTotalAmount.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 13.8pt, style=Bold</value>
   </data>
@@ -294,11 +282,14 @@
   <data name="&gt;&gt;pbLanguageUA.Name" xml:space="preserve">
     <value>pbLanguageUA</value>
   </data>
-  <data name="&gt;&gt;pbAdd.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>19</value>
   </data>
   <data name="&gt;&gt;tsmiSupplies.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pbDelete.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
   </data>
   <data name="&gt;&gt;tsmiCustomers.Name" xml:space="preserve">
     <value>tsmiCustomers</value>
@@ -306,11 +297,14 @@
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 10.2pt</value>
+  </data>
   <data name="&gt;&gt;pbCart.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="&gt;&gt;pbDelete.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-5, -7</value>
   </data>
   <data name="pbAdd.TabIndex" type="System.Int32, mscorlib">
     <value>44</value>
@@ -360,9 +354,6 @@
   <data name="tsmiGoods.Text" xml:space="preserve">
     <value>Товари</value>
   </data>
-  <data name="btnClear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>307, 689</value>
-  </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 10.2pt</value>
   </data>
@@ -381,8 +372,14 @@
   <data name="&gt;&gt;btnBuy.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="&gt;&gt;pictureBox4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
+  </data>
+  <data name="pbLanguageUS.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
   </data>
   <data name="&gt;&gt;btnBuy.Name" xml:space="preserve">
     <value>btnBuy</value>
@@ -395,9 +392,6 @@
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>39</value>
-  </data>
-  <data name="&gt;&gt;pbDelete.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="&gt;&gt;label5.Parent" xml:space="preserve">
     <value>$this</value>
@@ -465,6 +459,9 @@
   <data name="Goods.HeaderText" xml:space="preserve">
     <value>Товар</value>
   </data>
+  <data name="&gt;&gt;tsmiCustomers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;pictureBox7.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
@@ -477,20 +474,20 @@
   <data name="&gt;&gt;pbCart.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="tsmiCustomers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 29</value>
+  <data name="&gt;&gt;pictureBox7.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;dgvCart.ZOrder" xml:space="preserve">
     <value>12</value>
+  </data>
+  <data name="btnClear.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 13.8pt, style=Bold</value>
   </data>
   <data name="pbAdd.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 60</value>
   </data>
   <data name="tsmiReports.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 29</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="&gt;&gt;btnContinueShopping.Name" xml:space="preserve">
     <value>btnContinueShopping</value>
@@ -537,26 +534,17 @@
   <data name="msMainMenu.Text" xml:space="preserve">
     <value>menuStrip1</value>
   </data>
-  <data name="&gt;&gt;pbLanguageUS.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>400, 24</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
-  </data>
-  <data name="Quantity.Width" type="System.Int32, mscorlib">
-    <value>125</value>
-  </data>
-  <data name="btnClear.TabIndex" type="System.Int32, mscorlib">
-    <value>45</value>
+  <data name="btnClear.Location" type="System.Drawing.Point, System.Drawing">
+    <value>307, 689</value>
   </data>
   <data name="&gt;&gt;Total_price.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;Goods.Name" xml:space="preserve">
     <value>Goods</value>
+  </data>
+  <data name="&gt;&gt;Price.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Deletion.HeaderText" xml:space="preserve">
     <value>Видалення</value>
@@ -600,11 +588,14 @@
   <data name="msMainMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>156, 305</value>
   </data>
-  <data name="&gt;&gt;tsmiCustomers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;tsmiGoods.Name" xml:space="preserve">
     <value>tsmiGoods</value>
+  </data>
+  <data name="&gt;&gt;pbDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="pbCart.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -627,6 +618,9 @@
   <data name="tsmiGoods.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 29</value>
   </data>
+  <data name="&gt;&gt;tsmiSales.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="lbTotalAmount.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 25</value>
   </data>
@@ -642,11 +636,11 @@
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="btnClear.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 13.8pt, style=Bold</value>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;pbLanguageUS.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>400, 24</value>
   </data>
   <data name="&gt;&gt;label3.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -654,17 +648,20 @@
   <data name="pbLanguageUA.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>CenterImage</value>
   </data>
+  <data name="&gt;&gt;btnBuy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;pbMainMenu.Name" xml:space="preserve">
     <value>pbMainMenu</value>
   </data>
-  <data name="&gt;&gt;tsmiSales.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;pbDelete.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;tsmiSales.Name" xml:space="preserve">
     <value>tsmiSales</value>
   </data>
-  <data name="&gt;&gt;pbDelete.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 26</value>
   </data>
   <data name="pictureBox4.Location" type="System.Drawing.Point, System.Drawing">
     <value>318, 4</value>
@@ -702,6 +699,9 @@
   <data name="label2.Text" xml:space="preserve">
     <value>0 шт</value>
   </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
   <data name="tsmiCustomers.Text" xml:space="preserve">
     <value>Клієнти</value>
   </data>
@@ -711,20 +711,20 @@
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 19</value>
   </data>
-  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-5, -7</value>
+  <data name="btnBuy.Text" xml:space="preserve">
+    <value>Купити</value>
   </data>
   <data name="msMainMenu.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 10.2pt</value>
-  </data>
-  <data name="Price.Width" type="System.Int32, mscorlib">
-    <value>125</value>
+  <data name="dgvCart.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>187, 26</value>
+  </data>
+  <data name="btnBuy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1048, 689</value>
   </data>
   <data name="pbCart.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -744,29 +744,29 @@
   <data name="label4.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="pbAdd.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Times New Roman, 19.8pt, style=Bold</value>
   </data>
-  <data name="&gt;&gt;pictureBox7.Parent" xml:space="preserve">
+  <data name="&gt;&gt;pbDelete.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="msMainMenu.TabIndex" type="System.Int32, mscorlib">
     <value>46</value>
   </data>
-  <data name="&gt;&gt;pictureBox7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="pbAdd.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="&gt;&gt;pictureBox4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;pbAdd.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>19</value>
+  <data name="Quantity.Width" type="System.Int32, mscorlib">
+    <value>125</value>
   </data>
-  <data name="btnBuy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1048, 689</value>
+  <data name="btnClear.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
   </data>
   <data name="&gt;&gt;pictureBox4.Name" xml:space="preserve">
     <value>pictureBox4</value>
@@ -774,8 +774,8 @@
   <data name="label5.Text" xml:space="preserve">
     <value>012 345 67 89</value>
   </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
+  <data name="&gt;&gt;pbLanguageUS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tsmiSales.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 29</value>
@@ -786,8 +786,8 @@
   <data name="&gt;&gt;pbCart.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Deletion.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;pbLanguageUS.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="lbTotalAmount.Text" xml:space="preserve">
     <value>000 000, 00 грн</value>
@@ -795,11 +795,11 @@
   <data name="&gt;&gt;msMainMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="pbCart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>855, 8</value>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
   </data>
-  <data name="pbLanguageUS.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
+  <data name="Deletion.Width" type="System.Int32, mscorlib">
+    <value>130</value>
   </data>
   <data name="&gt;&gt;lbTotalAmount.Name" xml:space="preserve">
     <value>lbTotalAmount</value>
@@ -807,14 +807,14 @@
   <data name="Total_price.Width" type="System.Int32, mscorlib">
     <value>130</value>
   </data>
-  <data name="pbDelete.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
+  <data name="Price.Width" type="System.Int32, mscorlib">
+    <value>125</value>
   </data>
-  <data name="&gt;&gt;btnBuy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="tsmiCustomers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 29</value>
   </data>
-  <data name="&gt;&gt;Price.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;pictureBox7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -837,9 +837,6 @@
   <data name="&gt;&gt;label4.Name" xml:space="preserve">
     <value>label4</value>
   </data>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>uk-UA</value>
-  </metadata>
   <metadata name="Deletion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -847,9 +844,6 @@
     <value>True</value>
   </metadata>
   <metadata name="Quantity.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="Goods.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

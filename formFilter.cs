@@ -67,8 +67,6 @@ namespace AppAccountingSalesOE
             ShowManufCountries(ref goods_list, ref cbManufCountries);
             ShowCategories(ref goods_list, ref clbCategories);
             ShowWarranties(ref goods_list, ref clbWarranties);
-
-            LocalizationHelper.ApplyLocalization(this, LanguageManager.CurrentCulture);
         }
 
         private void btnApplyFilter_Click(object sender, EventArgs e)

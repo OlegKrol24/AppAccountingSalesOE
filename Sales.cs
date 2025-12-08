@@ -123,8 +123,6 @@ namespace AppAccountingSalesOE
             cbEmployees.DisplayMember = "Full_name";
             cbEmployees.ValueMember = "ID";
             cbEmployees.SelectedIndex = -1;
-
-            LocalizationHelper.ApplyLocalization(this, LanguageManager.CurrentCulture);
         }
 
         private void btnApplyFilter_Click(object sender, EventArgs e)
@@ -177,26 +175,6 @@ namespace AppAccountingSalesOE
             this.Hide();
             formCart formCart = new formCart(currentUser);
             formCart.Show();
-        }
-
-        private void ChangeGlobalLanguageAndReload(string newLanguageString)
-        {
-            LanguageManager.SetCulture(newLanguageString);
-
-            this.Hide();
-
-            formMainPage mainPage = new formMainPage(currentUser);
-            mainPage.Show();
-        }
-
-        private void pbLanguageUA_Click(object sender, EventArgs e)
-        {
-            ChangeGlobalLanguageAndReload("uk-UA");
-        }
-
-        private void pbLanguageUS_Click(object sender, EventArgs e)
-        {
-            ChangeGlobalLanguageAndReload("en-US");
         }
     }
 }

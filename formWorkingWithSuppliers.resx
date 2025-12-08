@@ -203,9 +203,6 @@
   <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 43</value>
   </data>
-  <data name="&gt;&gt;lbFullNameCustomer.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <data name="&gt;&gt;lbAddress.Name" xml:space="preserve">
     <value>lbAddress</value>
   </data>
@@ -229,6 +226,9 @@
   </data>
   <data name="lbPhoneNumber.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
+  </data>
+  <data name="tbEmail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>343, 255</value>
   </data>
   <data name="btnClear.Text" xml:space="preserve">
     <value>Скинути</value>
@@ -260,6 +260,9 @@
   <data name="&gt;&gt;tbEmail.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="lbEmail.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="&gt;&gt;btnClear.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
@@ -277,9 +280,6 @@
   </data>
   <data name="&gt;&gt;tbFullNameSupplier.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="btnSave.Text" xml:space="preserve">
-    <value>Зберегти</value>
   </data>
   <data name="&gt;&gt;lbEmail.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -330,8 +330,8 @@
   <data name="&gt;&gt;lbEmail.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="tbEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>343, 255</value>
+  <data name="&gt;&gt;lbFullNameCustomer.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="btnClear.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 10.2pt, style=Bold</value>
@@ -405,8 +405,8 @@
   <data name="lbEmail.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
   </data>
-  <data name="lbEmail.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>Зберегти</value>
   </data>
   <data name="lbAddress.Text" xml:space="preserve">
     <value>Електронна пошта</value>
@@ -414,10 +414,4 @@
   <data name="&gt;&gt;lbPhoneNumber.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>uk-UA</value>
-  </metadata>
 </root>
