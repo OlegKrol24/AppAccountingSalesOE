@@ -382,6 +382,10 @@ namespace AppAccountingSalesOE
             UpdateCartLabels();
 
             MessageBox.Show("Замовлення успішно оформлено!\nЧек сформовано.", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            this.Hide();
+            formMainPage homeForm = new formMainPage(currentUser);
+            homeForm.Show();
         }
 
         private void pbMainMenu_Click(object sender, EventArgs e)
